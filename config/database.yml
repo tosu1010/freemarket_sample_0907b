@@ -10,7 +10,7 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: "#{app_path}/tmp/sockets/unicorn.sock"
+  socket: "/tmp/mysql.sock"
 
 development:
   <<: *default
