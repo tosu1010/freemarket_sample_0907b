@@ -50,7 +50,7 @@
 | p_address_number     | string ||
 | p_address_building   | string ||
 | p_identification     | string ||
-| user_id              | references | foreign_key: true|
+| user_id              | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -66,7 +66,7 @@
 | limit_month   | integer | null: false |
 | limit_year    | integer | null: false |
 | security_code | integer | null: false |
-| user_id       | references | foreign_key: true | 
+| user_id       | references | null: false, foreign_key: true | 
 
 ### Association
 - belongs_to :user
@@ -81,8 +81,8 @@
 | merchandise_description | text | null: false |
 | price                   | integer | null: false |
 | delivery_id             | references | null: false, foreign_key: true |
-| brand_id                | references | foreign_key: true |
-| category_id             | references | foreign_key: true |
+| brand_id                | references | null: false, foreign_key: true |
+| category_id             | references | null: false, foreign_key: true |
 
 ### Index
 - add_index :name, category_id
@@ -156,8 +156,8 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | value    | integer | null: false |
-| user_id  | references | foreign_key: true |
-| merchandise_id | references | foreign_key: true |
+| user_id  | references | null: false, foreign_key: true |
+| merchandise_id | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -170,8 +170,8 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | comment   | text | null: false |
-| user_id   | references | foreign_key: true |
-| merchandise_id  | references | foretin_key: true |
+| user_id   | references | null: false, foreign_key: true|
+| merchandise_id  | references | null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -185,8 +185,8 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | evaluation_type   | string | 
-| user_id           | references | foreign_key: true |
-| purchase_id       | references | foreign_key: true | 
+| user_id           | references | null: false, foreign_key: true|
+| purchase_id       | references | null: false, foreign_key: true | 
 
 ### Association
 - belongs_to :user
@@ -199,9 +199,9 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | purchase_status     | integer    | null: false |
-| user_id             | references | foreign_key: true |
-| merchandise_id      | references | foreign_key: true |
-| delivery_company_id | references | foreign_key: true |
+| user_id             | references | null: false, foreign_key: true |
+| merchandise_id      | references | null: false, foreign_key: true |
+| delivery_company_id | references | null: false, foreign_key: true |
 
 ### Association
 - has_one :evaluation
@@ -218,7 +218,7 @@
 |--|--|--|
 | points           | integer ||
 | expiration_date  | integer | null: false |
-| user_id          | references | foreign_key: true |
+| user_id          | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -231,8 +231,8 @@
 |--|--|--|
 | exhibit_status | integer | null: false |
 | exhibit_size   | integer ||
-| user_id        | references | foreign_key: true |
-| merchandise_id | references | foreign_key: true |
+| user_id        | references | null: false, foreign_key: true |
+| merchandise_id | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :to_does
@@ -248,7 +248,7 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | exhibit_image | text | null: false |
-| exhibit_id    | references | foreign_key: true |
+| exhibit_id    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :exhibit
@@ -280,10 +280,10 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | to_do_comment  | text | null: false |
-| user_id        | references | foreign_key: true |
-| exhibit_id     | references | foreign_key: true |
-| purchase_id    | references | foreign_key: true |
-| merchandise_id | references | foreign_key: true |
+| user_id        | references | null: false, foreign_key: true |
+| exhibit_id     | references | null: false, foreign_key: true |
+| purchase_id    | references | null: false, foreign_key: true |
+| merchandise_id | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -303,7 +303,7 @@
 | account_number         | integer | null: false |
 | name     | string | null: false |
 | name      | string | null: false |
-| personal_information_id| references | foreign_key: true |
+| personal_information_id| references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :personal_information
@@ -315,8 +315,8 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | deadline       | integer | null: false |
-| user_id        | references | foreign_key: true |
-| merchandise_id | references | foreign_key: true |
+| user_id        | references | null: false, foreign_key: true |
+| merchandise_id | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -340,8 +340,8 @@
 | bug_detail           | text ||
 | name     | string ||
 | bug_display_comment  | text ||
-| merchandise_id       | references | foreign_key: true |
-| user_id              | references | foreign_key: true |
+| merchandise_id       | references | null: false, foreign_key: true |
+| user_id              | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -355,7 +355,7 @@
 |--|--|--|
 | name          | text | null: false |
 | whether_usefullness | boolean | default: false |
-| user_id             | references | foreign_key: true |
+| user_id             | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -367,8 +367,8 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | dealed_comment | text | null: false |
-| user_id        | references | foreign_key: true |
-| merchandise_id | references | foreign_key: true |
+| user_id        | references | null: false, foreign_key: true |
+| merchandise_id | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
