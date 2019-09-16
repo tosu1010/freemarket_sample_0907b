@@ -74,21 +74,18 @@
 <br>
 
 ---
-## merchandiseテーブル
+## Merchandiseテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| merchandise_name        | string | null: false |
+| name                    | string | null: false |
 | merchandise_description | text | null: false |
-| price                  | integer | null: false |
-| delivery_id            | references | null: false, foreign_key: true |
-| brand_id               | references | foreign_key: true |
-| category_1_id          | references | foreign_key: true |
-| category_2_id          | references | foreign_key: true |
-| category_3_id          | references | foreign_key: true |
-| category_4_id          | references | foreign_key: true |
+| price                   | integer | null: false |
+| delivery_id             | references | null: false, foreign_key: true |
+| brand_id                | references | foreign_key: true |
+| category_id             | references | foreign_key: true |
 
 ### Index
-- add_index :merchandise_name, category_1_id, category_2_id, category_3_id, category_4_id
+- add_index :name, category_id
 
 ### Association
 - has_one :balance
@@ -102,10 +99,7 @@
 
 - belongs_to :delivery
 - belongs_to :brand
-- belongs_to :category_1
-- belongs_to :category_2
-- belongs_to :category_3
-- belongs_to :category_4
+- belongs_to :category
 
 
 <br>
@@ -114,7 +108,7 @@
 ## Brandテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| brand_name | string ||
+| name | string ||
 
 ### Association
 - has_many :merchandises
@@ -122,58 +116,14 @@
 <br>
 
 ---
-## Category_1テーブル
+## Categoryテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| category_1_name | string | null: false |
+| name | string | null: false |
 
 ### Association
 - has_many :merchandises
-- has_many :category_2s
-
-<br>
-
----
-## Category_2テーブル
-|カラム名|タイプ|オプション|
-|--|--|--|
-| category_2_name | string | null: false |
-| category_1_id   | references | foreign_key: true |
-
-### Association
-- has_many :merchandises
-- has_many :category_3s
-
-- belongs_to :category_1
-
-<br>
-
----
-## Category_3テーブル
-|カラム名|タイプ|オプション|
-|--|--|--|
-| category_3_name | string | null: false |
-| category_2_id | references | foreign_key: true |
-
-### Association
-- has_many :merchandises
-- has_many :category_4
-
-- belongs_to :category_2
-
-<br>
-
----
-## Category_4テーブル
-|カラム名|タイプ|オプション|
-|--|--|--|
-| category_4_name | string | null: false |
-| category_3_id   | references | foreign_key: true |
-
-### Association
-- has_many :merchandises
-
-- belongs_to :category_3
+- has_ancestry
 
 <br>
 
@@ -181,8 +131,8 @@
 ## Delivery_methodテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| delivery_type_name | string | null: false|
-| company_name       | string | null: false |
+| name | string | null: false|
+| name       | string | null: false |
 
 ### Association
 - has_one :delivery
@@ -347,12 +297,12 @@
 ## remitteeテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| bank_name              | text | null: false |
+| name              | text | null: false |
 | account_type           | integer | null: false |
 | branch_code            | integer | null: false |
 | account_number         | integer | null: false |
-| account_first_name     | string | null: false |
-| account_last_name      | string | null: false |
+| name     | string | null: false |
+| name      | string | null: false |
 | personal_information_id| references | foreign_key: true |
 
 ### Association
@@ -388,7 +338,7 @@
 | occurrence_minute    | integer ||
 | occurrence_friquence | integer ||
 | bug_detail           | text ||
-| merchandise_name     | string ||
+| name     | string ||
 | bug_display_comment  | text ||
 | merchandise_id       | references | foreign_key: true |
 | user_id              | references | foreign_key: true |
@@ -403,7 +353,7 @@
 ## Guideテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| guide_name          | text | null: false |
+| name          | text | null: false |
 | whether_usefullness | boolean | default: false |
 | user_id             | references | foreign_key: true |
 
