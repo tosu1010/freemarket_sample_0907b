@@ -22,20 +22,20 @@
 | profile_description | text ||
 
 ### Association
-- has_one :personal_information
-- has_one :guide
-- has_one :credit_card
-- has_one :dealed_comment
-- has_many :points
-- has_many :notices
-- has_many :to_does
-- has_many :balances
-- has_many :likes
-- has_many :exhibits
-- has_many :contacts
-- has_many :comments
-- has_many :purchases
-- has_many :evaluations
+- has_one :personal_information, dependent: :destroy
+- has_one :guide, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
+- has_one :dealed_comment, dependent: :destroy
+- has_many :points, dependent: :destroy
+- has_many :notices, dependent: :destroy
+- has_many :to_does, dependent: :destroy
+- has_many :balances, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :exhibits, dependent: :destroy
+- has_many :contacts, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :purchases, dependent: :destroy
+- has_many :evaluations, dependent: :destroy
 
 
 <br>
@@ -53,8 +53,8 @@
 | user_id              | references | null: false, foreign_key: true |
 
 ### Association
+- has_one :remittee, dependent: :destroy
 - belongs_to :user
-- has_one :remittee
 
 <br>
 
@@ -88,14 +88,14 @@
 - add_index :name, category_id
 
 ### Association
-- has_one :balance
-- has_one :exhibit
-- has_one :purchases
-- has_many :to_does
-- has_many :likes
-- has_many :contacts
-- has_many :comments
-- has_many :dealed_comment
+- has_one :balance, dependent: :destroy
+- has_one :exhibit, dependent: :destroy
+- has_one :purchases, dependent: :destroy
+- has_many :to_does, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :contacts, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :dealed_comment, dependent: :destroy
 
 - belongs_to :delivery
 - belongs_to :brand
@@ -132,10 +132,10 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | name | string | null: false|
-| name       | string | null: false |
+| delivery_id   | references | null: false, foreign_key: true |
 
 ### Association
-- has_one :delivery
+- has_one :delivery, dependent: :destroy
 
 <br>
 
@@ -148,6 +148,7 @@
 | shipping_date       | string | null: false |
 
 ### Association
+- belongs_to :delivery_method
 
 <br>
 
@@ -204,8 +205,8 @@
 | delivery_company_id | references | null: false, foreign_key: true |
 
 ### Association
-- has_one :evaluation
-- has_many :to_does
+- has_one :evaluation, dependent: :destroy
+- has_many :to_does, dependent: :destroy
 
 - belongs_to :merchandise
 - belongs_to :delivery_company
@@ -235,8 +236,8 @@
 | merchandise_id | references | null: false, foreign_key: true |
 
 ### Association
-- has_many :to_does
-- has_many :exhibit_images
+- has_many :to_does, dependent: :destroy
+- has_many :exhibit_images, dependent: :destroy
 
 - belongs_to :user
 - belongs_to :merchandise
