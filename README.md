@@ -44,12 +44,12 @@
 ## Personal_informationテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| p_postal_code        | integer ||
-| p_address_prefecture | string ||
-| p_address_city       | string ||
-| p_address_number     | string ||
-| p_address_building   | string ||
-| p_identification     | string ||
+| postal_code        | integer ||
+| address_prefecture | string ||
+| address_city       | string ||
+| address_number     | string ||
+| address_building   | string ||
+| identification     | string ||
 | user_id              | references | null: false, foreign_key: true |
 
 ### Association
