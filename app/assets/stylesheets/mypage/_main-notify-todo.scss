@@ -1,0 +1,21 @@
+.mypage {
+  &__main {
+    &__tab {
+      width: 100%;
+      background-color: #eeeeee;
+      height: 74px;
+      text-align: center;
+      display: flex;
+      line-height: 74px;
+      li {
+        display: inline-block;
+        width: 50%;
+        height: 72px;
+      }
+      .active {
+        background-color: #ffffff;
+        border-top: solid 2px #ea352d;
+      }
+    }
+  }
+}
