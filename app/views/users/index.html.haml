@@ -47,7 +47,7 @@
       %li.mypage__menu__links__link
         %a{:href => "https://www.mercari.com/jp/mypage/news/"}
           ニュース一覧
-    %h3.mypage__menu__header
+    %h3.mypage__menu__header.bold
       メルペイ
     %ul.mypage__menu__links
       %li.mypage__menu__links__link
@@ -56,7 +56,7 @@
       %li.mypage__menu__links__link
         %a{:href => "https://www.mercari.com/jp/mypage/point/"}
           ポイント
-    %h3.mypage__menu__header
+    %h3.mypage__menu__header.bold
       設定
     %ul.mypage__menu__links
       %li.mypage__menu__links__link
@@ -81,31 +81,32 @@
         %a{:href => "https://www.mercari.com/jp/logout/"}
           ログアウト
   .mypage__main
-    .mypage__main__user_icon
-      %a{:herf => "https://www.mercari.com/jp/mypage/"}
-        %img.mypage__main_user_image{src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-        .mypage__main__user_name
-          ユーザー名
-        .mypage__main__evaluation
-          評価
-          %span.bold
-            0
-        .mypage__main__evaluation
-          出品数
-          %span.bold
-            0
-    .mypage__main__notify_todo
-      .mypage__main__notify_todo__notify
+    .mypage__main__user-icon
+      %a{:href => "https://www.mercari.com/jp/mypage/"}
+        %img.mypage__main__user-icon__image{src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+        .mypage__main__user-name.bold
+          tosu
+        .mypage__main__user-info
+          .mypage__main__user-evaluation
+            評価
+            %span.bold
+              0
+          .mypage__main__user-exhibit
+            出品数
+            %span.bold
+              0
+    .mypage__main__notify-todo
+      .mypage__main__notify-todo__notify
         お知らせ
-        %img.mypage__main__notify_todo__notify__icon{src: "//static.mercdn.net/images/mercari_profile.png"}/
-        .mypage__main__notify_todo__notify__content
+        %img.mypage__main__notify-todo__notify__icon{src: "//static.mercdn.net/images/mercari_profile.png"}/
+        .mypage__main__notify-todo__notify__content
           《3連休最終日！すすメルペイでP1,000ゲット》10人招待したらP10,000もらえる！詳しくはこちらから
-        .mypage__main__notify_todo__notify__clock-icon
+        .mypage__main__notify-todo__notify__clock-icon
           = fa_icon "clock-o"
-        .mypage__main__notify_todo__notify__date
-      .mypage__main__notify_todo__notify__todo
+        .mypage__main__notify-todo__notify__date
+      .mypage__main__notify-todo__notify__todo
         やることリスト
-      .mypage__main__notify_todo__notify__tolist
+      .mypage__main__notify-todo__notify__tolist
         = link_to "一覧を見る", "https://www.mercari.com/jp/mypage/notification/"
     
     %h2
