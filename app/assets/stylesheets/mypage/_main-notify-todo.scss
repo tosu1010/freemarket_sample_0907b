@@ -1,20 +1,45 @@
 .mypage {
   &__main {
-    &__tab {
-      width: 100%;
-      background-color: #eeeeee;
-      height: 74px;
-      text-align: center;
-      display: flex;
-      line-height: 74px;
-      li {
-        display: inline-block;
-        width: 50%;
-        height: 72px;
-      }
-      .active {
-        background-color: #ffffff;
-        border-top: solid 2px #ea352d;
+    &__notify-todo {
+      background-color: #ffffff;
+      &__notify {
+        width: 100%;
+        height: auto;
+        &__content {
+          font-size: 14px;
+          position: relative;
+          border-bottom: solid 1px #eeeeee;
+          &:hover {
+            background-color: #fafafa;
+          }
+          a {
+            padding: 16px;
+            display: block;
+            line-height: inherit;            
+          }
+          &__icon {
+            height: 48px;
+            width: 48px;
+            float: left;
+          }
+          &__body {
+            color: #333333;
+            margin: 0 40px 0 68px;
+
+          }
+          &__date {
+            color: #888888;
+            &__clock-icon {
+              float: left;
+              margin-right: 8px;
+            }
+          }
+          .fa-angle-right {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+          }
+        }
       }
     }
   }
