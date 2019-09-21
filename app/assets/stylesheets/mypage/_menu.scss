@@ -1,21 +1,16 @@
 @import 'font-awesome';
-html, body {
-  height: 100%;
-  background-color: #f5f5f5;
-}
-a {
-  text-decoration: none;
-}
 
 .mypage {
-  margin: 40px 30px 0 30px;
-  height: 100%;
   &__menu {
     float: left;
     width: 280px;
     margin: 0 40px 0 0;
     font-size: 14px;
     border-width: 0;
+    left: 50%;
+    &__angle {
+      float: right;
+    }
     &__links {
       background-color: #ffffff;
       &__link {
@@ -35,10 +30,6 @@ a {
           &:visited {
             color: #333333;
           }
-        }
-        .fa-angle-right {
-          float: right;
-          font-size: 18px;
         }
       }
     }

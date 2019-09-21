@@ -52,6 +52,9 @@
             width: auto;
             height: 100%;
             background-color: #eeeeee;
+            &:hover {
+              background-color: #fafafa;
+            }
           }
         }
       }
