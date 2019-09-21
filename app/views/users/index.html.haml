@@ -64,21 +64,21 @@
           %li.mypage__main__not-found.bold
             現在、やることリストはありません
 
-    %h2
-      購入した商品
     .mypage__main__purchased
+      .mypage__main__purchased__header.bold
+        購入した商品
       %ul.mypage__main__tab
         %li.bold.active
           取引中
         %li.bold
           過去の取引
-    .mypage__main__tab-content
-      %ul.mypage__purchased__dealing__content.show
-        %li.mypage__main__not-found
-          取引中の商品がありません
-      %ul.mypage__purchased__dealed__content
-        %li.mypage__main__not-found
-          過去に取引した商品がありません
+      .mypage__main__tab-content
+        %ul.mypage__purchased__dealing__content.show
+          %li.mypage__main__not-found
+            取引中の商品がありません
+        %ul.mypage__purchased__dealed__content
+          %li.mypage__main__not-found
+            過去に取引した商品がありません
 
   %nav.mypage__menu
     %ul.mypage__menu__links
