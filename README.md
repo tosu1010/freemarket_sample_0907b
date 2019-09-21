@@ -40,10 +40,10 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | postal_code         | integer | null: false |
-| address_prefecture  | string | null: false |
-| address_city        | string | null: false |
-| address_number      | string | null: false |
-| address_building    | string ||
+| prefecture  | string | null: false |
+| city        | string | null: false |
+| number      | string | null: false |
+| building    | string ||
 | user_id             | references | null: false, foreign_key: true |
 
 ### Association
@@ -56,10 +56,10 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | postal_code        | integer ||
-| address_prefecture | string ||
-| address_city       | string ||
-| address_number     | string ||
-| address_building   | string ||
+| prefecture | string ||
+| city       | string ||
+| number     | string ||
+| building   | string ||
 | identification     | string ||
 | user_id              | references | null: false, foreign_key: true |
 
@@ -142,7 +142,8 @@
 ## Delivery_methodテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| name | string | null: false|
+| delivery_type_name | string | null: false|
+| company_name  | string | null: false |
 | delivery_id   | references | null: false, foreign_key: true |
 
 ### Association
@@ -181,8 +182,8 @@
 ## Commentテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| comment   | text | null: false |
-| user_id   | references | null: false, foreign_key: true|
+| comment         | text | null: false |
+| user_id         | references | null: false, foreign_key: true|
 | merchandise_id  | references | null: false, foreign_key: true|
 
 ### Association
@@ -196,7 +197,7 @@
 ## Evaluationテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| evaluation_type   | string | 
+| type              | string ||
 | user_id           | references | null: false, foreign_key: true|
 | purchase_id       | references | null: false, foreign_key: true | 
 
@@ -210,7 +211,7 @@
 ## Purchaseテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| purchase_status     | integer    | null: false |
+| status     | integer    | null: false |
 | user_id             | references | null: false, foreign_key: true |
 | merchandise_id      | references | null: false, foreign_key: true |
 | delivery_company_id | references | null: false, foreign_key: true |
@@ -241,8 +242,8 @@
 ## Exhibitテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| exhibit_status | integer | null: false |
-| exhibit_size   | integer ||
+| status         | integer | null: false |
+| size           | integer ||
 | user_id        | references | null: false, foreign_key: true |
 | merchandise_id | references | null: false, foreign_key: true |
 
@@ -259,7 +260,7 @@
 ## Exhibit_imageテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| exhibit_image | text | null: false |
+| image         | text | null: false |
 | exhibit_id    | references | null: false, foreign_key: true |
 
 ### Association
@@ -283,7 +284,7 @@
 ## Newsテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| news_content | text | null: false |
+| content | text | null: false |
 
 <br>
 
@@ -291,7 +292,7 @@
 ## To_doテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| to_do_comment  | text | null: false |
+| comment  | text | null: false |
 | user_id        | references | null: false, foreign_key: true |
 | exhibit_id     | references | null: false, foreign_key: true |
 | purchase_id    | references | null: false, foreign_key: true |
@@ -341,7 +342,7 @@
 ## Contactテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| contact_content      | text | null: false |
+| content      | text | null: false |
 | buy_or_sell          | integer ||
 | occurrence_year      | integer ||
 | occurrence_month     | integer ||
@@ -378,7 +379,7 @@
 ## Dealed_commentテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| dealed_comment | text | null: false |
+| comment        | text | null: false |
 | user_id        | references | null: false, foreign_key: true |
 | merchandise_id | references | null: false, foreign_key: true |
 
