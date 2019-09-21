@@ -13,7 +13,7 @@
 | birth_year          | integer | null: false |
 | birth_month         | integer | null: false |
 | birth_day           | integer | null: false |
-| phone_number        | integer ||
+| phone_number        | string ||
 | profile_description | text ||
 
 ### Association
@@ -39,7 +39,7 @@
 ## Addressテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| postal_code         | integer | null: false |
+| postal_code | string | null: false |
 | prefecture  | string | null: false |
 | city        | string | null: false |
 | number      | string | null: false |
@@ -55,11 +55,11 @@
 ## Personal_informationテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| postal_code        | integer ||
-| prefecture | string ||
-| city       | string ||
-| number     | string ||
-| building   | string ||
+| postal_code | string ||
+| prefecture  | string ||
+| city        | string ||
+| number      | string ||
+| building    | string ||
 | identification     | string ||
 | user_id              | references | null: false, foreign_key: true |
 
@@ -89,7 +89,7 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | name                    | string | null: false |
-| merchandise_description | text | null: false |
+| description             | text | null: false |
 | price                   | integer | null: false |
 | delivery_id             | references | null: false, foreign_key: true |
 | brand_id                | references | null: false, foreign_key: true |
@@ -260,7 +260,7 @@
 ## Exhibit_imageテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| image         | text | null: false |
+| image         | string | null: false |
 | exhibit_id    | references | null: false, foreign_key: true |
 
 ### Association
@@ -351,7 +351,7 @@
 | occurrence_minute    | integer ||
 | occurrence_friquence | integer ||
 | bug_detail           | text ||
-| name     | string ||
+| name                 | string ||
 | bug_display_comment  | text ||
 | merchandise_id       | references | null: false, foreign_key: true |
 | user_id              | references | null: false, foreign_key: true |
