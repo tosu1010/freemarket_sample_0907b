@@ -40,6 +40,29 @@
             right: 16px;
           }
         }
+        &__go-list {
+          padding: 16px;
+          height: 56px;
+          text-align: center;
+          line-height: 56px;
+          font-size: 14px;
+          a {
+            color: #333333;
+            display: block;
+            width: auto;
+            height: 100%;
+            background-color: #eeeeee;
+          }
+        }
+      }
+      &__todo {
+        li { 
+        }
+      }
+    }
+    &__tab-content {
+      ul {
+        min-height: 236px;
       }
     }
   }

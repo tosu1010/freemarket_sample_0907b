@@ -1,0 +1,12 @@
+.mypage {
+  &__main {
+    &__tab-content {
+      ul {
+        display: none;
+      }
+      ul.show {
+        display: block;
+      }
+    }
+  }
+}
