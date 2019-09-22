@@ -310,12 +310,12 @@
 ## remitteeテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| name              | text | null: false |
+| bank_name              | text | null: false |
 | account_type           | integer | null: false |
 | branch_code            | integer | null: false |
 | account_number         | integer | null: false |
-| name     | string | null: false |
-| name      | string | null: false |
+| account_first_name     | string | null: false |
+| account_last_name      | string | null: false |
 | personal_information_id| references | null: false, foreign_key: true |
 
 ### Association
