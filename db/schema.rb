@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_084432) do
+ActiveRecord::Schema.define(version: 2019_09_28_085546) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -84,6 +84,25 @@ ActiveRecord::Schema.define(version: 2019_09_28_084432) do
     t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
+  create_table "exhibit_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "exhibit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exhibit_id"], name: "index_exhibit_images_on_exhibit_id"
+  end
+
+  create_table "exhibits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status", null: false
+    t.integer "size"
+    t.bigint "user_id", null: false
+    t.bigint "merchandise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["merchandise_id"], name: "index_exhibits_on_merchandise_id"
+    t.index ["user_id"], name: "index_exhibits_on_user_id"
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "value", null: false
     t.bigint "user_id", null: false
@@ -108,6 +127,14 @@ ActiveRecord::Schema.define(version: 2019_09_28_084432) do
     t.index ["delivery_id"], name: "index_merchandises_on_delivery_id"
   end
 
+  create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.boolean "whether_read", default: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notices_on_user_id"
+  end
+
   create_table "personal_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code"
     t.string "prefecture"
@@ -119,6 +146,15 @@ ActiveRecord::Schema.define(version: 2019_09_28_084432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_personal_informations_on_user_id"
+  end
+
+  create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "points"
+    t.integer "expiration_date", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_points_on_user_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -160,12 +196,17 @@ ActiveRecord::Schema.define(version: 2019_09_28_084432) do
   add_foreign_key "delivery_methods", "deliveries"
   add_foreign_key "evaluations", "purchases"
   add_foreign_key "evaluations", "users"
+  add_foreign_key "exhibit_images", "exhibits"
+  add_foreign_key "exhibits", "merchandises"
+  add_foreign_key "exhibits", "users"
   add_foreign_key "likes", "merchandises"
   add_foreign_key "likes", "users"
   add_foreign_key "merchandises", "brands"
   add_foreign_key "merchandises", "categories"
   add_foreign_key "merchandises", "deliveries"
+  add_foreign_key "notices", "users"
   add_foreign_key "personal_informations", "users"
+  add_foreign_key "points", "users"
   add_foreign_key "purchases", "merchandises"
   add_foreign_key "purchases", "users"
 end

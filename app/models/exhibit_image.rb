@@ -1,0 +1,2 @@
+class ExhibitImage < ApplicationRecord
+end

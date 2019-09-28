@@ -271,7 +271,7 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | whether_read | boolean | default: false |
-| user_id      | references | foreign_key_ true |
+| user_id      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
