@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_085546) do
+ActiveRecord::Schema.define(version: 2019_09_28_092639) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "balances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "deadline", null: false
+    t.bigint "user_id", null: false
+    t.bigint "merchandise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["merchandise_id"], name: "index_balances_on_merchandise_id"
+    t.index ["user_id"], name: "index_balances_on_user_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,6 +56,26 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.integer "buy_or_sell"
+    t.integer "occurrence_year"
+    t.integer "occurrence_month"
+    t.integer "occurrence_day"
+    t.integer "occurrence_time"
+    t.integer "occurrence_minute"
+    t.integer "occurrence_friquence"
+    t.text "bug_detail"
+    t.string "name"
+    t.text "bug_display_comment"
+    t.bigint "merchandise_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["merchandise_id"], name: "index_contacts_on_merchandise_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "card_number", null: false
     t.integer "limit_month", null: false
@@ -55,6 +85,16 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
+  end
+
+  create_table "dealed_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment", null: false
+    t.bigint "user_id", null: false
+    t.bigint "merchandise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["merchandise_id"], name: "index_dealed_comments_on_merchandise_id"
+    t.index ["user_id"], name: "index_dealed_comments_on_user_id"
   end
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,6 +143,15 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
     t.index ["user_id"], name: "index_exhibits_on_user_id"
   end
 
+  create_table "guides", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "name", null: false
+    t.boolean "whether_usefullness", default: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_guides_on_user_id"
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "value", null: false
     t.bigint "user_id", null: false
@@ -125,6 +174,12 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
     t.index ["brand_id"], name: "index_merchandises_on_brand_id"
     t.index ["category_id"], name: "index_merchandises_on_category_id"
     t.index ["delivery_id"], name: "index_merchandises_on_delivery_id"
+  end
+
+  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -167,6 +222,33 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
+  create_table "remittees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "bank_name", null: false
+    t.integer "account_type", null: false
+    t.integer "branch_code", null: false
+    t.integer "account_number", null: false
+    t.string "account_first_name", null: false
+    t.string "account_last_name", null: false
+    t.bigint "personal_information_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["personal_information_id"], name: "index_remittees_on_personal_information_id"
+  end
+
+  create_table "to_dos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment", null: false
+    t.bigint "user_id", null: false
+    t.bigint "exhibit_id", null: false
+    t.bigint "purchase_id", null: false
+    t.bigint "merchandise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exhibit_id"], name: "index_to_dos_on_exhibit_id"
+    t.index ["merchandise_id"], name: "index_to_dos_on_merchandise_id"
+    t.index ["purchase_id"], name: "index_to_dos_on_purchase_id"
+    t.index ["user_id"], name: "index_to_dos_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -190,15 +272,22 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "balances", "merchandises"
+  add_foreign_key "balances", "users"
   add_foreign_key "comments", "merchandises"
   add_foreign_key "comments", "users"
+  add_foreign_key "contacts", "merchandises"
+  add_foreign_key "contacts", "users"
   add_foreign_key "credit_cards", "users"
+  add_foreign_key "dealed_comments", "merchandises"
+  add_foreign_key "dealed_comments", "users"
   add_foreign_key "delivery_methods", "deliveries"
   add_foreign_key "evaluations", "purchases"
   add_foreign_key "evaluations", "users"
   add_foreign_key "exhibit_images", "exhibits"
   add_foreign_key "exhibits", "merchandises"
   add_foreign_key "exhibits", "users"
+  add_foreign_key "guides", "users"
   add_foreign_key "likes", "merchandises"
   add_foreign_key "likes", "users"
   add_foreign_key "merchandises", "brands"
@@ -209,4 +298,9 @@ ActiveRecord::Schema.define(version: 2019_09_28_085546) do
   add_foreign_key "points", "users"
   add_foreign_key "purchases", "merchandises"
   add_foreign_key "purchases", "users"
+  add_foreign_key "remittees", "personal_informations"
+  add_foreign_key "to_dos", "exhibits"
+  add_foreign_key "to_dos", "merchandises"
+  add_foreign_key "to_dos", "purchases"
+  add_foreign_key "to_dos", "users"
 end

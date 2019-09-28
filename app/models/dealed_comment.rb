@@ -1,0 +1,2 @@
+class DealedComment < ApplicationRecord
+end

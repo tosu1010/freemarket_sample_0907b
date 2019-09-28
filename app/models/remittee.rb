@@ -1,0 +1,2 @@
+class Remittee < ApplicationRecord
+end
