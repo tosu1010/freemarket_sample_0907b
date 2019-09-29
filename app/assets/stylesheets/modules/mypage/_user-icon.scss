@@ -13,9 +13,11 @@
       vertical-align: middle;
       width: 660px;
       a {
-        text-decoration: none;
         display: block;
         width: 100%;
+        &:hover {
+          opacity: 0.8;
+        }
         &:visited {
           color: #333333;
         }
@@ -26,26 +28,24 @@
         width: 60px;
         border-radius: 30px;
       }
-    }
-    &__user-name {
-      font-size: 14px;
-      margin-top: 8px;
-    }
-    &__user-info {
-      margin-top: 8px;
-      font-size: 14px;
-    }
-    &__user-evaluation {
-      display: inline;
-      span {
-        margin-left: 8px;
+      &__user-name {
+        margin-top: 8px;
       }
-    }
-    &__user-exhibit {
-      display: inline;
-      margin-left: 16px;
-      span {
-        margin-left: 8px;
+      &__user-info {
+        margin-top: 8px;
+      }
+      &__user-evaluation {
+        display: inline;
+        span {
+          margin-left: 8px;
+        }
+      }
+      &__user-exhibit {
+        display: inline;
+        margin-left: 16px;
+        span {
+          margin-left: 8px;
+        }
       }
     }
   }

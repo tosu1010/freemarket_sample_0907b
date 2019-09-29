@@ -7,10 +7,14 @@
       text-align: center;
       display: flex;
       line-height: 74px;
+      font-size: 16px;
       li {
         display: inline-block;
         width: 50%;
         height: 72px;
+        &:hover {
+          opacity: 0.7
+        }
       }
       .active {
         background-color: #ffffff;

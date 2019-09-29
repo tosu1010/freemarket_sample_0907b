@@ -1,16 +1,16 @@
-.mypage
+.mypage.clearfix
   .mypage__main
     .mypage__main__user-icon
       = link_to "https://www.mercari.com/jp/mypage/" do
         %img.mypage__main__user-icon__image{src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-        .mypage__main__user-name.bold
+        .mypage__main__user-icon__user-name.bold
           tosu
-        .mypage__main__user-info
-          .mypage__main__user-evaluation
+        .mypage__main__user-icon__user-info
+          .mypage__main__user-icon__user-evaluation
             評価
             %span.bold
               0
-          .mypage__main__user-exhibit
+          .mypage__main__user-icon__user-exhibit
             出品数
             %span.bold
               0

@@ -6,7 +6,6 @@
         width: 100%;
         height: auto;
         &__content {
-          font-size: 14px;
           position: relative;
           border-bottom: solid 1px #eeeeee;
           &:hover {
@@ -15,7 +14,7 @@
           a {
             padding: 16px;
             display: block;
-            line-height: inherit;            
+            line-height: inherit;
           }
           &__icon {
             height: 48px;
@@ -25,7 +24,7 @@
           &__body {
             color: #333333;
             margin: 0 40px 0 68px;
-
+            line-height: 21px;
           }
           &__date {
             color: #888888;
@@ -56,10 +55,6 @@
               background-color: #fafafa;
             }
           }
-        }
-      }
-      &__todo {
-        li {
         }
       }
     }
