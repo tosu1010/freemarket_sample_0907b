@@ -198,7 +198,7 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | type              | string ||
-| user_id           | references | null: false, foreign_key: true|
+| user_id           | references | null: false, foreign_key: true |
 | purchase_id       | references | null: false, foreign_key: true | 
 
 ### Association
@@ -214,14 +214,12 @@
 | status     | integer    | null: false |
 | user_id             | references | null: false, foreign_key: true |
 | merchandise_id      | references | null: false, foreign_key: true |
-| delivery_company_id | references | null: false, foreign_key: true |
 
 ### Association
 - has_one :evaluation, dependent: :destroy
 - has_many :to_does, dependent: :destroy
 
 - belongs_to :merchandise
-- belongs_to :delivery_company
 
 <br>
 
@@ -273,7 +271,7 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | whether_read | boolean | default: false |
-| user_id      | references | foreign_key_ true |
+| user_id      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
