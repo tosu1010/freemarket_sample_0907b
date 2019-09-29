@@ -2,47 +2,58 @@
 
 .mypage {
   &__main {
-  float: right;
-  width: 700px;
+    float: right;
+    width: 700px;
+
     &__user-icon {
       background-color: yellow;
       display: table-cell;
       height: 160px;
-      text-align: center;
       padding: 20px;
+      text-align: center;
       vertical-align: middle;
       width: 660px;
+
       a {
         display: block;
         width: 100%;
+
         &:hover {
           opacity: 0.8;
         }
+
         &:visited {
-          color: #333333;
+          color: #333;
         }
       }
+
       &__image {
-        line-height: 160px;
-        height: 60px;
-        width: 60px;
         border-radius: 30px;
+        height: 60px;
+        line-height: 160px;
+        width: 60px;
       }
+
       &__user-name {
         margin-top: 8px;
       }
+
       &__user-info {
         margin-top: 8px;
       }
+
       &__user-evaluation {
         display: inline;
+
         span {
           margin-left: 8px;
         }
       }
+
       &__user-exhibit {
         display: inline;
         margin-left: 16px;
+
         span {
           margin-left: 8px;
         }

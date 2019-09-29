@@ -4,3 +4,6 @@ linters:
 
   NestingDepth:
     enabled: false
+
+  LeadingZero:
+    enabled: false
