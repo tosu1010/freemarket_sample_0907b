@@ -3,6 +3,17 @@
   padding: 40px 0;
   width: 1020px;
   height: 100%;
+  &:after{
+    @include clearfix;
+  }
+}
+
+@media screen and (max-width: 1068px){
+  .mypage {
+    margin: auto;
+    padding-top: 24px;
+    width: 700px;
+  }
 }
 
 a {
@@ -11,10 +22,4 @@ a {
 
 .bold {
   font-weight: bold;
-}
-
-.clearfix:after {
-	content: "";
-	clear: both;
-	display: block;
 }
