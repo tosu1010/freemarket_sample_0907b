@@ -1,83 +1,84 @@
 .mypage
-  .mypage__main
-    .mypage__main__user-icon
-      = link_to "https://www.mercari.com/jp/mypage/" do
-        %img.mypage__main__user-icon__image{src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-        .mypage__main__user-icon__user-name.bold
+  .main
+    .user-icon
+      = link_to "https://www.mercari.com/jp/mypage/", class: "user-icon__link" do
+        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "user-icon__image"
+        .user-icon__user-name.bold
           tosu
-        .mypage__main__user-icon__user-info
-          .mypage__main__user-icon__user-evaluation
+        .user-icon__user-info
+          .user-icon__user-evaluation
             評価
             %span.bold
               0
-          .mypage__main__user-icon__user-exhibit
+          .user-icon__user-exhibit
             出品数
             %span.bold
               0
-    .mypage__main__notify-todo
-      %ul.mypage__main__tab
+
+    .notify-todo
+      %ul.tab
         %li.bold.active
           お知らせ
         %li.bold
           やることリスト
-      .mypage__main__tab-content
-        %ul.mypage__main__notify-todo__notify.show
-          %li.mypage__main__notify-todo__notify__content
-            = link_to "https://www.mercari.com/jp/mypage/news/" do
-              %img.mypage__main__notify-todo__notify__content__icon{src: "//static.mercdn.net/images/mercari_profile.png"}/
-              .mypage__main__notify-todo__notify__content__body
-                .mypage__main__notify-todo__notify__content__text
+      .tab-content
+        %ul.notify-todo__notify.show
+          %li.notify-todo__notify__content
+            = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
+              = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
+              .notify-todo__notify__content__body
+                .notify-todo__notify__content__text
                   事務局から個別メッセージ「《3連休はスパリゾートハワイアンズへ》9月限定！メルペイのコード払いで入場料20%割引！」
-                .mypage__main__notify-todo__notify__content__date
-                  .mypage__main__notify-todo__notify__content__date__clock-icon
+                .notify-todo__notify__content__date
+                  .notify-todo__notify__content__date__clock-icon
                     = fa_icon "clock-o"
-                  .mypage__main__notify-todo__notify__content__date__time
+                  .notify-todo__notify__content__date__time
                     5時間前
               = fa_icon "angle-right"
-          %li.mypage__main__notify-todo__notify__content
-            = link_to "https://www.mercari.com/jp/mypage/news/" do
-              %img.mypage__main__notify-todo__notify__content__icon{src: "//static.mercdn.net/images/mercari_profile.png"}/
-              .mypage__main__notify-todo__notify__content__body
-                .mypage__main__notify-todo__notify__content__text
+          %li.notify-todo__notify__content
+            = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
+              = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
+              .notify-todo__notify__content__body
+                .notify-todo__notify__content__text
                   事務局から個別メッセージ「《3連休はスパリゾートハワイアンズへ》9月限定！メルペイのコード払いで入場料20%割引！」
-                .mypage__main__notify-todo__notify__content__date
-                  .mypage__main__notify-todo__notify__content__date__clock-icon
+                .notify-todo__notify__content__date
+                  .notify-todo__notify__content__date__clock-icon
                     = fa_icon "clock-o"
-                  .mypage__main__notify-todo__notify__content__date__time
+                  .notify-todo__notify__content__date__time
                     5時間前
               = fa_icon "angle-right"
-          %li.mypage__main__notify-todo__notify__content
-            = link_to "https://www.mercari.com/jp/mypage/news/" do
-              %img.mypage__main__notify-todo__notify__content__icon{src: "//static.mercdn.net/images/mercari_profile.png"}/
-              .mypage__main__notify-todo__notify__content__body
-                .mypage__main__notify-todo__notify__content__text
+          %li.notify-todo__notify__content
+            = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
+              = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
+              .notify-todo__notify__content__body
+                .notify-todo__notify__content__text
                   事務局から個別メッセージ「《3連休はスパリゾートハワイアンズへ》9月限定！メルペイのコード払いで入場料20%割引！」
-                .mypage__main__notify-todo__notify__content__date
-                  .mypage__main__notify-todo__notify__content__date__clock-icon
+                .notify-todo__notify__content__date
+                  .notify-todo__notify__content__date__clock-icon
                     = fa_icon "clock-o"
-                  .mypage__main__notify-todo__notify__content__date__time
+                  .notify-todo__notify__content__date__time
                     5時間前
               = fa_icon "angle-right"
-          .mypage__main__notify-todo__notify__go-list
-            = link_to "一覧を見る", "https://www.mercari.com/jp/mypage/notification/"
-        %ul.mypage__main__notify-todo__todo
-          %li.mypage__main__not-found.bold
+          .notify-todo__notify__go-list
+            = link_to "一覧を見る", "https://www.mercari.com/jp/mypage/notification/", class:"notify-todo__notify__go-list__link"
+        %ul.notify-todo__todo
+          %li.not-found.bold
             現在、やることリストはありません
 
-    .mypage__main__purchased
-      .mypage__main__purchased__header.bold
+    .purchased
+      .purchased__header.bold
         購入した商品
-      %ul.mypage__main__tab
+      %ul.tab
         %li.bold.active
           取引中
         %li.bold
           過去の取引
-      .mypage__main__tab-content
-        %ul.mypage__purchased__dealing__content.show
-          %li.mypage__main__not-found.bold
+      .tab-content
+        %ul.purchased__dealing__content.show
+          %li.not-found.bold
             取引中の商品がありません
-        %ul.mypage__purchased__dealed__content
-          %li.mypage__main__not-found.bold
+        %ul.purchased__dealed__content
+          %li.not-found.bold
             過去に取引した商品がありません
 
   = render "menu"

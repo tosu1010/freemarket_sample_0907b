@@ -1,7 +1,7 @@
 @import 'font-awesome';
 
 .mypage {
-  &__menu {
+  .menu {
     border-width: 0;
     float: left;
     left: 50%;
@@ -17,7 +17,7 @@
       background-color: #fff;
       margin-top: 8px;
 
-      &__link {
+      &__box {
         display: block;
         height: 48px;
         width: 100%;
@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 1068px){
   .mypage {
-    &__menu {
+    .menu {
       margin-top: 40px;
       width: 100%;
     }

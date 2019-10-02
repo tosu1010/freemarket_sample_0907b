@@ -1,9 +1,0 @@
-linters:
-  ColorVariable:
-    enabled: false
-
-  NestingDepth:
-    enabled: false
-
-  LeadingZero:
-    enabled: false

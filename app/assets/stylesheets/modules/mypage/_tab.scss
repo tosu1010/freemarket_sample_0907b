@@ -1,6 +1,6 @@
 .mypage {
-  &__main {
-    &__tab {
+  .main {
+    .tab {
       background-color: #eee;
       display: flex;
       font-size: 16px;
@@ -15,7 +15,7 @@
         width: 50%;
 
         &:hover {
-          opacity: 0.7;
+          opacity: .7;
         }
       }
 

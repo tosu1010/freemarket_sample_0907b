@@ -1,12 +1,8 @@
-@import 'font-awesome';
-
 .mypage {
-  &__main {
-    float: right;
-    width: 700px;
-
-    &__user-icon {
-      background-color: yellow;
+  .main {
+    .user-icon {
+      background-image: url(/images/icons/mypage_header.jpg);
+      background-size: cover;
       display: table-cell;
       height: 160px;
       padding: 20px;
@@ -14,12 +10,12 @@
       vertical-align: middle;
       width: 660px;
 
-      a {
+      &__link {
         display: block;
         width: 100%;
 
         &:hover {
-          opacity: 0.8;
+          opacity: .8;
         }
 
         &:visited {
