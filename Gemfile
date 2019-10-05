@@ -87,3 +87,7 @@ gem 'rails-i18n'
 gem 'fog-aws'
 gem 'jquery-rails'
 gem 'erb2haml'
+
+
+
+gem 'owlcarousel-rails'
