@@ -1,0 +1,84 @@
+.mypage
+  .main
+    .user-icon
+      = link_to "https://www.mercari.com/jp/mypage/", class: "user-icon__link" do
+        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "user-icon__image"
+        .user-icon__user-name.bold
+          tosu
+        .user-icon__user-info
+          .user-icon__user-evaluation
+            評価
+            %span.bold
+              0
+          .user-icon__user-exhibit
+            出品数
+            %span.bold
+              0
+
+    .notify-todo
+      %ul.tab
+        %li.bold.active
+          お知らせ
+        %li.bold
+          やることリスト
+      .tab-content
+        %ul.notify-todo__notify.show
+          %li.notify-todo__notify__content
+            = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
+              = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
+              .notify-todo__notify__content__body
+                .notify-todo__notify__content__text
+                  事務局から個別メッセージ「《3連休はスパリゾートハワイアンズへ》9月限定！メルペイのコード払いで入場料20%割引！」
+                .notify-todo__notify__content__date
+                  .notify-todo__notify__content__date__clock-icon
+                    = fa_icon "clock-o"
+                  .notify-todo__notify__content__date__time
+                    5時間前
+              = fa_icon "angle-right"
+          %li.notify-todo__notify__content
+            = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
+              = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
+              .notify-todo__notify__content__body
+                .notify-todo__notify__content__text
+                  事務局から個別メッセージ「《3連休はスパリゾートハワイアンズへ》9月限定！メルペイのコード払いで入場料20%割引！」
+                .notify-todo__notify__content__date
+                  .notify-todo__notify__content__date__clock-icon
+                    = fa_icon "clock-o"
+                  .notify-todo__notify__content__date__time
+                    5時間前
+              = fa_icon "angle-right"
+          %li.notify-todo__notify__content
+            = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
+              = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
+              .notify-todo__notify__content__body
+                .notify-todo__notify__content__text
+                  事務局から個別メッセージ「《3連休はスパリゾートハワイアンズへ》9月限定！メルペイのコード払いで入場料20%割引！」
+                .notify-todo__notify__content__date
+                  .notify-todo__notify__content__date__clock-icon
+                    = fa_icon "clock-o"
+                  .notify-todo__notify__content__date__time
+                    5時間前
+              = fa_icon "angle-right"
+          .notify-todo__notify__go-list
+            = link_to "一覧を見る", "https://www.mercari.com/jp/mypage/notification/", class:"notify-todo__notify__go-list__link"
+        %ul.notify-todo__todo
+          %li.not-found.bold
+            現在、やることリストはありません
+
+    .purchased
+      .purchased__header.bold
+        購入した商品
+      %ul.tab
+        %li.bold.active
+          取引中
+        %li.bold
+          過去の取引
+      .tab-content
+        %ul.purchased__dealing__content.show
+          %li.not-found.bold
+            取引中の商品がありません
+        %ul.purchased__dealed__content
+          %li.not-found.bold
+            過去に取引した商品がありません
+
+  = render "menu"

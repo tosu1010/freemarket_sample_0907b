@@ -1,0 +1,59 @@
+.mypage {
+  .main {
+    .user-icon {
+      background-image: url(/images/icons/mypage_header.jpg);
+      background-size: cover;
+      display: table-cell;
+      height: 160px;
+      padding: 20px;
+      text-align: center;
+      vertical-align: middle;
+      width: 660px;
+
+      &__link {
+        display: block;
+        width: 100%;
+
+        &:hover {
+          opacity: .8;
+        }
+
+        &:visited {
+          color: #333;
+        }
+      }
+
+      &__image {
+        border-radius: 30px;
+        height: 60px;
+        line-height: 160px;
+        width: 60px;
+      }
+
+      &__user-name {
+        margin-top: 8px;
+      }
+
+      &__user-info {
+        margin-top: 8px;
+      }
+
+      &__user-evaluation {
+        display: inline;
+
+        span {
+          margin-left: 8px;
+        }
+      }
+
+      &__user-exhibit {
+        display: inline;
+        margin-left: 16px;
+
+        span {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
