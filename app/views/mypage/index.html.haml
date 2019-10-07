@@ -2,7 +2,8 @@
   .main
     .user-icon
       = link_to "https://www.mercari.com/jp/mypage/", class: "user-icon__link" do
-        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "user-icon__image"
+        .user-icon__image-div
+          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "user-icon__image"
         .user-icon__user-name.bold
           tosu
         .user-icon__user-info

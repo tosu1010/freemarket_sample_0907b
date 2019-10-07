@@ -1,0 +1,76 @@
+.mypage {
+  .profile {
+    @include mypage-content;
+
+    &__header {
+      font-size: 24px;
+      height: 33px;
+      line-height: 33px;
+      text-align: center;
+      padding: 8px 24px;
+    }
+
+    &__form {
+
+      &__icon {
+        background-image: url(/images/icons/mypage_header.jpg);
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        padding: 72px 16px 24px;
+
+        &__image {
+          @include user-icon(60px);
+        }
+
+        &__user-name {
+          align-self: center;
+          border: solid 1px #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+          height: 28px;
+          line-height: 24px;
+          margin-left: 8px;
+          padding: 10px 16px 8px;
+          width: 186px;
+          
+          &:focus {
+            @include focus;
+          }
+        }
+      }
+
+      &__content {
+        padding: 40px 16px;
+
+        &__discription {
+          border: solid 1px #ccc;
+          box-sizing: border-box;
+          height: 226px;
+          font-size: 16px;
+          line-height: 1.5;
+          min-height: 216px;
+          overflow-wrap: break-word;
+          padding: 10px;
+          resize: vertical;
+          width: 100%;
+
+          &:focus {
+            @include focus;
+          }
+        }
+  
+        &__button {
+          box-sizing: border-box;
+          border: solid 1px #EA352D;
+          background-color: #EA352D;
+          color: #fff;
+          cursor: pointer;
+          height: 48px;
+          margin-top: 16px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
