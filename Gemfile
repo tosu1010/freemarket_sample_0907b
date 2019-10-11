@@ -81,7 +81,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'faker'
 gem 'haml-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise'
 gem 'rails-i18n'
 gem 'fog-aws'
