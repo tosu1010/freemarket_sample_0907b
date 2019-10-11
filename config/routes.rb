@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   get 'sign_up_5' => 'signup#sign_up_5'
   get 'sign_up_6' => 'signup#sign_up_6'
 
+
+
+
+  
+
 end
