@@ -1,0 +1,188 @@
+.sign_up {
+
+  &__main {
+    display: block;
+    text-align: center;
+  
+    &__section {
+      background: $white;
+      padding: 0 0 64px;
+
+      &__title {
+      border-bottom: .05rem solid $light-grey;
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.5;
+      padding: 16px;
+      text-align: center;
+      }
+    }
+  }
+
+  .contents {
+    margin: 0 auto;
+    max-width: 343px;
+    padding: 10px 40px 0;
+    text-align: left;
+
+    &-field:first-child {
+      margin-top: 30px;
+    }
+
+    &-field {
+      font-weight: 600;
+      margin-top: 32px;
+      z-index: 1;
+
+      &__information {
+        margin-top: 40px;
+    
+        &__notice {
+          line-height: 1.5;
+          margin-top: 8px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  input {
+    outline-width: 2px;
+    background: $white;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 100;
+    height: 28px;
+    line-height: 1.5;
+    margin-top: 8px;
+    padding: 10px 16px 8px;
+    width: 90%;
+    }
+
+  .form__submit {
+    background-color: $red;
+    color: $white;
+    cursor: pointer;
+    font-weight: normal;
+    margin: 30px 0 60px;
+    padding: 14px 0 35px;
+    width: 100%;
+
+    &:active {
+      background-color: $middle-grey;
+      outline-width: 0;
+      transition: all ease-out .3s;
+    }
+  }
+
+  .aicon-arrow-bottom,
+  .aicon-arrow-bottom-2,
+  .aicon-arrow-bottom-3 {
+    background-color: $white;
+    color: $middle-grey;
+    font-size: 20px;
+    position: relative;
+    -webkit-text-stroke: .07rem $white;
+    top: 40px;
+  }
+
+  .aicon-arrow-bottom {
+    left: -55px;
+  }
+
+  .aicon-arrow-bottom-2 {
+    left: 15px;
+  }
+
+  .aicon-arrow-bottom-3 {
+    left: 90px;
+  }
+  
+  select {
+    -webkit-appearance: none;
+    outline-width: 2px;
+    margin-top: 5px;
+    background: 0;
+    border: 1px solid $grey;
+    cursor: pointer;
+    height: 48px;
+    padding: 0 16px;
+    width: 22%;
+    position: relative;
+  }
+
+  .name {
+    display: inline-block;
+    width: 39%;
+  }
+  
+  span {
+    font-weight: 50;
+
+    &.reqiure {
+      background: $red;
+      border-radius: 2px;
+      color: $white;
+      font-size: 12px;
+      margin-left: 8px;
+      padding: 2px 4px;
+      vertical-align: text-top;
+    }
+  }
+
+  .text {
+    font-size: 13.5px;
+    font-weight: 100;
+    line-height: 1.5;
+    text-align: center;
+
+    .link {
+      color: $cyan;
+      text-decoration: none;
+    
+      &:hover {
+        opacity: .7;
+        text-decoration: underline;
+      }
+    }
+
+    &__personal {
+      text-align: right;
+
+      .link {
+        color: $cyan;
+        text-decoration: none;
+      
+        &:hover {
+          opacity: .7;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .fa.fa-angle-right {
+        font-size: 20px;
+        font-weight: bold;
+  }
+
+  .asterisk {
+    color: $middle-grey;
+    line-height: 1.5;
+    margin: 8px 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sign_up {
+    @include responsitve;
+  }
+}

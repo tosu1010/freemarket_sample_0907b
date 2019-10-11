@@ -1,0 +1,127 @@
+.input_address {
+  &__main {
+    display: block;
+    text-align: center;
+
+    &__section {
+      background: $white;
+      padding: 0 0 64px;
+      text-align: left;
+    }
+  }
+
+  h2 {
+    border-bottom: .05rem solid $light-grey;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .contents {
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 343px;
+
+    &-field {
+      font-weight: 600;
+      z-index: 1;
+      text-align: left;
+      padding: 40px 0 6px;
+      z-index: 1;
+    }
+  }
+
+  .reqiure {
+    background: $red;
+    border-radius: 2px;
+    color: $white;
+    font-size: 12px;
+    margin-left: 8px;
+    padding: 2px 4px;
+    vertical-align: text-top;
+  }
+
+  .optional {
+    background: $grey;
+    border-radius: 2px;
+    color: $white;
+    font-size: 12px;
+    margin-left: 8px;
+    padding: 2px 4px;
+    vertical-align: text-top;
+  }
+
+  input {
+    outline-width: 2px;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 100;
+    height: 28px;
+    line-height: 1.5;
+    margin-top: 8px;
+    padding: 10px 16px 8px;
+    width: 90%;
+  }
+    
+  .aicon-arrow-bottom {
+    background-color: $white;
+    color: $middle-grey;
+    font-size: 20px;
+    right: -200px;
+    position: relative;
+    -webkit-text-stroke: .07rem $white;
+    top: 45px;
+  }
+
+  .prefecture {
+    font-weight: normal;
+    -webkit-appearance: none;
+    outline-width: 2px;
+    background: 0;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    height: 48px;
+    line-height: 1.5;
+    margin-top: 10px;
+    padding: 0 16px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+      
+  .form {
+    border-top: 1px;
+    text-align: left;
+
+    &__submit {
+      border-radius: 0;
+      font-size: 14px;
+      background-color: $red;
+      color: $white;
+      cursor: pointer;
+      font-weight: normal;
+      margin: 32px 0;
+      width: 343px;
+      padding: 15px 40% 35px;
+
+      &:active {
+        background-color: $middle-grey;
+        outline-width: 0;
+        transition-duration: .8s;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input_address {
+    @include responsitve;
+  }
+}
