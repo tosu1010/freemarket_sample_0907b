@@ -106,6 +106,6 @@
 
 @media screen and (min-width: 768px) {
   .authentication_phone_number {
-    @include responsitve;
+    @include responsive;
   }
 }

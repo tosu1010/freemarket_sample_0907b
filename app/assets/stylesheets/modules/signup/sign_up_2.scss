@@ -93,6 +93,6 @@
 
 @media screen and (min-width: 768px) {
   .confirm_phone_number {
-    @include responsitve;
+    @include responsive;
   }
 }

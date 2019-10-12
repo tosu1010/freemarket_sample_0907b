@@ -117,7 +117,7 @@
 
 @media screen and (min-width: 768px) {
   .sign_up_before {
-    @include responsitve;
+    @include responsive;
   }
 
   .sign_before_header {

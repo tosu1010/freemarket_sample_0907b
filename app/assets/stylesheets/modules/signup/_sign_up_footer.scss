@@ -3,7 +3,10 @@
   margin: 0 auto;
 
   &__main {
-      margin: 40px 7px 40px 7px;
+
+    &__list {
+      margin: 40px 7px;
+    } 
 
     &__logo {
       
