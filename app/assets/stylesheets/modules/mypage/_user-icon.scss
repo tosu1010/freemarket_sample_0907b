@@ -24,10 +24,7 @@
       }
 
       &__image {
-        border-radius: 30px;
-        height: 60px;
-        line-height: 160px;
-        width: 60px;
+        @include user-icon(160px);
       }
 
       &__user-name {

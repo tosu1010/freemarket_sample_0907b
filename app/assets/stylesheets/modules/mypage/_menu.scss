@@ -13,7 +13,10 @@
 
     &__links {
       background-color: #fff;
-      margin-top: 8px;
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
 
       &__box {
         display: block;
@@ -28,7 +31,7 @@
           background-color: #fafafa;
         }
 
-        a {
+        &__link {
           display: block;
           line-height: inherit;
           padding: 16px;

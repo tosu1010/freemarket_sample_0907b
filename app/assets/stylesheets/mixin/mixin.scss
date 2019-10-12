@@ -3,3 +3,24 @@
   clear: both;
   display: block;
 }
+
+// ユーザープロフィール編集画面作成時に追加(鈴木)
+// ここから
+@mixin user-icon($line-height) {
+  border-radius: 30px;
+  height: 60px;
+  line-height: $line-height;
+  width: 60px;
+}
+
+@mixin mypage-content {
+  background-color: #fff;
+  width: 700px;
+  float: right;
+}
+
+@mixin focus {
+  border-color: #0099E8;
+  outline: 0;
+}
+// ここまで
