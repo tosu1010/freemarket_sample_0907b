@@ -1,0 +1,16 @@
+.mypage {
+  .main {
+    .purchased {
+      background-color: #fff;
+      margin-top: 40px;
+
+      &__header {
+        background-color: #fafafa;
+        font-size: 16px;
+        height: 72px;
+        line-height: 72px;
+        padding: 0 16px;
+      }
+    }
+  }
+}
