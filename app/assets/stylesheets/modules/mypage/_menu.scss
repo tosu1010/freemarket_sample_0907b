@@ -1,0 +1,60 @@
+.mypage {
+  .menu {
+    border-width: 0;
+    float: left;
+    left: 50%;
+    line-height: 16px;
+    margin: 0 40px 0 0;
+    width: 280px;
+
+    &__angle {
+      float: right;
+    }
+
+    &__links {
+      background-color: #fff;
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+
+      &__box {
+        display: block;
+        height: 48px;
+        width: 100%;
+
+        &:not(:first-child) {
+          border-top: solid 1px #e9e9e9;
+        }
+
+        &:hover {
+          background-color: #fafafa;
+        }
+
+        &__link {
+          display: block;
+          line-height: inherit;
+          padding: 16px;
+
+          &:visited {
+            color: #333;
+          }
+        }
+      }
+    }
+
+    &__header {
+      font-size: 16px;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1068px){
+  .mypage {
+    .menu {
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+}

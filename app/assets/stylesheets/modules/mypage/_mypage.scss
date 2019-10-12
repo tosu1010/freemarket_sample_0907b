@@ -1,0 +1,26 @@
+.mypage {
+  height: 100%;
+  margin: auto;
+  padding: 40px 0;
+  width: 1020px;
+
+  &::after {
+    @include clearfix;
+  }
+}
+
+@media screen and (max-width: 1068px){
+  .mypage {
+    margin: auto;
+    padding-top: 24px;
+    width: 700px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+}
