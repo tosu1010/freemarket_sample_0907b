@@ -1,0 +1,22 @@
+.signup_header
+  .signup_header__container
+    .signup_header__container__wrapper
+      %h1.header_logo
+        = link_to "https://www.mercari.com/jp/" do
+          = image_tag('logo.svg', class: 'logo')
+      %nav.line-bar
+        %li.bar_name
+          会員情報
+          .status
+        %li.bar_name
+          電話番号認証
+          .status
+        %li.bar_name
+          お届け先住所入力
+          .status
+        %li.bar_name
+          支払い方法
+          .status
+        %li.bar_name
+          完了
+          .status
