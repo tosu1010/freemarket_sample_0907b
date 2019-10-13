@@ -36,5 +36,9 @@
           .contents-field
             .contents-field__button
               = f.submit "ログイン", class: "form__submit"
+            .text-left
+              %p.text__password
+                = link_to "https://www.mercari.com/jp/password/reset/start/", target: :_blank , class:"link" do
+                  パスワードをお忘れの方
 
 = render partial: "signup/sign_up_footer"
