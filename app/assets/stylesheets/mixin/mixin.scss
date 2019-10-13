@@ -27,92 +27,92 @@
 
 //トップページ　〜〜〜　Start　〜〜〜
 
-// 今回レビュー対象外。後ほどプルリク
+// 今回レビュー対象外
 // //ヘッダー
-// @mixin top_after_category2 {
-//   background-color: $white;
-//   box-shadow: rgba(0, 0, 0, 0.18) 0 2px 4px;
-//   display: none;
-//   left: 224px;
-//   position: absolute;
-//   top: 0;
-//   width: 224px;
-// }
-// @mixin top_hover_category1_brand {
-//   a:hover{
-//     background-color:#e9352d;;
-//     color: $white;
-//   }
-// }
-// @mixin top_hover_after_category2 {
-//   a:hover {
-//     background-color:#efefef;
-//     color: $black ;
-//   }
-// }
+@mixin top_after_category2 {
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.18) 0 2px 4px;
+  display: none;
+  left: 224px;
+  position: absolute;
+  top: 0;
+  width: 224px;
+}
+@mixin top_hover_category1_brand {
+  a:hover{
+    background-color:#e9352d;;
+    color: $white;
+  }
+}
+@mixin top_hover_after_category2 {
+  a:hover {
+    background-color:#efefef;
+    color: $black ;
+  }
+}
 
-// 今回レビュー対象外。後ほどプルリク
+// 今回レビュー対象外
 //スライダー
-// @mixin top_slide-banner-owl-nav-btn($background-image) {
-//   background-image: image_url($background-image) !important;
-//   cursor: pointer;
-//   height: 46px;
-//   width: 31px;
-//   position: absolute;
-//   top: 50%;
-//   -webkit-transform: translateY(-23px);
-//   transform: translateY(-23px);
-// }
-// @mixin top_slide-banner-owl-item-background($background-image) {
-//   background: image_url($background-image);
-//   background-size: auto 100%;
-//   background-position: center;
-// }
+@mixin top_slide-banner-owl-nav-btn($background-image) {
+  background-image: image_url($background-image) !important;
+  cursor: pointer;
+  height: 46px;
+  width: 31px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-23px);
+  transform: translateY(-23px);
+}
+@mixin top_slide-banner-owl-item-background($background-image) {
+  background: image_url($background-image);
+  background-size: auto 100%;
+  background-position: center;
+}
 
-// 今回レビュー対象外。後ほどプルリク
+// 今回レビュー対象外
 // //アプリダウンロードバナー
-// @mixin  top_app-download_img {
-//   background: url(https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg) center center / cover;
-//   background-position: center center;    
-// }
+@mixin  top_app-download_img {
+  background: url(https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg) center center / cover;
+  background-position: center center;    
+}
 
-// 今回レビュー対象外。後ほどプルリク
+// 今回レビュー対象外
 // //フッター
-// @mixin top_footer_section {
-//   display: inline-block;
-//   vertical-align: top;
-//   box-sizing: border-box;
-// }
+@mixin top_footer_section {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
 
-// @mixin top_footer_title {
-//   font-size: 16px;
-//   font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-//   font-weight: 600;
-//   line-height: 1.4em;
-//   margin: 0;
-//   padding: 0;
-// }
+@mixin top_footer_title {
+  font-size: 16px;
+  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin: 0;
+  padding: 0;
+}
 
-// @mixin top_footer_content {
-//   line-height: 1.4em;
-//   margin: 16px 0 0;
-// }
+@mixin top_footer_content {
+  line-height: 1.4em;
+  margin: 16px 0 0;
+}
 
-// @mixin top_footer_link {
-//   color: $white;
-//   opacity: .7;
-// }
+@mixin top_footer_link {
+  color: $white;
+  opacity: .7;
+}
 
-// @mixin top_footer_privacy-terms_section {
-//   display: inline-block;
-//   padding-left: 10px;
-//   vertical-align: top;
-//   width: 50%;
-//   box-sizing: border-box;
-// }
+@mixin top_footer_privacy-terms_section {
+  display: inline-block;
+  padding-left: 10px;
+  vertical-align: top;
+  width: 50%;
+  box-sizing: border-box;
+}
 
-// @mixin top_footer_social-link_img {
-//   margin: 14px 18px 0 0;
-//   font-size: 32px;
-// }
+@mixin top_footer_social-link_img {
+  margin: 14px 18px 0 0;
+  font-size: 32px;
+}
 //トップページ　〜〜〜 End  〜〜〜
