@@ -1,0 +1,24 @@
+= render partial: "sign_up_header"
+
+.confirm_phone_number
+  .confirm_phone_number__main
+    .confirm_phone_number__main__section
+      %h2 電話番号の確認
+      = fields_for :phone_number do |f|
+        .contents
+          .contents-field
+            = f.label :携帯電話の番号
+            %br/
+            = f.text_field :telephone, autofocus: true, autocomplete: "telephone", placeholder: "携帯電話の番号を入力", class:"phone_number"
+        .contents
+          .contents-field__message
+            %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          .contents-field__submit
+            = f.submit "SMSを送信する", class: "form__submit"
+            %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .contents-field__right
+            = link_to "https://www.mercari.com/jp/help_center/article/244/", target: :_blank , class:"link" do
+              電話番号の確認が必要な理由
+              %i.fa.fa-angle-right
+
+= render partial: "sign_up_footer"
