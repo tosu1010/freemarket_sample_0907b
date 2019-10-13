@@ -59,6 +59,5 @@ $(document).ready(function() {
     $(".lower__left__brand__box").hide(); 
     $('.lower__left__brand_search').css('color', hover_black); 
 
-
   });
 });
