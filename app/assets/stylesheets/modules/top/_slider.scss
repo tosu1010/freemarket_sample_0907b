@@ -1,0 +1,78 @@
+.slide-banner {
+  height: 170px;
+  left: 50%;
+  margin-left: -50vw;
+  position: relative;
+  top: 0;
+  width: 100vw !important;
+  overflow: hidden;
+  display: block;
+
+  @media screen and (min-width: 1068px) {
+      height: 390px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1068px) {
+      height: 290px;
+  }
+
+  @media screen and (max-width: 768px) {
+      display: none;
+  }
+  &__link {
+    display: block;
+    height: 100%;
+    &--1 {
+      @include top_slide-banner-owl-item-background("top-banner-camp-4f3fd88c685e8932d7dde2ad3a8336ba.jpg");
+    }
+    &--2 {
+      @include top_slide-banner-owl-item-background("top-banner-super-exhibition-fes-1354ceda34bd06081a45ee755e911f07");
+    }
+  }
+}
+.owl-carousel {
+  .owl-stage-outer {
+    height: 100%;
+    .owl-stage {
+      height: 100%;
+      .owl-item {
+        height: 100%;
+      }
+    }
+  } 
+  .owl-nav {
+    color: transparent;
+    display: block;
+    .owl-prev {
+      @include top_slide-banner-owl-nav-btn("carousel-prev.png");
+      left: 60px;
+      outline : none;
+    }
+    .owl-next {
+      @include top_slide-banner-owl-nav-btn("carousel-next.png");
+      right: 60px;
+      outline : none;
+    }  
+  }
+  .owl-dots {
+    margin: -30px;
+    text-align: center;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+    .owl-dot {
+      position: relative;
+      background-color: hsla(0,0%,100%,.6) !important;
+      opacity: .4;
+      border-radius: 50%;
+      height: 12px;
+      width: 12px;
+      min-height: 12px;
+      margin-right: 15px;
+      display: inline-block;
+      &.active {
+          opacity: 1;
+          background: $white !important;
+      }
+    }
+  }
+}
