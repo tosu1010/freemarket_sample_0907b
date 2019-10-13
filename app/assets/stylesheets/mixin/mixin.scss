@@ -20,7 +20,7 @@
 }
 
 @mixin focus {
-  border-color: #0099E8;
+  border-color: $cyan;
   outline: 0;
 }
 // ここまで
@@ -40,7 +40,7 @@
 }
 @mixin top_hover_category1_brand {
   a:hover{
-    background-color:#e9352d;;
+    background-color:#e9352d;
     color: $white;
   }
 }
