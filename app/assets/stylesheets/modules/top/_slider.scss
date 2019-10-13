@@ -61,17 +61,16 @@
     }
     .owl-dot {
       position: relative;
-      background-color: hsla(0,0%,100%,.6) !important;
+      background-color: hsla(0 ,0 ,100% ,.6);
       opacity: .4;
       border-radius: 50%;
-      height: 12px;
       width: 12px;
       min-height: 12px;
       margin-right: 15px;
       display: inline-block;
       &.active {
           opacity: 1;
-          background: $white !important;
+          background: $white;
       }
     }
   }
