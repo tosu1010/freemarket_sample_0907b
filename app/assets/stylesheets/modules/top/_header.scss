@@ -41,16 +41,13 @@
         width: 100%;
         
         &_input {
-          background-color: rgb(245, 245, 245);
+          background-color: $light-grey;
           font-size: 16px;
           height: 40px;
           line-height: 1.4em;
           position: relative;
           width: 100%;
-          border-width: 1px;
-          border-style: solid;
-          border-color: rgb(204, 204, 204);
-          border-image: initial;
+          border: solid 1px $grey;
           border-radius: 4px;
           outline: none;
           padding: 0 50px 0 10px;
@@ -94,15 +91,13 @@
         margin-left: -3px;
 
         &__category {
-          padding: 0 10px 0 0;
+          padding-right: 10px;
           cursor: pointer;
           height: 44px;
           position: relative;
           z-index: 3;
           
           &_search {
-            display: block;
-            font-size: 14px;
             font-weight: 600;
             line-height: 36px;
             white-space: nowrap;
@@ -189,7 +184,7 @@
           }
 
         &__brand  {
-          padding: 0 10px 0 0;
+          padding-right: 10px;
           cursor: pointer;
           height: 44px;
           position: relative;
@@ -255,10 +250,7 @@
             color:  $white;
             display: inline-block;
             font-size: 14px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: $red;
-            border-image: initial;
+            border: solid 1px $red;
             border-radius: 4px;
             padding: 8px 10px;
             height: 14px;
@@ -271,27 +263,84 @@
           text-align: center;
           margin-left: 11px;
 
-          a:hover { 
-            background-color: $login-btn_bule; 
-            color: $white;         
-          }
-
           &_link {
             background-color: $white;
             color: $login-btn_bule;
             display: block;
             font-size: 14px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: $login-btn_bule;
-            border-image: initial;
+            border: solid 1px $login-btn_bule;
             border-radius: 4px;
             padding: 8px 10px;
             transition: all 0.3s ease-out 0s;
             height: 14px;
             line-height: 14px;
+            &:hover { 
+              background-color: $login-btn_bule; 
+              color: $white;         
+            }
           }
         }
+
+        //レビュー対象外
+        // &__nice {
+        //   @include top_header_list;
+        //   display: none;
+        //   padding-left: 0px;
+
+        //   @media (min-width: 1068px) {
+        //     display: block;
+        //   }
+
+        //   &_link {
+        //     @include top_header_list_link;
+            
+        //     &_img {
+        //       @include top_header_list_link_img; 
+        //     }   
+        //   }
+        // }
+  
+
+        // &__news {
+        //   @include top_header_list;
+
+        //   &_link {
+        //     @include top_header_list_link;
+
+        //     &_img {
+        //       @include top_header_list_link_img;
+        //     }
+        //   }
+        // }
+
+        // &__to-do {
+        //   @include top_header_list;
+
+        //   &_link {
+        //     @include top_header_list_link;
+
+        //     &_img {              
+        //       @include top_header_list_link_img;
+        //     }
+        //   }
+        // }
+
+        // &__mypage {
+        //   @include top_header_list;
+        //   padding-right: 0px;
+
+        //   &_link {
+        //     @include top_header_list_link;
+
+        //     &_img {
+        //       margin-right: 10px;
+        //       width: 32px;
+        //       border-radius: 50%;
+        //       overflow: hidden;
+        //     }
+        //   }
+        // }
+
       }
     }
   }

@@ -37,13 +37,10 @@
           line-height: 26px;
           text-align: center;
           color: $white;
-          border-width: 1px;
-          border-style: solid;
-          border-image: initial;
+          border: solid 1px $red;
           border-radius: 4px;
           padding: 0 6px;
-          background: rgb(234, 53, 45);
-          border-color: rgb(234, 53, 45);
+          background: $red;
 
           @media (min-width: 375px){
             line-height: 30px;
@@ -55,15 +52,12 @@
           display: block;
           line-height: 26px;
           text-align: center;
-          color: rgb(0, 149, 238);
+          color: $login-btn_bule;
           margin-left: 6px;
-          border-width: 1px;
-          border-style: solid;
-          border-image: initial;
+          border: solid 1px $login-btn_bule;
           border-radius: 4px;
           padding: 0 6px;
           background: $white;
-          border-color: rgb(0, 149, 238);
 
           @media (min-width: 375px) {
             line-height: 30px;
@@ -71,6 +65,49 @@
           }
         }
       }
+    //レビュー対象外
+      // .upper_right_in {
+      //   align-items: center;
+      //   display: flex;
+
+      //   .news {
+
+      //     &_link {
+      //       @include top_header_responsive_upper_right_link;
+
+      //       .fa {
+      //         @include top_header_responsive_upper_right_link_fa;
+      //         width: 18px;
+      //       }
+      //     }
+      //   }
+
+      //   .to-do {
+      //     margin-left: 16px;
+
+      //     &_link {
+      //       @include top_header_responsive_upper_right_link;
+
+      //       .fa {
+      //         @include top_header_responsive_upper_right_link_fa;
+      //         width: 22px;
+      //       }
+      //     }
+      //   }
+
+      //   .mypage-img {
+      //     margin-left: 16px;
+
+      //     &_link {
+      //       @include top_header_responsive_upper_right_link;
+
+      //       &_img {
+      //         border-radius: 50%;
+      //         overflow: hidden;
+      //       }
+      //     }
+      //   }
+      // }
     }
 
     .middle {
@@ -80,7 +117,7 @@
         position: relative;
 
         &_input {
-          background-color: rgb(245, 245, 245);
+          background-color: $light-grey;
           font-size: 16px;
           height: 40px;
           line-height: 1.4em;
@@ -88,7 +125,7 @@
           width: 100%;
           border-width: 1px;
           border-style: solid;
-          border-color: rgb(204, 204, 204);
+          border-color: $grey;
           border-image: initial;
           border-radius: 4px;
           outline: none;
@@ -105,10 +142,7 @@
           right: 0;
           top: 0;
           width: 40px;
-          border-width: initial;
           border-style: none;
-          border-color: initial;
-          border-image: initial;
           border-radius: 0 4px 4px 0;
           padding: 0;
           line-height: 14px;
