@@ -118,9 +118,18 @@
 }
 
 // //アプリダウンロードバナー
-@mixin  top_app-download_img {
+@mixin top_app-download_img {
   background: url(https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg) center center / cover;
   background-position: center center;    
+}
+@mixin top_app-download_store {
+  height: 0%;
+  display: inline-block;
+  line-height: 68px;
+}
+@mixin top_app-download_store_img {
+  height: 40px;
+  width: 144px;
 }
 
 // //フッター

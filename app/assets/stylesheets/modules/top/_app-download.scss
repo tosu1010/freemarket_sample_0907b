@@ -45,21 +45,19 @@
           }
 
           .app-store {          
-            height: 0%;
-
+            @include top_app-download_store;
+            
             .app-store_image {
-              height: 40px;
-              width: 144px;              
+              @include top_app-download_store_img;
               margin-right: 8px;
             }
           }
           
           .google-play {
-            height: 0%;
+            @include top_app-download_store;
 
             .google-play_image {
-              height: 40px;
-              width: 144px;
+              @include top_app-download_store_img;
             }
           }
         }
