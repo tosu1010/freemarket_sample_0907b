@@ -51,7 +51,57 @@
   }
 }
 
-// 今回レビュー対象外
+//今回レビュー対象外
+@mixin top_header_list {
+  height: 44px;
+  position: relative;
+  padding: 0px 7px;
+
+  @media (min-width: 1068px) {
+    padding: 0px 14px;
+  } 
+}
+
+@mixin top_header_list_link {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  height: 32px;
+  transform: scale(1);
+  transition: all 0.3s ease-out 0s;
+}
+
+@mixin top_header_list_link_img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  color: $grey;
+  margin-right: 5px;
+  width: 19px;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+@mixin top_header_responsive_upper_right_link {
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  position: relative;
+  width: 32px;
+  font-size: 18px;
+}
+
+@mixin top_header_responsive_upper_right_link_fa {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  color: $grey;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 32px;
+}
+
 //スライダー
 @mixin top_slide-banner-owl-nav-btn($background-image) {
   background-image: image_url($background-image) !important;
@@ -69,14 +119,12 @@
   background-position: center;
 }
 
-// 今回レビュー対象外
 // //アプリダウンロードバナー
 @mixin  top_app-download_img {
   background: url(https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg) center center / cover;
   background-position: center center;    
 }
 
-// 今回レビュー対象外
 // //フッター
 @mixin top_footer_section {
   display: inline-block;

@@ -1,0 +1,110 @@
+.app-download {
+    @include top_app-download_img;
+    color: $white;
+    margin-top: auto;
+    display: block;
+
+  .wrapper {
+    @include top_app-download_img;
+
+    @media screen and ( max-width:768px ){
+      display: none;
+    }  
+    
+    .content {
+      display: flex;
+      justify-content: space-between;
+      width: 750px;
+      margin: 0 auto;
+    
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .upper {
+          color: $white;
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+
+        .middle {
+          color: $white;
+          font-size: 35px;
+          margin-bottom: 20px;
+        }
+        .lower {          
+          display: flex;
+          a:hover {opacity: .6;}
+
+          .mercari_logo {
+            height: 68px;
+            width: 68px;            
+            margin-right: 20px;
+          }
+
+          .app-store {          
+            height: 0%;
+
+            .app-store_image {
+              height: 40px;
+              width: 144px;              
+              margin-right: 8px;
+            }
+          }
+          
+          .google-play {
+            height: 0%;
+
+            .google-play_image {
+              height: 40px;
+              width: 144px;
+            }
+          }
+        }
+      }
+      
+      .right { 
+        margin: 0;
+
+        &_image {
+          height: 260px;
+          width: 300px; 
+        }
+      }
+    }
+  }
+}
+.wrapper_responsive {
+  @media screen and ( min-width:768px ){
+    display: none;
+  }
+
+  .link {
+    align-items: center;
+    background-color: rgba(0, 0, 0, .2);
+    color: $white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 0;
+
+    .mercari_logo {
+      height: 50px;
+      margin-right: 20px;
+      width: 50px;
+    }
+    
+    .content {
+      display: inline-flex;
+      flex-direction: column;
+      text-align: left;
+
+      .lower {
+        font-size: 20px;
+        margin-top: 8px;
+      }
+    } 
+  }
+}
