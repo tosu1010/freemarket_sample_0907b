@@ -108,6 +108,7 @@
 
       &__left {
         @include top_footer_privacy-terms_section;
+        padding-left:0;
         padding-right:10px;
 
         &_container {
