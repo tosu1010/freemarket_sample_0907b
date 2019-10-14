@@ -26,8 +26,6 @@
 // ここまで
 
 //トップページ　〜〜〜　Start　〜〜〜
-
-// 今回レビュー対象外
 // //ヘッダー
 @mixin top_after_category2 {
   background-color: $white;
@@ -51,7 +49,6 @@
   }
 }
 
-// 今回レビュー対象外
 //スライダー
 @mixin top_slide-banner-owl-nav-btn($background-image) {
   background-image: image_url($background-image) !important;
