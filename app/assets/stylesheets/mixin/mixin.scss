@@ -126,6 +126,7 @@
   height: 0%;
   display: inline-block;
   line-height: 68px;
+  &:hover {opacity: .6;}
 }
 @mixin top_app-download_store_img {
   height: 40px;
