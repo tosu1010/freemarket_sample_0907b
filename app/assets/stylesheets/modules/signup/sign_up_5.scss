@@ -1,0 +1,179 @@
+.credit_card {
+
+  &__main {
+    display: block;
+    text-align: center;
+
+    &__section {
+      background: $white;
+    }
+  }
+
+  h2 {
+    border-bottom: .05rem solid $light-grey;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 32px;
+  }
+
+  .contents {
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 343px;
+    text-align: left;
+
+    &-field {
+      font-weight: 600;
+      z-index: 1;
+      padding: 40px 0 6px;
+
+      &__reason {
+          text-align: right;
+          color: $cyan;
+      }
+    }
+  }
+
+  .question {
+    display: inline-block;
+    font-weight: 100;
+    background: $cyan;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    color: $white;
+    line-height: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  li {
+    display: inline;
+    margin: 0 1px 0;
+  
+    .card_logo {
+      height: 10%;
+      width: 10%;
+    }
+  }
+
+  input {
+    outline-width: 2px;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 100;
+    height: 28px;
+    line-height: 1.5;
+    margin-top: 8px;
+    padding: 10px 16px 8px;
+    width: 90%;
+  }
+
+  .aicon-arrow-bottom,
+  .aicon-arrow-bottom-2 {
+    background-color: $white;
+    color: $middle-grey;
+    font-size: 20px;
+    position: relative;
+    -webkit-text-stroke: .07rem $white;
+    top: 45px;
+    left: -20px;
+  }
+
+  .aicon-arrow-bottom-2 {
+    left: 122px;
+  }
+
+  select {
+    -webkit-appearance: none;
+  }
+  
+  .month_selection,
+  .year_selection {
+    outline-width: 2px;
+    background: 0;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    height: 48px;
+    line-height: 1.5;
+    margin-top: 10px;
+    padding: 0 16px;
+    position: relative;
+    width: 36%;
+    z-index: 2;
+  }
+
+  span {
+    font-weight: 50;
+    margin: 0 10px 0;
+
+    &.reqiure {
+      background: $red;
+      border-radius: 2px;
+      color: $white;
+      font-size: 12px;
+      margin-left: 8px;
+      padding: 2px 4px;
+      vertical-align: text-top;
+    }
+  }
+
+  .form {
+    border-top: 1px;
+    text-align: left;
+
+    &__submit {
+      border-radius: 0;
+      background-color: $red;
+      color: $white;
+      cursor: pointer;
+      font-weight: normal;
+      margin: 32px 0;
+      padding: 15px 0 35px 0;
+      width: 100%;
+
+      &:active {
+        background-color: $middle-grey;
+        outline-width: 0;
+        transition-duration: .8s;
+      }
+    }
+  }
+
+  // 以下、クレジットカードの裏面表示（jsで表示させる）
+  .credit-seq_before::before {
+    opacity: 0;
+    background-color: $white;
+  }
+
+  .image {
+    padding-top: 16px;
+    background: $light-grey;
+    border-radius: 6px;
+    position: absolute;
+  }
+
+  .credit-seq_after {
+    color: $grey-black;
+    position: absolute;
+    left:80px;
+  }
+
+  .seq-card {
+    width: 240px;
+    height: 105px;
+    padding: 30px 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .credit_card {
+    @include responsive;
+  }
+}

@@ -1,4 +1,7 @@
+@import "reset";
 @import "./config/*";
 @import "./mixin/*";
-@import "./modules/*/*";
-@import "./reset";
+@import "./modules/**/*";
+@import 'font-awesome';
+@import "owl.carousel";
+@import "owl.theme.default";

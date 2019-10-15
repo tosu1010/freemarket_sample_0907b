@@ -1,0 +1,46 @@
+.signup_header
+  .signup_header__container
+    .signup_header__container__wrapper
+      %h1.partial-only
+        = link_to "https://www.mercari.com/jp/" do
+          = image_tag('logo.svg', class: 'header_logo')
+
+
+.authentication_phone_number
+  .authentication_phone_number__main
+    .authentication_phone_number__main__section
+      %h2 電話番号認証
+      = fields_for :phone_number do |f|
+        .contents
+          .contents-field
+            = f.label :認証番号
+            %br/
+            = f.text_field :certification_number, autofocus: true, autocomplete: "certification_number", placeholder: "認証番号を入力"
+          .contents-field__instruction
+            %p SMSで届いた認証番号を入力してください
+          .contents-field__submit
+            = f.submit "認証して完了", class: "form__submit"
+
+    .authentication_phone_number__main__section
+      .contents
+        .contents__title
+          .contents__title__not-reach
+          %h3 30秒たっても認証番号が届かない方へ
+          %p 電話で認証番号を聞くこともできます。
+          %button{class: "form__input", type: "button"} 電話で認証番号を聞く（通話無料）
+
+    .authentication_phone_number__main__section
+      .contents
+        .contents__title
+          .contents__title__hearing-tel
+          %h3 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+          -# show部分には、第二ページのリンク先をつける。
+          = link_to "sign_up_2", target: :_blank , class:"link" do
+            電話番号を再度入力する
+          %p.sms-notice
+            ※SMSが届かない場合は
+            = link_to "https://www.mercari.com/jp/help_center/article/248/", target: :_blank , class:"link" do
+              SMS受信設定
+            を確認して、もう一度電話番号を入力してください。
+
+= render partial: "sign_up_footer"

@@ -1,0 +1,13 @@
+@mixin responsive {
+  &__main {
+    &__section {
+      margin: 0 auto;
+      width: 700px;
+    }
+
+    h2 {
+      font-size: 22px;
+      padding: 32px;
+    }
+  }
+}

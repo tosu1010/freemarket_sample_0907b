@@ -1,0 +1,73 @@
+= render partial: "signup/sign_up_header"
+
+.sign_up
+  .sign_up__main
+    .sign_up__main__section
+      %h2.sign_up__main__section__title 会員情報入力
+      = form_for(resource, as: resource_name, url: 'registration_path(resource_name)', html: {class: "form"}) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .contents
+          .contents-field
+            = f.label "ニックネーム"
+            %span.reqiure 必須
+            = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
+          .contents-field
+            = f.label "メールアドレス"
+            %span.reqiure 必須
+            = f.email_field :email, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+          .contents-field
+            = f.label "パスワード"
+            %span.reqiure 必須
+            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上"
+          .contents-field
+            = f.label "パスワード(確認)"
+            %span.reqiure 必須
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "7文字以上"
+          .contents-field__information
+            = f.label "本人確認"
+            %p.contents-field__information__notice 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .contents-field
+            = f.label "お名前(全角)"
+            %span.reqiure 必須
+            %br/
+            = f.text_field :last_name, autocomplete: "last_name", placeholder: "例）山田", class: "name"
+            = f.text_field :first_name, autocomplete: "first_name", placeholder: "例）彩", class: "name"
+          .contents-field
+            = f.label "お名前カナ(全角)"
+            %span.reqiure 必須
+            %br/
+            = f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: "例）ヤマダ", class: "name"
+            = f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "例）アヤ", class: "name"
+          .contents-field
+            = f.label "生年月日"
+            %span.reqiure 必須
+            = fa_icon "chevron-down", class: "aicon-arrow-bottom"
+            = fa_icon "chevron-down", class: "aicon-arrow-bottom-2"
+            = fa_icon "chevron-down", class: "aicon-arrow-bottom-3"
+            %br/
+            = f.select :birth_year, [], {include_blank: '--'}, class: 'year'
+            %span 年
+            = f.select :birth_month, [], {include_blank: '--'}, class: 'month'
+            %span 月
+            = f.select :birth_day, [], {include_blank: '--'}, class: 'day'
+            %span 日
+          .clearfix
+          .asterisk ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .contents
+          .contents-field
+            .g-recaptcha{"data-sitekey" => "6LcJNrkUAAAAAAAXmDB03OB9_cBUJDtlmkZRyvkl"}
+            .contents-field
+              %p.text
+                「次へ進む」のボタンを押すことにより、
+                = link_to "https://www.mercari.com/jp/tos_list/", target: :_blank, class:"link" do
+                  利用規約
+                に同意したものとみなします
+            .contents-field__button
+              = f.submit "次へ進む", class: "form__submit"
+            .text-right
+              %p.text__personal
+                = link_to "https://www.mercari.com/jp/help_center/article/423/", target: :_blank , class:"link" do
+                  本人情報の登録について
+                  %i.fa.fa-angle-right
+
+= render partial: "signup/sign_up_footer"
