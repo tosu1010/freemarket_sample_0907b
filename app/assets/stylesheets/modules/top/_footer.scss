@@ -35,12 +35,11 @@
         @include top_footer_title;
       }
       &__container {
-        padding: 0;
 
         &__content {
           @include top_footer_content;
 
-          &_link {
+          &__link {
             @include top_footer_link;
           }
         }
@@ -69,7 +68,7 @@
 
       @media (min-width: 1068px) {
         width: auto;
-        padding: 0 40px 0 0;
+        padding-right: 40px;
       }
 
       &__title {
@@ -77,12 +76,11 @@
       }
 
       &__container {
-        padding: 0;
         
         &__content {
           @include top_footer_content;
 
-          &_link {
+          &__link {
             @include top_footer_link;
           }
         }
@@ -92,8 +90,7 @@
     &__privacy-terms {
       @include  top_footer_section;
       display: inline-table;
-      width: 100%;
-      padding: 0;    
+      width: 100%;    
       margin-top: 35px;
 
       @media (min-width: 1068px) {
@@ -112,12 +109,11 @@
         padding-right:10px;
 
         &__container {
-          padding: 0;
 
           &__content {
             @include top_footer_content;
 
-            &_link {
+            &__link {
               @include top_footer_link;
             }
           }
@@ -127,12 +123,11 @@
         @include top_footer_privacy-terms_section;
 
         &__container {
-          padding: 0;
 
           &__content {
             @include top_footer_content;
 
-            &_link {
+            &__link {
               @include top_footer_link;
             }
           }
@@ -143,7 +138,6 @@
     &__country {
       @include  top_footer_section;
       width: 100%;
-      padding: 0;
       margin-top: 35px;   
 
       @media (min-width: 1068px) {
@@ -156,12 +150,11 @@
       }
 
       &__container {
-        padding: 0;
         
         &__content {
           @include top_footer_content;
 
-          &_link {
+          &__link {
             @include top_footer_link;
             margin-right: 30px;
 
@@ -190,7 +183,7 @@
       margin: 30px auto 20px;
     }
 
-    &_to-top {
+    &__to-top {
       text-align: center;
       height: 33px;
       width: 124px;
@@ -198,7 +191,7 @@
       &:hover {opacity: .7;}
     }
 
-    &_copy-right {
+    &__copy-right {
       padding-left: 15px;
       width: 75%;      
       

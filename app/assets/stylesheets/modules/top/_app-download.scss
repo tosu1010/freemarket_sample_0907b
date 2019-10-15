@@ -1,7 +1,6 @@
 .app-download {
     @include top_app-download_img;
     color: $white;
-    margin-top: auto;
     display: block;
 
   .wrapper {
@@ -73,7 +72,7 @@
     }
   }
 }
-.wrapper_responsive {
+.wrapper__responsive {
   @media screen and ( min-width:768px ){
     display: none;
   }
