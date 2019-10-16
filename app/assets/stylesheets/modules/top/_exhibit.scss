@@ -1,0 +1,59 @@
+.exhibit {
+     position: fixed;
+     right: -14px;
+     bottom: -14px;
+     text-align: center;
+     z-index: 2;
+ 
+    @media (min-width: 768px) {
+      bottom: 32px;
+      font-size: 22px;
+      height: 160px;
+      right: 32px;
+      width: 160px;
+    }
+
+    .link {
+      display: block;
+
+    .btn {
+      box-sizing: border-box;
+      padding-top: 15px;
+      text-align: center;
+      height: 80px;
+      width: 80px;
+      background-color: $red;
+      border-radius: 50%;
+
+      @media (min-width: 768px) {
+        width: 160px;
+        height: 160px;
+        padding-top: 32px;
+      }
+      
+      .text {
+        color: $white;
+
+        @media (min-width: 768px) {
+          font-size: 22px;
+        }
+      }
+
+      .fa-camera {
+        font-size: 25px;
+        width: 26px; 
+        height: 24px;
+        color: $white;
+        display: block;        
+        margin: 5px auto 0;
+
+        @media (min-width: 768px) {
+          font-size: 55px;
+          width: 60px;
+          height: 54px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

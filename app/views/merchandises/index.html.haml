@@ -5,6 +5,7 @@
   .wrapper
     -# スライダー
     = render 'layouts/slider'
+
     .label#category_label
     .items#category_items
       .items__section
@@ -116,12 +117,10 @@
     -# ブランドごとの表示は後ほど実装する
     -# .label#brand_label
     -# .items#brand_items
--# 今回レビュー対象外。後ほどプルリク
--# -# 出品ボタン
--# = render 'layouts/exhibit'
--# 今回レビュー対象外。後ほどプルリク
--# -# アプリダウンロードバーナー
--# = render 'layouts/app-download'
--# 今回レビュー対象外。後ほどプルリク
--# -# フッター
--# = render 'layouts/footer'
+
+-# 出品ボタン
+= render 'layouts/exhibit'
+-# アプリダウンロードバーナー
+= render 'layouts/app-download'
+-# フッター
+= render 'layouts/footer'

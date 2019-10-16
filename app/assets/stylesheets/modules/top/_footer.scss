@@ -1,0 +1,203 @@
+.footer {
+  background-color: rgb(34, 34, 34);
+  color: $white;
+  font-size: 12px;
+  padding: 0 20px 10px;
+
+  a:visited { color: $white; } 
+  a:hover { text-decoration: underline; }
+  
+  &__upper {
+    display: table;
+
+    @media (min-width: 768px) {
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1068px) {
+      width: 1020px;
+    }
+
+    &__about-Mercari {
+
+      @include  top_footer_section;
+      width: 50%;
+      padding-right: 10px;
+      margin-top: 18px;
+
+      @media (min-width: 1068px) {
+        width: auto;
+        padding-right: 40px;
+      }
+
+      &__title {
+        @include top_footer_title;
+      }
+      &__container {
+
+        &__content {
+          @include top_footer_content;
+
+          &__link {
+            @include top_footer_link;
+          }
+        }
+
+        &__social-link {
+          margin-top: 30px;
+          color: $white;
+          display: inline-block;
+          background: transparent;
+        
+          .twitter {
+            @include top_footer_social-link_img;        
+          }
+          .facebook {
+            @include top_footer_social-link_img;
+          }        
+        }
+      }
+    }
+
+    &__help-guide {
+      @include  top_footer_section;
+      width: 50%;
+      padding: 0 10px;
+      margin-top: 18px;
+
+      @media (min-width: 1068px) {
+        width: auto;
+        padding-right: 40px;
+      }
+
+      &__title {
+        @include top_footer_title;
+      }
+
+      &__container {
+        
+        &__content {
+          @include top_footer_content;
+
+          &__link {
+            @include top_footer_link;
+          }
+        }
+      }
+    }
+
+    &__privacy-terms {
+      @include  top_footer_section;
+      display: inline-table;
+      width: 100%;    
+      margin-top: 35px;
+
+      @media (min-width: 1068px) {
+        margin-top: 18px;
+        padding-right: 40px;
+        width: 43%;
+      }
+
+      &__title {
+        @include top_footer_title;
+      }
+
+      &__left {
+        @include top_footer_privacy-terms_section;
+        padding-left:0;
+        padding-right:10px;
+
+        &__container {
+
+          &__content {
+            @include top_footer_content;
+
+            &__link {
+              @include top_footer_link;
+            }
+          }
+        }
+      }
+      &__right {
+        @include top_footer_privacy-terms_section;
+
+        &__container {
+
+          &__content {
+            @include top_footer_content;
+
+            &__link {
+              @include top_footer_link;
+            }
+          }
+        }
+      }
+    }
+
+    &__country {
+      @include  top_footer_section;
+      width: 100%;
+      margin-top: 35px;   
+
+      @media (min-width: 1068px) {
+        margin-top: 18px;
+        width: auto;
+      }
+
+      &__title {
+        @include top_footer_title;
+      }
+
+      &__container {
+        
+        &__content {
+          @include top_footer_content;
+
+          &__link {
+            @include top_footer_link;
+            margin-right: 30px;
+
+            @media (min-width: 1068px) {
+              display: block;
+              margin-top: 16px;
+            } 
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    align-items: center;
+    display: flex;
+    margin-top: 55px;
+
+    @media (min-width: 768px) {
+      width: 700px;
+      margin: 55px auto 10px;
+    }
+
+    @media (min-width: 1068px) {
+      width: 1020px;
+      margin: 30px auto 20px;
+    }
+
+    &__to-top {
+      text-align: center;
+      height: 33px;
+      width: 124px;
+      cursor: default;
+      &:hover {opacity: .7;}
+    }
+
+    &__copy-right {
+      padding-left: 15px;
+      width: 75%;      
+      
+      @media (min-width: 768px) {
+        text-align: center;
+      }
+    }
+  } 
+}
