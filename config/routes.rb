@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'merchandises#index'
 
   resources :mypage, only: [:index]
-  resources :merchandises, only: [:index]
+  resources :merchandises, only: [:index, :show]
 
   get '/mypage/profile', to: 'mypage#edit'
   get 'log_in' => 'login#log_in'

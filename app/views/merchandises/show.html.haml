@@ -1,0 +1,200 @@
+-# ヘッダー
+= render 'layouts/header_responsive'
+= render 'layouts/header'
+
+.merchandise-detail.clearfix
+  .merchandise-detail__main
+    %h2.merchandise-name
+      コーチショルダーバッグ
+    .item-photo
+      = image_tag "https://placehold.jp/300x300.png"
+      = image_tag "https://placehold.jp/300x300.png"
+      = image_tag "https://placehold.jp/300x300.png"
+      = image_tag "https://placehold.jp/300x300.png"
+      = image_tag "https://placehold.jp/300x300.png"
+      = image_tag "https://placehold.jp/300x300.png"
+      = image_tag "https://placehold.jp/300x300.png"
+
+    %table.item-detail
+      %tr
+        %th
+          くまちゃん
+        %td
+          .evaluations
+            .evaluations__icon
+              = fa_icon "smile-o"
+            .evaluations__num
+              0
+          .evaluations
+            .evaluations__icon
+              = fa_icon "meh-o"
+            .evaluations__num
+              0
+          .evaluations
+            .evaluations__icon
+              = fa_icon "frown-o"
+            .evaluations__num
+              0
+
+      %tr
+        %th
+          カテゴリー
+        %td
+          = link_to "#" do
+            .category
+              メンズ
+          = link_to "#" do
+            .category__child
+              = fa_icon "chevron-right"
+              ジャケット/アウター
+          = link_to "#" do
+            .category__grandchild
+              = fa_icon "chevron-right"
+              ダウンベスト
+
+      %tr
+        %th
+          ブランド
+        %td
+          アヴィレックス
+
+      %tr
+        %th
+          商品のサイズ
+        %td
+          L
+        
+      %tr
+        %th
+          商品の状態
+        %td
+          目立った傷や汚れなし
+      
+      %tr
+        %th
+          配送料の負担
+        %td
+          送料込み(出品者負担)
+
+      %tr
+        %th
+          配送の方法
+        %td
+          らくらくメルカリ便
+        
+      %tr
+        %th
+          配送元地域
+        %td
+          兵庫県
+
+      %tr
+        %th
+          発送日の目安
+        %td
+          2~3日で発送
+
+    .price
+      .price__tax
+
+    .buy-button
+      = link_to "#" do
+        購入画面に進む
+    
+    .item-description
+      %p.item-description__text
+        フードもついてます。ツーパターンで着用できます。
+    .liks
+      いいね！
+      %span
+        2
+    .report-item
+      %span
+        = fa_icon "flag-o"
+      不適切な商品の報告
+
+    = link_to "あんしん・あんぜんへの取り組み", "#"
+
+  .comments
+    .comment
+      .comment__image-div
+        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__user-icon__image"
+      .comment__user-name
+        tetsu
+      .comment__comment
+        .comment__comment__text
+          こんにちわ！
+        .comment__comment__date
+          .comment__comment__date__icon
+            = fa_icon "clock-o"
+          .comment__comment__date__time
+            8時間前
+        .comment__report
+          = fa_icon "flag-o"
+      
+    .comment
+      .comment__image-div
+        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__user-icon__image"
+      .comment__user-name
+        tetsu
+      .comment__comment
+        .comment__comment__text
+          こんにちわ！
+        .comment__comment__date
+          .comment__comment__date__icon
+            = fa_icon "clock-o"
+          .comment__comment__date__time
+            8時間前
+        .comment__report
+          = fa_icon "flag-o"
+    
+    .attention
+      %p
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .text-box
+      %textarea.text-box__input(cols="40" rows="10")
+    .form
+      %input.form__input{type: "submit", value: "コメントする"}
+  
+  %ul.item-link
+    %li.item-link__prev
+      = link_to "#", class: "item-link__link" do
+        = fa_icon "chevron-left"
+    %li.item-link__next
+      = link_to "#", class: "item-link__link" do
+        = fa_icon "chevron-right"
+
+  .social-icon
+    .facebook
+      = fa_icon "facebook-official"
+    .twitter
+      = fa_icon "twitter-square"
+    .pinterst
+      = fa_icon "pinterest"
+    
+  .another_merchandise
+    %h2
+      くまちゃんさんのその他の出品
+    .items
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+
+  .another_merchandise
+    %h2
+      コーチのショルダーバッグ その他の商品
+    .items
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+      = render "showpage-item"
+
+-# -# アプリダウンロードバーナー
+-# = render 'layouts/app-download'
+-# -# フッター
+-# = render 'layouts/footer'
