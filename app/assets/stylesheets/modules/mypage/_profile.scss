@@ -2,6 +2,10 @@
   .profile {
     @include mypage-content;
 
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
+
     &__header {
       font-size: 24px;
       height: 33px;
