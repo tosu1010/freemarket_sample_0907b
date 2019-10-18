@@ -1,4 +1,10 @@
-.main {
-  float: right;
-  width: 700px;
+.mypage {
+  .main {
+    float: right;
+    width: 700px;
+
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
+  }
 }

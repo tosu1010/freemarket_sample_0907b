@@ -1,3 +1,7 @@
+-# ヘッダー
+= render 'layouts/header_responsive'
+= render 'layouts/header'
+
 .mypage
   .profile
     %h2.profile__header.bold
@@ -11,3 +15,10 @@
         %input.profile__form__content__button(type="submit" value="変更する")/
   
   = render "menu"
+
+  -# 出品ボタン
+= render 'layouts/exhibit'
+-# アプリダウンロードバーナー
+= render 'layouts/app-download'
+-# フッター
+= render 'layouts/footer'
