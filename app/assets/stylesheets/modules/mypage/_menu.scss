@@ -20,7 +20,6 @@
       }
 
       &__box {
-        box-sizing: border-box;
         display: block;
         height: 48px;
         width: 100%;
@@ -35,7 +34,6 @@
         }
         
         &__link {
-          box-sizing: border-box;
           display: block;
           line-height: inherit;
           width: 100%;
@@ -49,6 +47,13 @@
         &__angle {
           position: absolute;
           right: 16px;
+          color: $grey;
+        }
+
+        &:hover .menu__links__box__angle {
+          color: $black;
+          font-size: 1.2em;
+          transition: 0.3s ease;
         }
       }
     }
