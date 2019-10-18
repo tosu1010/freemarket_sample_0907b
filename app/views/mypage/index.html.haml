@@ -1,3 +1,7 @@
+-# ヘッダー
+= render 'layouts/header_responsive'
+= render 'layouts/header'
+
 .mypage
   .main
     .user-icon
@@ -35,7 +39,7 @@
                     = fa_icon "clock-o"
                   .notify-todo__notify__content__date__time
                     5時間前
-              = fa_icon "angle-right"
+              = fa_icon "chevron-right", class: "notify-todo__notify__content__angle"
           %li.notify-todo__notify__content
             = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
               = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
@@ -47,7 +51,7 @@
                     = fa_icon "clock-o"
                   .notify-todo__notify__content__date__time
                     5時間前
-              = fa_icon "angle-right"
+              = fa_icon "chevron-right", class: "notify-todo__notify__content__angle"
           %li.notify-todo__notify__content
             = link_to "https://www.mercari.com/jp/mypage/news/", class: "notify-todo__notify__content__link" do
               = image_tag "//static.mercdn.net/images/mercari_profile.png", class: "notify-todo__notify__content__icon"
@@ -59,7 +63,7 @@
                     = fa_icon "clock-o"
                   .notify-todo__notify__content__date__time
                     5時間前
-              = fa_icon "angle-right"
+              = fa_icon "chevron-right", class: "notify-todo__notify__content__angle"
           .notify-todo__notify__go-list
             = link_to "一覧を見る", "https://www.mercari.com/jp/mypage/notification/", class:"notify-todo__notify__go-list__link"
         %ul.notify-todo__todo
@@ -83,3 +87,10 @@
             過去に取引した商品がありません
 
   = render "menu"
+
+  -# 出品ボタン
+= render 'layouts/exhibit'
+-# アプリダウンロードバーナー
+= render 'layouts/app-download'
+-# フッター
+= render 'layouts/footer'

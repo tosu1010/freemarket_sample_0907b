@@ -7,20 +7,15 @@
   &::after {
     @include clearfix;
   }
-}
 
-@media screen and (max-width: 1068px){
-  .mypage {
+  @media screen and (max-width: 1068px){
     margin: auto;
     padding-top: 24px;
     width: 700px;
   }
-}
 
-@media screen and (max-width: 768px){
-  .mypage {
-    width: 100vw;
-    padding-top: 24px;
+  @media screen and (max-width: 768px){
+    width: auto;
   }
 }
 
