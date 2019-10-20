@@ -134,45 +134,47 @@
             あんしん・あんぜんへの取り組み
 
   .comments
-    .comment
-      .comment__image-div
-        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__user-icon__image"
-      .comment__user-name
-        tetsu
-      .comment__comment
-        .comment__comment__text
-          こんにちわ！
-        .comment__comment__date
-          .comment__comment__date__icon
-            = fa_icon "clock-o"
-          .comment__comment__date__time
-            8時間前
-        .comment__report
-          = fa_icon "flag-o"
-      
-    .comment
-      .comment__image-div
-        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__user-icon__image"
-      .comment__user-name
-        tetsu
-      .comment__comment
-        .comment__comment__text
-          こんにちわ！
-        .comment__comment__date
-          .comment__comment__date__icon
-            = fa_icon "clock-o"
-          .comment__comment__date__time
-            8時間前
-        .comment__report
-          = fa_icon "flag-o"
-    
-    .attention
-      %p
-        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    .text-box
-      %textarea.text-box__input(cols="40" rows="10")
-    .form
-      %input.form__input{type: "submit", value: "コメントする"}
+    %ul.comments__container
+      %li.comment
+        = link_to "#", class: "comment__link" do
+          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
+          .comment__link__user-name
+            tetsu
+        .comment__content
+          .comment__content__text
+            こんにちわ！
+          .comment__content__bottom
+            .comment__content__bottom__date
+              .comment__content__bottom__date__icon
+                = fa_icon "clock-o"
+              .comment__content__bottom__date__time
+                8時間前
+            .comment__content__bottom__report
+              = fa_icon "flag-o"
+
+      %li.comment
+        = link_to "#", class: "comment__link" do
+          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
+          .comment__link__user-name
+            tetsu
+        .comment__content
+          .comment__content__text
+            こんにちわ！
+          .comment__content__bottom
+            .comment__content__bottom__date
+              .comment__content__bottom__date__icon
+                = fa_icon "clock-o"
+              .comment__content__bottom__date__time
+                8時間前
+            .comment__content__bottom__report
+              = fa_icon "flag-o"
+
+    .comment-form
+      .comment-form__attention
+        %p
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.comment-form__text-box(cols="40" rows="10")
+      %input.comment-form__submit{type: "submit", value: "コメントする"}
   
   %ul.item-link
     %li.item-link__prev
