@@ -185,13 +185,17 @@
         = fa_icon "chevron-right"
 
   .social-icon
-    .facebook
-      = fa_icon "facebook-official"
-    .twitter
-      = fa_icon "twitter-square"
-    .pinterst
-      = fa_icon "pinterest"
-    
+    %ul.social-icon__box
+      = link_to "#", class: "social-icon__box__link" do
+        %li.social-icon__box__link--facebook
+          = fa_icon "facebook-official"
+      = link_to "#", class: "social-icon__box__link" do
+        %li.social-icon__box__link--twitter
+          = fa_icon "twitter"
+      = link_to "#", class: "social-icon__box__link" do
+        %li.social-icon__box__link--pinterest
+          = fa_icon "pinterest"
+
   .another_merchandise
     %h2
       くまちゃんさんのその他の出品

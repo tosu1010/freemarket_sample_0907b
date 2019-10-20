@@ -172,3 +172,13 @@
   font-size: 32px;
 }
 //トップページ　〜〜〜 End  〜〜〜
+
+@mixin social-icon($length, $background-color) {
+  background-color: $background-color;
+  display: inline-block;
+  height: $length;
+  text-align: center;
+  vertical-align: middle;
+  line-height: $length;
+  width: $length;
+}
