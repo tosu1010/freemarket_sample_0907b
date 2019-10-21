@@ -1,0 +1,61 @@
+.merchandise-detail {
+  .item-link {
+    width: 700px;
+    margin: 24px auto;
+
+    &:after {
+      @include clearfix;
+    }
+
+    &__prev {
+      float: left;
+      color: $cyan;
+      text-align: left;
+      overflow-wrap: break-word;
+      width: 45%;
+      position: relative;
+      padding-left: 14px;
+
+      &:hover {
+        text-decoration: underline;
+        opacity: .7;
+      }
+    }
+
+    &__next {
+      float: right;
+      color: $cyan;
+      text-align: right;
+      overflow-wrap: break-word;
+      width: 45%;
+      position: relative;
+      padding-right: 14px;
+
+      &:hover {
+        text-decoration: underline;
+        opacity: .7;
+      }
+    }
+
+    &__link {
+        
+      &__icon-prev {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+      }
+      
+      &__icon-next {
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+      }
+    }
+  }
+}
