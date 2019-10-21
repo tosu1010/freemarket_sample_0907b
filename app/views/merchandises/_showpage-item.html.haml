@@ -1,12 +1,13 @@
 .item
   = link_to "#", class: "item__link" do
-    = image_tag "https://placehold.jp/220x290.png", class: "item__image"
+    = image_tag "https://placehold.jp/220x220.png", class: "item__image"
     .item__body
       .item__body__name
-        カーディガン
-      .item__body__price
-        ￥1,100
-      .item__body__likes
-        = fa_icon "heart-o"
-        %span
-          1
+        カーディガンカーディガンカーディガンカーディガン
+      .item__body__bottom
+        .item__body__bottom__price
+          ￥1,100
+        .item__body__bottom__likes
+          = fa_icon "heart-o", class: "item__body__bottom__likes__icon"
+          %span
+            1

@@ -1,13 +1,9 @@
 .merchandise-detail {
   .anothers {
     width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
 
     .another-merchandise {
-      
-      &:after {
-        @include clearfix;
-      }
       
       &__head {
         margin: 24px 0 8px;
