@@ -199,27 +199,30 @@
         %li.social-icon__box__link--pinterest
           = fa_icon "pinterest"
 
-  .another_merchandise
-    %h2
-      くまちゃんさんのその他の出品
-    .items
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
+  .anothers
+    .another-merchandise
+      %h2.another-merchandise__head
+        = link_to "#", class: "another-merchandise__head__link" do
+          くまちゃんさんのその他の出品
+      .items
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
 
-  .another_merchandise
-    %h2
-      コーチのショルダーバッグ その他の商品
-    .items
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
-      = render "showpage-item"
+    .another-merchandise
+      %h2.another-merchandise__head
+        = link_to "#", class: "another-merchandise__head__link" do
+          コーチのショルダーバッグ その他の商品
+      .items
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
+        = render "showpage-item"
 
 -# アプリダウンロードバーナー
 = render 'layouts/app-download'
