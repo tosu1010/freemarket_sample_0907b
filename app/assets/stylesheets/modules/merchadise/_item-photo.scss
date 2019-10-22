@@ -1,0 +1,71 @@
+.merchandise-detail {
+  &__main {
+    &__content {
+      .left-content {
+        .item-photos {
+          width: 300px;
+          position: relative;
+          background-color: $ultra-light-grey;
+          
+          .owl-stage {
+            height: 300px;
+
+            .owl-item {
+              height: 300px;
+            }
+          }
+
+          &__image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+          }
+  
+          .owl-dots {
+            margin: 0;
+            width: 300px;
+            font-size: 0;
+            text-align: left;
+            background-color: $ultra-light-grey;
+            
+            .owl-dot {
+              position: relative;
+              margin: 0;
+              overflow: hidden;
+              opacity: .4;
+              width: 60px;
+              height: 60px;
+              display: inline-block;
+              cursor: default;
+              border-radius: 0;
+
+              &.active {
+                opacity: 1;
+
+              }
+              
+              &__inner {
+                overflow: hidden;
+                padding: 0;
+                pointer-events: none;
+                
+                &__image {
+                  object-fit: cover;
+                  width: 60px;
+                  height: 60px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

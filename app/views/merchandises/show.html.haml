@@ -7,14 +7,49 @@
     %h2.merchandise-detail__main__name.bold
       コーチ ショルダーバッグ
     .merchandise-detail__main__content
-      .item-photo
-        = image_tag "https://placehold.jp/300x300.png"
-        -# = image_tag "https://placehold.jp/300x300.png"
-        -# = image_tag "https://placehold.jp/300x300.png"
-        -# = image_tag "https://placehold.jp/300x300.png"
-        -# = image_tag "https://placehold.jp/300x300.png"
-        -# = image_tag "https://placehold.jp/300x300.png"
-        -# = image_tag "https://placehold.jp/300x300.png"
+      .left-content
+        .item-photos
+          .owl-carousel.owl-loaded.owl-drag
+            .owl-stage-outer
+              %ul.owl-stage
+                %li.owl-item
+                  = image_tag "https://placehold.jp/200x300.png", class: "item-photos__image"
+                %li.owl-item
+                  = image_tag "https://placehold.jp/300x200.png", class: "item-photos__image"
+                %li.owl-item
+                  = image_tag "https://placehold.jp/300x300.png", class: "item-photos__image"
+                %li.owl-item
+                  = image_tag "https://placehold.jp/400x400.png", class: "item-photos__image"
+                %li.owl-item
+                  = image_tag "https://placehold.jp/500x500.png", class: "item-photos__image"
+                %li.owl-item
+                  = image_tag "https://placehold.jp/600x600.png", class: "item-photos__image"
+                %li.owl-item
+                  = image_tag "https://placehold.jp/700x700.png", class: "item-photos__image"
+
+            %ul.owl-dots
+              %li.owl-dot
+                .owl-dot__inner
+                  = image_tag "https://placehold.jp/200x300.png", class: "owl-dot__inner__image"
+              %li.owl-dot
+                .owl-dot__inner
+                  = image_tag "https://placehold.jp/300x200.png", class: "owl-dot__inner__image"
+              %li.owl-dot
+                .owl-dot__inner
+                  = image_tag "https://placehold.jp/300x300.png", class: "owl-dot__inner__image"
+              %li.owl-dot
+                .owl-dot__inner
+                  = image_tag "https://placehold.jp/400x400.png", class: "owl-dot__inner__image"
+              %li.owl-dot
+                .owl-dot__inner
+                  = image_tag "https://placehold.jp/500x500.png", class: "owl-dot__inner__image"
+              %li.owl-dot
+                .owl-dot__inner
+                  = image_tag "https://placehold.jp/600x600.png", class: "owl-dot__inner__image"
+              %li.owl-dot
+                .owl-dot__inner
+                  = image_tag "https://placehold.jp/700x700.png", class: "owl-dot__inner__image"
+                
 
       %table.item-detail
         %tr
