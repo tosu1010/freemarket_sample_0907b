@@ -5,7 +5,7 @@
   &__header {
     width: 100%;
     height: 128px;
-    background-color:#f5f5f5;
+    background-color:$light-grey;
     display: flex;
   }
 
@@ -18,7 +18,7 @@
 /////ヘッダーとフッター以外の全体のレイアウト/////
   &__contents {
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: $light-grey;
 
 /////入力箇所の大枠/////
     &__main {
@@ -34,7 +34,7 @@
   .content {
     width: 620px;
     background-color: white;
-    border-bottom: solid 1.5px #f5f5f5;
+    border-bottom: solid 1.5px $light-grey;
     padding: 40px;
     display: inline-block;
   }
@@ -43,7 +43,7 @@
     .content__head {
       margin: 0 auto;
       font-size: 22px;
-      color: #333333;
+      color: $grey-black333;
       font-weight: bold;
       background-color: white;
       text-align: center;
@@ -54,7 +54,7 @@
     .content__box__img__title-photos {
       font-size: 16px;
       font-weight: bold;
-      color: #333333;
+      color: $grey-black333;
       display: inline-block;  
     }
 
@@ -68,7 +68,7 @@
       color: white;
       font-size: 12px;
       font-weight: bold;
-      background-color: #ea352d;
+      background-color: $red;
       float: right;
     }
 
@@ -77,7 +77,7 @@
       font-size: 14px;
       font-weight: normal;
       margin: 8px 0 0 0;
-      color: #333333;
+      color: $grey-black333;
     }
 
 /////画像選択の部分/////
@@ -104,8 +104,8 @@
       .content__box__dropbox {
         width: 100%;
         height: 162px;
-        background-color: #f5f5f5;
-        border: dashed 1px #cccccc;
+        background-color: $light-grey;
+        border: dashed 1px $greyccc;
         text-align: center;
         display: inline-block;
         cursor: pointer;
@@ -132,7 +132,7 @@
 //   font-size: 14px;
 //   float: left;
 //   color: #0098E8;
-//   background-color: #f5f5f5;
+//   background-color: $light-grey;
 //   border: none;
 //   text-align: center;
 //   line-height: 3.2;
@@ -150,7 +150,7 @@
 //   height: 100%;
 //   font-size: 14px;
 //   padding: 0;
-//   background-color: #f5f5f5;
+//   background-color: $light-grey;
 //   border: none;
 //   outline: 0;
 //   color: #0098E8;
@@ -170,8 +170,8 @@
 // }
 
 // .img-field {
-//   background-color: #f5f5f5;
-//   border: 1px solid #eee;
+//   background-color: $light-grey;
+//   border: 1px solid $light-grey;
 // }
 
 // .img-field-upper {
@@ -196,7 +196,7 @@
 //   float: right;
 //   text-align: center;
 //   line-height: 2.8;
-//   border-left: 1px solid #eee;
+//   border-left: 1px solid $light-grey;
 //   box-sizing: border-box;
 // }
 
@@ -211,8 +211,8 @@
 //   width: 491px;   //公式の横幅をコピー
 //   //共通化できる
 //   height: 162px;
-//   background-color: #f5f5f5;
-//   border: dashed 1px #cccccc;
+//   background-color: $light-grey;
+//   border: dashed 1px $greyccc;
 //   text-align: center;
 //   display: inline-block;
 //   float: right;
@@ -250,8 +250,8 @@
 //   width: 362px;
 //   //共通化できる
 //   height: 162px;
-//   background-color: #f5f5f5;
-//   border: dashed 1px #cccccc;
+//   background-color: $light-grey;
+//   border: dashed 1px $greyccc;
 //   text-align: center;
 //   display: inline-block;
 //   float: right;
@@ -284,8 +284,8 @@
 //     width: 234px;
 //     //
 //     height: 162px;
-//     background-color: #f5f5f5;
-//     border: dashed 1px #cccccc;
+//     background-color: $light-grey;
+//     border: dashed 1px $greyccc;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -318,8 +318,8 @@
 //     width: 106px;
 //     //
 //     height: 162px;
-//     background-color: #f5f5f5;
-//     border: dashed 1px #cccccc;
+//     background-color: $light-grey;
+//     border: dashed 1px $greyccc;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -355,8 +355,8 @@
 //   .content__box__dropbox__6 {
 //     width: 100%;
 //     height: 162px;
-//     background-color: #f5f5f5;
-//     border: dashed 1px #cccccc;
+//     background-color: $light-grey;
+//     border: dashed 1px $greyccc;
 //     text-align: center;
 //     display: inline-block;
 //     cursor: pointer;
@@ -385,8 +385,8 @@
 //     width: 491px;
 //     //
 //     height: 162px;
-//     background-color: #f5f5f5;
-//     border: dashed 1px #cccccc;
+//     background-color: $light-grey;
+//     border: dashed 1px $greyccc;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -420,8 +420,8 @@
 //     width: 362px;
 //     //
 //     height: 162px;
-//     background-color: #f5f5f5;
-//     border: dashed 1px #cccccc;
+//     background-color: $light-grey;
+//     border: dashed 1px $greyccc;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -454,8 +454,8 @@
 //     width: 234px;
 //     //
 //     height: 162px;
-//     background-color: #f5f5f5;
-//     border: dashed 1px #cccccc;
+//     background-color: $light-grey;
+//     border: dashed 1px $greyccc;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -488,8 +488,8 @@
 //     width: 106px;
 //     //
 //     height: 162px;
-//     background-color: #f5f5f5;
-//     border: dashed 1px #cccccc;
+//     background-color: $light-grey;
+//     border: dashed 1px $greyccc;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -530,7 +530,7 @@
     &__title {
       font-size: 14px;
       font-weight: bold;
-      color: #333333;
+      color: $grey-black333;
       display: inline-block;
     }
 
@@ -542,7 +542,7 @@
           height: 48px;
           margin: 8px 0 0 0;
           padding: 10px 16px 8px;
-          border: 1px solid #ccc;
+          border: 1px solid $grey;
           border-radius: 4px;
           font-size: 16px;
           box-sizing: border-box;
@@ -559,7 +559,7 @@
     .content__box__title {
       font-size: 14px;
       font-weight: bold;
-      color: #333333;
+      color: $grey-black333;
       display: inline-block;
   
       .form_require {
@@ -571,7 +571,7 @@
         color: white;
         font-size: 12px;
         font-weight: bold;
-        background-color: #ea352d;
+        background-color: $red;
         float: right;
       }  
 
@@ -584,7 +584,7 @@
         height: 142px;
         margin: 8px 0 0 0;
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid $grey;
         font-size: 15.8px;
         resize: vertical;
         box-sizing: border-box;
@@ -601,12 +601,12 @@
       float: left;
       font-size: 14px;
       font-weight: bold;
-      color: #888888;
+      color: $middle-grey;
 
         &-head {
           font-size: 14px;
           font-weight: bold;
-          color: #888888;
+          color: $middle-grey;
           font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
         }
 
@@ -658,7 +658,7 @@
               appearance: none;
               padding: 0px 16px;
               background-color: white;
-              border: 1px solid #ccc;
+              border: 1px solid $grey;
               outline-width: 2px;
             }
 
@@ -713,7 +713,7 @@
           color: white;
           font-size: 12px;
           font-weight: bold;
-          background-color: #ea352d;
+          background-color: $red;
           float: right;
         }          
 
@@ -738,7 +738,7 @@
           .input-form {
             width: 160px;
             padding: 10px 16px 8px;
-            border: 1px solid #ccc;
+            border: 1px solid $grey;
             border-radius: 4px;
             font-size: 16px;
             box-sizing: border-box;
@@ -756,18 +756,18 @@
       width: 100%;
       height: 63px;
       padding: 24px 0;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
+      border-top: 1px solid $grey;
+      border-bottom: 1px solid $grey;
       box-sizing: border-box;
 
       .fee {
         font-size: 14px;
-        color: #333333;
+        color: $grey-black333;
         float: left;
       }
 
       .hyphen {
-        color: #333333;
+        color: $grey-black333;
         float: right;
 
         .sales-fee{
@@ -814,11 +814,11 @@
       p {
         font-size: 14px;
         margin: 0px;
-        color: #333333;
+        color: $grey-black333;
       }
 
       span {
-        color: #0099E8;
+        color: $cyan;
       }
 
     }
@@ -866,7 +866,7 @@
   .exhibit__footer {
     width: 100%;
     height: 220px;
-    background-color: #f5f5f5;
+    background-color: $light-grey;
 
     &__content {
       width: 456px;
@@ -897,7 +897,7 @@
 /////プライバシーポリシー/////
         .policy {
           float: left;
-          color: #333333; 
+          color: $grey-black333; 
         }
 
         .policy:hover {
@@ -910,7 +910,7 @@
         .agreement {
           float: left;
           margin: 0 16px ;
-          color: #333333; 
+          color: $grey-black333; 
         }
 
         .agreement:hover {
@@ -921,7 +921,7 @@
 /////特定商取引に関する表記/////
         .notation {
           float: right;
-          color: #333333; 
+          color: $grey-black333; 
 
           &:hover {
             touch-action: manipulation;
@@ -958,7 +958,7 @@
           font-size: 13px;
           margin: 0 auto;
           text-align: center;
-          color: #333333;
+          color: $grey-black333;
         }
 
       }
