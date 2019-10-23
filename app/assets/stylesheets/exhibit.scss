@@ -43,7 +43,7 @@
     .content__head {
       margin: 0 auto;
       font-size: 22px;
-      color: $grey-black333;
+      color: $grey-black;
       font-weight: bold;
       background-color: white;
       text-align: center;
@@ -54,7 +54,7 @@
     .content__box__img__title-photos {
       font-size: 16px;
       font-weight: bold;
-      color: $grey-black333;
+      color: $grey-black;
       display: inline-block;  
     }
 
@@ -77,7 +77,7 @@
       font-size: 14px;
       font-weight: normal;
       margin: 8px 0 0 0;
-      color: $grey-black333;
+      color: $grey-black;
     }
 
 /////画像選択の部分/////
@@ -105,7 +105,7 @@
         width: 100%;
         height: 162px;
         background-color: $light-grey;
-        border: dashed 1px $greyccc;
+        border: dashed 1px $grey;
         text-align: center;
         display: inline-block;
         cursor: pointer;
@@ -212,7 +212,7 @@
 //   //共通化できる
 //   height: 162px;
 //   background-color: $light-grey;
-//   border: dashed 1px $greyccc;
+//   border: dashed 1px $grey;
 //   text-align: center;
 //   display: inline-block;
 //   float: right;
@@ -251,7 +251,7 @@
 //   //共通化できる
 //   height: 162px;
 //   background-color: $light-grey;
-//   border: dashed 1px $greyccc;
+//   border: dashed 1px $grey;
 //   text-align: center;
 //   display: inline-block;
 //   float: right;
@@ -285,7 +285,7 @@
 //     //
 //     height: 162px;
 //     background-color: $light-grey;
-//     border: dashed 1px $greyccc;
+//     border: dashed 1px $grey;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -319,7 +319,7 @@
 //     //
 //     height: 162px;
 //     background-color: $light-grey;
-//     border: dashed 1px $greyccc;
+//     border: dashed 1px $grey;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -356,7 +356,7 @@
 //     width: 100%;
 //     height: 162px;
 //     background-color: $light-grey;
-//     border: dashed 1px $greyccc;
+//     border: dashed 1px $grey;
 //     text-align: center;
 //     display: inline-block;
 //     cursor: pointer;
@@ -386,7 +386,7 @@
 //     //
 //     height: 162px;
 //     background-color: $light-grey;
-//     border: dashed 1px $greyccc;
+//     border: dashed 1px $grey;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -421,7 +421,7 @@
 //     //
 //     height: 162px;
 //     background-color: $light-grey;
-//     border: dashed 1px $greyccc;
+//     border: dashed 1px $grey;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -455,7 +455,7 @@
 //     //
 //     height: 162px;
 //     background-color: $light-grey;
-//     border: dashed 1px $greyccc;
+//     border: dashed 1px $grey;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -489,7 +489,7 @@
 //     //
 //     height: 162px;
 //     background-color: $light-grey;
-//     border: dashed 1px $greyccc;
+//     border: dashed 1px $grey;
 //     text-align: center;
 //     display: inline-block;
 //     float: right;
@@ -530,7 +530,7 @@
     &__title {
       font-size: 14px;
       font-weight: bold;
-      color: $grey-black333;
+      color: $grey-black;
       display: inline-block;
     }
 
@@ -559,7 +559,7 @@
     .content__box__title {
       font-size: 14px;
       font-weight: bold;
-      color: $grey-black333;
+      color: $grey-black;
       display: inline-block;
   
       .form_require {
@@ -762,12 +762,12 @@
 
       .fee {
         font-size: 14px;
-        color: $grey-black333;
+        color: $grey-black;
         float: left;
       }
 
       .hyphen {
-        color: $grey-black333;
+        color: $grey-black;
         float: right;
 
         .sales-fee{
@@ -814,7 +814,7 @@
       p {
         font-size: 14px;
         margin: 0px;
-        color: $grey-black333;
+        color: $grey-black;
       }
 
       span {
@@ -897,7 +897,7 @@
 /////プライバシーポリシー/////
         .policy {
           float: left;
-          color: $grey-black333; 
+          color: $grey-black; 
         }
 
         .policy:hover {
@@ -910,7 +910,7 @@
         .agreement {
           float: left;
           margin: 0 16px ;
-          color: $grey-black333; 
+          color: $grey-black; 
         }
 
         .agreement:hover {
@@ -921,7 +921,7 @@
 /////特定商取引に関する表記/////
         .notation {
           float: right;
-          color: $grey-black333; 
+          color: $grey-black; 
 
           &:hover {
             touch-action: manipulation;
@@ -958,7 +958,7 @@
           font-size: 13px;
           margin: 0 auto;
           text-align: center;
-          color: $grey-black333;
+          color: $grey-black;
         }
 
       }
