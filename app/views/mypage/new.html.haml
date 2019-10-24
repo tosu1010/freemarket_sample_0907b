@@ -1,0 +1,65 @@
+-# ヘッダー
+= render 'layouts/header_responsive'
+= render 'layouts/header'
+
+.mypage
+  .mypage__identification
+    %h2.mypage__identification__header
+      本人情報の登録
+    = fields_for :Address do |f|
+      .contents
+        .contents__information
+          %p お客さまの本人情報をご登録ください。
+          %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          .contents__information__upload
+            = link_to "https://www.mercari.com/jp/help_center/article/495/", target: :_blank , class:"link" do
+              本人確認書類のアップロードについて
+              %i.fa.fa-angle-right
+        .contents__field
+          = f.label "お名前"
+          %p.form__contents ◯◯ ◯◯
+        .contents__field
+          = f.label "お名前カナ"
+          %p.form__contents ◯◯ ◯◯
+        .contents__field
+          = f.label "生年月日"
+          %p.form__contents 2000/01/01
+        .contents__field
+          = f.label :郵便番号
+          %span.optional 任意
+          = f.text_field :postal_code, autocomplete: "postal_code", placeholder: "例)123-4567"
+        .contents__field
+          = f.label :都道府県
+          %span.optional 任意
+          = fa_icon "chevron-down", class: "aicon-arrow-bottom"
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '--'}, class: 'prefecture'
+        .contents__field
+          = f.label :市区町村
+          %span.optional 任意
+          = f.text_field :city, autocomplete: "city", placeholder: "例)横浜市緑区"
+        .contents__field
+          = f.label :番地
+          %span.optional 任意
+          = f.text_field :number, autocomplete: "number", placeholder: "例)青山1-1-1"
+        .contents__field
+          = f.label :建物名
+          %span.optional 任意
+          = f.text_field :building, autocomplete: "building", placeholder: "例)柳ビル103"
+        .contents__field
+          .contents__field__button
+            = f.submit "登録する", class: "form__submit"
+          .text-right
+            %p.text__personal
+              = link_to "https://www.mercari.com/jp/help_center/article/423/", target: :_blank , class:"link" do
+                本人情報の登録について
+                = fa_icon 'angle-right'
+
+  
+  = render "menu"
+
+  -# 出品ボタン
+= render 'layouts/exhibit'
+-# アプリダウンロードバーナー
+= render 'layouts/app-download'
+-# フッター
+= render 'layouts/footer' 

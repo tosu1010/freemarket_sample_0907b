@@ -40,11 +40,11 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | postal_code | string | null: false |
-| prefecture  | string | null: false |
 | city        | string | null: false |
 | number      | string | null: false |
 | building    | string ||
 | user_id             | references | null: false, foreign_key: true |
+| prefecture_id       | string | null: false |
 
 ### Association
 - belongs_to :user
@@ -56,7 +56,7 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | postal_code | string ||
-| prefecture  | string ||
+| prefecture_id  | string ||
 | city        | string ||
 | number      | string ||
 | building    | string ||

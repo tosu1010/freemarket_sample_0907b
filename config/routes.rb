@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :merchandises, only: [:index]
 
   get '/mypage/profile', to: 'mypage#edit'
+  get '/mypage/identification', to: 'mypage#new'
+
   get 'log_in' => 'login#log_in'
   get 'sign_up_before' => 'signup#sign_up_before'
   get 'sign_up_2' => 'signup#sign_up_2'
