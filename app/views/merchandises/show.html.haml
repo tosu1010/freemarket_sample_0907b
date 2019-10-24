@@ -1,8 +1,9 @@
--# ヘッダー
-= render 'layouts/header_responsive'
-= render 'layouts/header'
-
 .merchandise-detail
+
+  -# ヘッダー
+  = render 'layouts/header_responsive'
+  = render 'layouts/header'
+
   .merchandise-detail__main
     %h2.merchandise-detail__main__name.bold
       コーチ ショルダーバッグ
@@ -50,6 +51,13 @@
                 .owl-dot__inner
                   = image_tag "https://placehold.jp/700x700.png", class: "owl-dot__inner__image"
                 
+      .price-box--mini
+        %span.price-box--mini__price.bold
+          ￥700
+        %span.price-box--mini__tax
+          (税込)
+        %span.price-box--mini__shipping-free
+          送料込み
 
       %table.item-detail
         %tr
@@ -258,8 +266,12 @@
         = render "showpage-item"
         = render "showpage-item"
         = render "showpage-item"
+  
+  .buy-button-fix
+    = link_to "#", class: "buy-button-fix__button" do
+      購入画面に進む
 
--# アプリダウンロードバーナー
-= render 'layouts/app-download'
--# フッター
-= render 'layouts/footer'
+  -# アプリダウンロードバーナー
+  = render 'layouts/app-download'
+  -# フッター
+  = render 'layouts/footer'

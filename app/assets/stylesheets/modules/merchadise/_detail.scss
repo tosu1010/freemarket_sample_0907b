@@ -1,10 +1,18 @@
 .merchandise-detail {
+  width: auto;
+
   &__main {
     margin: 40px auto 0;
     padding: 24px 40px 40px;
     width: 620px;
     background-color: $white;
-    
+
+    @media screen and (max-width: 768px) {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 24px 16px 55px;
+      margin-top: 40px;
+    }
     
     &__name {
       font-size: 24px;
@@ -20,8 +28,11 @@
 
       .left-content {
         float: left;
-      }
 
+        @media screen and (max-width: 768px) {
+          float: none;
+        }
+      }
 
       .item-detail {
         float: right;
@@ -29,6 +40,12 @@
         height: 418px;
         border: solid 1px $light-grey;
         border-collapse:  collapse;
+
+        @media screen and (max-width: 768px) {
+          width: 360px;
+          margin: 8px auto 0;
+          float: none;
+        }
 
         th {
           background-color: $ultra-light-grey;
@@ -84,9 +101,20 @@
       margin-top: 24px;
       text-align: center;
 
+      @media screen and (max-width: 768px) {
+        
+      }
+
       &__price {
         font-size: 50px;
         line-height: 50px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 32px;
+          line-height: 32px;
+          margin-right: 8px;
+          font-weight: 600;
+        }
       }
 
       &__tax {
@@ -97,6 +125,24 @@
       &__shipping-free {
         font-size: 16px;
         line-height: 16px;
+      }
+      
+      // 768px以下は画像と商品概要の間に価格が出現するため。
+      &--mini {
+        display: none;
+
+        @media screen and (max-width: 768px) {
+          text-align: center;
+          display: block;
+          margin-top: 24px;
+
+          &__price {
+            font-size: 32px;
+            line-height: 32px;
+            margin-right: 8px;
+            font-weight: 600;
+          }
+        }
       }
     }
 
@@ -111,10 +157,21 @@
       font-weight: 600;
       transition: 0.3s ease-in-out;
 
+      
       &:hover {
         position: relative;
         cursor: pointer;
         background-color: #E52017;
+      }
+
+      @media screen and (max-width: 768px) {
+        height: 56px;
+        font-size: 14px;
+
+        &:hover {
+          opacity: .7;
+          text-decoration: underline;
+        }
       }
     }
 
@@ -122,6 +179,11 @@
       padding-top:32px;
       font-size: 18px;
       line-height: 27px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
 
     .item-button {
@@ -131,8 +193,16 @@
         @include clearfix;
       }
 
+      @media screen and (max-width: 768px) {
+        font-size: 12px;
+      }
+
       &__left {
         float: left;
+
+        @media screen and (max-width: 768px) {
+          float: none;
+        }
         
         .likes {
           background-color: $light-grey;
@@ -167,10 +237,19 @@
       &__right {
         float: right;
 
+        @media screen and (max-width: 768px) {
+          float: none;
+          margin-top: 16px;
+        }
+
         &__link {
           display: block;
           color: #0099E8;
           line-height: 32px;
+
+          @media screen and (max-width: 768px) {
+            line-height: 12px;
+          }
           
           &:hover {
             opacity: .7;

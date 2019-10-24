@@ -6,12 +6,25 @@
           width: 300px;
           position: relative;
           background-color: $ultra-light-grey;
+
+          @media screen and (max-width: 768px) {
+            width: 360px;
+            margin: 0 auto;
+          }
           
           .owl-stage {
             height: 300px;
 
+            @media screen and (max-width: 768px) {
+              height: 360px;
+            }
+
             .owl-item {
               height: 300px;
+              
+              @media screen and (max-width: 768px) {
+                height: 360px;
+              }
             }
           }
 
@@ -24,8 +37,12 @@
             margin: auto;
             max-width: 300px;
             max-height: 300px;
-            width: auto;
-            height: auto;
+            object-fit: contain;
+
+            @media screen and (max-width: 768px) {
+              max-width: 360px;
+              max-height: 360px;
+            }
           }
   
           .owl-dots {
@@ -34,6 +51,11 @@
             font-size: 0;
             text-align: left;
             background-color: $ultra-light-grey;
+
+            @media screen and (max-width: 768px) {
+              width: 360px;
+              display: block;
+            }
             
             .owl-dot {
               position: relative;
@@ -46,9 +68,13 @@
               cursor: default;
               border-radius: 0;
 
+              @media screen and (max-width: 768px) {
+                width: 72px;
+                height: 72px;
+              }
+
               &.active {
                 opacity: 1;
-
               }
               
               &__inner {
@@ -60,6 +86,11 @@
                   object-fit: cover;
                   width: 60px;
                   height: 60px;
+
+                  @media screen and (max-width: 768px) {
+                    width: 72px;
+                    height: 72px;
+                  }
                 }
               }
             }
