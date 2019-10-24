@@ -67,10 +67,25 @@ if(path === '/sign_up_6') {
 // --------------------------------------------------------
 
 // クレジットカードの裏面（セキュリティコード）の説明(classの追加または削除)
+// ページでクラスの統一ができていないため、下記で2パターン作成
 
 $(document).ready(function(){
   $('.seq-card').hide();
   $('div .image').hide();
+});
+
+$(function() {
+  $('.contents__field__reason').click(function() {
+    if($('.credit-seq_before').hasClass('credit-seq_before')) {
+      $('.credit-seq_before').toggleClass('credit-seq_before').toggleClass('credit-seq_after');
+      $('.seq-card').show();
+      $('div .image').show();
+    } else {
+      $('.credit-seq_after').toggleClass('credit-seq_after').toggleClass('credit-seq_before');
+      $('.seq-card').hide();
+      $('div .image').hide();
+    }
+  });
 });
 
 $(function() {
@@ -84,7 +99,7 @@ $(function() {
       $('.seq-card').hide();
       $('div .image').hide();
     }
-  }); 
+  });
 });
 
 // --------------------------------------------------------
