@@ -1,0 +1,971 @@
+.exhibit {
+
+
+/////ヘッダー部分/////
+  &__header {
+    width: 100%;
+    height: 128px;
+    background-color:$light-grey;
+    display: flex;
+  }
+
+  .logo {
+    width: 185px;
+    height: 49px;
+    margin: auto;
+  }
+  
+/////ヘッダーとフッター以外の全体のレイアウト/////
+  &__contents {
+    width: 100%;
+    background-color: $light-grey;
+
+/////入力箇所の大枠/////
+    &__main {
+      width: 700px;
+      background-color: white;
+      margin: 0 auto ;
+    }
+
+  }
+
+  
+/////各入力欄の枠/////
+  .content {
+    width: 620px;
+    background-color: white;
+    border-bottom: solid 1.5px $light-grey;
+    padding: 40px;
+    display: inline-block;
+  }
+
+/////「商品の情報を入力」の部分/////
+    .content__head {
+      margin: 0 auto;
+      font-size: 22px;
+      color: $grey-black;
+      font-weight: bold;
+      background-color: white;
+      text-align: center;
+    }
+
+
+/////「出品画像」の部分/////
+    .content__box__img__title-photos {
+      font-size: 16px;
+      font-weight: bold;
+      color: $grey-black;
+      display: inline-block;  
+    }
+
+/////「必須」の部分////
+    .form_require {
+      height: 20px;
+      line-height: 20px;
+      padding: 0 4px;
+      border-radius: 2px;
+      margin: 0 0 0 8px;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: $red;
+      float: right;
+    }
+
+/////説明部分/////
+    .explain {
+      font-size: 14px;
+      font-weight: normal;
+      margin: 8px 0 0 0;
+      color: $grey-black;
+    }
+
+/////画像選択の部分/////
+/////画像選択部分の大枠/////
+    .content__box__img__select-img {
+      width: 100%;
+      height: 162px;
+      margin: 16px 0 0 0;
+    }
+
+/////画像を６個目選択時に下の段を表示するための大枠/////
+    .content__box__select-img-2 {
+      width: 100%;
+      height: 162px;
+      margin: 16px 0 0 0;
+    }
+
+/////出品画像////
+      .select_img { 
+        display: none; //inputのデフォルトを非表示
+      }
+
+/////inputのデザイン/////
+      .content__box__dropbox {
+        width: 100%;
+        height: 162px;
+        background-color: $light-grey;
+        border: dashed 1px $grey;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+
+/////inputのデザインのテキスト部分/////
+      &__form {
+        height: 162px;
+        display: flex;
+        align-items: center;
+        justify-content: center;          
+        box-sizing: border-box;
+      }
+
+    }
+
+
+//※※※※※※※※※※※※※※※※※※※※※今回のレビュー対象外※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※はじまり
+// /////javascriptによる追加要素のcss/////はじまり
+
+// /////画像選択共通部分////
+// .edit-btn {
+//   width: 50%;
+//   height: 100%;
+//   font-size: 14px;
+//   float: left;
+//   color: #0098E8;
+//   background-color: $light-grey;
+//   border: none;
+//   text-align: center;
+//   line-height: 3.2;
+// }
+
+// /////画像選択共通部分////
+// .edit-btn:hover {
+//   text-decoration: underline;
+//   opacity: .7;
+// }
+
+// /////画像選択共通部分////
+// #clear, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear8, #clear9, #clear10 {
+//   width: 50%;
+//   height: 100%;
+//   font-size: 14px;
+//   padding: 0;
+//   background-color: $light-grey;
+//   border: none;
+//   outline: 0;
+//   color: #0098E8;
+// }
+
+// /////画像選択共通部分////
+// #clear:hover, #clear2:hover, #clear3:hover, #clear4:hover, #clear5:hover, #clear6:hover, #clear7:hover, #clear8:hover, #clear9:hover, #clear10:hover {
+//   text-decoration: underline;
+//   opacity: .7;
+// }
+
+// //////出品画像表示欄1/////
+// .img-view {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+// }
+
+// .img-field {
+//   background-color: $light-grey;
+//   border: 1px solid $light-grey;
+// }
+
+// .img-field-upper {
+//   height: 116px;
+// }
+
+// .preview {   //選択画像の表示
+//   line-height: 116px;
+//   width: 100%;
+//   margin: 15px 0 0 0;
+//   position: static;
+// }
+
+// .img-field-bottom {
+//   height: 44px;
+//   box-sizing: border-box;
+// }
+
+// .delete-btn {
+//   width: 50%;
+//   height: 100%;
+//   float: right;
+//   text-align: center;
+//   line-height: 2.8;
+//   border-left: 1px solid $light-grey;
+//   box-sizing: border-box;
+// }
+
+    
+// /////画像選択後の追加要素。選択された画像の数：選択部分/////
+// /////出品画像1:1/////
+// .select_img_2 {
+//   display: none;
+// }
+
+// .content__box__dropbox__2 {
+//   width: 491px;   //公式の横幅をコピー
+//   //共通化できる
+//   height: 162px;
+//   background-color: $light-grey;
+//   border: dashed 1px $grey;
+//   text-align: center;
+//   display: inline-block;
+//   float: right;
+//   cursor: pointer;
+//   //
+// }
+
+
+// //////出品画像表示欄2/////
+// .img-view2 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+
+// .img-field-upper {
+//   height: 116px;
+// }
+
+// .preview2 {
+//   line-height: 116px;
+//   width: 100%;
+//   margin: 15px 0 0 0;
+//   position: static;
+//   box-sizing:border-box;
+// }
+          
+// /////出品画像2:1/////
+// .select_img_3 {
+//   display: none;
+// }
+
+// .content__box__dropbox__3 {
+//   width: 362px;
+//   //共通化できる
+//   height: 162px;
+//   background-color: $light-grey;
+//   border: dashed 1px $grey;
+//   text-align: center;
+//   display: inline-block;
+//   float: right;
+//   cursor: pointer;
+//   //
+// }
+
+// //////出品画像表示欄3/////
+// .img-view3 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+  
+//   .preview3 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//     box-sizing:border-box;
+//   }
+      
+// /////出品画像3:1/////
+// .select_img_4 {
+//   display: none;
+// }
+
+//   .content__box__dropbox__4 {
+//     width: 234px;
+//     //
+//     height: 162px;
+//     background-color: $light-grey;
+//     border: dashed 1px $grey;
+//     text-align: center;
+//     display: inline-block;
+//     float: right;
+//     cursor: pointer;
+//     //
+//   }
+
+// //////出品画像表示欄4/////
+// .img-view4 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+  
+//   .preview4 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//     box-sizing:border-box;
+//   }
+
+// /////出品画像4:1/////
+// .select_img_5 {
+//   display: none;
+// }
+
+//   .content__box__dropbox__5 {
+//     width: 106px;
+//     //
+//     height: 162px;
+//     background-color: $light-grey;
+//     border: dashed 1px $grey;
+//     text-align: center;
+//     display: inline-block;
+//     float: right;
+//     cursor: pointer;
+//     //
+//   }
+
+//   .change_select_img {
+//     display: none;
+//   }
+
+// //////出品画像表示欄5/////
+// .img-view5 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+
+//   .preview5 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//     box-sizing:border-box;
+//   }
+          
+// /////出品画像5:1/////
+// .select_img_6 {
+//   display: none;
+// }
+
+//   .content__box__dropbox__6 {
+//     width: 100%;
+//     height: 162px;
+//     background-color: $light-grey;
+//     border: dashed 1px $grey;
+//     text-align: center;
+//     display: inline-block;
+//     cursor: pointer;
+//   }
+
+// //////出品画像表示欄6/////
+// .img-view6 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+// }
+
+//   .preview6 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//   }
+
+// /////出品画像6:1/////
+// .select_img_7 {
+//   display: none;
+// }
+
+//   .content__box__dropbox__7 {
+//     width: 491px;
+//     //
+//     height: 162px;
+//     background-color: $light-grey;
+//     border: dashed 1px $grey;
+//     text-align: center;
+//     display: inline-block;
+//     float: right;
+//     cursor: pointer;
+//     //
+//   }
+          
+// //////出品画像表示欄7/////
+// .img-view7 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+      
+//   .preview7 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//     box-sizing:border-box;
+
+//   }
+  
+// /////出品画像7:1/////
+// .select_img_8 {
+//   display: none;
+// }
+
+//   .content__box__dropbox__8 {
+//     width: 362px;
+//     //
+//     height: 162px;
+//     background-color: $light-grey;
+//     border: dashed 1px $grey;
+//     text-align: center;
+//     display: inline-block;
+//     float: right;
+//     cursor: pointer;
+//     //
+//   }
+  
+// //////出品画像表示欄8/////
+// .img-view8 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+          
+//   .preview8 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//     box-sizing:border-box;
+//   }
+
+// /////出品画像8:1/////
+// .select_img_9 {
+//   display: none;
+// }
+
+//   .content__box__dropbox__9 {
+//     width: 234px;
+//     //
+//     height: 162px;
+//     background-color: $light-grey;
+//     border: dashed 1px $grey;
+//     text-align: center;
+//     display: inline-block;
+//     float: right;
+//     cursor: pointer;
+//     //
+//   }
+
+// //////出品画像表示欄9/////
+// .img-view9 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+
+//   .preview9 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//     box-sizing:border-box;
+//   }
+
+
+// /////出品画像9:1/////
+// .select_img_10 {
+//   display: none;
+// }
+//   .content__box__dropbox__10 {
+//     width: 106px;
+//     //
+//     height: 162px;
+//     background-color: $light-grey;
+//     border: dashed 1px $grey;
+//     text-align: center;
+//     display: inline-block;
+//     float: right;
+//     cursor: pointer;
+//     //
+//   }
+
+// //////出品画像表示欄10/////
+// .img-view10 {
+//   width: 116px;
+//   height: 160px;
+//   float: left;
+//   margin: 0 0 0 10px;
+// }
+  
+//   .preview10 {
+//     line-height: 116px;
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     position: static;
+//     box-sizing:border-box;
+//   }
+
+
+// /////出品画像10/////
+// /////なし/////
+
+// /////javascriptによる追加要素のcss/////おわり
+//※※※※※※※※※※※※※※※※※※※※※今回のレビュー対象外※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※終わり
+
+
+.content {
+
+  &__box {
+    width: 100%;
+    height: 70px;
+
+    &__title {
+      font-size: 14px;
+      font-weight: bold;
+      color: $grey-black;
+      display: inline-block;
+    }
+
+/////商品名/////
+      &__text-field {
+
+        .input-form {
+          width: 100%;
+          height: 48px;
+          margin: 8px 0 0 0;
+          padding: 10px 16px 8px;
+          border: 1px solid $grey;
+          border-radius: 4px;
+          font-size: 16px;
+          box-sizing: border-box;
+        }
+
+      }
+
+    }
+      
+/////商品説明/////
+  &__box__explain {
+    margin: 40px 0 0 0;
+
+    .content__box__title {
+      font-size: 14px;
+      font-weight: bold;
+      color: $grey-black;
+      display: inline-block;
+  
+      .form_require {
+        height: 20px;
+        line-height: 20px;
+        padding: 0 4px;
+        border-radius: 2px;
+        margin: 0 0 0 8px;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: $red;
+        float: right;
+      }  
+
+    }
+      
+    .content__box__text-area {
+
+      .input-text-form {
+        width: 100%;
+        height: 142px;
+        margin: 8px 0 0 0;
+        padding: 10px;
+        border: 1px solid $grey;
+        font-size: 15.8px;
+        resize: vertical;
+        box-sizing: border-box;
+      }
+
+    }
+
+  }
+
+}
+  
+/////商品の詳細&発送＆販売価格まで/////
+    .content__box__title__left {
+      float: left;
+      font-size: 14px;
+      font-weight: bold;
+      color: $middle-grey;
+
+        &-head {
+          font-size: 14px;
+          font-weight: bold;
+          color: $middle-grey;
+          font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        }
+
+          .question { 
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            background-color: #0098e6;
+            text-align: center;
+            font-size: 12px;
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            text-decoration: none;
+            /////公式とフォントが違う/////
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          }
+
+        }
+
+    .content__box__title__right {
+      width: 400px;
+      float: right;
+
+      .content__box {
+        height: 100%
+      }
+
+    }
+
+/////カテゴリーのプルダウン（jsによる追加要素も指定している）/////
+        .content__box__select-category, .content__box__select-category2, .content__box__select-category3, .content__box__select-shipping_charge { //jsで追加した要素も含む
+          margin: 8px 0 0;
+
+          .content__box__select-category__box {
+            width: 100%;
+            position: relative;
+            display: inline-block;
+          
+
+            .select, .select2, .select3, .select4 {  //jsで追加した要素も含む
+              width: 100%;
+              height: 48px;
+              font-size: 16px;
+              position: relative;
+              display: inline-block;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              padding: 0px 16px;
+              background-color: white;
+              border: 1px solid $grey;
+              outline-width: 2px;
+            }
+
+/////下矢印/////
+            .icon {
+              position: absolute;
+              right: 20px;
+              float: right;
+              top: 50%;
+              z-index: 2;
+              color: #888;
+              font-size: 8px;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+            }
+
+              i {
+                font-size: 20px;
+                font-weight: bold;
+              }
+
+            }
+
+          }
+  
+
+/////発送についての2段目3段目のプルダウン/////
+    .content__box-middle, .content__box-bottom {
+      margin: 40px 0 0 0;
+    }
+      .content__box__select {
+        margin: 8px 0 0;
+      }
+
+/////販売価格の右側/////
+    .content__box-price {
+      height: 48px;
+      padding: 0 0 24px;
+
+      &__left {
+          width: 200px;
+          float: left;
+          line-height: 48px;
+
+/////販売価格の部分の必須/////
+        .form_require2 {
+          height: 20px;
+          line-height: 20px;
+          padding: 0 4px;
+          border-radius: 2px;
+          margin: 13px 0 0 8px;
+          color: white;
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $red;
+          float: right;
+        }          
+
+      }
+
+      &__right {
+        font-size: 14px;
+        width: 200px;
+        line-height: 48px;
+        float: right;
+
+        &__yen {
+          width: 40px;
+          padding: 0 5px 0 0;
+          float: left;
+          text-align: right;
+          box-sizing: border-box;
+          font-size: 66.66667%;
+        }
+
+
+          .input-form {
+            width: 160px;
+            padding: 10px 16px 8px;
+            border: 1px solid $grey;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            text-align: right;
+            float: right;
+          }
+
+        }
+
+      }
+
+
+/////販売手数料/////
+    .content__box-fee {
+      width: 100%;
+      height: 63px;
+      padding: 24px 0;
+      border-top: 1px solid $grey;
+      border-bottom: 1px solid $grey;
+      box-sizing: border-box;
+
+      .fee {
+        font-size: 14px;
+        color: $grey-black;
+        float: left;
+      }
+
+      .hyphen {
+        color: $grey-black;
+        float: right;
+
+        .sales-fee{
+          border: none;
+          text-align: right;
+        }
+
+      }
+
+    }
+
+/////販売利益/////
+    .content__box-profit {
+      box-sizing: border-box;
+      width: 100%;
+      height: 83px;
+      padding: 24px 0;
+      font-size: 16px;
+      font-weight: bold;
+
+      &-left {
+        display: inline-block;
+      }
+
+      &-right {
+        float: right;
+        display: inline-block;
+      }
+
+      .total-price {
+        width: 300px;
+        float: right;
+        display: inline-block;
+        border: none;
+        text-align: right;
+        font-size: 34px;
+      }
+
+    }
+    
+/////注意事項/////
+    .content__caution {
+
+      p {
+        font-size: 14px;
+        margin: 0px;
+        color: $grey-black;
+      }
+
+      span {
+        color: $cyan;
+      }
+
+    }
+
+/////ボタン部分/////
+/////出品/////
+    .content-btn-exhibit {
+      width: 100%;
+      height:48px;
+      background-color: #E62017;
+      margin: 40px 0 0 0;
+
+      .text {
+        width: 100%;
+        display: block;
+        line-height: 48px;
+        color: white;
+        margin: 0 auto;
+        text-align:center;
+        text-decoration: none;
+      }
+
+    }
+/////もどる/////
+    .content-btn-back {
+      display: block;
+      width: 45%;
+      height: 48px;
+      background-color: #aaa;
+      margin: 24px 170.5px 0;
+
+      .back {
+        width: 100%;
+        display: block;
+        line-height: 48px;
+        color: white;
+        margin: 0 auto;
+        text-align:center;
+        text-decoration: none;
+      }
+
+    }
+
+/////フッター部分/////
+  .exhibit__footer {
+    width: 100%;
+    height: 220px;
+    background-color: $light-grey;
+
+    &__content {
+      width: 456px;
+      height: 100%;
+      padding: 40px 0;
+      margin: 0 auto;
+      box-sizing: border-box;
+      position: relative;
+
+      &__lists {
+        width: 100%;
+        height: 12px;
+        padding: 0 30px 0 53px;
+        display: flex;
+        box-sizing: border-box;
+
+        li {
+          list-style: none;
+          display: inline-block;
+        }
+
+        #link {
+          font-size: 11px;
+          display: inline-block;
+          text-decoration: none;
+          box-sizing: border-box;
+        }
+/////プライバシーポリシー/////
+        .policy {
+          float: left;
+          color: $grey-black; 
+        }
+
+        .policy:hover {
+          touch-action: manipulation;
+          text-decoration: underline; 
+          opacity: .7;
+
+        }
+/////メルカリ利用規約/////
+        .agreement {
+          float: left;
+          margin: 0 16px ;
+          color: $grey-black; 
+        }
+
+        .agreement:hover {
+          touch-action: manipulation;
+          text-decoration: underline; 
+          opacity: .7;
+        }
+/////特定商取引に関する表記/////
+        .notation {
+          float: right;
+          color: $grey-black; 
+
+          &:hover {
+            touch-action: manipulation;
+            text-decoration: underline; 
+            opacity: .7;
+          }
+
+        }
+
+      }
+/////ロゴ////
+      &__logo {
+        width: 100%;
+        height: 90px;
+
+        .footer__logo {
+          width: 80px;
+          height: 65px;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          position: absolute;
+          box-sizing: border-box;
+        }
+
+      }
+
+      &__copy-right {
+        width: 100%;
+        margin: 8px 0 0 0;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+
+        .copy-right {
+          font-size: 13px;
+          margin: 0 auto;
+          text-align: center;
+          color: $grey-black;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
