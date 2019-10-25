@@ -3,11 +3,11 @@
     .exhibit__footer__content
       .exhibit__footer__content__lists
         %li
-          %a.policy{href: 'https://www.mercari.com/jp/privacy/'} プライバシーポリシー 
+          = link_to "プライバシーポリシー", 'https://www.mercari.com/jp/privacy/', class: "policy", id: "link"
         %li
-          %a.agreement{href: 'https://www.mercari.com/jp/tos/'} メルカリ利用規約 
+          = link_to "メルカリ利用規約", 'https://www.mercari.com/jp/tos/', class: "agreement", id: "link"
         %li
-          %a.notation{href: 'https://www.mercari.com/jp/tokutei/'} 特定商取引に関する表記
+          = link_to "特定商取引に関する表記", 'https://www.mercari.com/jp/tokutei/', class: "notation", id: "link"
 
       .exhibit__footer__content__logo
         .footer__logo

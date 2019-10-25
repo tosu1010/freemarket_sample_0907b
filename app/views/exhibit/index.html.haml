@@ -153,13 +153,21 @@
 
       .content
         .content__caution
-          %p <span>禁止されている出品、行為</span>を必ずご確認ください。
-          %p またブランド品でシリアルナンバー等がある場合はご記載ください。<span>偽ブランドの販売</span>は犯罪であり処罰される可能性があります。
-          %p また、出品をもちまして<span>加盟店規約</span>に同意したことになります。
+          %p 
+            %span<> 禁止されている出品、行為
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %span<> 偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+          %p 
+            また、出品をもちまして
+            %span<> 加盟店規約
+            に同意したことになります。
         .content-btn-exhibit
-          %a.text{href: 'https://www.mercari.com/jp/'} 出品する
+          = link_to "出品する", 'https://www.mercari.com/jp/', class: "text"
         .content-btn-back
-          %a.back{href: 'https://www.mercari.com/jp/'} もどる
+          = link_to "もどる", 'https://www.mercari.com/jp/', class: "back"
 
   .exhibit__footer
     = render "footer"
