@@ -11,9 +11,9 @@
         .contents__field__title
           クレジットカード一覧
       .contents__field
-      = link_to "/create", target: :_blank , class:"contents__field__button" do
-        = fa_icon 'credit-card' , class:"contents__field__card"
-        クレジットカードを追加する
+        = link_to "/mypage/card/create", target: :_blank , class:"contents__field__button" do
+          = fa_icon 'credit-card' , class:"contents__field__card"
+          クレジットカードを追加する
       .contents__text
         %p.contents__text__method
           = link_to "https://www.mercari.com/jp/help_center/category/6/", target: :_blank , class:"contents__text__method__link" do
