@@ -2,15 +2,14 @@
 = render 'layouts/header_responsive'
 = render 'layouts/header'
 
-.logout
-  .content
-    .container
-      %form.form(action="#")
-        .form__wraper
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-            
+.mypage
+  .logout
+    .content
+      .container
+        %form.form(action="#")
+          .form__wraper
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
   = render 'mypage/menu'
-
   -# 出品ボタン
 = render 'layouts/exhibit'
 -# アプリダウンロードバーナー
