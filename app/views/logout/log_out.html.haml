@@ -4,8 +4,8 @@
 
 .mypage
   .logout
-    .content
-      .container
+    .container
+      .content
         %form.form(action="#")
           .form__wraper
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'

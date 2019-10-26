@@ -2,7 +2,7 @@
  
   .logout {
 
-    .content {
+    .container {
       width: 100%;
 
       @media screen and (min-width: 768px) {
@@ -14,7 +14,7 @@
         float: right;
       }
 
-      .container {
+      .content {
         background: $white;
 
         .form {
