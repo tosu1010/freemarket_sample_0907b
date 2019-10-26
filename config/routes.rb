@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'merchandises#index'
 
   resources :mypage, only: [:index]
-  resources :merchandise, only: [:index, :show] 
+  resources :merchandises, only: [:index]
 
   get '/mypage/profile', to: 'mypage#edit'
   get 'log_in' => 'login#log_in'
@@ -14,6 +14,5 @@ Rails.application.routes.draw do
   get 'sign_up_5' => 'signup#sign_up_5'
   get 'sign_up_6' => 'signup#sign_up_6'
   get 'logout' => 'logout#log_out'
-
   
 end
