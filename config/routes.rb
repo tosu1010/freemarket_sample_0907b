@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-
+  devise_for :users, :controllers: {
+    omniouth_callbacks: "users/omniauth_callbacks"
+  }
+  
   root 'merchandises#index'
 
   resources :signup do
