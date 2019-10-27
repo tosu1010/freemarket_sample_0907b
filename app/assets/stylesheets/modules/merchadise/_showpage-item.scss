@@ -1,0 +1,121 @@
+.merchandise-detail {
+  .anothers {
+    .another-merchandise {
+      .items {
+        font-size: 0;
+
+        &:after {
+          @include clearfix;
+        }
+
+        .item {
+          width: 220px;
+          margin: 0 20px 20px 0;
+          display: inline-block;
+
+          &:nth-child(3n) {
+            margin: 0 0 20px;
+          }
+
+          @media screen and (max-width: 768px) {
+            width: calc(33.3333% - 2.666666px);
+            margin: 0 4px 4px 0;
+
+            &:nth-child(3n) {
+              margin: 0 0 4px;
+            }
+
+            &__image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          &__body {
+            background-color: $white;
+            padding: 16px;
+            height: 78px;
+
+            @media screen and (max-width: 768px) {
+              height: 0;
+              padding: 0;
+            }
+
+            &__name {
+              height: 48px;
+              line-height: 24px;
+              font-size: 16px;
+              word-wrap: break-word;
+              overflow: hidden;
+              position: relative;
+
+              &:after {
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 60% , rgba(255, 255, 255, 1) 85%);
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 50%;
+                position: absolute;
+              }
+
+              @media screen and (max-width: 768px) {
+                display: none;
+              }
+            }
+
+            &__bottom {
+              margin-top: 8px;
+              font-size: 14px;
+              line-height: 16px;
+              display: flex;
+              justify-content: space-between;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+              position: relative;
+
+              @media screen and (max-width: 768px) {
+                margin-top: 0;
+              }
+              
+              &__price {
+                font-weight: 600;
+                font-size: 16px;
+
+                @media screen and (max-width: 768px) {
+                  display: block;
+                  color: $white;
+                  position: absolute;
+                  bottom: 10px;
+                  font-size: 14px;
+                  line-height: 14px;
+                  left: 0;
+                  background-color: #808087;
+                  border-radius: 0 12px 12px 0;
+                  padding: 4px 12px 4px 8px;
+                  font-weight: 600;
+                }
+              
+              }
+
+              &__likes {
+
+                @media screen and (max-width: 768px) {
+                  display: none;
+                }
+
+                &__icon {
+                  color: $grey;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
