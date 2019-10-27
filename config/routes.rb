@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/mypage/profile', to: 'mypage#edit'
   get '/mypage/identification', to: 'mypage#new'
+  get '/mypage/card', to: 'mypage#show'
+  get '/mypage/card/create', to: 'mypage#create'
 
   get 'log_in' => 'login#log_in'
   get 'sign_up_before' => 'signup#sign_up_before'
