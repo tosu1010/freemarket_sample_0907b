@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :mypage, only: [:index]
   resources :merchandises, only: [:index]
+  resources :exhibit, only: [:index]
 
   get '/mypage/profile', to: 'mypage#edit'
   get 'log_in' => 'login#log_in'

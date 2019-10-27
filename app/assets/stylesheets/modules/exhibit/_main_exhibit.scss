@@ -1,4 +1,4 @@
-.exhibit {
+.main_exhibit {
 
 
 /////ヘッダー部分/////
@@ -71,6 +71,9 @@
       background-color: $red;
       float: right;
     }
+    #opt {
+      background-color: #CCCCCC;
+    }
 
 /////説明部分/////
     .explain {
@@ -117,409 +120,408 @@
         align-items: center;
         justify-content: center;          
         box-sizing: border-box;
+        font-weight: bold;
+        line-height: 1.5
+  
       }
 
     }
 
+/////javascriptによる追加要素のcss/////はじまり
 
-//※※※※※※※※※※※※※※※※※※※※※今回のレビュー対象外※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※はじまり
-// /////javascriptによる追加要素のcss/////はじまり
+/////画像選択共通部分////
+.edit-btn {
+  width: 50%;
+  height: 100%;
+  font-size: 14px;
+  float: left;
+  color: #0098E8;
+  background-color: $light-grey;
+  border: none;
+  text-align: center;
+  line-height: 3.2;
+}
 
-// /////画像選択共通部分////
-// .edit-btn {
-//   width: 50%;
-//   height: 100%;
-//   font-size: 14px;
-//   float: left;
-//   color: #0098E8;
-//   background-color: $light-grey;
-//   border: none;
-//   text-align: center;
-//   line-height: 3.2;
-// }
+/////画像選択共通部分////
+.edit-btn:hover {
+  text-decoration: underline;
+  opacity: .7;
+}
 
-// /////画像選択共通部分////
-// .edit-btn:hover {
-//   text-decoration: underline;
-//   opacity: .7;
-// }
+/////画像選択共通部分////
+#clear, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear8, #clear9, #clear10 {
+  width: 50%;
+  height: 100%;
+  font-size: 14px;
+  padding: 0;
+  background-color: $light-grey;
+  border: none;
+  outline: 0;
+  color: #0098E8;
+}
 
-// /////画像選択共通部分////
-// #clear, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear8, #clear9, #clear10 {
-//   width: 50%;
-//   height: 100%;
-//   font-size: 14px;
-//   padding: 0;
-//   background-color: $light-grey;
-//   border: none;
-//   outline: 0;
-//   color: #0098E8;
-// }
+/////画像選択共通部分////
+#clear:hover, #clear2:hover, #clear3:hover, #clear4:hover, #clear5:hover, #clear6:hover, #clear7:hover, #clear8:hover, #clear9:hover, #clear10:hover {
+  text-decoration: underline;
+  opacity: .7;
+}
 
-// /////画像選択共通部分////
-// #clear:hover, #clear2:hover, #clear3:hover, #clear4:hover, #clear5:hover, #clear6:hover, #clear7:hover, #clear8:hover, #clear9:hover, #clear10:hover {
-//   text-decoration: underline;
-//   opacity: .7;
-// }
+//////出品画像表示欄1/////
+.img-view {
+  width: 116px;
+  height: 160px;
+  float: left;
+}
 
-// //////出品画像表示欄1/////
-// .img-view {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-// }
+.img-field {
+  background-color: $light-grey;
+  border: 1px solid $light-grey;
+}
 
-// .img-field {
-//   background-color: $light-grey;
-//   border: 1px solid $light-grey;
-// }
+.img-field-upper {
+  height: 116px;
+}
 
-// .img-field-upper {
-//   height: 116px;
-// }
+.preview {   //選択画像の表示
+  line-height: 116px;
+  width: 100%;
+  margin: 15px 0 0 0;
+  position: static;
+}
 
-// .preview {   //選択画像の表示
-//   line-height: 116px;
-//   width: 100%;
-//   margin: 15px 0 0 0;
-//   position: static;
-// }
+.img-field-bottom {
+  height: 44px;
+  box-sizing: border-box;
+}
 
-// .img-field-bottom {
-//   height: 44px;
-//   box-sizing: border-box;
-// }
-
-// .delete-btn {
-//   width: 50%;
-//   height: 100%;
-//   float: right;
-//   text-align: center;
-//   line-height: 2.8;
-//   border-left: 1px solid $light-grey;
-//   box-sizing: border-box;
-// }
+.delete-btn {
+  width: 50%;
+  height: 100%;
+  float: right;
+  text-align: center;
+  line-height: 2.8;
+  border-left: 1px solid $light-grey;
+  box-sizing: border-box;
+}
 
     
-// /////画像選択後の追加要素。選択された画像の数：選択部分/////
-// /////出品画像1:1/////
-// .select_img_2 {
-//   display: none;
-// }
+/////画像選択後の追加要素。選択された画像の数：選択部分/////
+/////出品画像1:1/////
+.select_img_2 {
+  display: none;
+}
 
-// .content__box__dropbox__2 {
-//   width: 491px;   //公式の横幅をコピー
-//   //共通化できる
-//   height: 162px;
-//   background-color: $light-grey;
-//   border: dashed 1px $grey;
-//   text-align: center;
-//   display: inline-block;
-//   float: right;
-//   cursor: pointer;
-//   //
-// }
+.content__box__dropbox__2 {
+  width: 491px;   //公式の横幅をコピー
+  //共通化できる
+  height: 162px;
+  background-color: $light-grey;
+  border: dashed 1px $grey;
+  text-align: center;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  //
+}
 
 
-// //////出品画像表示欄2/////
-// .img-view2 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄2/////
+.img-view2 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
 
-// .img-field-upper {
-//   height: 116px;
-// }
+.img-field-upper {
+  height: 116px;
+}
 
-// .preview2 {
-//   line-height: 116px;
-//   width: 100%;
-//   margin: 15px 0 0 0;
-//   position: static;
-//   box-sizing:border-box;
-// }
+.preview2 {
+  line-height: 116px;
+  width: 100%;
+  margin: 15px 0 0 0;
+  position: static;
+  box-sizing:border-box;
+}
           
-// /////出品画像2:1/////
-// .select_img_3 {
-//   display: none;
-// }
+/////出品画像2:1/////
+.select_img_3 {
+  display: none;
+}
 
-// .content__box__dropbox__3 {
-//   width: 362px;
-//   //共通化できる
-//   height: 162px;
-//   background-color: $light-grey;
-//   border: dashed 1px $grey;
-//   text-align: center;
-//   display: inline-block;
-//   float: right;
-//   cursor: pointer;
-//   //
-// }
+.content__box__dropbox__3 {
+  width: 362px;
+  //
+  height: 162px;
+  background-color: $light-grey;
+  border: dashed 1px $grey;
+  text-align: center;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  //
+}
 
-// //////出品画像表示欄3/////
-// .img-view3 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄3/////
+.img-view3 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
   
-//   .preview3 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//     box-sizing:border-box;
-//   }
+  .preview3 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+    box-sizing:border-box;
+  }
       
-// /////出品画像3:1/////
-// .select_img_4 {
-//   display: none;
-// }
+/////出品画像3:1/////
+.select_img_4 {
+  display: none;
+}
 
-//   .content__box__dropbox__4 {
-//     width: 234px;
-//     //
-//     height: 162px;
-//     background-color: $light-grey;
-//     border: dashed 1px $grey;
-//     text-align: center;
-//     display: inline-block;
-//     float: right;
-//     cursor: pointer;
-//     //
-//   }
+  .content__box__dropbox__4 {
+    width: 234px;
+    //
+    height: 162px;
+    background-color: $light-grey;
+    border: dashed 1px $grey;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    //
+  }
 
-// //////出品画像表示欄4/////
-// .img-view4 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄4/////
+.img-view4 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
   
-//   .preview4 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//     box-sizing:border-box;
-//   }
+  .preview4 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+    box-sizing:border-box;
+  }
 
-// /////出品画像4:1/////
-// .select_img_5 {
-//   display: none;
-// }
+/////出品画像4:1/////
+.select_img_5 {
+  display: none;
+}
 
-//   .content__box__dropbox__5 {
-//     width: 106px;
-//     //
-//     height: 162px;
-//     background-color: $light-grey;
-//     border: dashed 1px $grey;
-//     text-align: center;
-//     display: inline-block;
-//     float: right;
-//     cursor: pointer;
-//     //
-//   }
+  .content__box__dropbox__5 {
+    width: 106px;
+    //
+    height: 162px;
+    background-color: $light-grey;
+    border: dashed 1px $grey;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    //
+  }
 
-//   .change_select_img {
-//     display: none;
-//   }
+  .change_select_img {
+    display: none;
+  }
 
-// //////出品画像表示欄5/////
-// .img-view5 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄5/////
+.img-view5 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
 
-//   .preview5 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//     box-sizing:border-box;
-//   }
+  .preview5 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+    box-sizing:border-box;
+  }
           
-// /////出品画像5:1/////
-// .select_img_6 {
-//   display: none;
-// }
+/////出品画像5:1/////
+.select_img_6 {
+  display: none;
+}
 
-//   .content__box__dropbox__6 {
-//     width: 100%;
-//     height: 162px;
-//     background-color: $light-grey;
-//     border: dashed 1px $grey;
-//     text-align: center;
-//     display: inline-block;
-//     cursor: pointer;
-//   }
+  .content__box__dropbox__6 {
+    width: 100%;
+    height: 162px;
+    background-color: $light-grey;
+    border: dashed 1px $grey;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+  }
 
-// //////出品画像表示欄6/////
-// .img-view6 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-// }
+//////出品画像表示欄6/////
+.img-view6 {
+  width: 116px;
+  height: 160px;
+  float: left;
+}
 
-//   .preview6 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//   }
+  .preview6 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+  }
 
-// /////出品画像6:1/////
-// .select_img_7 {
-//   display: none;
-// }
+/////出品画像6:1/////
+.select_img_7 {
+  display: none;
+}
 
-//   .content__box__dropbox__7 {
-//     width: 491px;
-//     //
-//     height: 162px;
-//     background-color: $light-grey;
-//     border: dashed 1px $grey;
-//     text-align: center;
-//     display: inline-block;
-//     float: right;
-//     cursor: pointer;
-//     //
-//   }
+  .content__box__dropbox__7 {
+    width: 491px;
+    //
+    height: 162px;
+    background-color: $light-grey;
+    border: dashed 1px $grey;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    //
+  }
           
-// //////出品画像表示欄7/////
-// .img-view7 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄7/////
+.img-view7 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
       
-//   .preview7 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//     box-sizing:border-box;
+  .preview7 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+    box-sizing:border-box;
 
-//   }
+  }
   
-// /////出品画像7:1/////
-// .select_img_8 {
-//   display: none;
-// }
+/////出品画像7:1/////
+.select_img_8 {
+  display: none;
+}
 
-//   .content__box__dropbox__8 {
-//     width: 362px;
-//     //
-//     height: 162px;
-//     background-color: $light-grey;
-//     border: dashed 1px $grey;
-//     text-align: center;
-//     display: inline-block;
-//     float: right;
-//     cursor: pointer;
-//     //
-//   }
+  .content__box__dropbox__8 {
+    width: 362px;
+    //
+    height: 162px;
+    background-color: $light-grey;
+    border: dashed 1px $grey;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    //
+  }
   
-// //////出品画像表示欄8/////
-// .img-view8 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄8/////
+.img-view8 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
           
-//   .preview8 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//     box-sizing:border-box;
-//   }
+  .preview8 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+    box-sizing:border-box;
+  }
 
-// /////出品画像8:1/////
-// .select_img_9 {
-//   display: none;
-// }
+/////出品画像8:1/////
+.select_img_9 {
+  display: none;
+}
 
-//   .content__box__dropbox__9 {
-//     width: 234px;
-//     //
-//     height: 162px;
-//     background-color: $light-grey;
-//     border: dashed 1px $grey;
-//     text-align: center;
-//     display: inline-block;
-//     float: right;
-//     cursor: pointer;
-//     //
-//   }
+  .content__box__dropbox__9 {
+    width: 234px;
+    //
+    height: 162px;
+    background-color: $light-grey;
+    border: dashed 1px $grey;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    //
+  }
 
-// //////出品画像表示欄9/////
-// .img-view9 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄9/////
+.img-view9 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
 
-//   .preview9 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//     box-sizing:border-box;
-//   }
+  .preview9 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+    box-sizing:border-box;
+  }
 
 
-// /////出品画像9:1/////
-// .select_img_10 {
-//   display: none;
-// }
-//   .content__box__dropbox__10 {
-//     width: 106px;
-//     //
-//     height: 162px;
-//     background-color: $light-grey;
-//     border: dashed 1px $grey;
-//     text-align: center;
-//     display: inline-block;
-//     float: right;
-//     cursor: pointer;
-//     //
-//   }
+/////出品画像9:1/////
+.select_img_10 {
+  display: none;
+}
+  .content__box__dropbox__10 {
+    width: 106px;
+    //
+    height: 162px;
+    background-color: $light-grey;
+    border: dashed 1px $grey;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    //
+  }
 
-// //////出品画像表示欄10/////
-// .img-view10 {
-//   width: 116px;
-//   height: 160px;
-//   float: left;
-//   margin: 0 0 0 10px;
-// }
+//////出品画像表示欄10/////
+.img-view10 {
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 0 0 0 10px;
+}
   
-//   .preview10 {
-//     line-height: 116px;
-//     width: 100%;
-//     margin: 15px 0 0 0;
-//     position: static;
-//     box-sizing:border-box;
-//   }
+  .preview10 {
+    line-height: 116px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static;
+    box-sizing:border-box;
+  }
 
 
-// /////出品画像10/////
-// /////なし/////
+/////出品画像10/////
+/////なし/////
 
-// /////javascriptによる追加要素のcss/////おわり
-//※※※※※※※※※※※※※※※※※※※※※今回のレビュー対象外※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※終わり
-
+/////javascriptによる追加要素のcss/////おわり
 
 .content {
 
@@ -532,6 +534,7 @@
       font-weight: bold;
       color: $grey-black;
       display: inline-block;
+      line-height: 20px;
     }
 
 /////商品名/////
@@ -555,28 +558,8 @@
 /////商品説明/////
   &__box__explain {
     margin: 40px 0 0 0;
+  }
 
-    .content__box__title {
-      font-size: 14px;
-      font-weight: bold;
-      color: $grey-black;
-      display: inline-block;
-  
-      .form_require {
-        height: 20px;
-        line-height: 20px;
-        padding: 0 4px;
-        border-radius: 2px;
-        margin: 0 0 0 8px;
-        color: white;
-        font-size: 12px;
-        font-weight: bold;
-        background-color: $red;
-        float: right;
-      }  
-
-    }
-      
     .content__box__text-area {
 
       .input-text-form {
@@ -591,8 +574,6 @@
       }
 
     }
-
-  }
 
 }
   
@@ -610,6 +591,7 @@
           font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
         }
 
+      }
           .question { 
             width: 14px;
             height: 14px;
@@ -625,7 +607,6 @@
             font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
           }
 
-        }
 
     .content__box__title__right {
       width: 400px;
@@ -638,16 +619,17 @@
     }
 
 /////カテゴリーのプルダウン（jsによる追加要素も指定している）/////
-        .content__box__select-category, .content__box__select-category2, .content__box__select-category3, .content__box__select-shipping_charge { //jsで追加した要素も含む
+        .content__box__select-category, .content__box__select-category2, .content__box__select-category3, .content__box__select-shipping_charge, .content__box__select { //jsで追加した要素も含む
           margin: 8px 0 0;
+        }
 
-          .content__box__select-category__box {
+          .content__box__select-category__box, .content__box__select__box {
             width: 100%;
             position: relative;
             display: inline-block;
-          
+          }
 
-            .select, .select2, .select3, .select4 {  //jsで追加した要素も含む
+            .select, .select2, .select3, .select4, .select5, .select6 {  //jsで追加した要素も含む
               width: 100%;
               height: 48px;
               font-size: 16px;
@@ -679,10 +661,6 @@
                 font-size: 20px;
                 font-weight: bold;
               }
-
-            }
-
-          }
   
 
 /////発送についての2段目3段目のプルダウン/////
@@ -733,22 +711,23 @@
           box-sizing: border-box;
           font-size: 66.66667%;
         }
-
-
+      }
+    }
           .input-form {
-            width: 160px;
+            width: 100%;
             padding: 10px 16px 8px;
             border: 1px solid $grey;
             border-radius: 4px;
             font-size: 16px;
             box-sizing: border-box;
-            text-align: right;
+            // text-align: right;
             float: right;
+
           }
 
-        }
+        // }
 
-      }
+      // }
 
 
 /////販売手数料/////

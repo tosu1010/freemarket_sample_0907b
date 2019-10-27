@@ -1,8 +1,8 @@
-.exhibit
+.main_exhibit
   = render 'header' 
 
-  .exhibit__contents
-    .exhibit__contents__main
+  .main_exhibit__contents
+    .main_exhibit__contents__main
       .content
         .content__head
           商品の情報を入力
@@ -27,7 +27,7 @@
         .content__box
           .content__box__title
             商品名
-            .form_require 
+            .form_require
               必須
           .content__box__text-field
             = fields_for @merchandise do |f|
@@ -66,11 +66,10 @@
                 商品の状態
                 .form_require 
                   必須
-
               .content__box__select
                 .content__box__select__box
                   = fields_for @exhibit do |f|
-                    = f.select :status, ["---", "新品、未使用", "未使用に近い", "目立った傷や,汚れなし", "やや傷や,汚れあり", "全体的に状態が悪い"]
+                    = f.select :status, ["---", "新品、未使用", "未使用に近い", "目立った傷や,汚れなし", "やや傷や,汚れあり", "全体的に状態が悪い"], {}, {class: "select"}
                   .icon
                     %i.fa.fa-angle-down
 
@@ -89,7 +88,7 @@
               .content__box__select-shipping_charge
                 .content__box__select__box
                   = fields_for @delivery do |f|
-                    = f.select :shipping_charge, ["---", "送料込み(出品者負担)", "着払い(購入者負担)"],{},{class: "select3"}
+                    = f.select :shipping_charge, ["---", "送料込み(出品者負担)", "着払い(購入者負担)"],{},{class: "select4"}
                   .icon
                     %i.fa.fa-angle-down
 
@@ -101,7 +100,7 @@
               .content__box__select
                 .content__box__select__box
                   = fields_for @delivery do |f|
-                    = f.select :shipping_area, ["---",1,2,3,4,5,6,] #暫定。DBから引っ張れるようにしたい
+                    = f.select :shipping_area, ["---",1,2,3,4,5,6,], {}, {class: "select"} #暫定。DBから引っ張れるようにしたい
                   .icon
                     %i.fa.fa-angle-down
                     
@@ -113,7 +112,7 @@
               .content__box__select
                 .content__box__select__box
                   = fields_for @delivery do |f|
-                    = f.select :shipping_date, ["---", "1~2日で発送", "2~3日で発送", "4~7日で発送"] 
+                    = f.select :shipping_date, ["---", "1~2日で発送", "2~3日で発送", "4~7日で発送"], {}, {class:"select"}
                   .icon
                     %i.fa.fa-angle-down
       .content
@@ -171,4 +170,5 @@
 
   .exhibit__footer
     = render "footer"
+
 
