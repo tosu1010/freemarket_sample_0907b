@@ -1,4 +1,4 @@
-$(window).on('load',function(){
+$(function(){
 
   //現在のパスを取得
   var path = location.pathname
