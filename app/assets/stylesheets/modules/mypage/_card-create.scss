@@ -116,15 +116,15 @@
     span {
       font-weight: 50;
       margin: 0 10px 0;
+    }
 
-      &.reqiure {
-        background: $red;
-        border-radius: 2px;
-        color: $white;
-        font-size: 12px;
-        margin-left: 8px;
-        padding: 2px 4px;
-      }
+    .reqiure {
+      background: $red;
+      border-radius: 2px;
+      color: $white;
+      font-size: 12px;
+      margin-left: 8px;
+      padding: 2px 4px;
     }
 
     .form {
