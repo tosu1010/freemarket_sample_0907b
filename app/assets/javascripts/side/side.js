@@ -1,4 +1,4 @@
-$(function(){
+document.addEventListener('turbolinks:load', function(){
 
   //現在のパスを取得
   var path = location.pathname
