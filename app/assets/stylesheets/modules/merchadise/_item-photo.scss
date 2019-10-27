@@ -4,7 +4,6 @@
       .left-content {
         .item-photos {
           width: 300px;
-          position: relative;
           background-color: $ultra-light-grey;
 
           @media screen and (max-width: 768px) {
@@ -12,84 +11,88 @@
             margin: 0 auto;
           }
           
-          .owl-stage {
-            height: 300px;
+          &__carousel {
 
-            @media screen and (max-width: 768px) {
-              height: 360px;
-            }
-
-            .owl-item {
+            &__stage {
               height: 300px;
-              
+  
               @media screen and (max-width: 768px) {
                 height: 360px;
               }
-            }
-          }
 
-          &__image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            margin: auto;
-            max-width: 300px;
-            max-height: 300px;
-            object-fit: contain;
+              &__item {
+                height: 300px;
+                position: relative;
 
-            @media screen and (max-width: 768px) {
-              max-width: 360px;
-              max-height: 360px;
-            }
-          }
-  
-          .owl-dots {
-            margin: 0;
-            width: 300px;
-            font-size: 0;
-            text-align: left;
-            background-color: $ultra-light-grey;
+                @media screen and (max-width: 768px) {
+                  height: 360px;
+                }
 
-            @media screen and (max-width: 768px) {
-              width: 360px;
-              display: block;
-            }
-            
-            .owl-dot {
-              position: relative;
-              margin: 0;
-              overflow: hidden;
-              opacity: .4;
-              width: 60px;
-              height: 60px;
-              display: inline-block;
-              cursor: default;
-              border-radius: 0;
-
-              @media screen and (max-width: 768px) {
-                width: 72px;
-                height: 72px;
-              }
-
-              &.active {
-                opacity: 1;
-              }
-              
-              &__inner {
-                overflow: hidden;
-                padding: 0;
-                pointer-events: none;
-                
                 &__image {
-                  object-fit: cover;
-                  width: 60px;
-                  height: 60px;
-
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  left: 0;
+                  bottom: 0;
+                  margin: auto;
+                  max-width: 300px;
+                  max-height: 300px;
+                  object-fit: contain;
+      
                   @media screen and (max-width: 768px) {
-                    width: 72px;
-                    height: 72px;
+                    max-width: 360px;
+                    max-height: 360px;
+                  }
+                }
+              }
+            }
+
+            &__dots {
+              margin: 0;
+              width: 300px;
+              font-size: 0;
+              text-align: left;
+              background-color: $ultra-light-grey;
+  
+              @media screen and (max-width: 768px) {
+                width: 360px;
+                display: block;
+              }
+
+              &__dot {
+                position: relative;
+                margin: 0;
+                overflow: hidden;
+                opacity: .4;
+                width: 60px;
+                height: 60px;
+                display: inline-block;
+                cursor: default;
+                border-radius: 0;
+
+                @media screen and (max-width: 768px) {
+                  width: 72px;
+                  height: 72px;
+                }
+
+                &.active {
+                  opacity: 1;
+                }
+                
+                &__inner {
+                  overflow: hidden;
+                  padding: 0;
+                  pointer-events: none;
+                  
+                  &__image {
+                    object-fit: cover;
+                    width: 60px;
+                    height: 60px;
+
+                    @media screen and (max-width: 768px) {
+                      width: 72px;
+                      height: 72px;
+                    }
                   }
                 }
               }
