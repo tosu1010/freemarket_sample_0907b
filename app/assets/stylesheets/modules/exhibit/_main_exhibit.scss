@@ -37,6 +37,58 @@
     border-bottom: solid 1.5px $light-grey;
     padding: 40px;
     display: inline-block;
+
+    &__box {
+      width: 100%;
+      height: 70px;
+  
+      &__title {
+        font-size: 14px;
+        font-weight: bold;
+        color: $grey-black;
+        display: inline-block;
+        line-height: 20px;
+      }
+  
+  /////商品名/////
+        &__text-field {
+  
+          .input-form {
+            width: 100%;
+            height: 48px;
+            margin: 8px 0 0 0;
+            padding: 10px 16px 8px;
+            border: 1px solid $grey;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+          }
+  
+        }
+  
+      }
+        
+  /////商品説明/////
+    &__box__explain {
+      margin: 40px 0 0 0;
+    }
+  
+      .content__box__text-area {
+  
+        .input-text-form {
+          width: 100%;
+          height: 142px;
+          margin: 8px 0 0 0;
+          padding: 10px;
+          border: 1px solid $grey;
+          font-size: 15.8px;
+          resize: vertical;
+          box-sizing: border-box;
+        }
+  
+      }
+  
+
     
   }
 
@@ -520,59 +572,6 @@
 
 /////javascriptによる追加要素のcss/////おわり
 
-.content {
-
-  &__box {
-    width: 100%;
-    height: 70px;
-
-    &__title {
-      font-size: 14px;
-      font-weight: bold;
-      color: $grey-black;
-      display: inline-block;
-      line-height: 20px;
-    }
-
-/////商品名/////
-      &__text-field {
-
-        .input-form {
-          width: 100%;
-          height: 48px;
-          margin: 8px 0 0 0;
-          padding: 10px 16px 8px;
-          border: 1px solid $grey;
-          border-radius: 4px;
-          font-size: 16px;
-          box-sizing: border-box;
-        }
-
-      }
-
-    }
-      
-/////商品説明/////
-  &__box__explain {
-    margin: 40px 0 0 0;
-  }
-
-    .content__box__text-area {
-
-      .input-text-form {
-        width: 100%;
-        height: 142px;
-        margin: 8px 0 0 0;
-        padding: 10px;
-        border: 1px solid $grey;
-        font-size: 15.8px;
-        resize: vertical;
-        box-sizing: border-box;
-      }
-
-    }
-
-}
   
 /////商品の詳細&発送＆販売価格まで/////
     .content__box__title__left {
