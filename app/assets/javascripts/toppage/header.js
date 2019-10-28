@@ -2,7 +2,7 @@ var hover_blue = 'rgb(0, 149, 238)'
 var hover_black = 'rgb(0, 0, 0)'
 
 //カテゴリー検索
-$(document).ready(function() {
+document.addEventListener('turbolinks:load', function(){
    //大分類を表示・非表示
   $('.lower__left__category').hover(function() {
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
 });
 
 //ブランド検索
-$(document).ready(function() {
+document.addEventListener('turbolinks:load', function(){
 
   //ブランドを表示・非表示
   $('.lower__left__brand').hover(function() {

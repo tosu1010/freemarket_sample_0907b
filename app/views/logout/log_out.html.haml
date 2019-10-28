@@ -1,0 +1,18 @@
+-# ヘッダー
+= render 'layouts/header_responsive'
+= render 'layouts/header'
+
+.mypage
+  .logout
+    .container
+      .content
+        %form.form(action="#")
+          .form__wraper
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+  = render 'mypage/menu'
+  -# 出品ボタン
+= render 'layouts/exhibit'
+-# アプリダウンロードバーナー
+= render 'layouts/app-download'
+-# フッター
+= render 'layouts/footer'
