@@ -65,49 +65,49 @@
           }
         }
       }
-    //レビュー対象外
-      // .upper_right_in {
-      //   align-items: center;
-      //   display: flex;
 
-      //   .news {
+      .upper_right_in {
+        align-items: center;
+        display: flex;
 
-      //     &_link {
-      //       @include top_header_responsive_upper_right_link;
+        .news {
 
-      //       .fa {
-      //         @include top_header_responsive_upper_right_link_fa;
-      //         width: 18px;
-      //       }
-      //     }
-      //   }
+          &_link {
+            @include top_header_responsive_upper_right_link;
 
-      //   .to-do {
-      //     margin-left: 16px;
+            .fa {
+              @include top_header_responsive_upper_right_link_fa;
+              width: 18px;
+            }
+          }
+        }
 
-      //     &_link {
-      //       @include top_header_responsive_upper_right_link;
+        .to-do {
+          margin-left: 16px;
 
-      //       .fa {
-      //         @include top_header_responsive_upper_right_link_fa;
-      //         width: 22px;
-      //       }
-      //     }
-      //   }
+          &_link {
+            @include top_header_responsive_upper_right_link;
 
-      //   .mypage-img {
-      //     margin-left: 16px;
+            .fa {
+              @include top_header_responsive_upper_right_link_fa;
+              width: 22px;
+            }
+          }
+        }
 
-      //     &_link {
-      //       @include top_header_responsive_upper_right_link;
+        .mypage-img {
+          margin-left: 16px;
 
-      //       &_img {
-      //         border-radius: 50%;
-      //         overflow: hidden;
-      //       }
-      //     }
-      //   }
-      // }
+          &_link {
+            @include top_header_responsive_upper_right_link;
+
+            &_img {
+              border-radius: 50%;
+              overflow: hidden;
+            }
+          }
+        }
+      }
     }
 
     .middle {

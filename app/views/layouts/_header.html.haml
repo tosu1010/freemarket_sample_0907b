@@ -237,8 +237,31 @@
                 = link_to "アディダス", "" , class: "brand__list__item_link"
               %li.brand__list__item
                 = link_to "ブランド一覧", "" , class: "brand__list__item_link"
-      .lower__right
-        .lower__right__sign-up
-          = link_to "新規会員登録", "", class: "lower__right__sign-up_link"
-        .lower__right__login
-          = link_to "ログイン", "", class: "lower__right__login_link"
+
+        - if user_signed_in?
+          %ul.lower__right
+          %li.lower__right__nice.lower__right_li
+            = link_to  "", class: "lower__right__nice_link" do
+              .lower__right__nice_link_img
+                %i.fa.fa-heart
+              いいね！一覧
+          %li.lower__right__news.lower__right_li
+            = link_to  "", class: "lower__right__news_link" do
+              .lower__right__news_link_img
+                %i.fa.fa-bell
+              お知らせ
+          %li.lower__right__to-do.lower__right_li
+            = link_to  "", class: "lower__right__to-do_link" do
+              .lower__right__to-do_link_img
+                %i.fa.fa-check
+              やることリスト
+          %li.lower__right__mypage.lower__right_li
+            = link_to  "", class: "lower__right__mypage_link" do
+              = image_tag("https://static.mercdn.net/thumb/members/158882622.jpg?1572265146", class: "lower__right__mypage_link_img")
+              マイページ
+      - else
+        .lower__right
+          .lower__right__sign-up
+            = link_to "新規会員登録", "", class: "lower__right__sign-up_link"
+          .lower__right__login
+            = link_to "ログイン", "", class: "lower__right__login_link"

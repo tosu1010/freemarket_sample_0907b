@@ -1,5 +1,7 @@
 var hover_blue = 'rgb(0, 149, 238)'
 var hover_black = 'rgb(0, 0, 0)'
+var white_grey = 'rgb(204, 204, 204)'
+var black_grey = '#333'
 
 //カテゴリー検索
 document.addEventListener('turbolinks:load', function(){
@@ -59,5 +61,21 @@ document.addEventListener('turbolinks:load', function(){
     $(".lower__left__brand__box").hide(); 
     $('.lower__left__brand_search').css('color', hover_black); 
 
+  });
+});
+
+//ホバー時にfontawsomeと文言の色を変更
+$(document).ready(function() {
+
+  $('.lower__right_li').hover(function() {
+
+    $(this).find('.fa').css('color',  hover_blue); 
+    $(this).css('color', hover_blue); 
+
+  }, function() {
+    
+    $(this).find('.fa').css('color',  white_grey); 
+    $(this).css('color',  black_grey); 
+    
   });
 });
