@@ -5,9 +5,21 @@
         .link
           =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo")
 
-      .upper_right
-        = link_to "新規会員", "", class: "sign-up"
-        = link_to "ログイン", "", class: "login"
+      - if user_signed_in?
+        .upper_right_in
+          .news
+            = link_to "", class: "news_link" do
+              %i.fa.fa-bell
+          .to-do
+            = link_to "", class: "to-do_link" do
+              %i.fa.fa-check
+          .mypage-img
+            = link_to "", class: "mypage-img_link" do
+              = image_tag("https://static.mercdn.net/thumb/members/158882622.jpg?1572265146", class: "mypage-img_link_img")
+      - else
+        .upper_right
+          = link_to "新規会員", "", class: "sign-up"
+          = link_to "ログイン", "", class: "login"
 
     .middle
       = form_tag "", method: :get, class: "search__form" do
