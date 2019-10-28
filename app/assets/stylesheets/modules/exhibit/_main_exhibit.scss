@@ -37,6 +37,7 @@
     border-bottom: solid 1.5px $light-grey;
     padding: 40px;
     display: inline-block;
+    
   }
 
 /////「商品の情報を入力」の部分/////
@@ -149,7 +150,7 @@
 }
 
 /////画像選択共通部分////
-#clear, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear8, #clear9, #clear10 {
+#clear, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear9, #clear10 {
   width: 50%;
   height: 100%;
   font-size: 14px;
@@ -231,10 +232,6 @@
   height: 160px;
   float: left;
   margin: 0 0 0 10px;
-}
-
-.img-field-upper {
-  height: 116px;
 }
 
 .preview2 {
@@ -687,7 +684,7 @@
           line-height: 20px;
           padding: 0 4px;
           border-radius: 2px;
-          margin: 13px 0 0 8px;
+          margin: 0 0 0 8px;
           color: white;
           font-size: 12px;
           font-weight: bold;
@@ -712,22 +709,20 @@
           font-size: 66.66667%;
         }
       }
-    }
           .input-form {
-            width: 100%;
+            width: 160px;
             padding: 10px 16px 8px;
             border: 1px solid $grey;
             border-radius: 4px;
             font-size: 16px;
             box-sizing: border-box;
-            // text-align: right;
+            text-align: right;
             float: right;
 
           }
 
-        // }
+        }
 
-      // }
 
 
 /////販売手数料/////

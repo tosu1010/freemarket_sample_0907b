@@ -507,10 +507,8 @@ $(document).on('turbolinks:load', function() {
     let input_price = $("#price").val()
     fee = Math.floor(parseInt(input_price) * 10/100);
     profit = input_price - fee
-    console.log(fee)
 
       if (9999999 >= input_price && input_price >= 300){
-        console.log("300以上");
         $(".total-price").empty();
           if (!input_price){
             $("#total-price").val("");
@@ -532,7 +530,6 @@ $(document).on('turbolinks:load', function() {
         }
         else {
           $("#toatl-price").replace("なし")
-          console.log("okokok")
           
         }
       }
@@ -614,7 +611,6 @@ $(document).on('turbolinks:load', function() {
       $(".img-view7").after(select_8);
       $(".preview7").attr('src', e.target.result);
     }
-    console.log("7")
     reader.readAsDataURL(e.target.files[0]);
   });
 
@@ -626,7 +622,6 @@ $(document).on('turbolinks:load', function() {
       $(".img-view8").after(select_9);
       $(".preview8").attr('src', e.target.result);
     }
-    console.log("8")
     reader.readAsDataURL(e.target.files[0]);
   });
   
@@ -638,7 +633,6 @@ $(document).on('turbolinks:load', function() {
       $(".img-view9").after(select_10);
       $(".preview9").attr('src', e.target.result);
     }
-    console.log("9")
     reader.readAsDataURL(e.target.files[0]);
   });
 
@@ -649,7 +643,6 @@ $(document).on('turbolinks:load', function() {
       $("label.select_10").replaceWith(exhibit_photo10);
       $(".preview10").attr('src', e.target.result);
     }
-    console.log("完成！")
     reader.readAsDataURL(e.target.files[0]);
   });
       
@@ -706,34 +699,6 @@ $(document).on('turbolinks:load', function() {
 
   });
   
-  
-  
-  $(function() {
-    $("#droparea").on({
-      "dragenter dragover":function(e){
-        e.preventDefault();
-      },
-      "drop":function(e){
-        var file = e.originalEvent.dataTransfer.files[0];
-        var fr1 = new FileReader();
-        fr1.onload = function(e) {
-          var blob=new Blob([e.target.result],{"type":file.type});
-          var fr2 = new FileReader();
-          fr2.onload = function(e) {
-            var src=e.target.result;
-            src=new Uint8Array(src);
-            src=String.fromCharCode.apply("",src);
-            src=btoa(src);
-            src="data:"+file.type+";base64,"+src;
-            $("<img>").attr({"src":src,"alt":file.name}).appendTo('#viewarea');
-          }
-          fr2.readAsArrayBuffer(blob);
-        }
-        fr1.readAsArrayBuffer(file);
-        e.preventDefault();
-      },
-    });
-  });
   
 });
   
