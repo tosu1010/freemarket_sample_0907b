@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :mypage, only: [:index]
   resources :merchandises, only: [:index, :show]
+  resources :merchandises, only: [:index]
+  resources :exhibit, only: [:index]
 
   get '/mypage/profile', to: 'mypage#edit'
   get '/mypage/identification', to: 'mypage#new'
