@@ -1,0 +1,31 @@
+-# ヘッダー
+= render 'layouts/header_responsive'
+= render 'layouts/header'
+
+.mypage
+  .mypage__card
+    %h2.mypage__card__header
+      支払い方法
+    .contents
+      .contents__field
+        .contents__field__title
+          クレジットカード一覧
+      .contents__field
+        = link_to "/mypage/card/create", target: :_blank , class:"contents__field__button" do
+          = fa_icon 'credit-card' , class:"contents__field__card"
+          クレジットカードを追加する
+      .contents__text
+        %p.contents__text__method
+          = link_to "https://www.mercari.com/jp/help_center/category/6/", target: :_blank , class:"contents__text__method__link" do
+            支払い方法について
+            = fa_icon 'angle-right' , class:"contents__text__method__allow"
+
+  
+  = render "menu"
+
+  -# 出品ボタン
+= render 'layouts/exhibit'
+-# アプリダウンロードバーナー
+= render 'layouts/app-download'
+-# フッター
+= render 'layouts/footer' 

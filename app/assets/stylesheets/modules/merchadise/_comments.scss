@@ -1,0 +1,124 @@
+.merchandise-detail {
+  .comments {
+    position: relative;
+    background-color: $white;
+    width: 700px;
+    margin: 8px auto;
+
+    @media screen and (max-width: 768px) {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    &__container {
+      padding: 24px;
+
+      .comment {
+        margin-top: 21px;
+
+        &:after {
+          @include clearfix;
+        }
+
+        &:not(:first-child) {
+          margin-top: 60px;
+        }
+
+        &__link {
+          position: relative;
+          top: -20px;
+
+            &__user-icon {
+              width: 40px;
+              height: 40px;
+              border-radius: 20px;
+            }
+    
+            &__user-name {
+              display: inline-block;
+              font-weight: 600;
+              position: absolute;
+              left: 56px;
+            }
+          }
+
+        &__content {
+          background-color: #EEF0F4;
+          float: right;
+          width: 568px;
+          padding: 16px;
+          border-radius: 15px;
+
+          @media screen and (max-width: 768px) {
+            box-sizing: border-box;
+            width: calc(100% - 56px);
+          }
+
+          &__text {
+            line-height: 1.5;
+          }
+
+          &__bottom {
+            margin-top: 8px;
+            
+            &:after {
+              @include clearfix;
+            }
+
+            &__date {
+              float: left;
+              color: #ababab;
+  
+              &__icon {
+                display: inline-block;
+              }
+  
+              &__time {
+                display: inline-block;
+              }
+            }
+
+            &__report {
+              float: right;
+              color: #ababab;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .comment-form {
+    padding: 24px;
+    
+    &__attention {
+      background-color: #fff6dd;
+      padding: 8px;
+    }
+
+    &__text-box {
+      box-sizing: border-box;
+      margin-top: 8px;
+      border: solid 1px $grey;
+      width: 100%;
+      height: 82px;
+      padding: 10px;
+      resize: vertical;
+      min-height: 104px;
+      
+      &:focus {
+        @include focus;
+      }
+    }
+
+    &__submit {
+      border: none;
+      margin-top: 8px;
+      width: 100%;
+      height: 50px;
+      background-color: #aaa;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
