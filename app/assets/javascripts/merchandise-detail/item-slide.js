@@ -1,18 +1,18 @@
 $(function(){
-  $('.owl-dots .owl-dot:first-child').addClass('active');
+  $('.item-photos__carousel__dots__dot:first-child').addClass('active');
 
   // マウスオーバーしたときにスタイルを適用する
-  $('.owl-dot').hover(function(){
+  $('.item-photos__carousel__dots__dot').hover(function(){
     $('.active').css({'opacity':'', 'pointer':''});
     $('.active').removeClass('active');
     $(this).addClass('active');
-    $(this).css({'opacity':'1', 'pointer':'default'});
+    // $(this).css({'opacity':'1', 'pointer':'default'});
   });
 
   // 画像がスライドしたときに、対応している画像にスタイルを適用させる
-  $('.owl-stage').on('afterChange', function(){
+  $('.item-photos__carousel__stage__item').on('afterChange', function(){
     let slideIndex = $(this).slick('slickCurrentSlide');
-    let curentDot = $('.owl-dot').eq(slideIndex);
+    let curentDot = $('.item-photos__carousel__dots__dot').eq(slideIndex);
     curentDot.addClass('active');
     $('.active').css({'opacity':'', 'pointer':''});
     $('.active').removeClass('active');
@@ -20,21 +20,21 @@ $(function(){
     curentDot.css({'opacity':'1', 'pointer':'default'});
   });
 
-  $('.owl-stage').slick({
+  $('.item-photos__carousel__stage').slick({
     autoplay: false,
     Speed: 7000,
     arrows: false,
     dots: false,
-    dotsClass: 'owl-dots',
+    dotsClass: 'item-photos__carousel__dots__dot',
     pauseOnDotsHover: true,
     infinite: true,
     waitForAnimate: false,
   });
 
-  $('.owl-dot').on('mouseover', function(e){
+  $('.item-photos__carousel__dots__dot').on('mouseover', function(e){
     var $currTarget = $(e.currentTarget);
     index = $(this).index();
-    slickObj = $('.owl-stage').slick('getSlick');
+    slickObj = $('.item-photos__carousel__stage').slick('getSlick');
     slickObj.slickGoTo(index);
   });
 });

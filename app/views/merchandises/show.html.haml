@@ -10,47 +10,46 @@
     .merchandise-detail__main__content
       .left-content
         .item-photos
-          .owl-carousel.owl-loaded.owl-drag
-            .owl-stage-outer
-              %ul.owl-stage
-                %li.owl-item
-                  = image_tag "https://placehold.jp/200x300.png", class: "item-photos__image"
-                %li.owl-item
-                  = image_tag "https://placehold.jp/300x200.png", class: "item-photos__image"
-                %li.owl-item
-                  = image_tag "https://placehold.jp/300x300.png", class: "item-photos__image"
-                %li.owl-item
-                  = image_tag "https://placehold.jp/400x400.png", class: "item-photos__image"
-                %li.owl-item
-                  = image_tag "https://placehold.jp/500x500.png", class: "item-photos__image"
-                %li.owl-item
-                  = image_tag "https://placehold.jp/600x600.png", class: "item-photos__image"
-                %li.owl-item
-                  = image_tag "https://placehold.jp/700x700.png", class: "item-photos__image"
+          .item-photos__carousel
+            %ul.item-photos__carousel__stage
+              %li.item-photos__carousel__stage__item
+                = image_tag "https://placehold.jp/200x300.png", class: "item-photos__carousel__stage__item__image"
+              %li.item-photos__carousel__stage__item
+                = image_tag "https://placehold.jp/300x200.png", class: "item-photos__carousel__stage__item__image"
+              %li.item-photos__carousel__stage__item
+                = image_tag "https://placehold.jp/300x300.png", class: "item-photos__carousel__stage__item__image"
+              %li.item-photos__carousel__stage__item
+                = image_tag "https://placehold.jp/400x400.png", class: "item-photos__carousel__stage__item__image"
+              %li.item-photos__carousel__stage__item
+                = image_tag "https://placehold.jp/500x500.png", class: "item-photos__carousel__stage__item__image"
+              %li.item-photos__carousel__stage__item
+                = image_tag "https://placehold.jp/600x600.png", class: "item-photos__carousel__stage__item__image"
+              %li.item-photos__carousel__stage__item
+                = image_tag "https://placehold.jp/700x700.png", class: "item-photos__carousel__stage__item__image"
 
-            %ul.owl-dots
-              %li.owl-dot
-                .owl-dot__inner
-                  = image_tag "https://placehold.jp/200x300.png", class: "owl-dot__inner__image"
-              %li.owl-dot
-                .owl-dot__inner
-                  = image_tag "https://placehold.jp/300x200.png", class: "owl-dot__inner__image"
-              %li.owl-dot
-                .owl-dot__inner
-                  = image_tag "https://placehold.jp/300x300.png", class: "owl-dot__inner__image"
-              %li.owl-dot
-                .owl-dot__inner
-                  = image_tag "https://placehold.jp/400x400.png", class: "owl-dot__inner__image"
-              %li.owl-dot
-                .owl-dot__inner
-                  = image_tag "https://placehold.jp/500x500.png", class: "owl-dot__inner__image"
-              %li.owl-dot
-                .owl-dot__inner
-                  = image_tag "https://placehold.jp/600x600.png", class: "owl-dot__inner__image"
-              %li.owl-dot
-                .owl-dot__inner
-                  = image_tag "https://placehold.jp/700x700.png", class: "owl-dot__inner__image"
-                
+            %ul.item-photos__carousel__dots
+              %li.item-photos__carousel__dots__dot
+                .item-photos__carousel__dots__dot__inner
+                  = image_tag "https://placehold.jp/200x300.png", class: "item-photos__carousel__dots__dot__inner__image"
+              %li.item-photos__carousel__dots__dot
+                .item-photos__carousel__dots__dot__inner
+                  = image_tag "https://placehold.jp/300x200.png", class: "item-photos__carousel__dots__dot__inner__image"
+              %li.item-photos__carousel__dots__dot
+                .item-photos__carousel__dots__dot__inner
+                  = image_tag "https://placehold.jp/300x300.png", class: "item-photos__carousel__dots__dot__inner__image"
+              %li.item-photos__carousel__dots__dot
+                .item-photos__carousel__dots__dot__inner
+                  = image_tag "https://placehold.jp/400x400.png", class: "item-photos__carousel__dots__dot__inner__image"
+              %li.item-photos__carousel__dots__dot
+                .item-photos__carousel__dots__dot__inner
+                  = image_tag "https://placehold.jp/500x500.png", class: "item-photos__carousel__dots__dot__inner__image"
+              %li.item-photos__carousel__dots__dot
+                .item-photos__carousel__dots__dot__inner
+                  = image_tag "https://placehold.jp/600x600.png", class: "item-photos__carousel__dots__dot__inner__image"
+              %li.item-photos__carousel__dots__dot
+                .item-photos__carousel__dots__dot__inner
+                  = image_tag "https://placehold.jp/700x700.png", class: "item-photos__carousel__dots__dot__inner__image"
+                  
       .price-box--mini
         %span.price-box--mini__price.bold
           ￥700

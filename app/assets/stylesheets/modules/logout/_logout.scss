@@ -1,0 +1,55 @@
+.mypage {
+ 
+  .logout {
+
+    .container {
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        float: none;
+        width: 700px;
+      }
+
+      @media screen and (min-width: 1068px) {
+        float: right;
+      }
+
+      .content {
+        background: $white;
+
+        .form {
+          border-top: 1px solid $light-grey;
+          padding: 40px;
+          
+          @media screen and (min-width: 768px) {
+            padding: 64px;
+          }
+
+          .form__wraper {
+            max-width: 320px;
+            margin: 0 auto;
+
+            .btn {
+              overflow: visible;
+              touch-action: manipulation;
+              outline: 0;
+              min-height: 1.5em;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+              background: $red;
+              border: 1px solid $red;
+              color: $white;
+              box-sizing: border-box;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
