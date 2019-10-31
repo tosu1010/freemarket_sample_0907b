@@ -6,53 +6,25 @@
 
   .merchandise-detail__main
     %h2.merchandise-detail__main__name.bold
-      コーチ ショルダーバッグ
+      = @merchandise.name
     .merchandise-detail__main__content
       .left-content
         .item-photos
           .item-photos__carousel
             %ul.item-photos__carousel__stage
-              %li.item-photos__carousel__stage__item
-                = image_tag "https://placehold.jp/200x300.png", class: "item-photos__carousel__stage__item__image"
-              %li.item-photos__carousel__stage__item
-                = image_tag "https://placehold.jp/300x200.png", class: "item-photos__carousel__stage__item__image"
-              %li.item-photos__carousel__stage__item
-                = image_tag "https://placehold.jp/300x300.png", class: "item-photos__carousel__stage__item__image"
-              %li.item-photos__carousel__stage__item
-                = image_tag "https://placehold.jp/400x400.png", class: "item-photos__carousel__stage__item__image"
-              %li.item-photos__carousel__stage__item
-                = image_tag "https://placehold.jp/500x500.png", class: "item-photos__carousel__stage__item__image"
-              %li.item-photos__carousel__stage__item
-                = image_tag "https://placehold.jp/600x600.png", class: "item-photos__carousel__stage__item__image"
-              %li.item-photos__carousel__stage__item
-                = image_tag "https://placehold.jp/700x700.png", class: "item-photos__carousel__stage__item__image"
+              - @merchandise.exhibit.exhibit_images.each do |image|
+                %li.item-photos__carousel__stage__item
+                  = image_tag "#{image.image}", class: "item-photos__carousel__stage__item__image"
 
             %ul.item-photos__carousel__dots
-              %li.item-photos__carousel__dots__dot
-                .item-photos__carousel__dots__dot__inner
-                  = image_tag "https://placehold.jp/200x300.png", class: "item-photos__carousel__dots__dot__inner__image"
-              %li.item-photos__carousel__dots__dot
-                .item-photos__carousel__dots__dot__inner
-                  = image_tag "https://placehold.jp/300x200.png", class: "item-photos__carousel__dots__dot__inner__image"
-              %li.item-photos__carousel__dots__dot
-                .item-photos__carousel__dots__dot__inner
-                  = image_tag "https://placehold.jp/300x300.png", class: "item-photos__carousel__dots__dot__inner__image"
-              %li.item-photos__carousel__dots__dot
-                .item-photos__carousel__dots__dot__inner
-                  = image_tag "https://placehold.jp/400x400.png", class: "item-photos__carousel__dots__dot__inner__image"
-              %li.item-photos__carousel__dots__dot
-                .item-photos__carousel__dots__dot__inner
-                  = image_tag "https://placehold.jp/500x500.png", class: "item-photos__carousel__dots__dot__inner__image"
-              %li.item-photos__carousel__dots__dot
-                .item-photos__carousel__dots__dot__inner
-                  = image_tag "https://placehold.jp/600x600.png", class: "item-photos__carousel__dots__dot__inner__image"
-              %li.item-photos__carousel__dots__dot
-                .item-photos__carousel__dots__dot__inner
-                  = image_tag "https://placehold.jp/700x700.png", class: "item-photos__carousel__dots__dot__inner__image"
+              - @merchandise.exhibit.exhibit_images.each do |image|
+                %li.item-photos__carousel__dots__dot
+                  .item-photos__carousel__dots__dot__inner
+                    = image_tag "#{image.image}", class: "item-photos__carousel__dots__dot__inner__image"
                   
       .price-box--mini
         %span.price-box--mini__price.bold
-          ￥700
+          = "￥#{@merchandise.price}"
         %span.price-box--mini__tax
           (税込)
         %span.price-box--mini__shipping-free
@@ -64,48 +36,48 @@
             出品者
           %td
             = link_to "#" do
-              くまちゃん
+              = @merchandise.exhibit.user.nickname
             .evaluations
               .evaluations__icon--smile
                 = fa_icon "smile-o"
               .evaluations__num
-                0
+                = @merchandise.exhibit.user.likes.where(value: 1).count
             .evaluations
               .evaluations__icon--normal
                 = fa_icon "meh-o"
               .evaluations__num
-                0
+                = @merchandise.exhibit.user.likes.where(value: 2).count
                 
             .evaluations
               .evaluations__icon--bad
                 = fa_icon "frown-o"
               .evaluations__num
-                0
+                = @merchandise.exhibit.user.likes.where(value: 3).count
 
         %tr
           %th
             カテゴリー
           %td
             = link_to "#" do
-              メンズ
+              = @merchandise.category.parent.parent.name
             = link_to "#" do
               = fa_icon "chevron-right"
-              ジャケット/アウター
+              = @merchandise.category.parent.name
             = link_to "#" do
               = fa_icon "chevron-right"
-              ダウンベスト
+              = @merchandise.category.name
 
         %tr
           %th
             ブランド
           %td
-            アヴィレックス
+            = @merchandise.brand.name
 
         %tr
           %th
             商品のサイズ
           %td
-            L
+            = @merchandise.exhibit.size
           
         %tr
           %th
@@ -117,30 +89,30 @@
           %th
             配送料の負担
           %td
-            送料込み(出品者負担)
+            -# = @merchandise.delivery.delivery_method.
 
         %tr
           %th
             配送の方法
           %td
-            らくらくメルカリ便
+            = @merchandise.delivery.delivery_method.delivery_type_name
           
         %tr
           %th
             配送元地域
           %td
             = link_to "#" do
-              兵庫県
+              = @merchandise.delivery.shipping_area
 
         %tr
           %th
             発送日の目安
           %td
-            2~3日で発送
+            = @merchandise.delivery.shipping_date
 
     .price-box
       %span.price-box__price.bold
-        ￥700
+        = "￥#{@merchandise.price}"
       %span.price-box__tax
         (税込)
       %span.price-box__shipping-free
@@ -152,7 +124,7 @@
     
     .item-description
       %p.item-description__text
-        フードもついてます。ツーパターンで着用できます。
+        = @merchandise.description
     
     .item-button
       .item-button__left
@@ -161,7 +133,7 @@
           %span
             いいね!
           %span
-            2
+            = @merchandise.likes.where(value: 1).count
 
         .report-item
           %span
@@ -177,39 +149,25 @@
 
   .comments
     %ul.comments__container
-      %li.comment
-        = link_to "#", class: "comment__link" do
-          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
-          .comment__link__user-name
-            tetsu
-        .comment__content
-          .comment__content__text
-            こんにちわ！
-          .comment__content__bottom
-            .comment__content__bottom__date
-              .comment__content__bottom__date__icon
-                = fa_icon "clock-o"
-              .comment__content__bottom__date__time
-                8時間前
-            .comment__content__bottom__report
-              = fa_icon "flag-o"
-
-      %li.comment
-        = link_to "#", class: "comment__link" do
-          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
-          .comment__link__user-name
-            tetsu
-        .comment__content
-          .comment__content__text
-            こんにちわ！
-          .comment__content__bottom
-            .comment__content__bottom__date
-              .comment__content__bottom__date__icon
-                = fa_icon "clock-o"
-              .comment__content__bottom__date__time
-                8時間前
-            .comment__content__bottom__report
-              = fa_icon "flag-o"
+      - @merchandise.comments.each do |comment|
+        %li.comment
+          = link_to "#", class: "comment__link" do
+            = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
+            .comment__link__user-name
+              = comment.user.nickname
+          .comment__content
+            .comment__content__text
+              = comment.comment
+            .comment__content__bottom
+              .comment__content__bottom__date
+                .comment__content__bottom__date__icon
+                  = fa_icon "clock-o"
+                .comment__content__bottom__date__time
+                  = ((Time.now - comment.created_at.in_time_zone('Tokyo'))/3600).floor
+                %span
+                  時間前
+              .comment__content__bottom__report
+                = fa_icon "flag-o"
 
     .comment-form
       .comment-form__attention
@@ -222,11 +180,11 @@
     %li.item-link__prev
       = link_to "#", class: "item-link__link" do
         = fa_icon "chevron-left", class: "item-link__link__icon-prev"
-        薄手ポンチョ
+        = Merchandise.order("RAND()").first.name
 
     %li.item-link__next
       = link_to "#", class: "item-link__link" do
-        ☆送料込み☆稼働品☆ Arrows 赤色 mineo スマートフォン M02
+        = Merchandise.order("RAND()").second.name
         = fa_icon "chevron-right", class: "item-link__link__icon-next"
 
   .social-icon
@@ -245,26 +203,20 @@
     .another-merchandise
       %h2.another-merchandise__head
         = link_to "#", class: "another-merchandise__head__link" do
-          くまちゃんさんのその他の出品
+          = "#{@merchandise.exhibit.user.nickname}さんのその他の出品"
       .items
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
+        - Exhibit.where(user_id: @merchandise.exhibit.user_id).each do |item|
+          = render partial: "showpage-item", locals: { item: item }
+         
 
     .another-merchandise
       %h2.another-merchandise__head
         = link_to "#", class: "another-merchandise__head__link" do
-          コーチのショルダーバッグ その他の商品
+          = "#{@merchandise.brand.name}の#{@merchandise.category.name} その他の商品"
       .items
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
-        = render "showpage-item"
+        -# = Exhibit.where(user_id: @merchandise.exhibit.user_id).order("RAND()").limit(6).each do |item|
+        -#   = render_partial "showpage-item", locals: { item: item }
+        
   
   .buy-button-fix
     = link_to "#", class: "buy-button-fix__button" do
