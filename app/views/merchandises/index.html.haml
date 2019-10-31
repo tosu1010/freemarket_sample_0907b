@@ -12,108 +12,19 @@
         .section__title
         .section__box
           .items__box
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-            .item__box
-              = link_to "", class: "item__box_link" do
-                %figure.figure
-                  %figcaption.figure__figcaption
-                    %span.figcaption__item-name
-                      大島紬  格子柄紺色 着易く軽いお召し物
-                  .figure__image
-                    %span.figure__image_price
-                      ¥23,000
-                    = image_tag("https://static.mercdn.net/thumb/photos/m62773354446_1.jpg?1568017120", class: "figure__image_photo") 
-
+            - @merchandises.each do |merchandise| 
+              .item__box{data: {merchandise_id: merchandise.id}}
+                = link_to merchandise_path(merchandise.id), class: "item__box_link" do
+                  %figure.figure
+                    %figcaption.figure__figcaption
+                      %span.figcaption__item-name
+                        = merchandise.name
+                    .figure__image
+                      %span.figure__image_price
+                        = "¥#{merchandise.price.to_s(:delimited)}"
+                      - merchandise.exhibit.exhibit_images.sort_by(&:id).each_with_index do |exhibit_image, i|
+                        = image_tag exhibit_image.image, class: "figure__image_photo" if i == 0 && exhibit_image.image.present?
+                    
     -# ブランドごとの表示は後ほど実装する
     -# .label#brand_label
     -# .items#brand_items

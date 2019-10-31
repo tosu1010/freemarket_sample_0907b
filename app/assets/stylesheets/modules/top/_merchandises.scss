@@ -47,6 +47,12 @@
               border: 1px solid transparent;
               &:hover {border-color: $hover_blue;}
 
+              @media (max-width: 768px) {
+                &:last-child {
+                  display: none;
+                }             
+              }
+
               &_link {
                 width: 100%;
                 cursor: pointer;
@@ -129,4 +135,3 @@
     }
   }
 }
-
