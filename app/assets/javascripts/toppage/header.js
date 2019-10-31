@@ -3,8 +3,19 @@ var hover_black = 'rgb(0, 0, 0)'
 var white_grey = 'rgb(204, 204, 204)'
 var black_grey = '#333'
 
+//トップページの場合、ロゴマークのリンクを無効化
+$(function(){
+  var path = location.pathname
+  if (!path.match(/^\w*\/\w{1,}/)){
+    $('.upper__logo').on('click', function(e) {
+      e.preventDefault();
+    
+    })
+  }
+});
+
 //カテゴリー検索
-document.addEventListener('turbolinks:load', function(){
+$(function(){
    //大分類を表示・非表示
   $('.lower__left__category').hover(function() {
 
@@ -48,7 +59,7 @@ document.addEventListener('turbolinks:load', function(){
 });
 
 //ブランド検索
-document.addEventListener('turbolinks:load', function(){
+$(function(){
 
   //ブランドを表示・非表示
   $('.lower__left__brand').hover(function() {
@@ -65,7 +76,7 @@ document.addEventListener('turbolinks:load', function(){
 });
 
 //ホバー時にfontawsomeと文言の色を変更
-$(document).ready(function() {
+$(function(){
 
   $('.lower__right_li').hover(function() {
 

@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', function(){
+$(function(){
   $(".slide-banner.owl-carousel").owlCarousel({
     // ループ
     loop:true,
