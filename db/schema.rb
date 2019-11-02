@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_100650) do
+ActiveRecord::Schema.define(version: 2019_11_02_142931) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -110,15 +110,15 @@ ActiveRecord::Schema.define(version: 2019_11_02_100650) do
     t.string "shipping_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "delivery_method_id", null: false
+    t.index ["delivery_method_id"], name: "index_deliveries_on_delivery_method_id"
   end
 
   create_table "delivery_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "delivery_type_name", null: false
     t.string "company_name", null: false
-    t.bigint "delivery_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["delivery_id"], name: "index_delivery_methods_on_delivery_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -301,7 +301,7 @@ ActiveRecord::Schema.define(version: 2019_11_02_100650) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "dealed_comments", "merchandises"
   add_foreign_key "dealed_comments", "users"
-  add_foreign_key "delivery_methods", "deliveries"
+  add_foreign_key "deliveries", "delivery_methods"
   add_foreign_key "evaluations", "purchases"
   add_foreign_key "evaluations", "users"
   add_foreign_key "exhibit_images", "exhibits"

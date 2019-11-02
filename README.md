@@ -149,7 +149,7 @@
 | delivery_id   | references | null: false, foreign_key: true |
 
 ### Association
-- has_one :delivery, dependent: :destroy
+- belongs_to :delivery
 
 <br>
 
@@ -160,9 +160,10 @@
 | shipping_charge     | integer | null: false |
 | shipping_area       | string | null: false |
 | shipping_date       | string | null: false |
+| delivery_method_id  | references | foreign_key: true, null: false |
 
 ### Association
-- belongs_to :delivery_method
+- has_one :delivery_method, dependent: :destroy
 
 <br>
 

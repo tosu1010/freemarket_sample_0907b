@@ -1,3 +1,3 @@
 class Delivery < ApplicationRecord
-  belongs_to :delivery_method
+  has_one :delivery_method, dependent: :destroy
 end
