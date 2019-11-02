@@ -6,7 +6,7 @@
         = item.merchandise.name
       .item__body__bottom
         .item__body__bottom__price
-          = item.merchandise.price
+          = "￥#{item.merchandise.price.to_s(:delimited)}"
         .item__body__bottom__likes
           = fa_icon "heart-o", class: "item__body__bottom__likes__icon"
           %span
