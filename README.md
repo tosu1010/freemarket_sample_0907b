@@ -94,6 +94,7 @@
 | delivery_id             | references | null: false, foreign_key: true |
 | brand_id                | references | null: false, foreign_key: true |
 | category_id             | references | null: false, foreign_key: true |
+| condition_id            | references | null: false, foreign_key: true |
 
 ### Index
 - add_index :name, category_id
@@ -111,6 +112,7 @@
 - belongs_to :delivery
 - belongs_to :brand
 - belongs_to :category
+- belongs_to :condition
 
 
 <br>
@@ -244,6 +246,7 @@
 | size           | integer ||
 | user_id        | references | null: false, foreign_key: true |
 | merchandise_id | references | null: false, foreign_key: true |
+| condition_id   | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :to_does, dependent: :destroy
@@ -263,6 +266,16 @@
 
 ### Association
 - belongs_to :exhibit
+
+<br>
+
+---
+## Conditionテーブル
+|カラム名|タイプ|オプション|
+|--|--|--|
+|value | string | null: false, unique: true |
+
+- has_many :merchandises
 
 <br>
 

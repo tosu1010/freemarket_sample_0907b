@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_082935) do
+ActiveRecord::Schema.define(version: 2019_11_02_100650) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -55,6 +55,12 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
     t.datetime "updated_at", null: false
     t.index ["merchandise_id"], name: "index_comments_on_merchandise_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -172,8 +178,10 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "condition_id", null: false
     t.index ["brand_id"], name: "index_merchandises_on_brand_id"
     t.index ["category_id"], name: "index_merchandises_on_category_id"
+    t.index ["condition_id"], name: "index_merchandises_on_condition_id"
     t.index ["delivery_id"], name: "index_merchandises_on_delivery_id"
     t.index ["name", "category_id"], name: "index_merchandises_on_name_and_category_id"
   end
@@ -237,6 +245,16 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
     t.index ["personal_information_id"], name: "index_remittees_on_personal_information_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "uid", null: false
+    t.string "provider", null: false
+    t.string "token", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "to_dos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
     t.bigint "user_id", null: false
@@ -294,6 +312,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
   add_foreign_key "likes", "users"
   add_foreign_key "merchandises", "brands"
   add_foreign_key "merchandises", "categories"
+  add_foreign_key "merchandises", "conditions"
   add_foreign_key "merchandises", "deliveries"
   add_foreign_key "notices", "users"
   add_foreign_key "personal_informations", "users"
@@ -301,6 +320,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
   add_foreign_key "purchases", "merchandises"
   add_foreign_key "purchases", "users"
   add_foreign_key "remittees", "personal_informations"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "to_dos", "exhibits"
   add_foreign_key "to_dos", "merchandises"
   add_foreign_key "to_dos", "purchases"
