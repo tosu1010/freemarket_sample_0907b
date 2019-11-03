@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_142931) do
+ActiveRecord::Schema.define(version: 2019_11_02_100650) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -55,12 +55,6 @@ ActiveRecord::Schema.define(version: 2019_11_02_142931) do
     t.datetime "updated_at", null: false
     t.index ["merchandise_id"], name: "index_comments_on_merchandise_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "value", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -119,6 +113,8 @@ ActiveRecord::Schema.define(version: 2019_11_02_142931) do
     t.string "company_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "delivery_id"
+    t.index ["delivery_id"], name: "index_delivery_methods_on_delivery_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -178,10 +174,9 @@ ActiveRecord::Schema.define(version: 2019_11_02_142931) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "condition_id", null: false
+    t.integer "condition_id", null: false
     t.index ["brand_id"], name: "index_merchandises_on_brand_id"
     t.index ["category_id"], name: "index_merchandises_on_category_id"
-    t.index ["condition_id"], name: "index_merchandises_on_condition_id"
     t.index ["delivery_id"], name: "index_merchandises_on_delivery_id"
     t.index ["name", "category_id"], name: "index_merchandises_on_name_and_category_id"
   end
@@ -302,6 +297,7 @@ ActiveRecord::Schema.define(version: 2019_11_02_142931) do
   add_foreign_key "dealed_comments", "merchandises"
   add_foreign_key "dealed_comments", "users"
   add_foreign_key "deliveries", "delivery_methods"
+  add_foreign_key "delivery_methods", "deliveries"
   add_foreign_key "evaluations", "purchases"
   add_foreign_key "evaluations", "users"
   add_foreign_key "exhibit_images", "exhibits"
@@ -312,7 +308,6 @@ ActiveRecord::Schema.define(version: 2019_11_02_142931) do
   add_foreign_key "likes", "users"
   add_foreign_key "merchandises", "brands"
   add_foreign_key "merchandises", "categories"
-  add_foreign_key "merchandises", "conditions"
   add_foreign_key "merchandises", "deliveries"
   add_foreign_key "notices", "users"
   add_foreign_key "personal_informations", "users"
