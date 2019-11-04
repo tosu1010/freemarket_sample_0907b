@@ -107,9 +107,9 @@ ActiveRecord::Schema.define(version: 2019_11_04_041617) do
     t.integer "shipping_charge_id", null: false
     t.integer "shipping_area_id", null: false
     t.integer "shipping_date_id", null: false
-    t.integer "delivery_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "delivery_type_id", null: false
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -235,16 +235,6 @@ ActiveRecord::Schema.define(version: 2019_11_04_041617) do
     t.index ["personal_information_id"], name: "index_remittees_on_personal_information_id"
   end
 
-  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "uid", null: false
-    t.string "provider", null: false
-    t.string "token", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
-  end
-
   create_table "to_dos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
     t.bigint "user_id", null: false
@@ -281,6 +271,9 @@ ActiveRecord::Schema.define(version: 2019_11_04_041617) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "balances", "merchandises"
+  add_foreign_key "balances", "users"
   add_foreign_key "comments", "merchandises"
   add_foreign_key "comments", "users"
   add_foreign_key "contacts", "merchandises"
@@ -305,7 +298,6 @@ ActiveRecord::Schema.define(version: 2019_11_04_041617) do
   add_foreign_key "purchases", "merchandises"
   add_foreign_key "purchases", "users"
   add_foreign_key "remittees", "personal_informations"
-  add_foreign_key "sns_credentials", "users"
   add_foreign_key "to_dos", "exhibits"
   add_foreign_key "to_dos", "merchandises"
   add_foreign_key "to_dos", "purchases"
