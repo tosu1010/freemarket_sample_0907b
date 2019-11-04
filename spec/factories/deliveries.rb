@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :delivery do
-    shipping_charge {"4000"}
-    shipping_area {"a"}
-    shipping_date {"2019-10-31"}
+    shipping_area { ShippingArea.first }
+    shipping_charge { ShippingCharge.first }
+    shipping_date  { ShippingDate.first }
+    delivery_type_id  { "1" }
   end
 end
