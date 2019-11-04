@@ -44,7 +44,12 @@
 | number      | string | null: false |
 | building    | string ||
 | user_id             | references | null: false, foreign_key: true |
-| prefecture_id       | string | null: false |
+| prefecture_id       | integer | null: false |
+| fist_name_kana      | string | null: false |
+| last_name_kana      | string | null: false |
+| first_name          | string | null: fasle |
+| last_name           | string | null: false |
+| phone_number        | string ||
 
 ### Association
 - belongs_to :user
@@ -112,8 +117,7 @@
 - belongs_to :delivery
 - belongs_to :brand
 - belongs_to :category
-- belongs_to :condition
-
+- belongs_to_active_hash :condition
 
 <br>
 
@@ -141,29 +145,19 @@
 <br>
 
 ---
-## Delivery_methodテーブル
-|カラム名|タイプ|オプション|
-|--|--|--|
-| delivery_type_name | string | null: false|
-| company_name  | string | null: false |
-| delivery_id   | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :delivery
-
-<br>
-
----
 ## Deliveryテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| shipping_charge     | integer | null: false |
-| shipping_area       | string | null: false |
-| shipping_date       | string | null: false |
-| delivery_method_id  | references | foreign_key: true, null: false |
+| shipping_charge_id    | integer | null: false |
+| delivery_type_name_id | integer | null: false |
+| shipping_area_id      | integer | null: false |
+| shipping_date_id      | integer | null: false |
 
 ### Association
-- has_one :delivery_method, dependent: :destroy
+- belongs_to_active_hash :shipping_charge
+- belongs_to_active_hash :delivery_type_name
+- belongs_to_active_hash :shipping_date
+- belongs_to_active_hash :shipping_area
 
 <br>
 
@@ -244,10 +238,9 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | status         | integer | null: false |
-| size           | integer ||
+| size_id        | integer ||
 | user_id        | references | null: false, foreign_key: true |
 | merchandise_id | references | null: false, foreign_key: true |
-| condition_id   | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :to_does, dependent: :destroy
@@ -255,6 +248,7 @@
 
 - belongs_to :user
 - belongs_to :merchandise
+- belongs_to_active_hash :size
 
 <br>
 
@@ -267,16 +261,6 @@
 
 ### Association
 - belongs_to :exhibit
-
-<br>
-
----
-## Conditionテーブル
-|カラム名|タイプ|オプション|
-|--|--|--|
-|value | string | null: false, unique: true |
-
-- has_many :merchandises
 
 <br>
 
