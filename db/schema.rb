@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_065822) do
+ActiveRecord::Schema.define(version: 2019_11_04_041617) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -20,7 +20,12 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "prefecture_id"
+    t.integer "prefecture_id"
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "phone_number"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -99,20 +104,12 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
   end
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "shipping_charge", null: false
-    t.string "shipping_area", null: false
-    t.string "shipping_date", null: false
+    t.integer "shipping_charge_id", null: false
+    t.integer "shipping_area_id", null: false
+    t.integer "shipping_date_id", null: false
+    t.integer "delivery_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "delivery_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "delivery_type_name", null: false
-    t.string "company_name", null: false
-    t.bigint "delivery_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["delivery_id"], name: "index_delivery_methods_on_delivery_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -135,7 +132,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
 
   create_table "exhibits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "status", null: false
-    t.string "size"
+    t.integer "size_id"
     t.bigint "user_id", null: false
     t.bigint "merchandise_id", null: false
     t.datetime "created_at", null: false
@@ -172,6 +169,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "condition_id", null: false
     t.index ["brand_id"], name: "index_merchandises_on_brand_id"
     t.index ["category_id"], name: "index_merchandises_on_category_id"
     t.index ["delivery_id"], name: "index_merchandises_on_delivery_id"
@@ -290,7 +288,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "dealed_comments", "merchandises"
   add_foreign_key "dealed_comments", "users"
-  add_foreign_key "delivery_methods", "deliveries"
   add_foreign_key "evaluations", "purchases"
   add_foreign_key "evaluations", "users"
   add_foreign_key "exhibit_images", "exhibits"
