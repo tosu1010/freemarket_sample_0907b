@@ -101,6 +101,7 @@
 | delivery_id             | references | null: false, foreign_key: true |
 | brand_id                | references | null: false, foreign_key: true |
 | category_id             | references | null: false, foreign_key: true |
+| condition_id            | integer    | null: false |
 
 ### Index
 - add_index :name, category_id
