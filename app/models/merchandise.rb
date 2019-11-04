@@ -10,4 +10,6 @@ class Merchandise < ApplicationRecord
   belongs_to :delivery
   belongs_to :brand
   belongs_to :category
+  belongs_to :condition
+  belongs_to_active_hash :condition
 end

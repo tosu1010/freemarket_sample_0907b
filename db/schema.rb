@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_082935) do
+ActiveRecord::Schema.define(version: 2019_10_26_065822) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -104,6 +104,8 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
     t.string "shipping_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "delivery_method_id", null: false
+    t.index ["delivery_method_id"], name: "index_deliveries_on_delivery_method_id"
   end
 
   create_table "delivery_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -135,7 +137,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
 
   create_table "exhibits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "status", null: false
-    t.integer "size"
+    t.string "size"
     t.bigint "user_id", null: false
     t.bigint "merchandise_id", null: false
     t.datetime "created_at", null: false
@@ -237,6 +239,16 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
     t.index ["personal_information_id"], name: "index_remittees_on_personal_information_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "uid", null: false
+    t.string "provider", null: false
+    t.string "token", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "to_dos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
     t.bigint "user_id", null: false
@@ -283,6 +295,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "dealed_comments", "merchandises"
   add_foreign_key "dealed_comments", "users"
+  add_foreign_key "deliveries", "delivery_methods"
   add_foreign_key "delivery_methods", "deliveries"
   add_foreign_key "evaluations", "purchases"
   add_foreign_key "evaluations", "users"
@@ -301,6 +314,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_082935) do
   add_foreign_key "purchases", "merchandises"
   add_foreign_key "purchases", "users"
   add_foreign_key "remittees", "personal_informations"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "to_dos", "exhibits"
   add_foreign_key "to_dos", "merchandises"
   add_foreign_key "to_dos", "purchases"
