@@ -15,7 +15,7 @@
 | birth_year          | integer | null: false |
 | birth_month         | integer | null: false |
 | birth_day           | integer | null: false |
-| phone_number        | string ||
+| phone_number        | string | null: false |
 | profile_description | text ||
 
 ### Association
