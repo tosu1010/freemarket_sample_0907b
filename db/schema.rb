@@ -104,8 +104,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
     t.string "shipping_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "delivery_method_id", null: false
-    t.index ["delivery_method_id"], name: "index_deliveries_on_delivery_method_id"
   end
 
   create_table "delivery_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -285,9 +283,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "users"
-  add_foreign_key "balances", "merchandises"
-  add_foreign_key "balances", "users"
   add_foreign_key "comments", "merchandises"
   add_foreign_key "comments", "users"
   add_foreign_key "contacts", "merchandises"
@@ -295,7 +290,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_065822) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "dealed_comments", "merchandises"
   add_foreign_key "dealed_comments", "users"
-  add_foreign_key "deliveries", "delivery_methods"
   add_foreign_key "delivery_methods", "deliveries"
   add_foreign_key "evaluations", "purchases"
   add_foreign_key "evaluations", "users"
