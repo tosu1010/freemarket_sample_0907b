@@ -149,13 +149,13 @@
 |カラム名|タイプ|オプション|
 |--|--|--|
 | shipping_charge_id    | integer | null: false |
-| delivery_type_name_id | integer | null: false |
+| delivery_type_id      | integer | null: false |
 | shipping_area_id      | integer | null: false |
 | shipping_date_id      | integer | null: false |
 
 ### Association
 - belongs_to_active_hash :shipping_charge
-- belongs_to_active_hash :delivery_type_name
+- belongs_to_active_hash :delivery_type
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :shipping_area
 

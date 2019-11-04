@@ -1,4 +1,4 @@
-class DeliveryTypeName < ActiveHash::Base
+class DeliveryType < ActiveHash::Base
   self.data = [
       {id: 1, value: "未定"}, {id: 2, value: "らくらくメルカリ便"}, {id: 3, value: "ゆうメール"},
       {id: 4, value: "レターパック"}, {id: 5, value: "普通郵便(定形、定形外"}, {id: 6, value: "クロネコヤマト"},
