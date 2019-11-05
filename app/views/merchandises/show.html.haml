@@ -24,11 +24,15 @@
                   
       .price-box--mini
         %span.price-box--mini__price.bold
-          = "￥#{@merchandise.price}"
+          = "￥#{@merchandise.price.to_s(:delimited)}"
         %span.price-box--mini__tax
           (税込)
-        %span.price-box--mini__shipping-free
-          送料込み
+        - if @merchandise.delivery.shipping_charge_id == 1
+          %span.price-box--mini__shipping-free
+            送料込み
+        - elsif @merchandise.delivery.shipping_charge_id == 2
+          %span.price-box--mini__shipping-free
+            着払い
 
       %table.item-detail
         %tr
@@ -73,50 +77,55 @@
           %td
             = @merchandise.brand.name
 
-        %tr
-          %th
-            商品のサイズ
-          %td
-            = @merchandise.exhibit.size
+        - if @merchandise.exhibit.size_id.present?
+          %tr
+            %th
+              商品のサイズ
+            %td
+              = @merchandise.exhibit.size.value
           
         %tr
           %th
             商品の状態
           %td
-            目立った傷や汚れなし
+            = @merchandise.condition.value
         
         %tr
           %th
             配送料の負担
           %td
-            -# = @merchandise.delivery.delivery_method.
+            = @merchandise.delivery.shipping_charge.value
 
         %tr
           %th
             配送の方法
           %td
-            = @merchandise.delivery.delivery_method.delivery_type_name
+            = @merchandise.delivery.delivery_type.value
           
         %tr
           %th
             配送元地域
           %td
             = link_to "#" do
-              = @merchandise.delivery.shipping_area
+              = @merchandise.delivery.shipping_area.name
 
         %tr
           %th
             発送日の目安
           %td
-            = @merchandise.delivery.shipping_date
+            = @merchandise.delivery.shipping_date.value
 
     .price-box
       %span.price-box__price.bold
-        = "￥#{@merchandise.price}"
+        = "￥#{@merchandise.price.to_s(:delimited)}"
       %span.price-box__tax
         (税込)
-      %span.price-box__shipping-free
-        送料込み
+      - if @merchandise.delivery.shipping_charge_id == 1
+        %span.price-box--mini__shipping-free
+          送料込み
+      - elsif @merchandise.delivery.shipping_charge_id == 2
+        %span.price-box--mini__shipping-free
+          着払い
 
     .buy-button
       = link_to "#" do
@@ -148,26 +157,25 @@
             あんしん・あんぜんへの取り組み
 
   .comments
-    %ul.comments__container
-      - @merchandise.comments.each do |comment|
-        %li.comment
-          = link_to "#", class: "comment__link" do
-            = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
-            .comment__link__user-name
-              = comment.user.nickname
-          .comment__content
-            .comment__content__text
-              = comment.comment
-            .comment__content__bottom
-              .comment__content__bottom__date
-                .comment__content__bottom__date__icon
-                  = fa_icon "clock-o"
-                .comment__content__bottom__date__time
-                  = ((Time.now - comment.created_at.in_time_zone('Tokyo'))/3600).floor
-                %span
-                  時間前
-              .comment__content__bottom__report
-                = fa_icon "flag-o"
+    - if @merchandise.comments.present?
+      %ul.comments__container
+        - @merchandise.comments.order("created_at ASC").each do |comment|
+          %li.comment
+            = link_to "#", class: "comment__link" do
+              = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
+              .comment__link__user-name
+                = comment.user.nickname
+            .comment__content
+              .comment__content__text
+                = comment.comment
+              .comment__content__bottom
+                .comment__content__bottom__date
+                  .comment__content__bottom__date__icon
+                    = fa_icon "clock-o"
+                  .comment__content__bottom__date__time
+                    = comment.calc_date
+                .comment__content__bottom__report
+                  = fa_icon "flag-o"
 
     .comment-form
       .comment-form__attention
@@ -178,13 +186,13 @@
   
   %ul.item-link
     %li.item-link__prev
-      = link_to "#", class: "item-link__link" do
+      = link_to merchandise_path(@merchandise.previous.id), class: "item-link__link" do
         = fa_icon "chevron-left", class: "item-link__link__icon-prev"
-        = Merchandise.order("RAND()").first.name
+        = @merchandise.previous.name
 
     %li.item-link__next
-      = link_to "#", class: "item-link__link" do
-        = Merchandise.order("RAND()").second.name
+      = link_to merchandise_path(@merchandise.next.id), class: "item-link__link" do
+        = @merchandise.next.name
         = fa_icon "chevron-right", class: "item-link__link__icon-next"
 
   .social-icon
@@ -206,7 +214,7 @@
           = "#{@merchandise.exhibit.user.nickname}さんのその他の出品"
       .items
         - Exhibit.where(user_id: @merchandise.exhibit.user_id).each do |item|
-          = render partial: "showpage-item", locals: { item: item }
+          = render partial: "showpage-item", locals: { item: item.merchandise }
          
 
     .another-merchandise
@@ -214,8 +222,8 @@
         = link_to "#", class: "another-merchandise__head__link" do
           = "#{@merchandise.brand.name}の#{@merchandise.category.name} その他の商品"
       .items
-        -# = Exhibit.where(user_id: @merchandise.exhibit.user_id).order("RAND()").limit(6).each do |item|
-        -#   = render_partial "showpage-item", locals: { item: item }
+        = Merchandise.where(category_id: @merchandise.category_id, brand_id: @merchandise.brand_id).order("RAND()").limit(6).each do |item|
+          = render partial: "showpage-item", locals: { item: item }
         
   
   .buy-button-fix

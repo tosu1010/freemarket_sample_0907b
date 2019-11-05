@@ -11,6 +11,17 @@ class Merchandise < ApplicationRecord
   belongs_to :brand
   belongs_to :category
 
+  def previous
+    previous_record = Merchandise.where("id < ?", self.id).order("id DESC").first
+    previous_record.present? ? previous_record : self
+  end
+
+  def next
+    next_record = Merchandise.where("id > ?", self.id).order("id ASC").first
+    next_record.present? ? next_record : self
+  end
+
+
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :condition
 end

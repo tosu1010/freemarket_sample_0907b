@@ -1,13 +1,13 @@
 .item
-  = link_to "#", class: "item__link" do
-    = image_tag "#{ExhibitImage.find_by(exhibit_id: item.id).image}", class: "item__image"
+  = link_to merchandise_path(item.id), class: "item__link" do
+    = image_tag "#{ExhibitImage.find_by(exhibit_id: item.exhibit).image}", class: "item__image"
     .item__body
       .item__body__name
-        = item.merchandise.name
+        = item.name
       .item__body__bottom
         .item__body__bottom__price
-          = "￥#{item.merchandise.price.to_s(:delimited)}"
+          = "￥#{item.price.to_s(:delimited)}"
         .item__body__bottom__likes
           = fa_icon "heart-o", class: "item__body__bottom__likes__icon"
           %span
-            = item.merchandise.likes.where(value: 1).count
+            = item.likes.where(value: 1).count
