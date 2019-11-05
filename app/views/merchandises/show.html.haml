@@ -181,8 +181,11 @@
       .comment-form__attention
         %p
           相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %textarea.comment-form__text-box(cols="40" rows="10")
-      %input.comment-form__submit{type: "submit", value: "コメントする"}
+      = form_for [@merchandise, @comment] do |f|
+        = f.text_area :comment, class: 'comment-form__text-box', size: '40*10'
+        = f.submit 'コメントする', class: 'comment-form__submit'
+        -# %textarea.comment-form__text-box(cols="40" rows="10")
+        -# %input.comment-form__submit{type: "submit", value: "コメントする"}
   
   %ul.item-link
     %li.item-link__prev

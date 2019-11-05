@@ -7,7 +7,7 @@ class MerchandisesController < ApplicationController
 
   def show
     @merchandise = Merchandise.find(merchandise_params[:id])
-    
+    @comment = Comment.new()
   end
 
 
