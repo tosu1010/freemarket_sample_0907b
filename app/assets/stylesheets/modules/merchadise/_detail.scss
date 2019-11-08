@@ -204,34 +204,33 @@
           float: none;
         }
 
-        .new_like {
+        .likes {
+          border-radius: 16px;
+          background-color: $light-grey;
           display: inline-block;
-          
-          .likes {
+          padding: 8px 16px;
+          border: 1px solid $light-grey;
+          line-height: 14px;
+          outline: 0;
+
+          &:active {
             border-radius: 16px;
-            background-color: $light-grey;
-            display: inline-block;
-            padding: 8px 16px;
-            border: 1px solid $light-grey;
-            line-height: 14px;
-            outline: 0;
-  
-            &:active {
-              border-radius: 16px;
-              border: 1px solid $red;
-            }
-      
-            span {
-              margin-left: 8px;
-            }
-      
-            &__icon {
-              color: $grey;
+            border: 1px solid $red;
+          }
+    
+          span {
+            margin-left: 8px;
+          }
+    
+          &__icon {
+            color: $grey;
+
+            &--liked {
+              color: $red;
             }
           }
         }
         
-    
         .report-item {
           background-color: $light-grey;
           display: inline-block;

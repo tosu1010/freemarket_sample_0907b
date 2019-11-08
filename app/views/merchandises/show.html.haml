@@ -137,13 +137,8 @@
     
     .item-button
       .item-button__left
-        = form_for [@merchandise, @like] do
-          = button_tag type: 'submit', class: 'likes' do
-            = fa_icon "heart-o", class: "likes__icon"
-            %span
-              いいね!
-            %span
-              = @merchandise.likes.where(value: 1).count
+        .likes
+          = render partial: 'likes/like', locals: {merchandise: @merchandise}
 
         .report-item
           %span

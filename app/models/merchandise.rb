@@ -21,6 +21,10 @@ class Merchandise < ApplicationRecord
     next_record.present? ? next_record : 0
   end
 
+  def liked_by(user_id)
+    likes.where(user_id: user_id).exists?
+  end
+
 
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :condition

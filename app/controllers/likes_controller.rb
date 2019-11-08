@@ -1,13 +1,15 @@
 class LikesController < ApplicationController
-
-  def new
-    
-  end
-
   def create
-    # 第一引数には、後ほどcurrent_userを入れる予定
-    Like.new().regist_like(1, params[:merchandise_id])
-    redirect_to merchandise_path(params[:merchandise_id])
+    # user_idには、後ほどcurrent_userを入れる予定
+    @merchandise = Merchandise.find(params[:merchandise_id])
+    like = Like.new(value: 1, user_id: 1, merchandise_id: params[:merchandise_id])
+    like.save
   end
 
+  def destroy
+    # user_idには、後ほどcurrent_userを入れる予定
+    @merchandise = Merchandise.find(params[:merchandise_id])
+    like = Like.find_by(user_id: 1, merchandise_id: params[:merchandise_id])
+    like.delete
+  end
 end
