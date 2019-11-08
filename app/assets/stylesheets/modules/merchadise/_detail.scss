@@ -203,22 +203,34 @@
         @media screen and (max-width: 768px) {
           float: none;
         }
-        
-        .likes {
-          background-color: $light-grey;
+
+        .new_like {
           display: inline-block;
-          padding: 8px 16px;
-          border-radius:16px;
-          border: 1px solid $light-grey;
-    
-          span {
-            margin-left: 8px;
-          }
-    
-          &__icon {
-            color: $grey;
+          
+          .likes {
+            border-radius: 16px;
+            background-color: $light-grey;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid $light-grey;
+            line-height: 14px;
+            outline: 0;
+  
+            &:active {
+              border-radius: 16px;
+              border: 1px solid $red;
+            }
+      
+            span {
+              margin-left: 8px;
+            }
+      
+            &__icon {
+              color: $grey;
+            }
           }
         }
+        
     
         .report-item {
           background-color: $light-grey;

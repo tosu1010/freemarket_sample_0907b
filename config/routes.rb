@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index]
   resources :merchandises, only: [:index, :show] do
     resources :comments, only: [:create, :new]
+    resources :likes, only: [:create, :new]
   end
   resources :exhibit, only: [:index]
 

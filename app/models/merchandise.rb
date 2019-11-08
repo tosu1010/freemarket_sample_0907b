@@ -13,12 +13,12 @@ class Merchandise < ApplicationRecord
 
   def previous
     previous_record = Merchandise.where("id < ?", self.id).order("id DESC").first
-    previous_record.present? ? previous_record : self
+    previous_record.present? ? previous_record : 0
   end
 
   def next
     next_record = Merchandise.where("id > ?", self.id).order("id ASC").first
-    next_record.present? ? next_record : self
+    next_record.present? ? next_record : 0
   end
 
 
