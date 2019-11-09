@@ -25,6 +25,20 @@ class Merchandise < ApplicationRecord
     likes.where(user_id: user_id).exists?
   end
 
+  # 引数に渡した商品のブランド・カテゴリの他の商品を配列itemsに格納して渡す。
+  # 現在表示している商品は省き、最大6件まで表示する。
+  def self.brand_new_items(merchandise)
+    items = []
+    self.where(category_id: merchandise.category_id, brand_id: merchandise.brand_id).limit(7).order("created_at DESC").each_with_index do |item, i|
+      if item.id == merchandise.id
+        next
+      else i < 7
+        items << item
+      end
+    end
+    items
+  end
+
 
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :condition

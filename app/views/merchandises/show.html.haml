@@ -197,9 +197,8 @@
         = link_to "#", class: "another-merchandise__head__link" do
           = "#{@merchandise.exhibit.user.nickname}さんのその他の出品"
       .items
-        - Exhibit.where(user_id: @merchandise.exhibit.user_id).each do |item|
-          - if item.merchandise.id != @merchandise.id
-            = render partial: "showpage-item", locals: { item: item.merchandise }
+        - Exhibit.user_new_items(@merchandise).each do |item|
+          = render partial: "showpage-item", locals: { item: item.merchandise }
          
 
     .another-merchandise
@@ -207,9 +206,8 @@
         = link_to "#", class: "another-merchandise__head__link" do
           = "#{@merchandise.brand.name}の#{@merchandise.category.name} その他の商品"
       .items
-        - Merchandise.where(category_id: @merchandise.category_id, brand_id: @merchandise.brand_id).order("RAND()").limit(6).each do |item|
-          - if item.id != @merchandise.id
-            = render partial: "showpage-item", locals: { item: item }
+        - Merchandise.brand_new_items(@merchandise).each do |item|
+          = render partial: "showpage-item", locals: { item: item }
         
   
   .buy-button-fix

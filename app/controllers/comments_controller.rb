@@ -11,9 +11,6 @@ class CommentsController < ApplicationController
       format.html { redirect_to merchandise_path(@merchandise) }
       format.json
     end
-    # user_idの部分に関しては、後々current_user.idにする予定
-    # Comment.create(comment_params)
-    # redirect_to merchandise_path(@merchandise.id))
   end
 
   private
