@@ -32,7 +32,7 @@ class Merchandise < ApplicationRecord
     self.where(category_id: merchandise.category_id, brand_id: merchandise.brand_id).limit(7).order("created_at DESC").each_with_index do |item, i|
       if item.id == merchandise.id
         next
-      else i < 7
+      elsif i < 7
         items << item
       end
     end

@@ -1,4 +1,9 @@
 $(document).ready(function(){
+  // コメントが一つも存在しなければ、comments__containerクラスを削除する。
+  if ($('#comments__container > li').length == 0) {
+    $('#comments__container').removeClass('comments__container')
+  }
+
   $(function(){
     function buildHTML(comment){
       let html = `<li class='comment'>
@@ -27,10 +32,16 @@ $(document).ready(function(){
                       </div>
                     </div>
                   </li>`
-                        
-    
+
     return html;
     };
+
+    function getCommentsContainer() {
+      let html = `<ul class="comments__container">
+                  </ul>`
+      return html;
+    }
+
     $('#comment-form__form').on('submit', function(e){
       e.preventDefault();
       let formData = new FormData(this);
@@ -45,6 +56,7 @@ $(document).ready(function(){
       })
       .done(function(comment){
         let html = buildHTML(comment);
+        $('#comments__container').addClass('comments__container');
         $('.comments__container').append(html);
         $('#comment-form__form')[0].reset();
       })

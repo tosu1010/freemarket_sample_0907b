@@ -153,8 +153,8 @@
             あんしん・あんぜんへの取り組み
 
   .comments
-    - if @merchandise.comments.present?
-      %ul.comments__container
+    %ul.comments__container#comments__container
+      - if @merchandise.comments.present?
         - @merchandise.comments.order("created_at ASC").each do |comment|
           = render partial: 'comments/comment', locals: {comment: comment}
 
