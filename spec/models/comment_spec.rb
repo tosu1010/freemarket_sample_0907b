@@ -1,5 +1,36 @@
 require 'rails_helper'
 
-RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+describe Comment do
+  describe '#create' do
+    it 'コメントの中身がなければ投稿できない(commentがnot null)' do
+      expect {create(:comment, comment: nil)}.to raise_error(ActiveRecord::NotNullViolation)
+    end
+
+    it 'ログインしなければ、コメントできない(user_idがnot null)' do
+      expect {create(:comment, user_id: nil)}.to raise_error(ActiveRecord::RecordInvalid)
+    end
+    
+    it 'ログインしていればコメントできる' do
+      expect(create(:comment)).to be_truthy
+    end
+  end
+
+  describe '#destory' do
+    before do
+      @comment = create(:comment)
+    end
+
+    it 'コメントが削除できる' do
+      expect(@comment.delete).to be_truthy
+    end
+
+    it 'コメント先の商品が削除された場合、コメントも削除される' do
+      expect{@comment.merchandise.destroy}.to change{ Comment.count }.by(-1)
+    end
+    
+    it 'ユーザーが削除されたら、そのユーザーが投稿したコメントも削除される' do
+      expect{@comment.user.destroy}.to change { Comment.count }.by(-1)
+    end
+  end
 end
