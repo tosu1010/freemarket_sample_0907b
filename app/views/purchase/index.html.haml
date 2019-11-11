@@ -1,0 +1,52 @@
+= render partial: 'exhibit/header'
+
+.purchase
+  %h2.header
+  .item-container
+    .item-container__item
+      .item-container__item__left
+      = image_tag 'https://placehold.jp/150x150.png', class: 'item-container__item__image'
+      .item-container__item__right
+        .item-container__item__right__name
+          サンプル品
+        .item-container__item__right__price
+          = "¥#{2500.to_s(:delimited)}"
+          %span
+            送料込み
+      .item-container__point
+      .item-container__payment
+        .item-container__payment__text
+          支払い金額
+        .item-container__payment__price
+          = "¥#{2500.to_s(:delimited)}"
+      .item-container__purchase-button
+  
+  .delivery
+    %h3.delivery__header
+    .delivery__destination
+      〒000-000
+      %br/
+      埼玉県〇〇市00-0
+      %br/
+      テスト 太郎
+    = link_to '#', class: 'delivery__change' do
+      %span
+        変更する
+      = fa_icon 'chevron-right'
+
+  .payment
+    %h3.payment__header
+      支払い方法
+    .payment__card-info
+      *********0000
+      %br/
+      12/99
+      %br/
+      = image_tag('visa.svg', class: 'card_logo')
+    = link_to '#', class: 'payment__change' do
+      %span
+        変更する
+      = fa_icon 'chevron-right'
+
+
+= render partial: 'exhibit/footer'

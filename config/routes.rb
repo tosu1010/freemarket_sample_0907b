@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :merchandises, only: [:index, :show] do
     resources :comments, only: [:create, :new]
     resources :likes, only: [:create, :destroy]
+    resources :purchase, only: [:index, :create]
   end
   resources :exhibit, only: [:index]
 
