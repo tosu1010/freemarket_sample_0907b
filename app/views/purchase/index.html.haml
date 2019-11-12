@@ -1,52 +1,58 @@
 = render partial: 'exhibit/header'
 
 .purchase
-  %h2.header
+  %h2.purchase__header
+    購入内容の確認
   .item-container
-    .item-container__item
-      .item-container__item__left
-      = image_tag 'https://placehold.jp/150x150.png', class: 'item-container__item__image'
-      .item-container__item__right
-        .item-container__item__right__name
-          サンプル品
-        .item-container__item__right__price
+    .item-container__inner
+      .item-container__inner__item
+        .item-container__inner__item__image-box
+          = image_tag 'https://placehold.jp/150x150.png', class: 'item-container__inner__item__image-box__image'
+        %p.item-container__inner__item__name
+          サンプル品サンプルサンプルサンプルサンプルサンプル品
+      .purchase-form
+        .purchase-form__price
           = "¥#{2500.to_s(:delimited)}"
           %span
             送料込み
-      .item-container__point
-      .item-container__payment
-        .item-container__payment__text
-          支払い金額
-        .item-container__payment__price
-          = "¥#{2500.to_s(:delimited)}"
-      .item-container__purchase-button
+        .purchase-form__point
+          ポイントはありません
+        .purchase-form__payment
+          .purchase-form__payment__text
+            支払い金額
+          .purchase-form__payment__price
+            = "¥#{2500.to_s(:delimited)}"
+        .purchase-form__button
+          購入する
   
   .delivery
-    %h3.delivery__header
-    .delivery__destination
-      〒000-000
-      %br/
-      埼玉県〇〇市00-0
-      %br/
-      テスト 太郎
-    = link_to '#', class: 'delivery__change' do
-      %span
-        変更する
-      = fa_icon 'chevron-right'
+    .delivery__inner
+      %h3.delivery__inner__header
+        配送先
+      .delivery__inner__destination
+        〒000-000
+        %br/
+        埼玉県〇〇市00-0
+        %br/
+        テスト 太郎
+      = link_to '#', class: 'delivery__inner__change' do
+        %span
+          変更する
+        = fa_icon 'chevron-right', class: 'delivery__inner__change__icon'
 
   .payment
-    %h3.payment__header
-      支払い方法
-    .payment__card-info
-      *********0000
-      %br/
-      12/99
-      %br/
-      = image_tag('visa.svg', class: 'card_logo')
-    = link_to '#', class: 'payment__change' do
-      %span
-        変更する
-      = fa_icon 'chevron-right'
+    .payment__inner
+      %h3.payment__inner__header
+        支払い方法
+      .payment__inner__card-info
+        *********0000
+        %br/
+        12/99
+      = image_tag('visa.svg', class: 'payment__inner__card-logo')
+      = link_to '#', class: 'payment__inner__change' do
+        %span
+          変更する
+        = fa_icon 'chevron-right'
 
 
 = render partial: 'exhibit/footer'
