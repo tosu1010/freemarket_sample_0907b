@@ -7,21 +7,25 @@
     .item-container__inner
       .item-container__inner__item
         .item-container__inner__item__image-box
-          = image_tag 'https://placehold.jp/150x150.png', class: 'item-container__inner__item__image-box__image'
+          = image_tag "#{@merchandise.exhibit.exhibit_images[0].image}", class: 'item-container__inner__item__image-box__image'
         %p.item-container__inner__item__name
-          サンプル品サンプルサンプルサンプルサンプルサンプル品
+          = @merchandise.name
       .purchase-form
         .purchase-form__price
-          = "¥#{2500.to_s(:delimited)}"
-          %span
-            送料込み
+          = "¥#{@merchandise.price.to_s(:delimited)}"
+          - if @merchandise.delivery.shipping_charge_id == 1
+            %span
+              送料込み
+          - elsif @merchandise.delivery.shipping_charge_id == 2
+            %span
+              着払い
         .purchase-form__point
           ポイントはありません
         .purchase-form__payment
           .purchase-form__payment__text
             支払い金額
           .purchase-form__payment__price
-            = "¥#{2500.to_s(:delimited)}"
+            = "¥#{@merchandise.price.to_s(:delimited)}"
         .purchase-form__button
           購入する
   
@@ -30,11 +34,11 @@
       %h3.delivery__inner__header
         配送先
       .delivery__inner__destination
-        〒000-000
+        = "〒#{User.find(1).address.postal_code}"
         %br/
-        埼玉県〇〇市00-0
+        = User.find(1).address.get_full_address
         %br/
-        テスト 太郎
+        = User.find(1).first_name + ' ' + User.find(1).last_name
       = link_to '#', class: 'delivery__inner__change' do
         %span
           変更する
