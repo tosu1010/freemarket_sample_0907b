@@ -34,11 +34,11 @@
       %h3.delivery__inner__header
         配送先
       .delivery__inner__destination
-        = "〒#{User.find(1).address.postal_code}"
+        = "〒#{@user.address.postal_code}"
         %br/
-        = User.find(1).address.get_full_address
+        = @user.address.get_full_address
         %br/
-        = User.find(1).first_name + ' ' + User.find(1).last_name
+        = @user.get_full_name
       = link_to '#', class: 'delivery__inner__change' do
         %span
           変更する

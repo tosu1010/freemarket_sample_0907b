@@ -19,4 +19,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :purchases, dependent: :destroy
   has_many :evaluations, dependent: :destroy
+
+  def get_full_name
+    self.first_name + ' ' + self.last_name    
+  end
 end

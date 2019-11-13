@@ -164,6 +164,10 @@
         background-color: #E52017;
       }
 
+      &__link {
+        display: block;
+      }
+
       @media screen and (max-width: 768px) {
         height: 56px;
         font-size: 14px;
