@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_merchandise
+  before_action :set_merchandise, only: [:create]
   def new
     redirect_to root_path
   end

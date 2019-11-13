@@ -61,7 +61,7 @@ $(document).ready(function(){
         $('#comment-form__form')[0].reset();
       })
       .fail(function(){
-        alert('error');
+        alert('文字を入力して下さい');
       })
       .always(function(){
         $('.comment-form__submit').removeAttr('disabled');

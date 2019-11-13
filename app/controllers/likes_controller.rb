@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_merchandise
+  before_action :set_merchandise, only: [:create, :destroy]
 
   def create
     # user_idには、後ほどcurrent_userを入れる予定
