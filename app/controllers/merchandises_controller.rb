@@ -6,7 +6,14 @@ class MerchandisesController < ApplicationController
   end
 
   def show
-    
+    @merchandise = Merchandise.find(merchandise_params[:id])
+    @comment = Comment.new()
+    @like = Like.new()
+  end
+
+
+  def merchandise_params
+    params.permit(:id)
   end
 
 

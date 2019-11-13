@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'merchandises#index'
 
   resources :mypage, only: [:index]
-  resources :merchandises, only: [:index, :show]
+  resources :merchandises, only: [:index, :show] do
+    resources :comments, only: [:create, :new]
+    resources :likes, only: [:create, :destroy]
+  end
   resources :exhibit, only: [:index]
 
   get '/mypage/profile', to: 'mypage#edit'

@@ -107,9 +107,9 @@ ActiveRecord::Schema.define(version: 2019_11_04_101837) do
     t.integer "shipping_charge_id", null: false
     t.integer "shipping_area_id", null: false
     t.integer "shipping_date_id", null: false
+    t.integer "delivery_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "delivery_type_id", null: false
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -271,9 +271,6 @@ ActiveRecord::Schema.define(version: 2019_11_04_101837) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "users"
-  add_foreign_key "balances", "merchandises"
-  add_foreign_key "balances", "users"
   add_foreign_key "comments", "merchandises"
   add_foreign_key "comments", "users"
   add_foreign_key "contacts", "merchandises"

@@ -1,5 +1,8 @@
 FactoryBot.define do
   factory :merchandise do
+    association :brand
+    association :category
+    association :delivery
     name          {"テスト商品"}
     description   {"テスト説明"}
     price         { Faker::Number.within(range: 1..999999999) .to_i }

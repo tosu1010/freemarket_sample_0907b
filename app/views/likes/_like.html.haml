@@ -1,0 +1,14 @@
+- if merchandise.liked_by(1)
+  = link_to merchandise_like_path(merchandise_id: merchandise.id, id: merchandise.likes[0].id), method: :delete, remote: true do
+    = fa_icon "heart", class: "likes__icon--liked"
+    %span
+      いいね!
+    %span.likes__count
+      = merchandise.likes.where(value: 1).count
+- else
+  = link_to merchandise_likes_path(merchandise.id), method: :post, remote: true do
+    = fa_icon "heart-o", class: "likes__icon"
+    %span
+      いいね!
+    %span.likes__count
+      = merchandise.likes.where(value: 1).count
