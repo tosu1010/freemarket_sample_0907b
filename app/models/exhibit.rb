@@ -6,13 +6,15 @@ class Exhibit < ApplicationRecord
 
   # 引数に渡した商品の出品者の他の商品を配列itemsに格納して渡す。
   # 現在表示している商品は省き、最大6件まで表示する。
-  def self.user_new_items(merchandise)
+  def user_new_items
     items = []
-    self.where(user_id: merchandise.exhibit.user_id).limit(7).order("created_at DESC").each_with_index do |item, i|
-      if item.merchandise.id == merchandise.id
+    Exhibit.where(user_id: self.user_id).limit(7).order(created_at: "DESC").each do |item|
+      if item.merchandise.id == self.id
         next
-      elsif i < 7
+      elsif items.length < 6
         items << item
+      else
+        break
       end
     end
     items

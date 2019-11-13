@@ -27,13 +27,15 @@ class Merchandise < ApplicationRecord
 
   # 引数に渡した商品のブランド・カテゴリの他の商品を配列itemsに格納して渡す。
   # 現在表示している商品は省き、最大6件まで表示する。
-  def self.brand_new_items(merchandise)
+  def brand_new_items
     items = []
-    self.where(category_id: merchandise.category_id, brand_id: merchandise.brand_id).limit(7).order("created_at DESC").each_with_index do |item, i|
-      if item.id == merchandise.id
+    Merchandise.where(category_id: self.category_id, brand_id: self.brand_id).limit(7).order("created_at DESC").each do |item|
+      if item.id == self.id
         next
-      elsif i < 7
+      elsif items.length < 6
         items << item
+      else
+        break
       end
     end
     items

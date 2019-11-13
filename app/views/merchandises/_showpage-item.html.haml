@@ -1,6 +1,6 @@
 .item
   = link_to merchandise_path(item.id), class: "item__link" do
-    = image_tag "#{ExhibitImage.find_by(exhibit_id: item.exhibit).image}", class: "item__image"
+    = image_tag "#{item.exhibit.exhibit_images[0].image}", class: "item__image"
     .item__body
       .item__body__name
         = item.name

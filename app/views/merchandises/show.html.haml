@@ -197,7 +197,7 @@
         = link_to "#", class: "another-merchandise__head__link" do
           = "#{@merchandise.exhibit.user.nickname}さんのその他の出品"
       .items
-        - Exhibit.user_new_items(@merchandise).each do |item|
+        - @merchandise.exhibit.user_new_items.each do |item|
           = render partial: "showpage-item", locals: { item: item.merchandise }
          
 
@@ -206,7 +206,7 @@
         = link_to "#", class: "another-merchandise__head__link" do
           = "#{@merchandise.brand.name}の#{@merchandise.category.name} その他の商品"
       .items
-        - Merchandise.brand_new_items(@merchandise).each do |item|
+        - @merchandise.brand_new_items.each do |item|
           = render partial: "showpage-item", locals: { item: item }
         
   
