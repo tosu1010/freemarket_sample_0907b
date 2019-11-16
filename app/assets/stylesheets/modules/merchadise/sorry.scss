@@ -1,0 +1,21 @@
+.merchandise-sorry {
+  width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 24px;
+  color: #C5C5C5;
+  background: url('https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?28086846') no-repeat;
+  background-size: 100px 120px;
+  background-position: center 20px;
+  line-height: 24px;
+  padding: 160px 0 60px;
+
+  @media screen and (max-width: 768px) {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 20px;
+    background-size: 75px 85px;
+    line-height: 20px;
+    padding: 120px 0 40px;
+  }
+}
