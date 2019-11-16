@@ -1,0 +1,31 @@
+.purchase {
+  .delivery {
+    margin-top: 40px;
+    padding: 24px 12.5% 0;
+    border-top: 1px solid $light-grey-f5;
+
+    &__inner {
+      @include purchase-inner;
+
+      &__header {
+        font-weight: 700;
+      }
+
+      &__destination {
+        margin-top: 8px;
+        line-height: 1.4;
+      }
+
+      &__change {
+        margin-top: 8px;
+        display: block;
+        color: $cyan;
+        text-align: right;
+
+        &__icon {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
