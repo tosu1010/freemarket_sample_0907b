@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :purchase, only: [:index, :create]
   end
-  resources :exhibits, only: [:index, :create]
+  resources :exhibit, only: [:index, :create, :show, :destroy]
 
   get '/mypage/profile' => 'mypage#edit'
   get '/mypage/identification' => 'mypage#new'

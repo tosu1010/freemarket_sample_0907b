@@ -1,0 +1,154 @@
+-# 時間がないため仮で作成
+.merchandise-detail#exhibit_change
+
+  -# ヘッダー
+  = render 'layouts/header_responsive'
+  = render 'layouts/header'
+
+  .merchandise-detail__main
+    %h2.merchandise-detail__main__name.bold
+      = @merchandise.name
+    .merchandise-detail__main__content
+      .left-content
+        .item-photos
+          .item-photos__carousel
+            %ul.item-photos__carousel__stage
+              - @merchandise.exhibit.exhibit_images.each do |image|
+                %li.item-photos__carousel__stage__item
+                  = image_tag "#{image.image}", class: "item-photos__carousel__stage__item__image"
+
+            %ul.item-photos__carousel__dots
+              - @merchandise.exhibit.exhibit_images.each do |image|
+                %li.item-photos__carousel__dots__dot
+                  .item-photos__carousel__dots__dot__inner
+                    = image_tag "#{image.image}", class: "item-photos__carousel__dots__dot__inner__image"
+                  
+      .price-box--mini
+        %span.price-box--mini__price.bold
+          = "￥#{@merchandise.price.to_s(:delimited)}"
+        %span.price-box--mini__tax
+          (税込)
+        - if @merchandise.delivery.shipping_charge_id == 1
+          %span.price-box--mini__shipping-free
+            送料込み
+        - elsif @merchandise.delivery.shipping_charge_id == 2
+          %span.price-box--mini__shipping-free
+            着払い
+
+      %table.item-detail
+        %tr
+          %th
+            出品者
+          %td
+            = link_to "#" do
+              = @merchandise.exhibit.user.nickname
+            .evaluations
+              .evaluations__icon--smile
+                = fa_icon "smile-o"
+              .evaluations__num
+                = @merchandise.exhibit.user.likes.where(value: 1).count
+            .evaluations
+              .evaluations__icon--normal
+                = fa_icon "meh-o"
+              .evaluations__num
+                = @merchandise.exhibit.user.likes.where(value: 2).count
+                
+            .evaluations
+              .evaluations__icon--bad
+                = fa_icon "frown-o"
+              .evaluations__num
+                = @merchandise.exhibit.user.likes.where(value: 3).count
+
+        %tr
+          %th
+            カテゴリー
+          %td
+            = link_to "#" do
+              = @merchandise.category.parent.parent.name
+            = link_to "#" do
+              = fa_icon "chevron-right"
+              = @merchandise.category.parent.name
+            = link_to "#" do
+              = fa_icon "chevron-right"
+              = @merchandise.category.name
+
+        %tr
+          %th
+            ブランド
+          %td
+            = @merchandise.brand.name
+
+        - if @merchandise.exhibit.size_id.present?
+          %tr
+            %th
+              商品のサイズ
+            %td
+              = @merchandise.exhibit.size.value
+          
+        %tr
+          %th
+            商品の状態
+          %td
+            = @merchandise.condition.value
+        
+        %tr
+          %th
+            配送料の負担
+          %td
+            = @merchandise.delivery.shipping_charge.value
+
+        %tr
+          %th
+            配送の方法
+          %td
+            = @merchandise.delivery.delivery_type.value
+          
+        %tr
+          %th
+            配送元地域
+          %td
+            = link_to "#" do
+              = @merchandise.delivery.shipping_area.name
+
+        %tr
+          %th
+            発送日の目安
+          %td
+            = @merchandise.delivery.shipping_date.value
+
+    .price-box
+      %span.price-box__price.bold
+        = "￥#{@merchandise.price.to_s(:delimited)}"
+      %span.price-box__tax
+        (税込)
+      - if @merchandise.delivery.shipping_charge_id == 1
+        %span.price-box--mini__shipping-free
+          送料込み
+      - elsif @merchandise.delivery.shipping_charge_id == 2
+        %span.price-box--mini__shipping-free
+          着払い
+    
+    .item-description
+      %p.item-description__text
+        = @merchandise.description
+  
+  = render 'exhibit/exhibiter_only'
+    
+  .comments
+    %ul.comments__container#comments__container
+      - if @merchandise.comments.present?
+        - @merchandise.comments.order("created_at ASC").each do |comment|
+          = render partial: 'comments/comment', locals: {comment: comment}
+
+    .comment-form
+      .comment-form__attention
+        %p
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      = form_for [@merchandise, @comment], html: {class: "comment-form__form", id: "comment-form__form"}, url: merchandise_comments_path(@merchandise) do |f|
+        = f.text_area :comment, class: 'comment-form__text-box', size: '40*10'
+        = f.submit 'コメントする', class: 'comment-form__submit'
+  
+  -# アプリダウンロードバーナー
+  = render 'layouts/app-download'
+  -# フッター
+  = render 'layouts/footer'
