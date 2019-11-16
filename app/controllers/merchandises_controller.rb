@@ -10,7 +10,7 @@ class MerchandisesController < ApplicationController
       @merchandise = Merchandise.find(merchandise_params[:id])
       @comment = Comment.new()
       @like = Like.new()
-    rescue
+    rescue StandardError
       render :sorry
     end
   end
