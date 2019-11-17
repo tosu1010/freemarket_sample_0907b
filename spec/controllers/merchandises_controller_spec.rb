@@ -18,4 +18,18 @@ describe MerchandisesController, type: :controller do
     end
   end
 
+  describe 'GET #show' do
+    it 'DBに登録されている商品の商品詳細のページに遷移できる' do
+      merchandise = create(:merchandise, delivery: delivery, brand: brand, category: category)
+      get :show, params: { id: merchandise }
+      expect(response).to render_template :show
+    end
+
+    it 'DBに登録されていない商品の商品詳細ページに遷移しようとした際に、sorryページへ遷移する' do
+      merchandise = create(:merchandise, delivery: delivery, brand: brand, category: category)
+      get :show, params: { id: merchandise.id + 1 }
+      expect(response).to render_template :sorry
+    end
+  end
+
 end

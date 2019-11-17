@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   end
   resources :exhibit, only: [:index]
 
-  get '/mypage/profile', to: 'mypage#edit'
-  get '/mypage/identification', to: 'mypage#new'
-  get '/mypage/card', to: 'mypage#show'
-  get '/mypage/card/create', to: 'mypage#create'
+  get '/mypage/profile' => 'mypage#edit'
+  get '/mypage/identification' => 'mypage#new'
+  get '/mypage/card' => 'mypage#show'
+  get '/mypage/card/create' => 'mypage#create'
 
   get 'log_in' => 'login#log_in'
   get 'sign_up_before' => 'signup#sign_up_before'

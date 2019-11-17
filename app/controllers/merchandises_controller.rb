@@ -6,11 +6,14 @@ class MerchandisesController < ApplicationController
   end
 
   def show
-    @merchandise = Merchandise.find(merchandise_params[:id])
-    @comment = Comment.new()
-    @like = Like.new()
+    begin
+      @merchandise = Merchandise.find(merchandise_params[:id])
+      @comment = Comment.new()
+      @like = Like.new()
+    rescue StandardError
+      render :sorry
+    end
   end
-
 
   def merchandise_params
     params.permit(:id)

@@ -4,7 +4,9 @@ require 'rails_helper'
 describe Comment do
   describe '#create' do
     it 'コメントの中身がなければ投稿できない(commentがnot null)' do
-      expect {create(:comment, comment: nil)}.to raise_error(ActiveRecord::NotNullViolation)
+      comment = build(:comment, comment: nil)
+      comment.valid?
+      expect(comment.errors[:comment]).to include("can't be blank")
     end
 
     it 'ログインしなければ、コメントできない(user_idがnot null)' do
