@@ -24,10 +24,11 @@
           %i.google
           = image_tag('google.jpg', class: 'google-icon')
           = button_to "Googleでログイン", { action: "new" }, method: "get", class: "google-button"
-       .notification
-        - flash.each do |key, value|
-          = content_tag :div, value, class: key
+
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .notification
+          - flash.each do |key, value|
+            = content_tag :div, value, class: key
         .contents
           .contents-field
             = f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "email-button"
