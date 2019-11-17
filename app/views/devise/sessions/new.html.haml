@@ -9,7 +9,7 @@
     .sign_in__main__section
       アカウントをお持ちでない方はこちら
       .sign_in__main__section__button
-      = button_to "新規会員登録", { controller: "users/sessions" ,action: "new" }, method: "get", class: "new-button"
+      = button_to "新規会員登録", signup_index_path, method: "get", class: "new-button"
       .sign_in__main__section__line
 
       .contents
@@ -24,15 +24,17 @@
           %i.google
           = image_tag('google.jpg', class: 'google-icon')
           = button_to "Googleでログイン", { action: "new" }, method: "get", class: "google-button"
-
-      = fields_for :user do |f|
+       .notification
+        - flash.each do |key, value|
+          = content_tag :div, value, class: key
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .contents
           .contents-field
             = f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "email-button"
           .contents-field
             = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "password-button"
           .contents-field
-            .g-recaptcha{"data-sitekey" => "6LcJNrkUAAAAAAAXmDB03OB9_cBUJDtlmkZRyvkl"}
+            = recaptcha_tags
           .contents-field
             .contents-field__button
               = f.submit "ログイン", class: "form__submit"
