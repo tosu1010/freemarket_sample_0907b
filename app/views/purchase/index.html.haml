@@ -1,0 +1,62 @@
+= render partial: 'exhibit/header'
+
+.purchase
+  %h2.purchase__header
+    購入内容の確認
+  .item-container
+    .item-container__inner
+      .item-container__inner__item
+        .item-container__inner__item__image-box
+          = image_tag "#{@merchandise.exhibit.exhibit_images[0].image}", class: 'item-container__inner__item__image-box__image'
+        %p.item-container__inner__item__name
+          = @merchandise.name
+      .purchase-form
+        .purchase-form__price
+          = "¥#{@merchandise.price.to_s(:delimited)}"
+          - if @merchandise.delivery.shipping_charge_id == 1
+            %span
+              送料込み
+          - elsif @merchandise.delivery.shipping_charge_id == 2
+            %span
+              着払い
+        .purchase-form__point
+          ポイントはありません
+        .purchase-form__payment
+          .purchase-form__payment__text
+            支払い金額
+          .purchase-form__payment__price
+            = "¥#{@merchandise.price.to_s(:delimited)}"
+        .purchase-form__button
+          購入する
+  
+  .delivery
+    .delivery__inner
+      %h3.delivery__inner__header
+        配送先
+      .delivery__inner__destination
+        = "〒#{@user.address.postal_code}"
+        %br/
+        = @user.address.get_full_address
+        %br/
+        = @user.get_full_name
+      = link_to '#', class: 'delivery__inner__change' do
+        %span
+          変更する
+        = fa_icon 'chevron-right', class: 'delivery__inner__change__icon'
+
+  .payment
+    .payment__inner
+      %h3.payment__inner__header
+        支払い方法
+      .payment__inner__card-info
+        *********0000
+        %br/
+        12/99
+      = image_tag('visa.svg', class: 'payment__inner__card-logo')
+      = link_to '#', class: 'payment__inner__change' do
+        %span
+          変更する
+        = fa_icon 'chevron-right'
+
+
+= render partial: 'exhibit/footer'

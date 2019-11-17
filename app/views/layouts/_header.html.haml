@@ -1,7 +1,7 @@
 %header.header
   .wrapper
     .upper
-      .upper__logo
+      = link_to root_path, class: "upper__logo" do
         = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "upper__logo-image")
       = form_tag "", method: :get, class: "upper__form" do
         = text_field_tag :keyword, "", class: "upper__form_input", placeholder: "何かお探しですか？"

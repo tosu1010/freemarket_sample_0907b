@@ -2,7 +2,7 @@
   .wrapper
     .upper
       .upper_left
-        .link
+        = link_to root_path, class: "upper__logo" do
           =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo")
 
       - if user_signed_in?

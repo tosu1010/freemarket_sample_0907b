@@ -1,0 +1,16 @@
+%li.comment
+  = link_to "#", class: "comment__link" do
+    = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "comment__link__user-icon"
+    .comment__link__user-name
+      = comment.user.nickname
+  .comment__content
+    .comment__content__text
+      = comment.comment
+    .comment__content__bottom
+      .comment__content__bottom__date
+        .comment__content__bottom__date__icon
+          = fa_icon "clock-o"
+        .comment__content__bottom__date__time
+          = comment.calc_date
+      .comment__content__bottom__report
+        = fa_icon "flag-o"

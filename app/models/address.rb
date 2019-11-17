@@ -2,6 +2,10 @@ class Address < ApplicationRecord
   #validation制御回避のため、user_idに対してoptional: trueをつける
   belongs_to :user , optional: true
 
+  def get_full_address
+    self.prefecture.name + self.city + self.number
+  end
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 

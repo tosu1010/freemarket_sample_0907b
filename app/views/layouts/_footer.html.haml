@@ -77,7 +77,7 @@
           = link_to "United States", "", class:"footer__upper__country__container__content__link"            
 
   .footer__bottom
-    .footer__bottom__to-top
+    = link_to root_path, class: "footer__bottom__to-top" do
       = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg", alt:"Mercari", class: "footer__bottom_to-top_logo"
     %span.footer__bottom__copy-right
       © 2019 Mercari

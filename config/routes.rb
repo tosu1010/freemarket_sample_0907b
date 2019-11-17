@@ -14,11 +14,16 @@ Rails.application.routes.draw do
   end
 
   resources :mypage, only: [:index]
-  resources :merchandises, only: [:index, :show]
+  resources :merchandises, only: [:index, :show] do
+    resources :comments, only: [:create, :new]
+    resources :likes, only: [:create, :destroy]
+    resources :purchase, only: [:index, :create]
+  end
   resources :exhibit, only: [:index]
 
-  get '/mypage/profile', to: 'mypage#edit'
-  get '/mypage/identification', to: 'mypage#new'
-  get '/mypage/card', to: 'mypage#show'
-  get '/mypage/card/create', to: 'mypage#create'
+  get '/mypage/profile' => 'mypage#edit'
+  get '/mypage/identification' => 'mypage#new'
+  get '/mypage/card' => 'mypage#show'
+  get '/mypage/card/create' => 'mypage#create'
+  
 end
