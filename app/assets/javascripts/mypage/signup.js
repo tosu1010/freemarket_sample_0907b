@@ -4,64 +4,113 @@ $(document).ready(function(){
 
  let path = location.pathname;
 
-if(path === '/users/sign_up') {
-  $('.status').eq(0).addClass('active');
-  $('.bar_name').eq(0).addClass('active');
-}
-if(path === '/sign_up_2') {
-  $('.status').eq(0).addClass('active');
-  $('.status').eq(1).addClass('active');
-  $('.bar_name').eq(0).removeClass('active');
-  $('.bar_name').eq(1).toggleClass('bar_name_before');
-  $('.bar_name').eq(0).toggleClass('bar_name_after');
-  $('.bar_name').eq(0).removeClass('bar_name');
-  $('.bar_name_before').eq(0).addClass('active');
-}
-if(path === '/sign_up_4') {
-  $('.status').eq(0).addClass('active');
-  $('.status').eq(1).addClass('active');
-  $('.status').eq(2).addClass('active');
-  $('.bar_name').eq(1).removeClass('active');
-  $('.bar_name').eq(1).toggleClass('bar_name_before');
-  $('.bar_name').eq(2).toggleClass('bar_name_before');
-  $('.bar_name').eq(0).toggleClass('bar_name_after');
-  $('.bar_name').eq(1).toggleClass('bar_name_after');
-  $('.bar_name').eq(1).removeClass('bar_name');
-  $('.bar_name_before').eq(1).addClass('active');
-}
-if(path === '/sign_up_5') {
-  $('.status').eq(0).addClass('active');
-  $('.status').eq(1).addClass('active');
-  $('.status').eq(2).addClass('active');
-  $('.status').eq(3).addClass('active');
-  $('.bar_name').eq(2).removeClass('active');
-  $('.bar_name').eq(1).toggleClass('bar_name_before');
-  $('.bar_name').eq(2).toggleClass('bar_name_before');
-  $('.bar_name').eq(3).toggleClass('bar_name_before');
-  $('.bar_name').eq(0).toggleClass('bar_name_after');
-  $('.bar_name').eq(1).toggleClass('bar_name_after');
-  $('.bar_name').eq(2).toggleClass('bar_name_after');
-  $('.bar_name').eq(2).removeClass('bar_name');
-  $('.bar_name_before').eq(2).addClass('active');
-}
-if(path === '/sign_up_6') {
-  $('.status').eq(0).addClass('active');
-  $('.status').eq(1).addClass('active');
-  $('.status').eq(2).addClass('active');
-  $('.status').eq(3).addClass('active');
-  $('.status').eq(4).addClass('active');
-  $('.bar_name').eq(3).removeClass('active');
-  $('.bar_name').eq(1).toggleClass('bar_name_before');
-  $('.bar_name').eq(2).toggleClass('bar_name_before');
-  $('.bar_name').eq(3).toggleClass('bar_name_before');
-  $('.bar_name').eq(4).toggleClass('bar_name_before');
-  $('.bar_name').eq(0).toggleClass('bar_name_after');
-  $('.bar_name').eq(1).toggleClass('bar_name_after');
-  $('.bar_name').eq(2).toggleClass('bar_name_after');
-  $('.bar_name').eq(3).toggleClass('bar_name_after');
-  $('.bar_name').eq(3).removeClass('bar_name');
-  $('.bar_name_before').eq(3).addClass('active');
-}
+  if(path === '/signup/step1') {
+    $('.status').eq(0).addClass('active');
+    $('.bar_name').eq(0).addClass('active');
+  }
+  
+  if(path === '/signup/step2') {
+    if ($('#user_nickname').hasClass('error') ||
+     $('#user_email').hasClass('error')||
+     $('#user_password').hasClass('error') ||
+     $('#user_password_confirmation').hasClass('error') ||
+     $('#user_last_name').hasClass('error') ||
+     $('#user_first_name').hasClass('error') ||
+     $('#user_last_name_kana').hasClass('error') ||
+     $('#user_first_name_kana').hasClass('error') ||
+     $('#user_birth_year').hasClass('error') ||
+     $('#user_birth_month').hasClass('error') ||
+     $('#user_birth_day').hasClass('error')) {
+      $('.status').eq(0).addClass('active');
+      $('.bar_name').eq(0).addClass('active');
+    } else {
+      $('.status').eq(0).addClass('active');
+      $('.status').eq(1).addClass('active');
+      $('.bar_name').eq(0).removeClass('active');
+      $('.bar_name').eq(1).toggleClass('bar_name_before');
+      $('.bar_name').eq(0).toggleClass('bar_name_after');
+      $('.bar_name').eq(0).removeClass('bar_name');
+      $('.bar_name_before').eq(0).addClass('active');
+    }
+  }
+
+  if(path === '/signup/step3') {
+    if ($('#user_phone_number').hasClass('error')) {
+      $('.status').eq(0).addClass('active');
+      $('.status').eq(1).addClass('active');
+      $('.bar_name').eq(0).removeClass('active');
+      $('.bar_name').eq(1).toggleClass('bar_name_before');
+      $('.bar_name').eq(0).toggleClass('bar_name_after');
+      $('.bar_name').eq(0).removeClass('bar_name');
+      $('.bar_name_before').eq(0).addClass('active');
+    } else {
+      $('.status').eq(0).addClass('active');
+      $('.status').eq(1).addClass('active');
+      $('.status').eq(2).addClass('active');
+      $('.bar_name').eq(1).removeClass('active');
+      $('.bar_name').eq(1).toggleClass('bar_name_before');
+      $('.bar_name').eq(2).toggleClass('bar_name_before');
+      $('.bar_name').eq(0).toggleClass('bar_name_after');
+      $('.bar_name').eq(1).toggleClass('bar_name_after');
+      $('.bar_name').eq(1).removeClass('bar_name');
+      $('.bar_name_before').eq(1).addClass('active');
+    }
+  }
+
+  if(path === '/signup/step4') {
+    if ($('#address_last_name').hasClass('error') ||
+     $('#address_first_name').hasClass('error')||
+     $('#address_last_name_kana').hasClass('error') ||
+     $('#address_first_name_kana').hasClass('error')||
+     $('#address_postal_code').hasClass('error')||
+     $('#address_prefecture_id').hasClass('error')||
+     $('#address_city').hasClass('error')||
+     $('#address_number').hasClass('error')) {
+      $('.status').eq(0).addClass('active');
+      $('.status').eq(1).addClass('active');
+      $('.status').eq(2).addClass('active');
+      $('.bar_name').eq(1).removeClass('active');
+      $('.bar_name').eq(1).toggleClass('bar_name_before');
+      $('.bar_name').eq(2).toggleClass('bar_name_before');
+      $('.bar_name').eq(0).toggleClass('bar_name_after');
+      $('.bar_name').eq(1).toggleClass('bar_name_after');
+      $('.bar_name').eq(1).removeClass('bar_name');
+      $('.bar_name_before').eq(1).addClass('active');
+    } else {
+      $('.status').eq(0).addClass('active');
+      $('.status').eq(1).addClass('active');
+      $('.status').eq(2).addClass('active');
+      $('.status').eq(3).addClass('active');
+      $('.bar_name').eq(2).removeClass('active');
+      $('.bar_name').eq(1).toggleClass('bar_name_before');
+      $('.bar_name').eq(2).toggleClass('bar_name_before');
+      $('.bar_name').eq(3).toggleClass('bar_name_before');
+      $('.bar_name').eq(0).toggleClass('bar_name_after');
+      $('.bar_name').eq(1).toggleClass('bar_name_after');
+      $('.bar_name').eq(2).toggleClass('bar_name_after');
+      $('.bar_name').eq(2).removeClass('bar_name');
+      $('.bar_name_before').eq(2).addClass('active');
+    }
+  }
+
+  if(path === '/signup/step5') {
+      $('.status').eq(0).addClass('active');
+      $('.status').eq(1).addClass('active');
+      $('.status').eq(2).addClass('active');
+      $('.status').eq(3).addClass('active');
+      $('.status').eq(4).addClass('active');
+      $('.bar_name').eq(3).removeClass('active');
+      $('.bar_name').eq(1).toggleClass('bar_name_before');
+      $('.bar_name').eq(2).toggleClass('bar_name_before');
+      $('.bar_name').eq(3).toggleClass('bar_name_before');
+      $('.bar_name').eq(4).toggleClass('bar_name_before');
+      $('.bar_name').eq(0).toggleClass('bar_name_after');
+      $('.bar_name').eq(1).toggleClass('bar_name_after');
+      $('.bar_name').eq(2).toggleClass('bar_name_after');
+      $('.bar_name').eq(3).toggleClass('bar_name_after');
+      $('.bar_name').eq(3).removeClass('bar_name');
+      $('.bar_name_before').eq(3).addClass('active');
+    }
 });
 
 // --------------------------------------------------------
