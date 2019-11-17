@@ -4,12 +4,19 @@
   .confirm_phone_number__main
     .confirm_phone_number__main__section
       %h2 電話番号の確認
-      = fields_for :phone_number do |f|
+      = form_for @user, url: step3_signup_index_path do |f|
         .contents
           .contents-field
             = f.label :携帯電話の番号
             %br/
-            = f.text_field :telephone, autofocus: true, autocomplete: "telephone", placeholder: "携帯電話の番号を入力", class:"phone_number"
+            = f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder: "携帯電話の番号を入力", class:"phone_number"
+            .error-messages
+              - if @user.errors.any?
+                - unless @user.valid?(:validates_step2)
+                  - if errors = @user.errors.full_messages_for(:phone_number)
+                    %ul
+                      - errors.each do |error|
+                        %li=error
         .contents
           .contents-field__message
             %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。

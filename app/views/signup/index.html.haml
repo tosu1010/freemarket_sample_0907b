@@ -1,0 +1,30 @@
+.sign_before_header
+  .sign_before_header__wrapper
+    %h1.merucari_logo
+      = link_to "https://www.mercari.com/jp/" do
+        = image_tag('logo.svg', class: 'header_logo')
+
+.sign_up_before
+  .sign_up_before__main
+    .sign_up_before__main__section
+      %h2 新規会員登録
+      .contents
+        .contents__field
+          .contents__field__first
+          %i.mail
+          = fa_icon 'envelope', class: 'mail-icon fa-lg icon'
+          = button_to "メールアドレスで登録する", { controller: "signup" ,action: "step1" }, method: "get", class: "mail-button button"
+      .contents
+        .contents__field
+          .contents__field__second
+          %i.facebok
+          = fa_icon 'facebook-square', class: 'facebook-icon fa-2x icon'
+          = button_to "Facebookで登録する", { controller: "signup" ,action: "step1" }, method: "get", class: "facebook-button button"
+      .contents
+        .contents__field
+          .contents__field__third
+          %i.google
+          = image_tag('google.jpg', class: 'google-icon icon')
+          = button_to "Googleで登録する", { controller: "signup" ,action: "step1" }, method: "get", class: "google-button button"
+
+= render partial: "sign_up_footer"

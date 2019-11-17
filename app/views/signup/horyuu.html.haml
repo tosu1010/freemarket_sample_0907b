@@ -10,7 +10,7 @@
   .authentication_phone_number__main
     .authentication_phone_number__main__section
       %h2 電話番号認証
-      = fields_for :phone_number do |f|
+      = form_for aaa, url: step3_signup_index_path do |f|
         .contents
           .contents-field
             = f.label :認証番号
