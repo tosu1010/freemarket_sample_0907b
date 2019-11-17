@@ -7,3 +7,4 @@
   .comment-form__form.exhibition_delete
     %button.comment-form__submit#exhibition_delete この商品を削除する
     = link_to "", exhibit_path(@exhibit), method: :DELETE, id: 'exhibition_delete_do'
+    = render 'exhibit/modal'
