@@ -118,7 +118,7 @@
     width: 22%;
     position: relative;
   }
-
+  
   .name {
     display: inline-block;
     width: 39%;
@@ -178,6 +178,10 @@
     color: $middle-grey;
     line-height: 1.5;
     margin: 8px 0 0;
+  }
+
+  label {
+    font-weight: bold;
   }
 }
 
