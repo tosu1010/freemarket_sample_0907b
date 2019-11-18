@@ -345,4 +345,13 @@
       }
     }
   }
+
+  .breadcrumbs {
+    padding: 16px 0;
+    border-top: 1px solid $light-grey;
+
+    .current {
+      font-weight: bold;
+    }
+  }
 }
