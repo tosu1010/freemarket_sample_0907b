@@ -1,190 +1,223 @@
-// 時間がないため仮で作成
-.merchandise-detail {
-  width: auto;
-
-  &__main {
+.exhibit_change.container {
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+  display: table;
+  @media screen and (min-width: 768px) {
+    width: 700px;
+  }
+  
+  @media screen and (min-width: 1068px) {
     margin: 40px auto 0;
-    padding: 24px 40px 40px;
-    width: 620px;
-    background-color: $white;
+    width: 1020px;
+  }
 
-    @media screen and (max-width: 768px) {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 24px 16px 55px;
-      margin-top: 40px;
+  .merchandise-detail {
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      float: none;
+      width: 700px;
     }
-    
-    &__name {
-      font-size: 24px;
-      text-align: center;
+    @media screen and (min-width: 1068px) {
+      float: right;
     }
 
-    &__content {
-      margin-top: 16px;
+    &__main {
+      background: $white;
+      margin: 40px auto 0;
+      padding: 24px 16px 55px 16px;
+
+      @media screen and (min-width: 768px) {
+        padding: 24px 40px 40px;
+      }
+
       
-      &::after {
-        @include clearfix;
+      &__name {
+        font-size: 24px;
+        text-align: center;
+        word-wrap: break-word;
       }
 
-      .left-content {
-        float: left;
-
-        @media screen and (max-width: 768px) {
-          float: none;
-        }
-      }
-
-      .item-detail {
-        float: right;
-        width: 300px;
-        height: 418px;
-        border: solid 1px $light-grey;
-        border-collapse:  collapse;
-
-        @media screen and (max-width: 768px) {
-          width: 360px;
-          margin: 8px auto 0;
-          float: none;
-        }
-
-        th {
-          background-color: $ultra-light-grey;
-          padding: 8px;
-          border: solid 1px $light-grey;
-        }
-
-        td {
-          border: solid 1px $light-grey;
-          padding: 8px;
-
-          a {
-            display: block;
-            color: #0099E8;
-            
-            &:hover {
-              opacity: .7;
-              text-decoration: underline;
-            }
-          }
-          
-
-          .evaluations {
-            display: inline-block;
-
-            &__icon {
-              &--smile {
-                display: inline-block;
-                color: #EF5185;
-              }
-
-              &--normal {
-                display: inline-block;
-                color: #FBA934;
-                margin: 8px 0 0 16px;
-              }
-
-              &--bad {
-                display: inline-block;
-                color: #6AB5D7;
-                margin: 8px 0 0 16px;
-              }
-            }
-
-            &__num {
-              display: inline-block;
-            }
-          }
-        }
-      }
-    }
-    .price-box {
-      margin-top: 24px;
-      text-align: center;
-
-      @media screen and (max-width: 768px) {
+      &__content {
+        margin: 16px 0 0;
         
-      }
+        &::after {
+          @include clearfix;
+        }
 
-      &__price {
-        font-size: 50px;
-        line-height: 50px;
+        .left-content {
+          float: left;
 
-        @media screen and (max-width: 768px) {
-          font-size: 32px;
-          line-height: 32px;
-          margin-right: 8px;
-          font-weight: 600;
+          @media screen and (max-width: 768px) {
+            float: none;
+          }
+        }
+
+        .item-detail {
+          float: right;
+          width: 300px;
+          height: 418px;
+          border: solid 1px $light-grey;
+          border-collapse:  collapse;
+
+          @media screen and (max-width: 768px) {
+            width: 360px;
+            margin: 8px auto 0;
+            float: none;
+          }
+
+          th {
+            background-color: $ultra-light-grey;
+            padding: 8px;
+            border: solid 1px $light-grey;
+          }
+
+          td {
+            border: solid 1px $light-grey;
+            padding: 8px;
+
+            a {
+              display: block;
+              color: #0099E8;
+              
+              &:hover {
+                opacity: .7;
+                text-decoration: underline;
+              }
+            }
+            
+            .evaluations {
+              display: inline-block;
+
+              &__icon {
+                &--smile {
+                  display: inline-block;
+                  color: #EF5185;
+                }
+
+                &--normal {
+                  display: inline-block;
+                  color: #FBA934;
+                  margin: 8px 0 0 16px;
+                }
+
+                &--bad {
+                  display: inline-block;
+                  color: #6AB5D7;
+                  margin: 8px 0 0 16px;
+                }
+              }
+
+              &__num {
+                display: inline-block;
+              }
+            }
+          }
         }
       }
-
-      &__tax {
-        font-size: 10px;
-        line-height: 10px;
-      }
-
-      &__shipping-free {
-        font-size: 16px;
-        line-height: 16px;
-      }
-      
-      // 768px以下は画像と商品概要の間に価格が出現するため。
-      &--mini {
-        display: none;
+      .price-box {
+        margin-top: 24px;
+        text-align: center;
 
         @media screen and (max-width: 768px) {
-          text-align: center;
-          display: block;
-          margin-top: 24px;
+          
+        }
 
-          &__price {
+        &__price {
+          font-size: 50px;
+          line-height: 50px;
+
+          @media screen and (max-width: 768px) {
             font-size: 32px;
             line-height: 32px;
             margin-right: 8px;
             font-weight: 600;
           }
         }
+
+        &__tax {
+          font-size: 10px;
+          line-height: 10px;
+        }
+
+        &__shipping-free {
+          font-size: 16px;
+          line-height: 16px;
+        }
+        
+        // 768px以下は画像と商品概要の間に価格が出現するため。
+        &--mini {
+          display: none;
+
+          @media screen and (max-width: 768px) {
+            text-align: center;
+            display: block;
+            margin-top: 24px;
+
+            &__price {
+              font-size: 32px;
+              line-height: 32px;
+              margin-right: 8px;
+              font-weight: 600;
+            }
+          }
+        }
       }
-    }
 
-    .buy-button {
-      background-color: $red;
-      color: $white;
-      margin-top: 16px;
-      font-size: 24px;
-      line-height: 60px;
-      height: 60px;
-      text-align: center;
-      font-weight: 600;
-      transition: 0.3s ease-in-out;
+      .buy-button {
+        background-color: $red;
+        color: $white;
+        margin-top: 16px;
+        font-size: 24px;
+        line-height: 60px;
+        height: 60px;
+        text-align: center;
+        font-weight: 600;
+        transition: 0.3s ease-in-out;
 
-      
-      &:hover {
-        position: relative;
-        cursor: pointer;
-        background-color: #E52017;
-      }
-
-      @media screen and (max-width: 768px) {
-        height: 56px;
-        font-size: 14px;
-
+        
         &:hover {
-          opacity: .7;
-          text-decoration: underline;
+          position: relative;
+          cursor: pointer;
+          background-color: #E52017;
+        }
+
+        @media screen and (max-width: 768px) {
+          height: 56px;
+          font-size: 14px;
+
+          &:hover {
+            opacity: .7;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .item-description {
+        padding-top:32px;
+        font-size: 18px;
+        line-height: 27px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+          line-height: 21px;
         }
       }
     }
+  }
 
-    .item-description {
-      padding-top:32px;
-      font-size: 18px;
-      line-height: 27px;
+  .side{
+    display: block;
+    margin: 40px auto 0;
 
-      @media screen and (max-width: 768px) {
-        font-size: 14px;
-        line-height: 21px;
-      }
+    @media screen and (min-width: 1068px) {
+      float: left;
+      width: 280px;
+      margin: 0 40px 0 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 700px;
     }
   }
 }

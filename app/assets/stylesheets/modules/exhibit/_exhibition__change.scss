@@ -1,24 +1,25 @@
-// 時間がないため仮で作成
 .exhibition__change__box {
-  position: relative;
-  background-color: $white;
-  width: 700px;
-  margin: 8px auto;
-  padding: 1px 0;
+
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
 
   @media screen and (max-width: 768px) {
     box-sizing: border-box;
     width: 100%;
   }
 
-
   .exhibition_edit {
-    margin: 16px 0 16px 0;
+    //実装されるまでは非活性とする
+    pointer-events: none;
     
-    .comment-form__submit {
-      background-color: $red;
-    }
+    margin: 16px 0 16px 0;
 
+    .comment-form__submit {
+      background: $red;
+      border: 1px solid $red;
+      @include comment-form__submit;
+    }
   }
   .exhibition_word_or {
     font-size: 16px;
@@ -26,9 +27,25 @@
   }
 
   .exhibition_stop {
+    //実装されるまでは非活性とする
+    pointer-events: none;
     
+    margin: 16px 0 16px 0;
+
+    .comment-form__submit {
+      background: $red;
+      border: 1px solid $red;
+      @include comment-form__submit;
+    }
   }
+  
   .exhibition_delete {
     margin: 16px 0 16px 0;
+
+    .comment-form__submit {
+      background: #aaa;
+      border: 1px solid #aaa;
+      @include comment-form__submit;
+    }
   }    
 }
