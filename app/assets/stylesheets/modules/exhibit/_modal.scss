@@ -1,0 +1,67 @@
+#modal {
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translate(0, -10px);
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 3000;
+
+
+  #modal__container {
+    text-align: center;
+    position: relative;
+    width: 95%;
+    max-width: 375px;
+    margin: 8px auto;
+    background: #fff;
+
+
+
+    .modal__upper {
+      padding: 32px 2.5%;
+      line-height: 1.5;
+
+      .modal__upper_bold {
+        font-size: 16px;
+        font-weight: 600;
+
+      }
+    }
+
+    .modal__bottom {
+      #modal-close-btn {
+        float: left;
+        border-top: 1px solid #ccc;
+        width: 50%;
+        text-align: center;
+        line-height: 49px;
+      }
+    
+      #delete-comformation-btn {
+        float: right;
+        border-left: 1px solid #ccc;
+        color: #0099e8;
+
+        border-top: 1px solid #ccc;
+        width: 50%;
+        text-align: center;
+        line-height: 49px;
+      }
+      
+    }
+  }
+}
+
+.item-delete-btn {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
