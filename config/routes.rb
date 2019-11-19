@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   get '/mypage/identification' => 'mypage#new'
   get '/mypage/card' => 'mypage#show'
   get '/mypage/card/create' => 'mypage#create'
+
+  get '/logout' => 'logout#log_out'
   
 end
