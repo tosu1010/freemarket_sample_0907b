@@ -5,13 +5,13 @@
     .credit_card__main__section
       %h2 支払い方法
       -# 仮にuserテーブルを配当
-      = form_for @user, url: step5_signup_index_path do |f|
+      = form_with url: step5_signup_index_path do |f|
         .contents
           .contents-field
             = f.label :カード番号
             %span.reqiure 必須
             %br/
-            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "半角数字のみ"
+            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "半角数字のみ", id: "card_number"
           %ul
             %li
               = image_tag('visa.svg', class: 'card_logo')
@@ -33,15 +33,15 @@
             = fa_icon "chevron-down", class: "aicon-arrow-bottom"
             = fa_icon "chevron-down", class: "aicon-arrow-bottom-2"
             %br/
-            = f.select :profile_description, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection'
+            = f.select :profile_description, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection', id: "exp_month"
             %span 月
-            = f.select :profile_description, ['19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'], {include_blank: '--'}, class: 'year_selection'
+            = f.select :profile_description, ['19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'], {include_blank: '--'}, class: 'year_selection', id: "exp_year"
             %span 年
           .contents-field
             = f.label :セキュリティコード
             %span.reqiure 必須
             %br/
-            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "カード背面4桁もしくは3桁の番号"
+            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "カード背面4桁もしくは3桁の番号", id: "cvc"
           .contents-field__reason
             %b.question?
             カード裏面の番号とは？
@@ -49,6 +49,7 @@
               %text.credit-seq_before カードの裏面をご参照ください。
               = image_tag('seq-card.png', class: 'seq-card')
           .contents-field__button
-            = f.submit "次へ進む", class: "form__submit"
+            #card_token
+            = f.submit "次へ進む", class: "form__submit", id: "credit_card_submit"
 
 = render partial: "sign_up_footer"

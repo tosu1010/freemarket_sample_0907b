@@ -52,7 +52,6 @@ class SignupController < ApplicationController
   end
 
   def step5
-
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -84,7 +83,9 @@ class SignupController < ApplicationController
         user_id: session[:id]
       )
 
-      @address.save
+      @credit_card = CreditCard.get_new_credit_card
+      
+      render 'step5' unless @credit_card.save && @address.save
 
     else
       render '/devise/registrations/sign_up_before'
@@ -209,5 +210,7 @@ class SignupController < ApplicationController
       :phone_number
     )
   end
+
+  
 
 end
