@@ -18,6 +18,5 @@ class Address < ApplicationRecord
   validates :prefecture_id,           presence: true
   validates :city,                    presence: true
   validates :number,                  presence: true
-  validates :phone_number,            length: {minimum: 10, maximum: 11}, format: { with: /\A\d{0,11}\z/ }
 
 end
