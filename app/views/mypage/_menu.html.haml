@@ -1,7 +1,7 @@
 %nav.menu
   %ul.menu__links
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/" ,class: "menu__links__box__link" do
+      = link_to mypage_index_path ,class: "menu__links__box__link" do
         マイページ
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
@@ -17,7 +17,7 @@
         いいね！一覧
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/sell/" ,class: "menu__links__box__link" do
+      = link_to exhibit_index_path ,class: "menu__links__box__link" do
         出品する
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
@@ -81,7 +81,7 @@
         発送元・お届け先住所変更
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/card/" ,class: "menu__links__box__link" do
+      = link_to mypage_card_path ,class: "menu__links__box__link" do
         支払い方法
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
@@ -89,7 +89,7 @@
         メール/パスワード
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/identification/" ,class: "menu__links__box__link" do
+      = link_to mypage_identification_path ,class: "menu__links__box__link" do
         本人情報
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
