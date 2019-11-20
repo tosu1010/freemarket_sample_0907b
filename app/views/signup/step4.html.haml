@@ -5,13 +5,13 @@
     .credit_card__main__section
       %h2 支払い方法
       -# 仮にuserテーブルを配当
-      = form_with url: step5_signup_index_path do |f|
+      = form_with url: step5_signup_index_path, html: {name: "credit_card_form"} do |f|
         .contents
           .contents-field
             = f.label :カード番号
             %span.reqiure 必須
             %br/
-            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "半角数字のみ", id: "card_number"
+            = f.text_field :card_number, autofocus: true, autocomplete: "card_number", placeholder: "半角数字のみ", id: "card_number"
           %ul
             %li
               = image_tag('visa.svg', class: 'card_logo')
@@ -33,15 +33,15 @@
             = fa_icon "chevron-down", class: "aicon-arrow-bottom"
             = fa_icon "chevron-down", class: "aicon-arrow-bottom-2"
             %br/
-            = f.select :profile_description, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection', id: "exp_month"
+            = f.select :exp_month, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection', id: "exp_month"
             %span 月
-            = f.select :profile_description, ['19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'], {include_blank: '--'}, class: 'year_selection', id: "exp_year"
+            = f.select :exp_year, [['19', 2019], ['20', 2020], ['21', 2021], ['22', 2022], ['23', 2023], ['24', 2024], ['25', 2025], ['26', 2026], ['27', 2027], ['28', 2028], ['29', 2029]], {include_blank: '--'}, class: 'year_selection', id: "exp_year"
             %span 年
           .contents-field
             = f.label :セキュリティコード
             %span.reqiure 必須
             %br/
-            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "カード背面4桁もしくは3桁の番号", id: "cvc"
+            = f.text_field :cvc, autofocus: true, placeholder: "カード背面4桁もしくは3桁の番号", id: "cvc"
           .contents-field__reason
             %b.question?
             カード裏面の番号とは？

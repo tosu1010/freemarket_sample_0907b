@@ -47,11 +47,11 @@ class SignupController < ApplicationController
     session[:number] = address_params[:number]
     session[:building] = address_params[:building]
     session[:phone_number_address] = address_params[:phone_number]
-    
-    @user = User.new # 仮置き（credit_cardページで、暫定@userデータを置いているため）
   end
 
   def step5
+    # TODO トランザクションを使ってDBへの保存を管理
+
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -82,10 +82,10 @@ class SignupController < ApplicationController
         phone_number: session[:phone_number_address],
         user_id: session[:id]
       )
-
-      @credit_card = CreditCard.get_new_credit_card
+      binding.pry
+      @credit_card = CreditCard.get_new_credit_card(@user, params['payjp-token'])
       
-      render 'step5' unless @credit_card.save && @address.save
+      render 'step5' unless @credit_card.save || @address.save
 
     else
       render '/devise/registrations/sign_up_before'

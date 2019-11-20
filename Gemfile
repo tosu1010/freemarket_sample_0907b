@@ -92,3 +92,4 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
+gem 'payjp'
