@@ -66,7 +66,9 @@ class SignupController < ApplicationController
       birth_day: session[:birth_day],
       phone_number: session[:phone_number]
     )
-    if @user.save
+
+    @user.transaction do
+      @user.save!
       session[:id] = @user.id
 
       @address = Address.new(
@@ -82,14 +84,15 @@ class SignupController < ApplicationController
         phone_number: session[:phone_number_address],
         user_id: session[:id]
       )
-      binding.pry
+      
       @credit_card = CreditCard.get_new_credit_card(@user, params['payjp-token'])
       
-      render 'step5' unless @credit_card.save || @address.save
-
-    else
-      render '/devise/registrations/sign_up_before'
+      @address.save!
+      @credit_card.save!
     end
+      render 'step5'
+    rescue => e
+      render '/devise/registrations/sign_up_before'
 
     sign_in User.find(session[:id]) unless user_signed_in?
   end

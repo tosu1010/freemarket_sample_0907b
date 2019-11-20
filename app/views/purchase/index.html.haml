@@ -34,11 +34,11 @@
       %h3.delivery__inner__header
         配送先
       .delivery__inner__destination
-        = "〒#{@user.address.postal_code}"
+        = "〒#{current_user.address.postal_code}"
         %br/
-        = @user.address.get_full_address
+        = current_user.address.get_full_address
         %br/
-        = @user.get_full_name
+        = current_user.get_full_name
       = link_to '#', class: 'delivery__inner__change' do
         %span
           変更する
@@ -49,10 +49,24 @@
       %h3.payment__inner__header
         支払い方法
       .payment__inner__card-info
-        *********0000
+        = "**** **** **** " + @default_card_information.last4
         %br/
-        12/99
-      = image_tag('visa.svg', class: 'payment__inner__card-logo')
+        = @default_card_information.exp_month.to_s + " / " + @default_card_information.exp_year.to_s.slice(2,3)
+      
+      - case @default_card_information.brand
+      - when "Visa"
+        = image_tag('visa.svg', class: 'payment__inner__card-logo')
+      - when "MasterCard"
+        = image_tag('master.svg', class: 'payment__inner__card-logo')
+      - when "JCB"
+        = image_tag('jcb.svg', class: 'payment__inner__card-logo')
+      - when "American Express"
+        = image_tag('american_express.svg', class: 'payment__inner__card-logo')
+      - when "Diners Club"
+        = image_tag('dinersclub.svg', class: 'payment__inner__card-logo')
+      - when "Discover"
+        = image_tag('discover.svg', class: 'payment__inner__card-logo')
+      
       = link_to '#', class: 'payment__inner__change' do
         %span
           変更する

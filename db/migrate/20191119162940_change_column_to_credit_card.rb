@@ -5,7 +5,7 @@ class ChangeColumnToCreditCard < ActiveRecord::Migration[5.2]
     remove_column :credit_cards, :limit_year, :int
     remove_column :credit_cards, :security_code, :int
 
-    add_column :credit_cards, :customer_id, :int
-    add_column :credit_cards, :card_id, :int
+    add_column :credit_cards, :customer_id, :string
+    add_column :credit_cards, :card_id, :string
   end
 end

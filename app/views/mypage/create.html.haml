@@ -6,7 +6,7 @@
   .mypage__card-create
     .mypage__card-create__section
       %h2.mypage__card-create__section__title  クレジットカード情報入力
-      = form_with url: mypage_index_path do |f|
+      = form_with url: credit_card_index_path, html: {name: "credit_card_form"} do |f|
         .contents
           .contents__field
             = f.label :カード番号

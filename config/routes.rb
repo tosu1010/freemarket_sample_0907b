@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :mypage, only: [:index]
+  resources :credit_card, only: [:create]
   resources :merchandises, only: [:index, :show] do
     resources :comments, only: [:create, :new]
     resources :likes, only: [:create, :destroy]
