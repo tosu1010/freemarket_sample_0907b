@@ -40,15 +40,15 @@ ActiveRecord::Schema.define(version: 2019_11_04_101837) do
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "ancestry"
   end
 
@@ -104,12 +104,12 @@ ActiveRecord::Schema.define(version: 2019_11_04_101837) do
   end
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "shipping_charge_id", null: false
-    t.integer "shipping_area_id", null: false
-    t.integer "shipping_date_id", null: false
-    t.integer "delivery_type_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "shipping_charge_id"
+    t.integer "shipping_area_id"
+    t.integer "shipping_date_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "delivery_type_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,21 +122,21 @@ ActiveRecord::Schema.define(version: 2019_11_04_101837) do
     t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
-  create_table "exhibit_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.bigint "exhibit_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "exhibit_images", options: "ENGINE=InnoDB DEFAULT CHARSET=sjis", force: :cascade do |t|
+    t.string "image", default: "", collation: "utf8_general_ci"
+    t.bigint "exhibit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["exhibit_id"], name: "index_exhibit_images_on_exhibit_id"
   end
 
   create_table "exhibits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status", null: false
+    t.string "status", limit: 30
     t.integer "size_id"
-    t.bigint "user_id", null: false
-    t.bigint "merchandise_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "merchandise_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["merchandise_id"], name: "index_exhibits_on_merchandise_id"
     t.index ["user_id"], name: "index_exhibits_on_user_id"
   end
@@ -161,15 +161,15 @@ ActiveRecord::Schema.define(version: 2019_11_04_101837) do
   end
 
   create_table "merchandises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description", null: false
-    t.integer "price", null: false
-    t.bigint "delivery_id", null: false
-    t.bigint "brand_id", null: false
-    t.bigint "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "condition_id", null: false
+    t.string "name", default: ""
+    t.text "description"
+    t.integer "price"
+    t.bigint "delivery_id"
+    t.bigint "brand_id"
+    t.bigint "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "condition_id"
     t.index ["brand_id"], name: "index_merchandises_on_brand_id"
     t.index ["category_id"], name: "index_merchandises_on_category_id"
     t.index ["delivery_id"], name: "index_merchandises_on_delivery_id"
@@ -250,27 +250,30 @@ ActiveRecord::Schema.define(version: 2019_11_04_101837) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.string "nickname", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
-    t.string "phone_number", null: false
+    t.string "email", default: ""
+    t.string "encrypted_password", default: ""
+    t.string "first_name", default: ""
+    t.string "last_name", default: ""
+    t.string "first_name_kana", default: ""
+    t.string "last_name_kana", default: ""
+    t.string "nickname", default: ""
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
+    t.string "phone_number", default: ""
     t.text "profile_description"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "balances", "merchandises"
+  add_foreign_key "balances", "users"
   add_foreign_key "comments", "merchandises"
   add_foreign_key "comments", "users"
   add_foreign_key "contacts", "merchandises"

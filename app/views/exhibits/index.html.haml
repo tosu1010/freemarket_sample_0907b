@@ -1,0 +1,177 @@
+.main_exhibit
+  = render 'header' 
+
+  -# = Category.all.each do |f|
+  -#   = f.name
+  -# = form_for @category.to_set do |f|
+  -#   = f.collection_select :category_id, Category.all, :id
+
+  = form_for @exhibit, html: { multipart: true }  do |ff|
+
+    .main_exhibit__contents
+      .main_exhibit__contents__main
+        .content
+          .content__head
+            商品の情報を入力
+
+        .content
+          .content__box__img
+            .content__box__img__title-photos 
+              出品画像
+              .form_require 
+                必須
+            .explain 最大10枚までアップロードできます
+            .content__box__img__select-img
+              %label.select_1
+                = fields_for @exhibit_image do |f|
+                  = f.file_field :image, class: "select_img", type: "file", id: "select_img", name: "[images][]"
+                  .content__box__dropbox
+                    .content__box__dropbox__form
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをアップロード
+        .content
+          .content__box
+            .content__box__title
+              商品名
+              .form_require
+                必須
+            .content__box__text-field
+              = fields_for @merchandise do |f|
+                = f.text_field :name, class: 'input-form', placeholder: '商品名（必須40字まで）'
+          .content__box__explain
+            .content__box__title
+              商品の説明
+              .form_require 
+                必須
+            .content__box__text-area
+              = fields_for @merchandise do |f|
+                = f.text_area :description, class: 'input-text-form', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+                
+        .content
+          .content__box
+            .content__box__title
+            .content__box__title__left
+              .content__box__title__left-head
+                商品の詳細
+            .content__box__title__right
+              .content__box
+                .content__box__title
+                  カテゴリー
+                  .form_require 
+                    必須
+                .content__box__select-category
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category, :id, :name,{include_blank: "---"} ,class: "select", id: "select", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+              .content__box-middle
+                .content__box__title
+                  商品の状態
+                  .form_require 
+                    必須
+                .content__box__select
+                  .content__box__select__box
+                    = fields_for @exhibit do |f|
+                      = f.select :status, ["---", "新品、未使用", "未使用に近い", "目立った傷や,汚れなし", "やや傷や,汚れあり", "全体的に状態が悪い"], {}, {class: "select3"}
+                    .icon
+                      %i.fa.fa-angle-down
+
+        .content
+          .content__box
+            .content__box__title
+            .content__box__title__left
+              .content__box__title__left-head
+                発送について
+                = link_to "?" ,"https://www.mercari.com/jp/help_center/article/68/", class: "question"
+            .content__box__title__right
+              .content__box1
+                .content__box__title
+                  配送料の負担
+                  .form_require
+                    必須
+                .content__box__select-shipping_charge
+                  .content__box__select__box
+                    = fields_for @delivery do |f|
+                      = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :value, {include_blank: "---"}, {class: "select4"}
+                    .icon
+                      %i.fa.fa-angle-down
+
+              .content__box-middle
+                .content__box__title
+                  発送元の地域
+                  .form_require 
+                    必須
+                .content__box__select
+                  .content__box__select__box
+                    = fields_for @delivery do |f|
+                      = f.collection_select :shipping_area_id, ShippingArea.all, :id, :name, {include_blank: "---"}, {class: "select"}
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+              .content__box-bottom
+                .content__box__title
+                  発送までの日数
+                  .form_require 
+                    必須
+                .content__box__select
+                  .content__box__select__box
+                    = fields_for @delivery do |f|
+                      = f.collection_select :shipping_date_id, ShippingDate.all, :id, :value, {include_blank: "---"}, {class: "select"}
+                    .icon
+                      %i.fa.fa-angle-down
+        .content
+          .content__box
+            .content__box__title
+            .content__box__title__left
+              .content__box__title__left-head
+                販売価格(300~9,999,999)
+                = link_to "?" ,"https://www.mercari.com/jp/help_center/article/64/", class: "question"
+            .content__box__title__right
+              .content__box-price
+                .content__box-price__left
+                  .content__box__title
+                    価格
+                    .form_require2
+                      必須
+                .content__box-price__right
+                  .content__box-price__right__yen
+                    ¥
+                  .content__box-price__right__text-field-price
+                    = fields_for @merchandise do |f|
+                      = f.text_field :price, class: 'input-form', placeholder: '例）300', id: "price"
+              .content__box-fee
+                .fee
+                  販売手数料（10%）
+                .hyphen 
+                  = fields_for @merchandise do |f|
+                    = f.text_field :fee, class: "sales-fee", id: "sales-fee", value: "-", disabled: "disabled" #←入力できないように
+              .content__box-profit
+                .content__box-profit-left
+                  販売利益
+                .content__box-profit-right
+                  = fields_for @merchandise do |f|
+                    = f.text_field :price, class: "total-price", id: "total-price", type: "text", value: "-", disabled: "disabled" #←入力できないように                     
+
+        .content
+          .content__caution
+            %p 
+              %span<> 禁止されている出品、行為
+              を必ずご確認ください。
+            %p
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              %span<> 偽ブランドの販売
+              は犯罪であり処罰される可能性があります。
+            %p 
+              また、出品をもちまして
+              %span<> 加盟店規約
+              に同意したことになります。
+          .content-btn-exhibit
+            = ff.submit "出品する", class: "text"
+          .content-btn-back
+            = link_to "もどる", 'https://www.mercari.com/jp/', class: "back"
+
+    .exhibit__footer
+      = render "footer"
