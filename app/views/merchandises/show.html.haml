@@ -21,7 +21,12 @@
                 %li.item-photos__carousel__dots__dot
                   .item-photos__carousel__dots__dot__inner
                     = image_tag "#{image.image}", class: "item-photos__carousel__dots__dot__inner__image"
-                  
+
+          - if @merchandise.purchase.present?
+            .item-photos__sold-out
+              .item-photos__sold-out__text
+                SOLD
+
       .price-box--mini
         %span.price-box--mini__price.bold
           = "￥#{@merchandise.price.to_s(:delimited)}"

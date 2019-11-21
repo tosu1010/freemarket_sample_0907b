@@ -187,3 +187,32 @@
   max-width: 320px;
   margin: 0 auto;
 }
+
+@mixin sold-out-box($side) {
+  &::after {
+    display: block;
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: $side $side 0 0;
+    border-color: $red transparent transparent transparent;
+  }
+}
+
+@mixin sold-out-text($top, $font-size) {
+  position: absolute;
+  left: 0;
+  top: $top;
+  z-index: 2;
+  letter-spacing: 2px;
+  font-weight: 600;;
+  color: $white;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  font-size: $font-size;
+}

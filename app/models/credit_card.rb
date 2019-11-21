@@ -10,7 +10,7 @@ class CreditCard < ApplicationRecord
       card: payjp_token,
       metadata: {user_id: user.id}
     )
-    credit_card = CreditCard.new(user_id: user.id, customer_id: customer.id, card_id: customer.default_card)
+    CreditCard.new(user_id: user.id, customer_id: customer.id, card_id: customer.default_card)
   end
 
   # 登録済みのカード情報を取得するためのメソッド

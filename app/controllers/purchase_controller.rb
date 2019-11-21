@@ -10,7 +10,7 @@ class PurchaseController < ApplicationController
     merchandise = Merchandise.find(params[:merchandise_id])
     if CreditCard.buy_merchandise(current_user, merchandise)
       redirect_to merchandise_path(merchandise)
-    elseg
+    else
       flash[:alert] = "すでに売り切れています"
       redirect_to merchandise_purchase_index_path(merchandise)
     end
