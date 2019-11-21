@@ -50,7 +50,6 @@ class SignupController < ApplicationController
   end
 
   def step5
-    # TODO トランザクションを使ってDBへの保存を管理
 
     @user = User.new(
       nickname: session[:nickname],
@@ -90,11 +89,11 @@ class SignupController < ApplicationController
       @address.save!
       @credit_card.save!
     end
+      sign_in User.find(session[:id]) unless user_signed_in?
       render 'step5'
-    rescue => e
+    rescue
       render '/devise/registrations/sign_up_before'
 
-    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
 

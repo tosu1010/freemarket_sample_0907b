@@ -10,7 +10,7 @@
           = image_tag "#{@merchandise.exhibit.exhibit_images[0].image}", class: 'item-container__inner__item__image-box__image'
         %p.item-container__inner__item__name
           = @merchandise.name
-      .purchase-form
+      = form_with url: merchandise_purchase_index_path, html: {class: "purchase-form"}, local: true do |f|
         .purchase-form__price
           = "¥#{@merchandise.price.to_s(:delimited)}"
           - if @merchandise.delivery.shipping_charge_id == 1
@@ -26,8 +26,9 @@
             支払い金額
           .purchase-form__payment__price
             = "¥#{@merchandise.price.to_s(:delimited)}"
-        .purchase-form__button
-          購入する
+        = f.submit '購入する', class: 'purchase-form__button'
+        .purchase-form__flash
+          = flash[:alert]
   
   .delivery
     .delivery__inner
