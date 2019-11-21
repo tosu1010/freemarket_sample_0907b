@@ -30,3 +30,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/secrets.yml
+
+# reCAPTCHAの環境変数
+.env

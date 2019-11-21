@@ -262,8 +262,8 @@
       - else
         .lower__right
           .lower__right__sign-up
-            = link_to "新規会員登録", "", class: "lower__right__sign-up_link"
+            = link_to "新規会員登録", signup_index_path, class: "lower__right__sign-up_link"
           .lower__right__login
-            = link_to "ログイン", "", class: "lower__right__login_link"
+            = link_to "ログイン", new_user_session_path, class: "lower__right__login_link"
 
     = render "layouts/breadcrumbs", class: "breadcrumbs"

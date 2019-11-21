@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root 'merchandises#index'
+
+  resources :signup do
+    collection do
+      get 'step1'
+      post 'step2'
+      post 'step3'
+      post 'step4'
+      post 'step5'
+    end
+  end
 
   resources :mypage, only: [:index]
   resources :merchandises, only: [:index, :show] do
@@ -15,13 +26,6 @@ Rails.application.routes.draw do
   get '/mypage/card' => 'mypage#show'
   get '/mypage/card/create' => 'mypage#create'
 
-  get 'log_in' => 'login#log_in'
-  get 'sign_up_before' => 'signup#sign_up_before'
-  get 'sign_up_2' => 'signup#sign_up_2'
-  get 'sign_up_3' => 'signup#sign_up_3'
-  get 'sign_up_4' => 'signup#sign_up_4'
-  get 'sign_up_5' => 'signup#sign_up_5'
-  get 'sign_up_6' => 'signup#sign_up_6'
-  get 'logout' => 'logout#log_out'
+  get '/logout' => 'logout#log_out'
   
 end

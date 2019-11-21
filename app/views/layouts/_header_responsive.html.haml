@@ -19,8 +19,8 @@
 
       - else
         .upper_right
-          = link_to "新規会員", "", class: "sign-up"
-          = link_to "ログイン", "", class: "login"
+          = link_to "新規会員", signup_index_path, class: "sign-up"
+          = link_to "ログイン", new_user_session_path, class: "login"
 
     .middle
       = form_tag "", method: :get, class: "search__form" do
