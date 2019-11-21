@@ -119,6 +119,16 @@
       background-color: #aaa;
       color: $white;
       cursor: pointer;
+
+      &--disabled {
+        background-color: #888;
+        cursor: not-allowed;
+        border: none;
+        margin-top: 8px;
+        width: 100%;
+        height: 50px;
+        color: $white;
+      }
     }
   }
 }

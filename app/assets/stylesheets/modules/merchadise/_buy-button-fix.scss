@@ -1,6 +1,6 @@
 .merchandise-detail {
   .buy-button-fix {
-    display: none;
+    display: none;    
 
     @media screen and (max-width: 768px) {
       display: block;
@@ -30,6 +30,17 @@
           opacity: .7;
           text-decoration: underline;
         }
+      }
+      &--sold-out {
+        background-color: #888;
+        display: block;
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 56px;
+        text-align: center;
+        font-weight: 600;
+        color: $white;
+        margin-top: 16px;
       }
     }
   }
