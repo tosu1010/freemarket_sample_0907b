@@ -90,5 +90,6 @@ gem 'erb2haml'
 gem 'owlcarousel-rails'
 gem 'ancestry'
 gem 'active_hash'
+gem 'gretel'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'

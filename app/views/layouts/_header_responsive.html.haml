@@ -16,6 +16,7 @@
           .mypage-img
             = link_to "", class: "mypage-img_link" do
               = image_tag("https://static.mercdn.net/thumb/members/158882622.jpg?1572265146", class: "mypage-img_link_img")
+
       - else
         .upper_right
           = link_to "新規会員", signup_index_path, class: "sign-up"
@@ -34,3 +35,5 @@
       = link_to "" , class: "brand-search__link" do
         %i.fa.fa-tag.brand-search__link_img
         %span.brand-search__link_text ブランドから探す
+
+    = render "layouts/breadcrumbs", class: "breadcrumbs-list"
