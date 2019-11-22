@@ -32,80 +32,69 @@ class ExhibitsController < ApplicationController
       @brand = Brand.new(
         name: params[:brand][:name]
         )
-      if @brand.name.present?
-        redirect_to "/" and return
-      else 
+      if @brand.name.blank?
         redirect_to "/exhibits" and return
-      end
+      else
+        if @brand.save
+          session[:brand_id] = @brand.id
+    
+          @category = Category.new(
+            name: params[:category][:name]
+          )
 
-    else redirect_to "/exhibits" and return #データがない場合は戻る
-
-    end
-    if @brand.save
-      session[:brand_id] = @brand.id
-
-      @category = Category.new(
-        name: params[:category][:name]
-      )
-
-    else
-      redirect_to "/exhibits" #データがない場合は戻る
-    end
-
-    if @category.save
-      session[:category_id] = @category.id
-
-      @merchandise = Merchandise.new(
-        name: params[:merchandise][:name],
-        description: params[:merchandise][:description],
-        price: params[:merchandise][:price],
-        delivery_id: session[:delivery_id],
-        brand_id: session[:brand_id],
-        category_id: session[:category_id],
-        condition_id: params[:merchandise][:condition_id]
-        )
-
-    else redirect_to "/exhibits" and return #データがない場合は戻る
-
-    end
-    if @merchandise.save
-      session[:merchandise_id] = @merchandise.id
-
-      @exhibit = Exhibit.new(
-        status: 1,
-        size_id: params[:exhibit][:size_id],
-        user_id: current_user.id,
-        merchandise_id: session[:merchandise_id]
-        )
-
-    else
-      redirect_to "/exhibits" and return #データがない場合は戻る
-      return
-
-    end
-    if @exhibit.save
-      session[:exhibit_id] = @exhibit.id
-
-      if params[:images].present?
-        params[:images].each do |image| 
-          @exhibit_image = ExhibitImage.new(
-            image: image,
-            exhibit_id: session[:exhibit_id]
-            )
-
-          if @exhibit_image.save
-            redirect_to mypage_index_path and return
-
-          else 
+          if @category.save
+            session[:category_id] = @category.id
+      
+            @merchandise = Merchandise.new(
+              name: params[:merchandise][:name],
+              description: params[:merchandise][:description],
+              price: params[:merchandise][:price],
+              delivery_id: session[:delivery_id],
+              brand_id: session[:brand_id],
+              category_id: session[:category_id],
+              condition_id: params[:merchandise][:condition_id]
+              )
+          
+            if @merchandise.save
+              session[:merchandise_id] = @merchandise.id
+        
+              @exhibit = Exhibit.new(
+                status: 1,
+                size_id: params[:exhibit][:size_id],
+                user_id: current_user.id,
+                merchandise_id: session[:merchandise_id]
+                )
+              if @exhibit.save
+                session[:exhibit_id] = @exhibit.id
+          
+                if params[:images].present?
+                  params[:images].each do |image| 
+                    @exhibit_image = ExhibitImage.new(
+                      image: image,
+                      exhibit_id: session[:exhibit_id]
+                      )
+                    if @exhibit_image.save
+                      redirect_to mypage_index_path and return
+                    else 
+                      redirect_to "/exhibits" and return #データがない場合は戻る
+                    end
+                  end
+                else
+                  redirect_to "/exhibits" and return #データがない場合は戻る
+                end
+              else
+                redirect_to "/exhibits" and return #データがない場合は戻る
+              end
+            else
+              redirect_to "/exhibits" and return #データがない場合は戻る
+            end
+          else
             redirect_to "/exhibits" and return #データがない場合は戻る
-
           end
-
-        else
-          redirect_to "/exhibits" and return #データがない場合は戻る
-          return
         end
       end
+    else
+      redirect_to "/exhibits" and return #データがない場合は戻る
     end
   end
 
@@ -127,6 +116,4 @@ class ExhibitsController < ApplicationController
       redirect_to action: :show
     end
   end
-
-
 end
