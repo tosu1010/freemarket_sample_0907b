@@ -94,7 +94,7 @@ class ExhibitsController < ApplicationController
             redirect_to "mypage_index_path"
 
           else 
-            redirect_to "mypage_index_path" #データがない場合は戻る
+            redirect_to "/exhibits" #データがない場合は戻る
 
           end
 
