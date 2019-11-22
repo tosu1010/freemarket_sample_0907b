@@ -216,3 +216,15 @@
   transform: rotate(-45deg);
   font-size: $font-size;
 }
+
+//_exhibition__change.scss
+@mixin comment-form__submit {
+  color: $white;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center; 
+}

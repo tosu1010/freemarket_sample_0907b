@@ -1,0 +1,51 @@
+.exhibition__change__box {
+
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
+
+  @media screen and (max-width: 768px) {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .exhibition_edit {
+    //実装されるまでは非活性とする
+    pointer-events: none;
+    
+    margin: 16px 0 16px 0;
+
+    .comment-form__submit {
+      background: $red;
+      border: 1px solid $red;
+      @include comment-form__submit;
+    }
+  }
+  .exhibition_word_or {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .exhibition_stop {
+    //実装されるまでは非活性とする
+    pointer-events: none;
+    
+    margin: 16px 0 16px 0;
+
+    .comment-form__submit {
+      background: $red;
+      border: 1px solid $red;
+      @include comment-form__submit;
+    }
+  }
+  
+  .exhibition_delete {
+    margin: 16px 0 16px 0;
+
+    .comment-form__submit {
+      background: #aaa;
+      border: 1px solid #aaa;
+      @include comment-form__submit;
+    }
+  }    
+}
