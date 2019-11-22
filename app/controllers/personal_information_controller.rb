@@ -8,10 +8,17 @@ class PersonalInformationController < ApplicationController
   end
 
   def create
-    @personal_information = PersonalInformation.update(personal_information_params)
+    @personal_information = PersonalInformation.create(personal_information_params)
     redirect_to mypage_identification_path
   end
 
+  def edit
+  end
+
+  def update
+    @personal_information = PersonalInformation.update(personal_information_params)
+    redirect_to mypage_identification_path
+  end
   
   private
 

@@ -23,11 +23,10 @@ Rails.application.routes.draw do
 
   get '/mypage/profile' => 'mypage#edit'
   get '/mypage/identification' => 'personal_information#new'
-  post '/mypage' => 'personal_information#create'
-  get '/mypage/identifications' => 'personal_information#edit'
-  patch '/mypage' => 'personal_information#update'
+  post '/mypage/identification' => 'personal_information#create'
+  patch '/mypage/identification' => 'personal_information#create'
   get '/mypage/card' => 'mypage#show'
-  get '/mypage/card/create' => 'mypage#card'
+  get '/mypage/card/create' => 'mypage#create'
   patch '/mypage' => 'mypage#update'
 
   get '/logout' => 'logout#log_out'

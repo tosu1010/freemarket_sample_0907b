@@ -14,7 +14,7 @@ class MypageController < ApplicationController
 
   end
 
-  def card
+  def create
   end
 
   def update
