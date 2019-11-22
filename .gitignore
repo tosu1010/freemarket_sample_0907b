@@ -31,4 +31,9 @@
 /config/master.key
 /config/secrets.yml
 
+
 /public/uploads
+
+# reCAPTCHAの環境変数
+.env
+

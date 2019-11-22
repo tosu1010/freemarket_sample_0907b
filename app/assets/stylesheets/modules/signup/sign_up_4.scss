@@ -66,6 +66,10 @@
     padding: 10px 16px 8px;
     width: 90%;
   }
+
+  .phone_number {
+    border: 1px solid $grey;
+  }
     
   .aicon-arrow-bottom {
     background-color: $white;
@@ -82,7 +86,6 @@
     -webkit-appearance: none;
     outline-width: 2px;
     background: 0;
-    border: 1px solid $grey;
     border-radius: 4px;
     cursor: pointer;
     display: inline-block;

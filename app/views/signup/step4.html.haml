@@ -4,13 +4,14 @@
   .credit_card__main
     .credit_card__main__section
       %h2 支払い方法
-      = fields_for :phone_number do |f|
+      -# 仮にuserテーブルを配当
+      = form_for @user, url: step5_signup_index_path do |f|
         .contents
           .contents-field
             = f.label :カード番号
             %span.reqiure 必須
             %br/
-            = f.text_field :card_number, autofocus: true, autocomplete: "card_number", placeholder: "半角数字のみ"
+            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "半角数字のみ"
           %ul
             %li
               = image_tag('visa.svg', class: 'card_logo')
@@ -32,15 +33,15 @@
             = fa_icon "chevron-down", class: "aicon-arrow-bottom"
             = fa_icon "chevron-down", class: "aicon-arrow-bottom-2"
             %br/
-            = f.select :birth_month, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection'
+            = f.select :profile_description, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection'
             %span 月
-            = f.select :birth_year, ['19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'], {include_blank: '--'}, class: 'year_selection'
+            = f.select :profile_description, ['19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'], {include_blank: '--'}, class: 'year_selection'
             %span 年
           .contents-field
             = f.label :セキュリティコード
             %span.reqiure 必須
             %br/
-            = f.text_field :security_code, autofocus: true, autocomplete: "security_code", placeholder: "カード背面4桁もしくは3桁の番号"
+            = f.text_field :profile_description, autofocus: true, autocomplete: "profile_description", placeholder: "カード背面4桁もしくは3桁の番号"
           .contents-field__reason
             %b.question?
             カード裏面の番号とは？
