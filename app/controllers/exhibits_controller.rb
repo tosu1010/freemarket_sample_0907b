@@ -33,12 +33,12 @@ class ExhibitsController < ApplicationController
         name: params[:brand][:name]
         )
       if @brand.name.present?
-        redirect_to "/"
+        redirect_to "/" and return
       else 
-        redirect_to "/exhibits"
+        redirect_to "/exhibits" and return
       end
 
-    else redirect_to "/exhibits" #データがない場合は戻る
+    else redirect_to "/exhibits" and return #データがない場合は戻る
 
     end
     if @brand.save
@@ -48,9 +48,10 @@ class ExhibitsController < ApplicationController
         name: params[:category][:name]
       )
 
-    else redirect_to "/exhibits" #データがない場合は戻る
-
+    else
+      redirect_to "/exhibits" #データがない場合は戻る
     end
+
     if @category.save
       session[:category_id] = @category.id
 
@@ -61,23 +62,25 @@ class ExhibitsController < ApplicationController
         delivery_id: session[:delivery_id],
         brand_id: session[:brand_id],
         category_id: session[:category_id],
-        condition_id: session[:condition_id],
+        condition_id: params[:merchandise][:condition_id]
         )
 
-    else redirect_to "/exhibits" #データがない場合は戻る
+    else redirect_to "/exhibits" and return #データがない場合は戻る
 
     end
     if @merchandise.save
       session[:merchandise_id] = @merchandise.id
 
       @exhibit = Exhibit.new(
-        status: params[:exhibit][:status],
+        status: 1,
         size_id: params[:exhibit][:size_id],
-        # user_id: current_user.id,
+        user_id: current_user.id,
         merchandise_id: session[:merchandise_id]
         )
 
-    else redirect_to "/exhibits" #データがない場合は戻る
+    else
+      redirect_to "/exhibits" and return #データがない場合は戻る
+      return
 
     end
     if @exhibit.save
@@ -91,15 +94,16 @@ class ExhibitsController < ApplicationController
             )
 
           if @exhibit_image.save
-            redirect_to "mypage_index_path"
+            redirect_to mypage_index_path and return
 
           else 
-            redirect_to "/exhibits" #データがない場合は戻る
+            redirect_to "/exhibits" and return #データがない場合は戻る
 
           end
 
-        else redirect_to "/exhibits" #データがない場合は戻る
-
+        else
+          redirect_to "/exhibits" and return #データがない場合は戻る
+          return
         end
       end
     end
