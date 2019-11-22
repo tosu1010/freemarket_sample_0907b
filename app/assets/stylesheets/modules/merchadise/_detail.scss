@@ -168,6 +168,22 @@
         display: block;
       }
 
+      &--sold-out {
+        background-color: #888;
+        color: $white;
+        margin-top: 16px;
+        font-size: 24px;
+        line-height: 60px;
+        height: 60px;
+        text-align: center;
+        font-weight: 600;
+
+        @media screen and (max-width: 768px) {
+          height: 56px;
+          font-size: 14px;
+        }
+      }
+
       @media screen and (max-width: 768px) {
         height: 56px;
         font-size: 14px;

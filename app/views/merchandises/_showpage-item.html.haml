@@ -11,3 +11,8 @@
           = fa_icon "heart-o", class: "item__body__bottom__likes__icon"
           %span
             = item.likes.where(value: 1).count
+  
+  - if item.purchase.present?
+    .item__sold-out
+      .item__sold-out__text
+        SOLD

@@ -37,7 +37,7 @@ class User < ApplicationRecord
   validates :phone_number,            presence: true, uniqueness: true, length: {minimum: 10, maximum: 11}, format: { with: /\A\d{10,11}\z/ }, on: :validates_step2
 
   def get_full_name
-    self.first_name + ' ' + self.last_name    
+    self.last_name + ' ' + self.first_name
   end
 
 end

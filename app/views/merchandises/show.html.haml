@@ -21,7 +21,11 @@
                 %li.item-photos__carousel__dots__dot
                   .item-photos__carousel__dots__dot__inner
                     = image_tag "#{image.image}", class: "item-photos__carousel__dots__dot__inner__image"
-                  
+
+          - if @merchandise.purchase.present?
+            .item-photos__sold-out
+              .item-photos__sold-out__text
+                SOLD
       .price-box--mini
         %span.price-box--mini__price.bold
           = "￥#{@merchandise.price.to_s(:delimited)}"
@@ -33,6 +37,14 @@
         - elsif @merchandise.delivery.shipping_charge_id == 2
           %span.price-box--mini__shipping-free
             着払い
+
+      - unless @merchandise.purchase.present?
+        .buy-button-fix
+          = link_to merchandise_purchase_index_path(@merchandise), class: "buy-button-fix__button" do
+            購入画面に進む
+      - else
+        .buy-button-fix--sold-out
+          売り切れました
 
       %table.item-detail
         %tr
@@ -127,9 +139,14 @@
         %span.price-box--mini__shipping-free
           着払い
 
-    .buy-button
-      = link_to merchandise_purchase_index_path(@merchandise), class: 'buy-button__link' do
-        購入画面に進む
+    - if @merchandise.purchase.present?
+      .buy-button--sold-out
+        売り切れました
+    - else
+      .buy-button
+        = link_to merchandise_purchase_index_path(@merchandise), class: 'buy-button__link' do
+          購入画面に進む
+        
     
     .item-description
       %p.item-description__text
@@ -163,8 +180,12 @@
         %p
           相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       = form_for [@merchandise, @comment], html: {class: "comment-form__form", id: "comment-form__form"}, url: merchandise_comments_path(@merchandise) do |f|
-        = f.text_area :comment, class: 'comment-form__text-box', size: '40*10'
-        = f.submit 'コメントする', class: 'comment-form__submit'
+        - unless @merchandise.purchase.present?
+          = f.text_area :comment, class: 'comment-form__text-box', size: '40*10'
+          = f.submit 'コメントする', class: 'comment-form__submit'
+        - else
+          = f.text_area :comment, class: 'comment-form__text-box', size: '40*10', disabled: 'disabled'
+          = f.submit '売り切れのためコメントできません', class: 'comment-form__submit--disabled', disabled: 'disabled'
   
   %ul.item-link
     - unless @merchandise.previous == 0
@@ -208,11 +229,7 @@
       .items
         - @merchandise.brand_new_items.each do |item|
           = render partial: "showpage-item", locals: { item: item }
-        
-  
-  .buy-button-fix
-    = link_to "#", class: "buy-button-fix__button" do
-      購入画面に進む
+
 
   -# アプリダウンロードバーナー
   = render 'layouts/app-download'

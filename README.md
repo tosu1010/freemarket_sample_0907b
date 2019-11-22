@@ -80,10 +80,8 @@
 ## Credit_cardテーブル
 |カラム名|タイプ|オプション|
 |--|--|--|
-| card_number   | integer | null: false |
-| limit_month   | integer | null: false |
-| limit_year    | integer | null: false |
-| security_code | integer | null: false |
+| customer_id   | integer | null: false |
+| card_id       | integer | null: false |
 | user_id       | references | null: false, foreign_key: true | 
 
 ### Association

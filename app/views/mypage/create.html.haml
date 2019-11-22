@@ -6,13 +6,13 @@
   .mypage__card-create
     .mypage__card-create__section
       %h2.mypage__card-create__section__title  クレジットカード情報入力
-      = fields_for :credit_card do |f|
+      = form_with url: credit_card_index_path, html: {name: "credit_card_form"} do |f|
         .contents
           .contents__field
             = f.label :カード番号
             %span.reqiure 必須
             %br/
-            = f.text_field :card_number, autofocus: true, autocomplete: "card_number", placeholder: "半角数字のみ"
+            = f.text_field :card_number, autofocus: true, autocomplete: "card_number", placeholder: "半角数字のみ", id: "card_number"
           %ul
             %li
               = image_tag('visa.svg', class: 'card_logo')
@@ -34,15 +34,15 @@
             = fa_icon "chevron-down", class: "contents__field__allow"
             = fa_icon "chevron-down", class: "contents__field__allow2"
             %br/
-            = f.select :birth_month, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection'
+            = f.select :birth_month, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], {include_blank: '--'}, class: 'month_selection', id: "exp_month"
             %span 月
-            = f.select :birth_year, ['19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'], {include_blank: '--'}, class: 'year_selection'
+            = f.select :profile_description, [['19', 2019], ['20', 2020], ['21', 2021], ['22', 2022], ['23', 2023], ['24', 2024], ['25', 2025], ['26', 2026], ['27', 2027], ['28', 2028], ['29', 2029]], {include_blank: '--'}, class: 'year_selection', id: "exp_year"
             %span 年
           .contents__field
             = f.label :セキュリティコード
             %span.reqiure 必須
             %br/
-            = f.text_field :security_code, autofocus: true, autocomplete: "security_code", placeholder: "カード背面4桁もしくは3桁の番号"
+            = f.text_field :security_code, autofocus: true, autocomplete: "security_code", placeholder: "カード背面4桁もしくは3桁の番号", id: "cvc"
           .contents__field__reason
             %b.contents__field__reason__question?
             カード裏面の番号とは？
@@ -50,7 +50,8 @@
               %text.credit-seq_before カードの裏面をご参照ください。
               = image_tag('seq-card.png', class: 'seq-card')
           .contents__field__button
-            = f.submit "追加する", class: "form__submit"
+            #card_token
+            = f.submit "追加する", class: "form__submit", id: "credit_card_submit"
 
 
   = render "menu"

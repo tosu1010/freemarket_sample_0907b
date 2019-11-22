@@ -12,6 +12,7 @@
           width: 220px;
           margin: 0 20px 20px 0;
           display: inline-block;
+          position: relative;
 
           &:nth-child(3n) {
             margin: 0 0 20px;
@@ -26,6 +27,7 @@
           @media screen and (max-width: 768px) {
             width: calc(33.3333% - 2.666666px);
             margin: 0 4px 4px 0;
+            height: 220px;
 
             &:nth-child(3n) {
               margin: 0 0 4px;
@@ -104,7 +106,6 @@
                   padding: 4px 12px 4px 8px;
                   font-weight: 600;
                 }
-              
               }
 
               &__likes {
@@ -118,6 +119,14 @@
                   font-size: 16px;
                 }
               }
+            }
+          }
+
+          &__sold-out {
+            @include sold-out-box(100px);
+
+            &__text {
+              @include sold-out-text(22px, 24px);
             }
           }
         }
