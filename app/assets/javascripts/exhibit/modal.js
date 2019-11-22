@@ -1,7 +1,7 @@
 let path = location.pathname
 
 //削除確認メッセージをモーダルで表示する画面を特定
-if (path.match(/^\w*\/exhibit\/\d*/)){
+if (path.match(/^\w*\/exhibits\/\d*/)){
   document.addEventListener(
     "DOMContentLoaded", e => {
       let modal_open = document.getElementById("exhibition_delete");

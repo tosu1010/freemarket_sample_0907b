@@ -105,4 +105,24 @@ class ExhibitsController < ApplicationController
     end
   end
 
+  def show
+    # Viewから送られてきたparamsよりインスタンス生成
+    @exhibit = Exhibit.find(params[:id])
+    @merchandise = Merchandise.find(params[:id])
+    @comment = Comment.new()
+  end
+
+  def destroy
+    # Viewから送られてきたparamsよりインスタンス生成
+    merchandise = Merchandise.find(params[:id])
+    # 削除処理
+    if merchandise.destroy
+      # リダイレクト先はマイページ（仮）
+      redirect_to mypage_index_path
+    else
+      redirect_to action: :show
+    end
+  end
+
+
 end
