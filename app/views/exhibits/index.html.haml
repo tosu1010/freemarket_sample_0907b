@@ -69,8 +69,8 @@
                     必須
                 .content__box__select
                   .content__box__select__box
-                    = fields_for @exhibit do |f|
-                      = f.select :status, ["---", "新品、未使用", "未使用に近い", "目立った傷や,汚れなし", "やや傷や,汚れあり", "全体的に状態が悪い"], {}, {class: "select3"}
+                    = fields_for @merchandise do |f|
+                      = f.collection_select :condition_id, Condition.all, :id, :value, {include_blank: "---"}, {class: "select"}
                     .icon
                       %i.fa.fa-angle-down
 
