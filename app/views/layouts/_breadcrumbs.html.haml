@@ -1,0 +1,27 @@
+- case params.values_at :controller, :action
+
+  -# マイページ(mypage)
+- when ['mypage', 'index']
+  - breadcrumb :mypage_index
+
+  -# プロフィール（profile）
+- when ['mypage', 'edit']
+  - breadcrumb :mypage_edit
+
+  -# 本人情報の登録(indentification)
+- when ['mypage', 'new']
+  - breadcrumb :mypage_new
+
+  -# 支払い方法(card)
+- when ['mypage', 'show']
+  - breadcrumb :mypage_show
+
+  -# クレジットカード情報入力(card_create)
+- when ['mypage', 'create']
+  - breadcrumb :mypage_create
+
+  -# ログアウト(logout)
+- when ['logout', 'log_out']
+  - breadcrumb :logout_log_out
+
+= breadcrumbs separator: " &nbsp;&nbsp;&gt;&nbsp; "

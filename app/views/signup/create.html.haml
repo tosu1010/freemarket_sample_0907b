@@ -4,13 +4,12 @@
   .registration_completed__main
     .registration_completed__main__section
       %h2 会員登録完了
-      = fields_for :phone_number do |f|
-        .contents
-          .contents-field
-          %p ありがとうございます。
-          %p 会員登録が完了しました。
-          .contents-field__submit
-            = f.submit "メルカリをはじめる", class: "form__submit"
+      .contents
+        .contents-field
+        %p ありがとうございます。
+        %p 会員登録が完了しました。
+        .contents-field__submit
+          = button_to 'メルカリをはじめる', root_path, method: :get, class: "form__submit"
       %ul
         %li
           = image_tag('download_promotion.jpg', class: 'download_logo')

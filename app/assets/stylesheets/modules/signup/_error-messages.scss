@@ -1,0 +1,27 @@
+.error-messages {
+  color: $red;
+  margin-top: 5px;
+  font-weight: 100;
+}
+
+.sign_up {
+  .error {
+    border: 1px solid $red;
+    outline-color: $red;
+  }
+}
+
+.confirm_phone_number {
+  .error {
+    border: 1px solid $red;
+    outline-color: $red;
+  }
+}
+
+
+.input_address {
+  .error {
+    border: 1px solid $red;
+    outline-color: $red;
+  }
+}
