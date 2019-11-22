@@ -1,11 +1,6 @@
 .main_exhibit
   = render 'header' 
 
-  -# = Category.all.each do |f|
-  -#   = f.name
-  -# = form_for @category.to_set do |f|
-  -#   = f.collection_select :category_id, Category.all, :id
-
   = form_for @exhibit, html: { multipart: true }  do |ff|
 
     .main_exhibit__contents
