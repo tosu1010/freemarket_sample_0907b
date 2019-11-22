@@ -51,7 +51,7 @@ class ExhibitsController < ApplicationController
               price: params[:merchandise][:price],
               delivery_id: session[:delivery_id],
               brand_id: session[:brand_id],
-              category_id: session[:category_id],
+              category_id: 8,
               condition_id: params[:merchandise][:condition_id]
               )
           
@@ -73,14 +73,9 @@ class ExhibitsController < ApplicationController
                       image: image,
                       exhibit_id: session[:exhibit_id]
                       )
-                    if @exhibit_image.save
-                      redirect_to mypage_index_path and return
-                    else 
-                      redirect_to "/exhibits" and return #データがない場合は戻る
-                    end
+                    @exhibit_image.save
                   end
-                else
-                  redirect_to "/exhibits" and return #データがない場合は戻る
+                  redirect_to root_path and return
                 end
               else
                 redirect_to "/exhibits" and return #データがない場合は戻る
