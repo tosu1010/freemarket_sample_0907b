@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
     
   /////出品画像表示/////
   /////1:1/////
@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
     let select_1 =
     `
     <label class="select_1">
-      <input class="select_img" type="file" id="select_img"/>
+      <input class="select_img" type="file" id="select_img" name="images[]" >
       <div class="content__box__dropbox">
         <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function() {
     let select_2 =
     `
     <label class="select_2">
-      <input class="select_img_2" id="select_img_2" type="file" name="image"/>
+      <input class="select_img_2" id="select_img_2" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__2">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -89,7 +89,7 @@ $(document).on('turbolinks:load', function() {
     let select_3 =
     `
     <label class="select_3">
-      <input class="select_img_3" id="select_img_3" type="file" name="image"/>
+      <input class="select_img_3" id="select_img_3" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__3">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -123,7 +123,7 @@ $(document).on('turbolinks:load', function() {
     let select_4 =
     `
     <label class="select_4">
-      <input class="select_img_4" id="select_img_4" type="file" name="image"/>
+      <input class="select_img_4" id="select_img_4" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__4">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -156,7 +156,7 @@ $(document).on('turbolinks:load', function() {
     `
     <div class="content__box__select-img-2">
       <label class="select_6">
-        <input class="select_img_6" id="select_img_6" type="file" name="image">
+        <input class="select_img_6" id="select_img_6" type="file" name="images[]", multiple= true>
         <div class="content__box__dropbox__6">
           <div class="content__box__dropbox__form">
             ドラッグアンドドロップ
@@ -173,7 +173,7 @@ $(document).on('turbolinks:load', function() {
     let select_5 =
     `
     <label class="select_5">
-      <input class="select_img_5" id="select_img_5" type="file" name="image"/>
+      <input class="select_img_5" id="select_img_5" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__5">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -206,7 +206,7 @@ $(document).on('turbolinks:load', function() {
     let select_6 =
     `
     <label class="select_6">
-      <input class="select_img_6" id="select_img_6" type="file" name="image"/>
+      <input class="select_img_6" id="select_img_6" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__6">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -239,7 +239,7 @@ $(document).on('turbolinks:load', function() {
     let select_7 =
     `
     <label class="select_7">
-      <input class="select_img_7" id="select_img_7" type="file" name="image"/>
+      <input class="select_img_7" id="select_img_7" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__7">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -272,7 +272,7 @@ $(document).on('turbolinks:load', function() {
     let select_8 =
     `
     <label class="select_8">
-      <input class="select_img_8" id="select_img_8" type="file" name="image"/>
+      <input class="select_img_8" id="select_img_8" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__8">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -305,7 +305,7 @@ $(document).on('turbolinks:load', function() {
     let select_9 =
     `
     <label class="select_9">
-      <input class="select_img_9" id="select_img_9" type="file" name="image"/>
+      <input class="select_img_9" id="select_img_9" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__9">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -338,7 +338,7 @@ $(document).on('turbolinks:load', function() {
     let select_10 =
     `
     <label class="select_10">
-      <input class="select_img_10" id="select_img_10" type="file" name="image"/>
+      <input class="select_img_10" id="select_img_10" type="file" name="images[]", multiple= true/>
       <div class= "content__box__dropbox__10">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
@@ -348,8 +348,7 @@ $(document).on('turbolinks:load', function() {
       </div>
     </label>
     `
-  
-  
+      
   ////カテゴリー２/////
     $(document).on("change", ".select", function(){
   
@@ -359,8 +358,8 @@ $(document).on('turbolinks:load', function() {
       <div class="content__box__select-category2">
         <div class="content__box__select-category__box">
           <fields_for @category do |f|>
-            <select :name class="select2">
-              <option>--
+            <select :name class="select2" name=[category][name]>
+              <option>---
               <option>トップス
               <option>ジャケット/アウター
               <option>パンツ
@@ -400,8 +399,8 @@ $(document).on('turbolinks:load', function() {
       <div class="content__box__select-category3">
         <div class="content__box__select-category__box">
           <fields_for @category do |f|>
-            <select :name class="select3">
-              <option>-- 
+            <select :name class="select3" name=[category][name]>
+              <option>--- 
               <option>ア
               <option>イ
               <option>ウ
@@ -430,12 +429,20 @@ $(document).on('turbolinks:load', function() {
         </div>
         <div class="content__box__select">
           <div class="content__box__select__box">
-            <fields_for @category do |f|>
-              <select :name class="select6">
-                <option>--
-                <option>S
-                <option>M
-                <option>L
+            <fields_for @exhibit do |f|>
+              <select :size_id class="select6" name= [exhibit][size_id]>
+                <option value="0">---</option>
+                <option value="1">XXS以下</option>
+                <option value="2">XS(SS)</option>
+                <option value="3">S</option>
+                <option value="4">M</option>
+                <option value="5">L</option>
+                <option value="6">XL(LL)</option>
+                <option value="7">2XL(3L)</option>
+                <option value="8">3XL(4L)</option>
+                <option value="9">4XL(5L)以上</option>
+                <option value="10">FREE SIZE</option>
+                </select>                
               </select>
             <div class="icon">
               <i class="fa fa-angle-down"></i>
@@ -454,8 +461,7 @@ $(document).on('turbolinks:load', function() {
       <div class="content__box__select">
         <div class="content__box__select__box">
           <fields_for @brand do |f|>
-            <input :name class="input-form">
-            </input>
+            <input :name class="input-form_brand" placeholder= "例）シャネル" name= [brand][name]>
         </div>
       </div>
     </div>
@@ -481,13 +487,18 @@ $(document).on('turbolinks:load', function() {
       </div>
       <div class="content__box__select">
         <div class="content__box__select__box">
-          <fields_for @category do |f|>
-            <select :name class="select5">
-              <option>--
-              <option>ア
-              <option>イ
-              <option>ウ
-            </select>
+          <select :delivery_type_id class="select5" name=[delivery][delivery_type_id]>
+            <option value="0">--
+            <option value="1">未定
+            <option value="2">らくらくメルカリ便
+            <option value="3">ゆうメール
+            <option value="4">レターパック
+            <option value="5">普通郵便(定形、定形外)
+            <option value="6">クロネコヤマト
+            <option value="7">ゆうパック
+            <option value="8">クリックポスト
+            <option value="9">ゆうパケット
+          </select>
           <div class="icon">
             <i class="fa fa-angle-down"></i>
           </div>
@@ -538,7 +549,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_1").replaceWith(exhibit_photo1);
+      $(".content__box__dropbox").replaceWith(exhibit_photo1);
       $(".img-view").after(select_2);
       $(".preview").attr('src', e.target.result);
     }
@@ -549,7 +560,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_2', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_2").replaceWith(exhibit_photo2);
+      $(".content__box__dropbox__2").replaceWith(exhibit_photo2);
       $(".img-view2").after(select_3);
       $(".preview2").attr('src', e.target.result);
     }
@@ -560,7 +571,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_3', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_3").replaceWith(exhibit_photo3);
+      $(".content__box__dropbox__3").replaceWith(exhibit_photo3);
       $(".img-view3").after(select_4);
       $(".preview3").attr('src', e.target.result);
     }
@@ -571,7 +582,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_4', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_4").replaceWith(exhibit_photo4);
+      $(".content__box__dropbox__4").replaceWith(exhibit_photo4);
       $(".img-view4").after(select_5);
       $(".preview4").attr('src', e.target.result);
     }
@@ -582,7 +593,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_5', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_5").replaceWith(exhibit_photo5);
+      $(".content__box__dropbox__5").replaceWith(exhibit_photo5);
       $(".content__box__img").append(exhibit_photo5_2);
       $(".preview5").attr('src', e.target.result);
     }
@@ -593,7 +604,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_6', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_6").replaceWith(exhibit_photo6);
+      $(".content__box__dropbox__6").replaceWith(exhibit_photo6);
       $(".img-view6").after(select_7);
       $(".preview6").attr('src', e.target.result);
     }
@@ -604,8 +615,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_7', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      // $(".content__box__select-img").replaceWith(exhibit_photo1);
-      $("label.select_7").replaceWith(exhibit_photo7);
+      $(".content__box__dropbox__7").replaceWith(exhibit_photo7);
       $(".img-view7").after(select_8);
       $(".preview7").attr('src', e.target.result);
     }
@@ -616,7 +626,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_8', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_8").replaceWith(exhibit_photo8);
+      $(".content__box__dropbox__8").replaceWith(exhibit_photo8);
       $(".img-view8").after(select_9);
       $(".preview8").attr('src', e.target.result);
     }
@@ -627,7 +637,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_9', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_9").replaceWith(exhibit_photo9);
+      $(".content__box__dropbox__9").replaceWith(exhibit_photo9);
       $(".img-view9").after(select_10);
       $(".preview9").attr('src', e.target.result);
     }
@@ -638,7 +648,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change', '#select_img_10', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $("label.select_10").replaceWith(exhibit_photo10);
+      $(".content__box__dropbox__10").replaceWith(exhibit_photo10);
       $(".preview10").attr('src', e.target.result);
     }
     reader.readAsDataURL(e.target.files[0]);
@@ -698,7 +708,7 @@ $(document).on('turbolinks:load', function() {
   });
   
   
-});
+
   
   
   

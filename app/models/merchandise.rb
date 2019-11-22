@@ -7,9 +7,11 @@ class Merchandise < ApplicationRecord
   has_many :contacts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :dealed_comment, dependent: :destroy
-  belongs_to :delivery
-  belongs_to :brand
-  belongs_to :category
+  belongs_to :delivery, optional: true
+  belongs_to :brand, optional: true
+  belongs_to :category, optional: true
+  belongs_to :exhibit, optional: true
+  accepts_nested_attributes_for :exhibit
 
   def previous
     previous_record = Merchandise.where("id < ?", self.id).order("id DESC").first
