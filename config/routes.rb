@@ -22,9 +22,13 @@ Rails.application.routes.draw do
   resources :exhibit, only: [:index]
 
   get '/mypage/profile' => 'mypage#edit'
-  get '/mypage/identification' => 'mypage#new'
+  get '/mypage/identification' => 'personal_information#new'
+  post '/mypage' => 'personal_information#create'
+  get '/mypage/identifications' => 'personal_information#edit'
+  patch '/mypage' => 'personal_information#update'
   get '/mypage/card' => 'mypage#show'
-  get '/mypage/card/create' => 'mypage#create'
+  get '/mypage/card/create' => 'mypage#card'
+  patch '/mypage' => 'mypage#update'
 
   get '/logout' => 'logout#log_out'
   
