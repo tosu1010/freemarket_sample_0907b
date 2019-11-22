@@ -1,5 +1,4 @@
 class MerchandisesController < ApplicationController
-  before_action :set_exhibit
   def index
     #最大10件表示する
     @merchandises = Merchandise.order(created_at: "DESC").limit(10)
@@ -26,15 +25,6 @@ class MerchandisesController < ApplicationController
     else
       redirect_to ""
     end
-  end
-
-  private
-  def merchandise_params
-    params.require(:merchandise).permit(:name, :description, :price)
-  end
-
-  def set_exhibit
-    @exhibit = Exhibit.find(params[:exhibit_id])
   end
 
 end

@@ -26,7 +26,7 @@ class ExhibitsController < ApplicationController
       shipping_date_id: params[:delivery][:shipping_date_id],
       delivery_type_id: params[:delivery][:delivery_type_id]
       )
-    if @delivery.save!
+    if @delivery.save
       session[:delivery_id] = @delivery.id
 
       @brand = Brand.new(
@@ -41,7 +41,7 @@ class ExhibitsController < ApplicationController
     else redirect_to "/exhibits" #データがない場合は戻る
 
     end
-    if @brand.save!
+    if @brand.save
       session[:brand_id] = @brand.id
 
       @category = Category.new(
@@ -51,7 +51,7 @@ class ExhibitsController < ApplicationController
     else redirect_to "/exhibits" #データがない場合は戻る
 
     end
-    if @category.save!
+    if @category.save
       session[:category_id] = @category.id
 
       @merchandise = Merchandise.new(
@@ -67,10 +67,9 @@ class ExhibitsController < ApplicationController
     else redirect_to "/exhibits" #データがない場合は戻る
 
     end
-    if @merchandise.save!
+    if @merchandise.save
       session[:merchandise_id] = @merchandise.id
 
-      # binding.pry
       @exhibit = Exhibit.new(
         status: params[:exhibit][:status],
         size_id: params[:exhibit][:size_id],
@@ -81,7 +80,7 @@ class ExhibitsController < ApplicationController
     else redirect_to "/exhibits" #データがない場合は戻る
 
     end
-    if @exhibit.save!
+    if @exhibit.save
       session[:exhibit_id] = @exhibit.id
 
       if params[:images].present?
@@ -91,15 +90,15 @@ class ExhibitsController < ApplicationController
             exhibit_id: session[:exhibit_id]
             )
 
-          if @exhibit_image.save!
-            # redirect_to "mypage_index_path"
+          if @exhibit_image.save
+            redirect_to "mypage_index_path"
 
           else 
             redirect_to "mypage_index_path" #データがない場合は戻る
 
           end
 
-        # else redirect_to "/exhibits" #データがない場合は戻る
+        else redirect_to "/exhibits" #データがない場合は戻る
 
         end
       end
