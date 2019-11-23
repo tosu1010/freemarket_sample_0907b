@@ -3,24 +3,33 @@ class PersonalInformationsController < ApplicationController
   before_action :move_to_root_path
 
   def new
-    @user = User.find(current_user.id)
+    @user = current_user
     @personal_information = PersonalInformation.new
   end
 
   def create
-    @personal_information = PersonalInformation.create(personal_information_params)
-    redirect_to mypage_index_path
+    @personal_information = PersonalInformation.new(personal_information_params)
+
+    if @personal_information.save
+      redirect_to mypage_index_path
+    else
+      redirect_to new_personal_information_path
+    end
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = current_user
     @personal_information = find_personal_information_by_id
   end
 
   def update
-    @personal_information = find_personal_information_by_id
-    @personal_information = PersonalInformation.update(personal_information_params)
-    redirect_to mypage_index_path
+
+    if PersonalInformation.update(personal_information_params)
+      redirect_to mypage_index_path
+    else
+      redirect_to edit_personal_information_path
+    end
+    
   end
   
   private
