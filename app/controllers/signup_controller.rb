@@ -35,7 +35,6 @@ class SignupController < ApplicationController
   end
 
   def step3
-    binding.pry
     session[:phone_number] = user_params[:phone_number]
     @address = Address.new
   end
@@ -70,35 +69,43 @@ class SignupController < ApplicationController
       phone_number: session[:phone_number]
     )
 
-    @user.transaction do
-      @user.save!
-      session[:id] = @user.id
+    begin
+      @user.transaction do
+        @user.save!
+        session[:id] = @user.id
+  
+        @address = Address.new(
+          last_name: session[:last_name_address],
+          first_name: session[:first_name_address],
+          last_name_kana: session[:last_name_kana_address],
+          first_name_kana: session[:first_name_kana_address],
+          postal_code: session[:postal_code],
+          prefecture_id: session[:prefecture_id],
+          city: session[:city],
+          number: session[:number],
+          building: session[:building],
+          phone_number: session[:phone_number_address],
+          user_id: session[:id]
+        )
+        
+        @address.save!
+        
+        @credit_card = CreditCard.get_new_credit_card(@user, params['payjp-token'])
 
-      @address = Address.new(
-        last_name: session[:last_name_address],
-        first_name: session[:first_name_address],
-        last_name_kana: session[:last_name_kana_address],
-        first_name_kana: session[:first_name_kana_address],
-        postal_code: session[:postal_code],
-        prefecture_id: session[:prefecture_id],
-        city: session[:city],
-        number: session[:number],
-        building: session[:building],
-        phone_number: session[:phone_number_address],
-        user_id: session[:id]
-      )
-      
-      @credit_card = CreditCard.get_new_credit_card(@user, params['payjp-token'])
-      @sns_credential = SnsCredential.create_for_oauth_user(@user, session[:oauth])
-      
-      @address.save!
-      @credit_card.save!
-      @sns_credential.save!
-    end
-      sign_in User.find(session[:id]) unless user_signed_in?
-      render 'step5'
+        if @credit_card.customer_id.present?
+          @credit_card.save!
+
+          if session[:oauth]
+            @sns_credential = SnsCredential.create_for_oauth_user(@user, session[:oauth])
+            @sns_credential.save!
+          end
+        end
+      end
+        sign_in User.find(session[:id]) unless user_signed_in?
+        render 'step5'
     rescue
       render '/devise/registrations/sign_up_before'
+    end
 
   end
 

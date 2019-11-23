@@ -44,7 +44,6 @@ class User < ApplicationRecord
 
   # protected
   def self.find_for_oauth(auth)
-    binding.pry
     oauth_user = SnsCredential.find_for_oauth_user(auth)
     
     if oauth_user
