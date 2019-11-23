@@ -7,7 +7,7 @@ class MypageController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user.id)
+    # @user = User.find(current_user.id)
   end
 
   def show
@@ -18,8 +18,8 @@ class MypageController < ApplicationController
   end
 
   def update
-    @user = User.find(current_user.id)
-    if @user.update(user_params)
+    # @user = User.find(current_user.id)
+    if current_user.update(user_params)
       flash[:alert] = "変更しました"
       redirect_to mypage_profile_path
     else

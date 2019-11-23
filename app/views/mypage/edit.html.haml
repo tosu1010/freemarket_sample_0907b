@@ -7,7 +7,7 @@
   .profile
     %h2.profile__header.bold
       プロフィール
-    = form_for @user, url: mypage_index_path, html: { method: :patch } do |f|
+    = form_for current_user, url: mypage_index_path, html: { method: :patch } do |f|
       .profile__form__icon
         = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "profile__form__icon__image"
         = f.text_field :nickname, placeholder: "例)AYA☆セール中", class: "profile__form__icon__user-name"
