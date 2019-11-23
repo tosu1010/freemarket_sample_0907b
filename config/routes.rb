@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers: {
-    omniouth_callbacks: "users/omniauth_callbacks"
-  }
   
   root 'merchandises#index'
 
@@ -15,6 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+  
   resources :mypage, only: [:index]
   resources :credit_card, only: [:create]
   resources :merchandises, only: [:index, :show] do
