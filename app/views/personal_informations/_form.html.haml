@@ -18,21 +18,21 @@
         .contents__field
           = f.label "お名前"
           %p.form__contents
-            = @user.last_name
-            = @user.first_name
+            = current_user.last_name
+            = current_user.first_name
         .contents__field
           = f.label "お名前カナ"
           %p.form__contents
-            = @user.last_name_kana
-            = @user.first_name_kana
+            = current_user.last_name_kana
+            = current_user.first_name_kana
         .contents__field
           = f.label "生年月日"
           %p.form__contents
-            = @user.birth_year
+            = current_user.birth_year
             %span /
-            = @user.birth_month
+            = current_user.birth_month
             %span /
-            = @user.birth_day
+            = current_user.birth_day
         .contents__field
           = f.label :郵便番号
           %span.optional 任意

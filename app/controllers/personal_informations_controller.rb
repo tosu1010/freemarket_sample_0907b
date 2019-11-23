@@ -3,7 +3,6 @@ class PersonalInformationsController < ApplicationController
   before_action :move_to_root_path
 
   def new
-    @user = current_user
     @personal_information = PersonalInformation.new
   end
 
@@ -18,7 +17,6 @@ class PersonalInformationsController < ApplicationController
   end
 
   def edit
-    @user = current_user
     @personal_information = find_personal_information_by_id
   end
 
