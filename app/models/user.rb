@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable
 
   has_one :personal_information, dependent: :destroy
   has_one :guide, dependent: :destroy
@@ -40,4 +40,21 @@ class User < ApplicationRecord
     self.last_name + ' ' + self.first_name
   end
 
+  has_many :sns_credentials, dependent: :destroy
+
+  # protected
+  def self.find_for_oauth(auth)
+    oauth_user = SnsCredential.find_for_oauth_user(auth)
+    
+    if oauth_user
+      user = oauth_user.user
+    else
+      if auth.info.email
+        user = User.new(email: auth.info.email, password: Devise.friendly_token[0, 20])
+      else
+        user = User.new(email: "#{auth.provider}_#{auth.uid}@example.com", password: Devise.friendly_token[0, 20])
+      end
+    end
+    user
+  end
 end

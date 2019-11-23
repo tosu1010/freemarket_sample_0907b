@@ -20,8 +20,8 @@ class PurchaseController < ApplicationController
 
   def check_card
     if user_signed_in?
-      redirect_to mypage_card_create_path unless current_user.credit_card.present?
-    else
+      redirect_to mypage_card_create_path if current_user.credit_card.present?
+    elsif
       redirect_to new_user_session_path
     end
   end

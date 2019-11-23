@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-
+  
   root 'merchandises#index'
 
   resources :signup do
@@ -13,6 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+  
   resources :mypage, only: [:index]
   resources :credit_card, only: [:create]
   resources :merchandises, only: [:index, :show] do
