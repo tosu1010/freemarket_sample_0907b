@@ -22,12 +22,11 @@ Rails.application.routes.draw do
   resources :exhibit, only: [:index]
 
   get '/mypage/profile' => 'mypage#edit'
-  get '/mypage/identification' => 'personal_information#new'
-  post '/mypage/identification' => 'personal_information#create'
-  patch '/mypage/identification' => 'personal_information#create'
   get '/mypage/card' => 'mypage#show'
   get '/mypage/card/create' => 'mypage#create'
   patch '/mypage' => 'mypage#update'
+
+  resources :personal_informations, only: [:new, :create, :edit, :update]
 
   get '/logout' => 'logout#log_out'
   

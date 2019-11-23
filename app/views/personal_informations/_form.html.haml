@@ -6,7 +6,7 @@
   .mypage__identification
     %h2.mypage__identification__header
       本人情報の登録
-    = form_for @personal_information, url: mypage_identification_path, html: { method: :post } do |f|
+    = form_for @personal_information do |f|
       .contents
         .contents__information
           %p お客さまの本人情報をご登録ください。
