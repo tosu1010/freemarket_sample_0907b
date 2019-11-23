@@ -17,13 +17,13 @@
           .contents__button__first
           %i.facebok
           = fa_icon 'facebook-square', class: 'facebook-icon fa-2x'
-          = button_to "Facebookでログイン", { action: "new" }, method: "get", class: "facebook-button"
+          = button_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post, class: "facebook-button"
       .contents
         .contents__button
           .contents__button__second
           %i.google
           = image_tag('google.jpg', class: 'google-icon')
-          = button_to "Googleでログイン", { action: "new" }, method: "get", class: "google-button"
+          = button_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post, class: "google-button"
 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .notification

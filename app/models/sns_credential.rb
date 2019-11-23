@@ -6,6 +6,6 @@ class SnsCredential < ApplicationRecord
   end
 
   def self.create_for_oauth_user(user, auth)
-    SnsCredential.create(uid: auth.uid, provider: auth.provider, token: auth.credentials.token, user_id: user.id)
+    SnsCredential.new(uid: auth["uid"], provider: auth["provider"], token: auth["credentials"]["token"], user_id: user.id)
   end
 end

@@ -44,19 +44,17 @@ class User < ApplicationRecord
 
   # protected
   def self.find_for_oauth(auth)
-    binding.pry()
+    binding.pry
     oauth_user = SnsCredential.find_for_oauth_user(auth)
     
     if oauth_user
       user = oauth_user.user
     else
       if auth.info.email
-        user = User.create(email: auth.info.email, password: Devise.friendly_token[0, 20])
+        user = User.new(email: auth.info.email, password: Devise.friendly_token[0, 20])
       else
-        user = User.create(email: "#{auth.provider}_#{auth.uid}@example.com", password: Devise.friendly_token[0, 20])
+        user = User.new(email: "#{auth.provider}_#{auth.uid}@example.com", password: Devise.friendly_token[0, 20])
       end
-
-      SnsCredential.create_for_oauth_user(user, auth)
     end
     user
   end

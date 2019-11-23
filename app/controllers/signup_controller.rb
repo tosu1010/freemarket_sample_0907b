@@ -9,8 +9,11 @@ class SignupController < ApplicationController
   end
 
   def step1
-    @user = User.new
-
+    if session[:user]
+      @user = User.new(session[:user])
+    else
+      @user = User.new
+    end
   end
 
   def step2
@@ -32,6 +35,7 @@ class SignupController < ApplicationController
   end
 
   def step3
+    binding.pry
     session[:phone_number] = user_params[:phone_number]
     @address = Address.new
   end
@@ -85,9 +89,11 @@ class SignupController < ApplicationController
       )
       
       @credit_card = CreditCard.get_new_credit_card(@user, params['payjp-token'])
+      @sns_credential = SnsCredential.create_for_oauth_user(@user, session[:oauth])
       
       @address.save!
       @credit_card.save!
+      @sns_credential.save!
     end
       sign_in User.find(session[:id]) unless user_signed_in?
       render 'step5'
