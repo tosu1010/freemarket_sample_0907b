@@ -11,11 +11,7 @@ document.addEventListener(
           exp_month: document.getElementById("exp_month").value,
           exp_year: document.getElementById("exp_year").value
         }; //入力されたデータを取得します。
-        console.log(card['number'])
-        console.log(card['cvc'])
-        console.log(card['exp_month'])
-        console.log(card['exp_year'])
-
+        
         if (card['number'] || card['cvc'] || card['exp_month'] || card['exp_year']) {
           Payjp.createToken(card, (status, response) => {
             if (status === 200) { //成功した場合
