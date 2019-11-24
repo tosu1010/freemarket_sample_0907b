@@ -1,19 +1,20 @@
 -# ヘッダー
 = render 'layouts/header_responsive'
 = render 'layouts/header'
+= render 'layouts/notifications'
 
 .mypage
   .profile
     %h2.profile__header.bold
       プロフィール
-    %form.profile__form(action="#")
+    = form_for current_user, url: mypage_index_path, html: { method: :patch } do |f|
       .profile__form__icon
         = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "profile__form__icon__image"
-        %input.profile__form__icon__user-name(type="text" name="nickname" placeholder="例)AYA☆セール中")/
+        = f.text_field :nickname, placeholder: "例)AYA☆セール中", class: "profile__form__icon__user-name"
       .profile__form__content
-        %textarea.profile__form__content__discription(placeholder="例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪")
-        %input.profile__form__content__button(type="submit" value="変更する")/
-  
+        = f.text_area :profile_description, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "profile__form__content__discription"
+        = f.submit "変更する", class: "profile__form__content__button"
+
   = render "menu"
 
   -# 出品ボタン

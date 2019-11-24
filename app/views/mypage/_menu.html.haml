@@ -1,7 +1,7 @@
 %nav.menu
   %ul.menu__links
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/" ,class: "menu__links__box__link" do
+      = link_to mypage_index_path ,class: "menu__links__box__link" do
         マイページ
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
@@ -17,7 +17,7 @@
         いいね！一覧
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/sell/" ,class: "menu__links__box__link" do
+      = link_to exhibit_index_path ,class: "menu__links__box__link" do
         出品する
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
@@ -71,6 +71,7 @@
 
   %h3.menu__header.bold
     設定
+    
   %ul.menu__links
     %li.menu__links__box
       = link_to mypage_profile_path ,class: "menu__links__box__link" do
@@ -81,7 +82,7 @@
         発送元・お届け先住所変更
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/card/" ,class: "menu__links__box__link" do
+      = link_to mypage_card_path ,class: "menu__links__box__link" do
         支払い方法
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
@@ -89,9 +90,14 @@
         メール/パスワード
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/identification/" ,class: "menu__links__box__link" do
-        本人情報
-        = fa_icon "chevron-right", class: "menu__links__box__angle"
+      - if current_user.personal_information.present?
+        = link_to edit_personal_information_path(current_user) ,class: "menu__links__box__link" do
+          本人情報
+          = fa_icon "chevron-right", class: "menu__links__box__angle"
+      - else
+        = link_to new_personal_information_path ,class: "menu__links__box__link" do
+          本人情報
+          = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
       = link_to "https://www.mercari.com/jp/mypage/sms_confirmation/" ,class: "menu__links__box__link" do
         電話番号の確認

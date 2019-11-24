@@ -6,7 +6,7 @@
   .mypage__identification
     %h2.mypage__identification__header
       本人情報の登録
-    = fields_for :Address do |f|
+    = form_for @personal_information do |f|
       .contents
         .contents__information
           %p お客さまの本人情報をご登録ください。
@@ -17,13 +17,22 @@
               %i.fa.fa-angle-right
         .contents__field
           = f.label "お名前"
-          %p.form__contents ◯◯ ◯◯
+          %p.form__contents
+            = current_user.last_name
+            = current_user.first_name
         .contents__field
           = f.label "お名前カナ"
-          %p.form__contents ◯◯ ◯◯
+          %p.form__contents
+            = current_user.last_name_kana
+            = current_user.first_name_kana
         .contents__field
           = f.label "生年月日"
-          %p.form__contents 2000/01/01
+          %p.form__contents
+            = current_user.birth_year
+            %span /
+            = current_user.birth_month
+            %span /
+            = current_user.birth_day
         .contents__field
           = f.label :郵便番号
           %span.optional 任意
@@ -54,12 +63,11 @@
                 本人情報の登録について
                 = fa_icon 'angle-right'
 
-  
-  = render "menu"
+  = render "mypage/menu"
 
   -# 出品ボタン
 = render 'layouts/exhibit'
 -# アプリダウンロードバーナー
 = render 'layouts/app-download'
 -# フッター
-= render 'layouts/footer' 
+= render 'layouts/footer'
