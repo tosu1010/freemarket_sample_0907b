@@ -31,9 +31,9 @@ ja:
         prefecture_id: 都道府県
         city: 市区町村
         number: 番地
-      recaptcha: 
-        errors: 
-          verification_failed: 'reCAPTCHA認証に失敗しました。' 
+  recaptcha:  
+    errors: 
+      verification_failed: 'reCAPTCHA認証に失敗しました。'
   date:
     abbr_day_names:
     - 日
