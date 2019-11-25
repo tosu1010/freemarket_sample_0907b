@@ -71,6 +71,7 @@
                   margin: 0;
                   overflow: hidden;
                   z-index: 0;
+                  position: relative;
                   
                   &__figcaption {
                     box-sizing: border-box;
@@ -126,6 +127,14 @@
                       z-index: 1;
                     }
                   }
+                }
+              }
+
+              &__sold-out {
+                @include sold-out-box(50px);
+
+                &__text {
+                  @include sold-out-text(12px, 10px);
                 }
               }
             }

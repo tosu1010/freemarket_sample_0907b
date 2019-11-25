@@ -24,6 +24,11 @@
                         = "¥#{merchandise.price.to_s(:delimited)}"
                       - merchandise.exhibit.exhibit_images.sort_by(&:id).each_with_index do |exhibit_image, i|
                         = image_tag "#{exhibit_image.image}", class: "figure__image_photo" if i == 0
+              
+                    - if merchandise.purchase.present?
+                      .item__box__sold-out
+                        .item__box__sold-out__text
+                          SOLD
                     
     -# ブランドごとの表示は後ほど実装する
     -# .label#brand_label
