@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
   resources :personal_informations, only: [:new, :create, :edit, :update]
 
+  get '/signup' => 'signup#index'
   get '/logout' => 'logout#log_out'
   
 end
