@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :signup do
     collection do
+      get 'index'
       get 'step1'
       post 'step2'
       post 'step3'
@@ -14,7 +15,8 @@ Rails.application.routes.draw do
 
   
   devise_for :users, controllers: {
-    omniauth_callbacks: "users/omniauth_callbacks"
+    omniauth_callbacks: "users/omniauth_callbacks",
+    sessions: "users/sessions"
   }
   
   resources :mypage, only: [:index]
@@ -33,7 +35,6 @@ Rails.application.routes.draw do
 
   resources :personal_informations, only: [:new, :create, :edit, :update]
 
-  get '/signup' => 'signup#index'
   get '/logout' => 'logout#log_out'
   
 end
