@@ -613,17 +613,36 @@
     }
 
 /////カテゴリーのプルダウン（jsによる追加要素も指定している）/////
-        .content__box__select-category, .content__box__select-category2, .content__box__select-category3, .content__box__select-shipping_charge, .content__box__select { //jsで追加した要素も含む
+        .content__box__select-category, 
+        .content__box__select-shipping_charge, 
+        .content__box__select,
+        #pull_down, 
+        #pull_down2,
+        #pull_down3 
+        { //jsで追加した要素も含む
           margin: 8px 0 0;
         }
 
-          .content__box__select-category__box, .content__box__select__box {
+        #pull_down, 
+        #pull_down2,
+        #pull_down3 
+        {
+          display: none;
+        }
+
+          .content__box__select-category__box,
+          .content__box__select__box {
             width: 100%;
             position: relative;
             display: inline-block;
           }
 
-            .select, .select2, .select3, .select4, .select5, .select6 {  //jsで追加した要素も含む
+            .select, 
+            .select2, 
+            .select3, 
+            .select4, 
+            .select5, 
+            .select6 {  //jsで追加した要素も含む
               width: 100%;
               height: 48px;
               font-size: 16px;

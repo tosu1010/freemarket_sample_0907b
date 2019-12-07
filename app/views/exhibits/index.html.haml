@@ -50,7 +50,7 @@
               .content__box__title__left-head
                 商品の詳細
             .content__box__title__right
-              .content__box
+              .content__box{id: "content_box"}
                 .content__box__title
                   カテゴリー
                   .form_require 
@@ -58,9 +58,1040 @@
                 .content__box__select-category
                   .content__box__select-category__box
                     = fields_for @category do |f|
-                      = f.collection_select :name, @category, :id, :name,{include_blank: "---"} ,class: "select", id: "select", name: 'item[category_ids][]'
+                      = f.collection_select :name, @category, :id, :name, {include_blank: "---"} ,class: "select", id: "select", name: 'item[category_ids][]'
                     .icon
                       %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_1{id: "pull_down2"}
+                  .content__box__select-category__box                   
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_10{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_11{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_11, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_12{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_12, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_13{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_13, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-ladies2_14{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ladies2_14, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_10{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_11{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_11, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_12{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_12, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-mens2_13{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_mens2_13, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+
+
+
+
+
+                .content__box__select-category-baby_kids{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_10{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_11{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_11, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_12{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_12, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_13{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_13, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-baby_kids2_14{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_baby_kids2_14, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+
+
+                .content__box__select-category-interia{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_10{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_11{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_11, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-interia2_12{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_interia2_12, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+                .content__box__select-category-book{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-book2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-book2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-book2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-book2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-book2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-book2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-book2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_book2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+
+                .content__box__select-category-hoby{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_10{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hoby2_11{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hoby2_11, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+
+                .content__box__select-category-cosme{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_10{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-cosme2_11{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_cosme2_11, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+
+                .content__box__select-category-electrical_appliance{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-electrical_appliance210{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_electrical_appliance2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+
+                .content__box__select-category-sports{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_9{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_9, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_10{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_10, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-sports2_11{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_sports2_11, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+                .content__box__select-category-hand_made{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-hand_made2_8{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_hand_made2_8, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+                .content__box__select-category-ticket{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-ticket2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-ticket2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-ticket2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-ticket2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-ticket2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-ticket2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+                      
+                .content__box__select-category-ticket2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_ticket2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+                .content__box__select-category-bicycle{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_bicycle, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-bicycle2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_bicycle2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-bicycle2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_bicycle2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-bicycle2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_bicycle2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-bicycle2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_bicycle2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-bicycle2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_bicycle2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-bicycle2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_bicycle2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+
+                .content__box__select-category-etc{id: "pull_down"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc, :id, :name,{include_blank: "---"} ,class: "select", id: "select2", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-etc2_1{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc2_1, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-etc2_2{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc2_2, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-etc2_3{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc2_3, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-etc2_4{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc2_4, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-etc2_5{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc2_5, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-etc2_6{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc2_6, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
+                .content__box__select-category-etc2_7{id: "pull_down2"}
+                  .content__box__select-category__box
+                    = fields_for @category do |f|
+                      = f.collection_select :name, @category_etc2_7, :id, :name,{include_blank: "---"} ,class: "select2", id: "select3", name: 'item[category_ids][]'
+                    .icon
+                      %i.fa.fa-angle-down
+
 
               .content__box-middle
                 .content__box__title
