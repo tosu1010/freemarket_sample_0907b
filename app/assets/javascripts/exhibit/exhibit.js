@@ -350,126 +350,876 @@
     `
       
   ////カテゴリー２/////
-    $(document).on("change", ".select", function(){
-  
-      let category2= 
-      // 選択肢は仮置き。
-      `
-      <div class="content__box__select-category2">
-        <div class="content__box__select-category__box">
-          <fields_for @category do |f|>
-            <select :name class="select2" name=[category][name]>
-              <option>---
-              <option>トップス
-              <option>ジャケット/アウター
-              <option>パンツ
-              <option>スカート
-              <option>ワンピース
-              <option>靴
-              <option>ルームウェア/パジャマ
-              <option>帽子
-              <option>バッグ
-              <option>アクセサリー
-              <option>ヘアアクセサリー
-              <option>小物
-              <option>時計
-              <option>ウィッグ/エクステ
-              <option>浴衣/水着
-              <option>スーツ/フォーマル/ドレス
-              <option>マタニティ
-              <option>
-            </select>
-          <div class="icon">
-            <i class="fa fa-angle-down"></i>
-          </icon>
-        </div>
-      </div>
-    `
-  
-      $(".content__box__select-category").append(category2);
-      $(document).off("change", ".select");
-    });
-  
-  /////カテゴリー３/////
-    $(document).on("change", ".select2", function(){
-  
-      let category3= 
-      // 選択肢は仮置き。
-      `
-      <div class="content__box__select-category3">
-        <div class="content__box__select-category__box">
-          <fields_for @category do |f|>
-            <select :name class="select3" name=[category][name]>
-              <option>--- 
-              <option>ア
-              <option>イ
-              <option>ウ
-            </select>
-          <div class="icon">
-            <i class="fa fa-angle-down"></i>
-          </icon>
-        </div>
-      </div>
-    `
-  
-      $(".content__box__select-category2").append(category3);
-      $(document).off("change", ".select2");
-    });
+    $(document).on("change", "#select", function(){
+      val_select = this.value
+      console.log(val_select)
+      ///レディース///
+      if (val_select == 47){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies").show()
+      }
+      ///メンズ///
+      else if (val_select == 184){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens").show()
+      }
+      ///ベビー・キッズ///
+      else if (val_select == 305){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids").show()
+      }
+      ///インテリア////
+      else if (val_select == 433){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia").show()
+      }
+      ///本///
+      else if (val_select == 563){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-book").show()
+      }
+      ///おもちゃ///
+      else if (val_select == 622){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-hoby").show()
+      }
+      ///コスメ///
+      else if (val_select == 729){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme").show()
+      }
+      ///家電///
+      else if (val_select == 827){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-electrical_appliance").show()
+      }
+      ///スポーツ///
+      else if (val_select == 913){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-sports").show()
+      }
+      ///ハンドメイド///
+      else if (val_select == 1022){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-hand_made").show()
+      }
+      ///チケット///
+      else if (val_select == 1072){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ticket").show()
+      }
+      ///自転車///
+      else if (val_select == 1131){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-bicycle").show()
+      }
+      ///その他///
+      else if (val_select == 1191){
+        $(".content__box > #pull_down").hide();
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-etc").show()
+      }
+    })
+
+    ///カテゴリー３///
+    $(document).on("change", "#select2", function(){
+      val_select2 = this.value
+      console.log(val_select2)
+      ///レディース///
+      if (val_select2 == 48){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_1").show()
+      }
+      else if (val_select2 == 63) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_2").show()
+      }
+      else if (val_select2 == 78) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_3").show()
+      }
+      else if (val_select2 == 91) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_4").show()
+      }
+      else if (val_select2 == 97) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_5").show()
+      }
+      else if (val_select2 == 102) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_6").show()
+      }
+      else if (val_select2 == 113) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_7").show()
+      }
+      else if (val_select2 == 116) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_8").show()
+      }
+      else if (val_select2 == 122) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_9").show()
+      }
+      else if (val_select2 == 130) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_10").show()
+      }
+      else if (val_select2 == 145) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_11").show()
+      }
+      else if (val_select2 == 157) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_12").show()
+      }
+      else if (val_select2 == 162) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_13").show()
+      }
+      else if (val_select2 == 177) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-ladies2_14").show()
+      }
+      ///メンズ///
+      else if (val_select2 == 185){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_1").show()
+      }
+      else if (val_select2 == 198) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_2").show()
+      }
+      else if (val_select2 == 213){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_3").show()
+      }
+      else if (val_select2 == 223){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_4").show()
+      }
+      else if (val_select2 == 232) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_5").show()
+      }
+      else if (val_select2 == 245) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_6").show()
+      }
+      else if (val_select2 == 251) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_7").show()
+      }
+      else if (val_select2 == 259) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_8").show()
+      }
+      else if (val_select2 == 268) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_9").show()
+      }
+      else if (val_select2 == 283) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_10").show()
+      }
+      else if (val_select2 == 290) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_11").show()
+      }
+      else if (val_select2 == 295) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_12").show()
+      }
+      else if (val_select2 == 300) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-mens2_13").show()
+      }
+      else if (val_select2 == 304) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box > #content__box-middle").remove();
+      }
+      ///ベビー・キッズ///
+      else if (val_select2 == 306){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_1").show()
+      }
+      else if (val_select2 == 318) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_2").show()
+      }
+      else if (val_select2 == 327) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_3").show()
+      }
+      else if (val_select2 == 336) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_4").show()
+      }
+      else if (val_select2 == 351) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_5").show()
+      }
+      else if (val_select2 == 366) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_6").show()
+      }
+      else if (val_select2 == 375) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_7").show()
+      }
+      else if (val_select2 == 381) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_8").show()
+      }
+      else if (val_select2 == 396) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_9").show()
+      }
+      else if (val_select2 == 403) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_10").show()
+      }
+      else if (val_select2 == 408) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_11").show()
+      }
+      else if (val_select2 == 413) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_12").show()
+      }
+      else if (val_select2 == 419) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_13").show()
+      }
+      else if (val_select2 == 427) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-baby_kids2_14").show()
+      }
+      ///インテリア///
+      else if (val_select2 == 434){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_1").show()
+        console.log("インテリア")
+      }
+      else if (val_select2 == 446){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_2").show()
+      }
+      else if (val_select2 == 461) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_3").show()
+      }
+      else if (val_select2 == 475) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_4").show()
+      } 
+      else if (val_select2 == 485) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_5").show()
+      }
+      else if (val_select2 == 496) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_6").show()
+      }
+      else if (val_select2 == 509) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_7").show()
+      } 
+      else if (val_select2 == 516) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_8").show()
+      }
+      else if (val_select2 == 522) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_9").show()
+      }
+      else if (val_select2 == 527) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_10").show()
+      }
+      else if (val_select2 == 532) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_11").show()
+      }
+      else if (val_select2 == 547) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-interia2_12").show()
+      }
+      else if (val_select2 == 562) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+      }
+      ///本///
+      else if (val_select2 == 564){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-book2_1").show()
+      }
+      else if (val_select2 == 579) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-book2_2").show()
+      }
+      else if (val_select2 == 587) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-book2_3").show()
+      }
+      else if (val_select2 == 593) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-book2_4").show()
+      }
+      else if (val_select2 == 601) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-book2_5").show()
+      }
+      else if (val_select2 == 611) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-book2_6").show()
+      }
+      else if (val_select2 == 615) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-book2_7").show()
+      }
+      ///おもちゃ///
+      else if (val_select2 == 623){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_1").show()
+      }
+      else if (val_select2 == 634) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_2").show()
+      }
+      else if (val_select2 == 640) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_3").show()
+      }
+      else if (val_select2 == 649) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_1").show()
+      }
+      else if (val_select2 == 664) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_4").show()
+      }
+      else if (val_select2 == 673) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_5").show()
+      }
+      else if (val_select2 == 688) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_6").show()
+      }
+      else if (val_select2 == 695) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_7").show()
+      }
+      else if (val_select2 == 710) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_8").show()
+      }
+      else if (val_select2 == 714) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hoby2_9").show()
+      }
+      ///コスメ///
+      else if (val_select2 == 730){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-cosme2_1").show()
+      }
+      else if (val_select2 == 740) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_2").show()
+      }
+      else if (val_select2 == 755) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_3").show()
+      }
+      else if (val_select2 == 765) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_4").show()
+      }
+      else if (val_select2 == 771) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_5").show()
+      }
+      else if (val_select2 == 786) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_6").show()
+      }
+      else if (val_select2 == 795) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_7").show()
+      }
+      else if (val_select2 == 805) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_8").show()
+      }
+      else if (val_select2 == 809) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_9").show()
+      }
+      else if (val_select2 == 816) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_10").show()
+      }
+      else if (val_select2 == 822) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-cosme2_11").show()
+      }
+      ///家電///
+      else if (val_select2 == 828){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_1").show()
+      }
+      else if (val_select2 == 834) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_2").show()
+      }
+      else if (val_select2 == 843) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_3").show()
+      }
+      else if (val_select2 == 852) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_4").show()
+      }
+      else if (val_select2 == 860) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_5").show()
+      }
+      else if (val_select2 == 869) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_6").show()
+      }
+      else if (val_select2 == 878) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_7").show()
+      }
+      else if (val_select2 == 885) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_8").show()
+      }
+      else if (val_select2 == 899) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-electrical_appliance2_9").show()
+      }
+      else if (val_select2 == 911) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-electrical_appliance2_10").show()
+      }
+      ///スポーツ///
+      else if (val_select2 == 914){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_1").show()
+      }
+      else if (val_select2 == 923) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_2").show()
+      }
+      else if (val_select2 == 930) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_3").show()
+      }
+      else if (val_select2 == 938) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_4").show()
+      }
+      else if (val_select2 == 944) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_5").show()
+      }
+      else if (val_select2 == 955) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_6").show()
+      }
+      else if (val_select2 == 963) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_7").show()
+      }
+      else if (val_select2 == 973) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_8").show()
+      }
+      else if (val_select2 == 985) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_9").show()
+      }
+      else if (val_select2 == 996) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_10").show()
+      }
+      else if (val_select2 == 1009) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-sports2_11").show()
+      }
+      else if (val_select2 == 1019) {
+        $(".content__box > #pull_down2").hide();
+      }
+      ///ハンドメイド///
+      else if (val_select2 == 1023){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_1").show()
+      }
+      else if ( val_select2 == 1033) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_1").show()
+      }
+      else if (val_select2 == 1040) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_2").show()
+      }
+      else if (val_select2 == 1045) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_3").show()
+      }
+      else if (val_select2 == 1053) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_4").show()
+      }
+      else if (val_select2 == 1057) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_5").show()
+      }
+      else if (val_select2 == 1063) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_6").show()
+      }
+      else if (val_select2 == 1068) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-hand_made2_7").show()
+      }
+      else if (val_select2 == 1071) {
+        $(".content__box > #pull_down2").hide();
+      }
+      ///チケット///
+      else if (val_select2 == 1073){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-ticket2_1").show()
+      }
+      else if (val_select2 == 1082) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-ticket2_2").show()
+      }
+      else if (val_select2 == 1094) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-ticket2_3").show()
+      }
+      else if (val_select2 == 1104) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-ticket2_4").show()
+      }
+      else if (val_select2 == 1109) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-ticket2_5").show()
+      }
+      else if (val_select2 == 1113) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-ticket2_6").show()
+      }
+      else if (val_select2 == 1124) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-ticket2_7").show()
+      }
+      else if (val_select2 == 1130) {
+        $(".content__box > #pull_down2").hide();
+      }
+      ///自転車///
+      else if (val_select2 == 1132){
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-bicycle2_1").show()
+      }
+      else if (val_select2 == 1135) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-bicycle2_2").show()
+      }
+      else if (val_select2 == 1140) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-bicycle2_3").show()
+      }
+      else if (val_select2 == 1155) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-bicycle2_4").show()
+      }
+      else if (val_select2 == 1169) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-bicycle2_5").show()
+      }
+      else if (val_select2 == 1184) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box > #content__box-middle").remove();
+        $(".content__box__select-category-bicycle2_6").show()
+      }
+      ///その他///
+      // else if (val_select2 == 1192){
+      //   $(".content__box > #pull_down2").hide();
+      //   $(".content__box__select-category-etc2_1").show()
+      // }
+      else if (val_select2 == 1193) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-etc2_1").show()
+      }
+      else if (val_select2 == 1204) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-etc2_2").show()
+      }
+      else if (val_select2 == 1214) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-etc2_3").show()
+      }
+      else if (val_select2 == 1226) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-etc2_4").show()
+      }
+      else if (val_select2 == 1239) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-etc2_5").show()
+      }
+      else if (val_select2 == 1250) {
+        $(".content__box > #pull_down2").hide();
+        $(".content__box__select-category-etc2_6").show()
+      }
+      else if (val_select2 == 1257) {
+        $(".content__box > #pull_down2").hide();
+      }
+    })
 
   /////サイズとブラント追加/////
-    $(document).on("change", ".select3", function(){
+    $(document).on("change", ".select2", function(){
       let size =
-      `
-      <div class="content__box-middle">
-        <div class="content__box__title">
-          サイズ
-          <div class="form_require">
-            必須
+        `
+        <div class="content__box-middle" id="content__box-middle">
+          <div class="content__box__title">
+            サイズ
+            <div class="form_require">
+              必須
+            </div>
           </div>
-        </div>
-        <div class="content__box__select">
-          <div class="content__box__select__box">
-            <fields_for @exhibit do |f|>
-              <select :size_id class="select6" name= [exhibit][size_id]>
-                <option value="0">---</option>
-                <option value="1">XXS以下</option>
-                <option value="2">XS(SS)</option>
-                <option value="3">S</option>
-                <option value="4">M</option>
-                <option value="5">L</option>
-                <option value="6">XL(LL)</option>
-                <option value="7">2XL(3L)</option>
-                <option value="8">3XL(4L)</option>
-                <option value="9">4XL(5L)以上</option>
-                <option value="10">FREE SIZE</option>
-                </select>                
-              </select>
-            <div class="icon">
-              <i class="fa fa-angle-down"></i>
+          <div class="content__box__select">
+            <div class="content__box__select__box">
+              <fields_for @exhibit do |f|>
+                <select :size_id class="select6" name= [exhibit][size_id]>
+                  <option value="0">---</option>
+                  <option value="1">XXS以下</option>
+                  <option value="2">XS(SS)</option>
+                  <option value="3">S</option>
+                  <option value="4">M</option>
+                  <option value="5">L</option>
+                  <option value="6">XL(LL)</option>
+                  <option value="7">2XL(3L)</option>
+                  <option value="8">3XL(4L)</option>
+                  <option value="9">4XL(5L)以上</option>
+                  <option value="10">FREE SIZE</option>
+                  </select>                
+                </select>
+              <div class="icon">
+                <i class="fa fa-angle-down"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        `
+      let size_shoes =
+        `
+          <div class="content__box-middle" id="content__box-middle">
+            <div class="content__box__title">
+              サイズ
+              <div class="form_require">
+                必須
+              </div>
+            </div>
+            <div class="content__box__select">
+              <div class="content__box__select__box">
+                <fields_for @exhibit do |f|>
+                  <select :size_id class="select6" name= [exhibit][size_id]>
+                    <option value="0">---</option>
+                    <option value="11">20cm以下</option>
+                    <option value="12">20.5cm</option>
+                    <option value="13">21cm</option>
+                    <option value="14">21.5cm</option>
+                    <option value="14">22cm</option>
+                    <option value="16">22.5cm</option>
+                    <option value="17">23cm</option>
+                    <option value="18">23.5cm</option>
+                    <option value="19">24cm</option>
+                    <option value="20">24.5cm</option>
+                    <option value="21">25cm</option>
+                    <option value="22">25.5cm</option>
+                    <option value="23">26cm</option>
+                    <option value="24">26.5cm</option>
+                    <option value="25">27cm</option>
+                    <option value="26">27.5cm以上</option>
+                  </select>
+                <div class="icon">
+                  <i class="fa fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
 
-      <div class="content__box-middle">
-      <div class="content__box__title">
-        ブランド
-        <div class="form_require", id="opt">
-          任意
+        let size_kid_shoes =
+        `
+          <div class="content__box-middle" id="content__box-middle">
+            <div class="content__box__title">
+              サイズ
+              <div class="form_require">
+                必須
+              </div>
+            </div>
+            <div class="content__box__select">
+              <div class="content__box__select__box">
+                <fields_for @exhibit do |f|>
+                  <select :size_id class="select6" name= [exhibit][size_id]>
+                    <option value="0">---</option>
+                    <option value="27">10.5cm以下</option>
+                    <option value="28">11cm・11.5cm</option>
+                    <option value="29">12cm・12.5cm</option>
+                    <option value="30">13cm・13.5cm</option>
+                    <option value="31">14cm・14.5cm</option>
+                    <option value="32">15cm・15.5cm</option>
+                    <option value="33">16cm・16.5cm</option>
+                    <option value="34">17cm以上</option>
+                  </select>
+                <div class="icon">
+                  <i class="fa fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+
+      let brand =
+        `
+        <div class="content__box-middle" id="content__box-middle">
+          <div class="content__box__title">
+            ブランド
+            <div class="form_require", id="opt">
+              任意
+            </div>
+          </div>
+          <div class="content__box__select">
+            <div class="content__box__select__box">
+              <fields_for @brand do |f|>
+                <input :name class="input-form_brand" placeholder= "例）シャネル" name= [brand][name]>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="content__box__select">
-        <div class="content__box__select__box">
-          <fields_for @brand do |f|>
-            <input :name class="input-form_brand" placeholder= "例）シャネル" name= [brand][name]>
-        </div>
-      </div>
-    </div>
+        `
 
-  `
+    if(val_select2 == 48 || val_select2 == 63 || val_select2 == 78 || val_select2 == 91 || val_select2 == 97 || val_select2 == 113 || val_select2 == 185 || val_select2 == 198 || val_select2 == 213 || val_select2 == 245 || val_select2 == 290 || val_select2 == 300 || val_select2 == 306 || val_select2 == 318 || val_select2 == 327 || val_select2 == 336 || val_select2 == 351 || val_select2 == 366) {
+      $(".content__box > #content__box-middle").remove();
+      $("#content_box").append(size);
+      $(".content__box > #content__box-middle").append(brand);
+    } 
+    else if(val_select == 47 || val_select == 184 || val_select == 305 || val_select == 433 || val_select == 729 ) {
+      $(".content__box > #content__box-middle").remove();
+      $("#content_box").append(brand);
+    }
+    else {
+      $(".content__box > #content__box-middle").remove();
+    }
+     
+    if (val_select2 == 102 || val_select2 == 223) {
+      $(".content__box > #content__box-middle").remove();
+      $("#content_box").append(size_shoes);
+      $("#content_box").append(brand);
+    }
+    else if(val_select2 == 375) {
+      $(".content__box > #content__box-middle").remove();
+      $("#content_box").append(size_kid_shoes);
+      $("#content_box").append(brand);
+    }
 
-    $(".content__box__select-category3").append(size);
-    $(document).off("change", ".select3");
   });
 
   
