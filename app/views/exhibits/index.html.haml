@@ -58,7 +58,7 @@
                 .content__box__select-category
                   .content__box__select-category__box
                     = fields_for @category do |f|
-                      = f.collection_select :name, @category, :id, :name,{include_blank: "---"} ,class: "select", id: "select", name: 'item[category_ids][]'
+                      = f.collection_select :name, @category, :id, :name,{include_blank: "---"} ,class: "select", id: "select"
                     .icon
                       %i.fa.fa-angle-down
 

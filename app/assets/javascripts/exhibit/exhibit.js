@@ -348,79 +348,118 @@
       </div>
     </label>
     `
-      
-  ////カテゴリー２/////
-    $(document).on("change", ".select", function(){
   
-      let category2= 
-      // 選択肢は仮置き。
-      `
+  // カテゴリーの各オプションの作成
+  function buildOption(category){
+    let html = `
+      <option value="${category.id}">${category.name}</option>
+    `
+    return html
+  }
+
+  ////カテゴリー２の作成/////
+  function buildCategory2(insertHtml){
+    let html = `
       <div class="content__box__select-category2">
         <div class="content__box__select-category__box">
-          <fields_for @category do |f|>
-            <select :name class="select2" name=[category][name]>
-              <option>---
-              <option>トップス
-              <option>ジャケット/アウター
-              <option>パンツ
-              <option>スカート
-              <option>ワンピース
-              <option>靴
-              <option>ルームウェア/パジャマ
-              <option>帽子
-              <option>バッグ
-              <option>アクセサリー
-              <option>ヘアアクセサリー
-              <option>小物
-              <option>時計
-              <option>ウィッグ/エクステ
-              <option>浴衣/水着
-              <option>スーツ/フォーマル/ドレス
-              <option>マタニティ
-              <option>
-            </select>
+          <select class="select2" id="select2">
+            <option value>---</option>
+            ${insertHtml}
+          </select>
           <div class="icon">
             <i class="fa fa-angle-down"></i>
           </icon>
         </div>
       </div>
     `
-  
-      $(".content__box__select-category").append(category2);
-      $(document).off("change", ".select");
-    });
-  
-  /////カテゴリー３/////
-    $(document).on("change", ".select2", function(){
-  
-      let category3= 
-      // 選択肢は仮置き。
-      `
+    return html
+  }
+
+  /////カテゴリー３の作成/////
+  function buildCategory3(insertHtml){
+    let html =  `
       <div class="content__box__select-category3">
         <div class="content__box__select-category__box">
-          <fields_for @category do |f|>
-            <select :name class="select3" name=[category][name]>
-              <option>--- 
-              <option>ア
-              <option>イ
-              <option>ウ
-            </select>
+          <select class="select3" name=[category][id]>
+            <option value>---</option>
+            ${insertHtml}
+          </select>
           <div class="icon">
             <i class="fa fa-angle-down"></i>
           </icon>
         </div>
       </div>
     `
-  
-      $(".content__box__select-category2").append(category3);
-      $(document).off("change", ".select2");
+    return html
+  }
+
+    // 子カテゴリ(category_2)の表示
+    $(document).on("change", "#select", function(e){
+      e.preventDefault();
+      let parentId = document.getElementById('select').value;
+      if (parentId) {
+        $.ajax({
+          url: '/exhibits/get_category_children',
+          type: 'GET',
+          data: { parent_id: parentId },
+          dataType: 'json'
+        })
+        .done(function(children){
+          $('.content__box__select-category2').remove();
+          $('.content__box__select-category3').remove();
+          $('#size_wrapper').remove();
+          $('#brand_wrapper').remove();
+          let insertHtml = '';
+          children.forEach(function(child){
+            insertHtml += buildOption(child);
+          })
+          let html = buildCategory2(insertHtml);
+          $('.content__box__select-category').append(html)
+        })
+        .fail(function(){
+          alert('カテゴリー取得に失敗しました');
+        })
+      }
+      else {
+        $('.content__box__select-category2').remove();
+      }
+    });
+
+    $(document).on("change", "#select2", function(e){
+      e.preventDefault();
+      let childId = $(this).val();
+      if (childId){
+        $.ajax({
+          url: '/exhibits/get_category_children',
+          type: 'GET',
+          data: { parent_id: childId },
+          dataType: 'json'
+        })
+        .done(function(children){
+          $('.content__box__select-category3').remove();
+          let insertHtml = '';
+          children.forEach(function(child){
+            insertHtml += buildOption(child);
+          })
+          let html = buildCategory3(insertHtml);
+          $('.content__box__select-category2').append(html)
+        })
+        .fail(function(){
+          alert('カテゴリー取得に失敗しました');
+        })
+      }
+      else {
+        $('.content__box__select-category3').remove();
+      }
     });
 
   /////サイズとブラント追加/////
     $(document).on("change", ".select3", function(){
+      $('#size_wrapper').remove();
+      $('#brand_wrapper').remove();
       let size =
       `
-      <div class="content__box-middle">
+      <div class="content__box-middle" id="size_wrapper">
         <div class="content__box__title">
           サイズ
           <div class="form_require">
@@ -429,21 +468,25 @@
         </div>
         <div class="content__box__select">
           <div class="content__box__select__box">
-            <fields_for @exhibit do |f|>
-              <select :size_id class="select6" name= [exhibit][size_id]>
-                <option value="0">---</option>
-                <option value="1">XXS以下</option>
-                <option value="2">XS(SS)</option>
-                <option value="3">S</option>
-                <option value="4">M</option>
-                <option value="5">L</option>
-                <option value="6">XL(LL)</option>
-                <option value="7">2XL(3L)</option>
-                <option value="8">3XL(4L)</option>
-                <option value="9">4XL(5L)以上</option>
-                <option value="10">FREE SIZE</option>
+            <select class="select6" name=[exhibit][size_id]>
+              <option value="0">---</option>
+              <option value="1">XXS以下</option>
+              <option value="2">XS(SS)</option>
+              <option value="3">S</option>
+              <option value="4">M</option>
+              <option value="5">L</option>
+              <option value="6">XL(LL)</option>
+              <option value="7">2XL(3L)</option>
+              <option value="8">3XL(4L)</option>
+              <option value="9">4XL(5L)以上</option>
+              <option value="10">FREE SIZE</option>
+            </select>
+                </select>                
+            </select>
                 </select>                
               </select>
+                </select>                
+            </select>
             <div class="icon">
               <i class="fa fa-angle-down"></i>
             </div>
@@ -451,31 +494,28 @@
         </div>
       </div>
 
-      <div class="content__box-middle">
-      <div class="content__box__title">
-        ブランド
-        <div class="form_require", id="opt">
-          任意
+      <div class="content__box-middle" id="brand_wrapper">
+        <div class="content__box__title">
+          ブランド
+          <div class="form_require", id="opt">
+            任意
+          </div>
         </div>
-      </div>
-      <div class="content__box__select">
-        <div class="content__box__select__box">
-          <fields_for @brand do |f|>
+        <div class="content__box__select">
+          <div class="content__box__select__box">
             <input :name class="input-form_brand" placeholder= "例）シャネル" name= [brand][name]>
+          </div>
         </div>
       </div>
-    </div>
 
   `
-
-    $(".content__box__select-category3").append(size);
-    $(document).off("change", ".select3");
+    
+  $(".content__box__select-category3").append(size);
   });
 
   
   /////発送方法/////
   $(document).on("change", ".select4", function(){
-
     let shipping=
     `
     <div class="content__box-middle">
@@ -706,12 +746,3 @@
     $(".img-view10").replaceWith(select_10);
 
   });
-  
-  
-
-  
-  
-  
-  
-  
-
