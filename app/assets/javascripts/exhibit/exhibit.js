@@ -22,16 +22,16 @@
   /////select_1/////
     let select_1 =
     `
-    <label class="select_1">
-      <input class="select_img" type="file" id="select_img" name="images[]" >
-      <div class="content__box__dropbox">
+    <input class="select_img" type="file" id="select_img" name="images[]" multiple>
+    <div class="select_1">
+      <label class="content__box__dropbox" for="select_img">
         <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////2:1/////
@@ -55,16 +55,16 @@
   /////select_2/////
     let select_2 =
     `
-    <label class="select_2">
-      <input class="select_img_2" id="select_img_2" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__2">
+    <input class="select_img_2" id="select_img_2" type="file" name="images[]", multiple>
+    <div class="select_2">
+      <label class= "content__box__dropbox__2" for="select_img_2">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////3:1/////
@@ -88,16 +88,16 @@
   /////select_3/////
     let select_3 =
     `
-    <label class="select_3">
-      <input class="select_img_3" id="select_img_3" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__3">
+    <input class="select_img_3" id="select_img_3" type="file" name="images[]", multiple>
+    <div class="select_3">
+    <label class= "content__box__dropbox__3" for="select_img_3">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////4:1/////
@@ -122,16 +122,16 @@
   /////select_4/////
     let select_4 =
     `
-    <label class="select_4">
-      <input class="select_img_4" id="select_img_4" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__4">
+    <input class="select_img_4" id="select_img_4" type="file" name="images[]", multiple>
+    <div class="select_4">
+      <label class= "content__box__dropbox__4" for="select_img_4">
         <div class= "content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////5:1/////
@@ -155,16 +155,16 @@
     let exhibit_photo5_2 =
     `
     <div class="content__box__select-img-2">
-      <label class="select_6">
-        <input class="select_img_6" id="select_img_6" type="file" name="images[]", multiple= true>
-        <div class="content__box__dropbox__6">
+      <input class="select_img_6" id="select_img_6" type="file" name="images[]", multiple= true>
+      <div class="select_6">
+        <label class="content__box__dropbox__6" for="select_img_6">
           <div class="content__box__dropbox__form">
             ドラッグアンドドロップ
             <br>
             またはクリックしてファイルをアップロード
           </div>
-        </div>
-      </label>
+        </label>
+      </div>
     </div>
     `
   
@@ -172,16 +172,16 @@
   /////select_5/////
     let select_5 =
     `
-    <label class="select_5">
-      <input class="select_img_5" id="select_img_5" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__5">
-        <div class= "content__box__dropbox__form">
+    <input class="select_img_5" id="select_img_5" type="file" name="images[]", multiple= true/>
+    <div class="select_5">
+      <label class="content__box__dropbox__5" for="select_img_5">
+        <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
     
   /////6:1/////
@@ -205,16 +205,16 @@
   /////select_6/////
     let select_6 =
     `
-    <label class="select_6">
-      <input class="select_img_6" id="select_img_6" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__6">
-        <div class= "content__box__dropbox__form">
+    <input class="select_img_6" id="select_img_6" type="file" name="images[]", multiple>
+    <div class="select_6">
+      <label class="content__box__dropbox__6" for="select_img_6">
+        <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////7:1/////
@@ -238,16 +238,16 @@
   /////select_7/////
     let select_7 =
     `
-    <label class="select_7">
-      <input class="select_img_7" id="select_img_7" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__7">
-        <div class= "content__box__dropbox__form">
+    <input class="select_img_7" id="select_img_7" type="file" name="images[]", multiple>
+    <div class="select_7">
+      <label class="content__box__dropbox__7" for="select_img_7">
+        <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////8:1/////
@@ -271,16 +271,16 @@
   /////select_8/////
     let select_8 =
     `
-    <label class="select_8">
-      <input class="select_img_8" id="select_img_8" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__8">
-        <div class= "content__box__dropbox__form">
+    <input class="select_img_8" id="select_img_8" type="file" name="images[]", multiple>
+    <div class="select_8">
+      <label class="content__box__dropbox__8" for="select_img_8">
+        <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////9:1/////
@@ -304,16 +304,16 @@
   /////select_9/////
     let select_9 =
     `
-    <label class="select_9">
-      <input class="select_img_9" id="select_img_9" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__9">
-        <div class= "content__box__dropbox__form">
+    <input class="select_img_9" id="select_img_9" type="file" name="images[]", multiple>
+    <div class="select_9">
+      <label class="content__box__dropbox__9" for="select_img_9">
+        <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   /////10/////
@@ -337,16 +337,16 @@
   /////select_10/////
     let select_10 =
     `
-    <label class="select_10">
-      <input class="select_img_10" id="select_img_10" type="file" name="images[]", multiple= true/>
-      <div class= "content__box__dropbox__10">
-        <div class= "content__box__dropbox__form">
+    <input class="select_img_10" id="select_img_10" type="file" name="images[]", multiple= true/>
+    <div class="select_10">
+      <label class="content__box__dropbox__10" for="select_img_10">
+        <div class="content__box__dropbox__form">
           ドラッグアンドドロップ
           <br>
           またはクリックしてファイルをアップロード
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
     `
   
   // カテゴリーの各オプションの作成
@@ -589,18 +589,18 @@
   $(document).on('change', '#select_img', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox").replaceWith(exhibit_photo1);
+      $(".select_1").replaceWith(exhibit_photo1);
       $(".img-view").after(select_2);
       $(".preview").attr('src', e.target.result);
     }
-    reader.readAsDataURL(e.target.files[0]);  
+    reader.readAsDataURL(e.target.files[0]);
   });
 
   /////2:1/////
   $(document).on('change', '#select_img_2', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__2").replaceWith(exhibit_photo2);
+      $(".select_2").replaceWith(exhibit_photo2);
       $(".img-view2").after(select_3);
       $(".preview2").attr('src', e.target.result);
     }
@@ -611,7 +611,7 @@
   $(document).on('change', '#select_img_3', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__3").replaceWith(exhibit_photo3);
+      $(".select_3").replaceWith(exhibit_photo3);
       $(".img-view3").after(select_4);
       $(".preview3").attr('src', e.target.result);
     }
@@ -622,7 +622,7 @@
   $(document).on('change', '#select_img_4', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__4").replaceWith(exhibit_photo4);
+      $(".select_4").replaceWith(exhibit_photo4);
       $(".img-view4").after(select_5);
       $(".preview4").attr('src', e.target.result);
     }
@@ -633,7 +633,7 @@
   $(document).on('change', '#select_img_5', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__5").replaceWith(exhibit_photo5);
+      $(".select_5").replaceWith(exhibit_photo5);
       $(".content__box__img").append(exhibit_photo5_2);
       $(".preview5").attr('src', e.target.result);
     }
@@ -644,7 +644,7 @@
   $(document).on('change', '#select_img_6', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__6").replaceWith(exhibit_photo6);
+      $(".select_6").replaceWith(exhibit_photo6);
       $(".img-view6").after(select_7);
       $(".preview6").attr('src', e.target.result);
     }
@@ -655,7 +655,7 @@
   $(document).on('change', '#select_img_7', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__7").replaceWith(exhibit_photo7);
+      $(".select_7").replaceWith(exhibit_photo7);
       $(".img-view7").after(select_8);
       $(".preview7").attr('src', e.target.result);
     }
@@ -666,7 +666,7 @@
   $(document).on('change', '#select_img_8', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__8").replaceWith(exhibit_photo8);
+      $(".select_8").replaceWith(exhibit_photo8);
       $(".img-view8").after(select_9);
       $(".preview8").attr('src', e.target.result);
     }
@@ -677,7 +677,7 @@
   $(document).on('change', '#select_img_9', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__9").replaceWith(exhibit_photo9);
+      $(".select_9").replaceWith(exhibit_photo9);
       $(".img-view9").after(select_10);
       $(".preview9").attr('src', e.target.result);
     }
@@ -688,7 +688,7 @@
   $(document).on('change', '#select_img_10', function (e) {
     let reader = new FileReader();
     reader.onload = function (e) {
-      $(".content__box__dropbox__10").replaceWith(exhibit_photo10);
+      $(".select_10").replaceWith(exhibit_photo10);
       $(".preview10").attr('src', e.target.result);
     }
     reader.readAsDataURL(e.target.files[0]);
@@ -698,51 +698,61 @@
   /////削除機能/////
   $(document).on("click", "#clear", function(){
     $(".img-view").remove();
-    $("label.select_2").replaceWith(select_1)
+    $("#select_img").remove();
+    $(".select_2").replaceWith(select_1)
   });
 
   $(document).on("click", "#clear2", function(){
     $(".img-view2").remove();
-    $("label.select_3").replaceWith(select_2)
+    $("#select_img_2").remove();
+    $(".select_3").replaceWith(select_2);
   });
   
   $(document).on("click", "#clear3", function(){
     $(".img-view3").remove();
-    $("label.select_4").replaceWith(select_3)
+    $("#select_img_3").remove();
+    $(".select_4").replaceWith(select_3)
   });
 
   $(document).on("click", "#clear4", function(){
     $(".img-view4").remove();
-    $("label.select_5").replaceWith(select_4)
+    $("#select_img_4").remove();
+    $(".select_5").replaceWith(select_4)
   });
 
   $(document).on("click", "#clear5", function(){
     $(".img-view5").remove();
+    $("#select_img_5").remove();
     $(".content__box__select-img-2").remove();
     $(".img-view4").after(select_5);
   });
 
   $(document).on("click", "#clear6", function(){
     $(".img-view6").remove();
-    $("label.select_7").replaceWith(select_6)
+    $("#select_img_6").remove();
+    $(".select_7").replaceWith(select_6)
   });
 
   $(document).on("click", "#clear7", function(){
     $(".img-view7").remove();
-    $("label.select_8").replaceWith(select_7)
+    $("#select_img_7").remove();
+    $(".select_8").replaceWith(select_7)
   });
 
   $(document).on("click", "#clear8", function(){
     $(".img-view8").remove();
-    $("label.select_9").replaceWith(select_8)
+    $("#select_img_8").remove();
+    $(".select_9").replaceWith(select_8)
   });
 
   $(document).on("click", "#clear9", function(){
     $(".img-view9").remove();
-    $("label.select_10").replaceWith(select_9)
+    $("#select_img_9").remove();
+    $(".select_10").replaceWith(select_9)
   });
 
   $(document).on("click", "#clear10", function(){
+    $("#select_img_10").remove();
     $(".img-view10").replaceWith(select_10);
 
   });

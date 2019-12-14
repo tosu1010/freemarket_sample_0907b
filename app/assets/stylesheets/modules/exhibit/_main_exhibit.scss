@@ -158,7 +158,7 @@
       .content__box__dropbox {
         width: 100%;
         height: 162px;
-        background-color: $light-grey-f5;
+        background-color: $light-grey;
         border: dashed 1px $grey;
         text-align: center;
         display: inline-block;
@@ -219,26 +219,41 @@
 
 //////出品画像表示欄1/////
 .img-view {
-  width: 116px;
+  width: 114px;
   height: 160px;
   float: left;
 }
 
 .img-field {
   background-color: $light-grey;
-  border: 1px solid $light-grey;
+  width: 114px;
 }
 
 .img-field-upper {
-  height: 116px;
+  height: 114px;
+  width: 114px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
 }
 
-.preview {   //選択画像の表示
-  line-height: 116px;
-  width: 100%;
-  margin: 15px 0 0 0;
-  position: static;
+.preview,
+.preview2,
+.preview3,
+.preview4,
+.preview5,
+.preview6,
+.preview7,
+.preview8,
+.preview9,
+.preview10 {   //選択画像の表示
+  max-height: 114px;
+  max-width: 114px;
+  height: auto;
+  width: auto;
 }
+
 
 .img-field-bottom {
   height: 44px;
@@ -283,14 +298,6 @@
   float: left;
   margin: 0 0 0 10px;
 }
-
-.preview2 {
-  line-height: 116px;
-  width: 100%;
-  margin: 15px 0 0 0;
-  position: static;
-  box-sizing:border-box;
-}
           
 /////出品画像2:1/////
 .select_img_3 {
@@ -318,13 +325,6 @@
   margin: 0 0 0 10px;
 }
   
-  .preview3 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
       
 /////出品画像3:1/////
 .select_img_4 {
@@ -352,13 +352,7 @@
   margin: 0 0 0 10px;
 }
   
-  .preview4 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
+
 
 /////出品画像4:1/////
 .select_img_5 {
@@ -390,13 +384,6 @@
   margin: 0 0 0 10px;
 }
 
-  .preview5 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
           
 /////出品画像5:1/////
 .select_img_6 {
@@ -419,13 +406,6 @@
   height: 160px;
   float: left;
 }
-
-  .preview6 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-  }
 
 /////出品画像6:1/////
 .select_img_7 {
@@ -453,14 +433,7 @@
   margin: 0 0 0 10px;
 }
       
-  .preview7 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
 
-  }
   
 /////出品画像7:1/////
 .select_img_8 {
@@ -488,13 +461,6 @@
   margin: 0 0 0 10px;
 }
           
-  .preview8 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
 
 /////出品画像8:1/////
 .select_img_9 {
@@ -522,14 +488,6 @@
   margin: 0 0 0 10px;
 }
 
-  .preview9 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
-
 
 /////出品画像9:1/////
 .select_img_10 {
@@ -556,13 +514,6 @@
   margin: 0 0 0 10px;
 }
   
-  .preview10 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
 
 
 /////出品画像10/////
