@@ -18,9 +18,9 @@
             .explain 最大10枚までアップロードできます
             .content__box__img__select-img
               = fields_for @exhibit_image do |f|
-                = f.file_field :image, class: "select_img", type: "file", id: "select_img", name: "[images][]"
+                = f.file_field :image, class: "select_img_1", type: "file", id: "select_img_1", name: "images[]"
                 .select_1
-                  %label{for: "select_img", class: 'content__box__dropbox'}
+                  %label{for: "select_img_1", class: 'content__box__dropbox__1'}
                     .content__box__dropbox__form
                       ドラッグアンドドロップ
                       %br/

@@ -150,12 +150,12 @@
     }
 
 /////出品画像////
-      .select_img { 
+      .select_img_1 { 
         display: none; //inputのデフォルトを非表示
       }
 
 /////inputのデザイン/////
-      .content__box__dropbox {
+      .content__box__dropbox__1 {
         width: 100%;
         height: 162px;
         background-color: $light-grey;
@@ -163,20 +163,19 @@
         text-align: center;
         display: inline-block;
         cursor: pointer;
-
-/////inputのデザインのテキスト部分/////
-      &__form {
-        height: 162px;
-        display: flex;
-        align-items: center;
-        justify-content: center;          
-        box-sizing: border-box;
-        font-weight: bold;
-        line-height: 1.5
-  
       }
-
-    }
+/////inputのデザインのテキスト部分/////
+      .content__box__dropbox {
+        &__form {
+          height: 162px;
+          display: flex;
+          align-items: center;
+          justify-content: center;          
+          box-sizing: border-box;
+          font-weight: bold;
+          line-height: 1.5
+        }
+      }
 
 /////javascriptによる追加要素のcss/////はじまり
 
@@ -200,7 +199,7 @@
 }
 
 /////画像選択共通部分////
-#clear, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear9, #clear10 {
+#clear1, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear9, #clear10 {
   width: 50%;
   height: 100%;
   font-size: 14px;
@@ -212,13 +211,13 @@
 }
 
 /////画像選択共通部分////
-#clear:hover, #clear2:hover, #clear3:hover, #clear4:hover, #clear5:hover, #clear6:hover, #clear7:hover, #clear8:hover, #clear9:hover, #clear10:hover {
+#clear1:hover, #clear2:hover, #clear3:hover, #clear4:hover, #clear5:hover, #clear6:hover, #clear7:hover, #clear8:hover, #clear9:hover, #clear10:hover {
   text-decoration: underline;
   opacity: .7;
 }
 
 //////出品画像表示欄1/////
-.img-view {
+.img-view1 {
   width: 114px;
   height: 160px;
   float: left;
@@ -238,7 +237,7 @@
   overflow: hidden;
 }
 
-.preview,
+.preview1,
 .preview2,
 .preview3,
 .preview4,
