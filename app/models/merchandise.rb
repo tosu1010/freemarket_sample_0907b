@@ -44,4 +44,22 @@ class Merchandise < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :condition
+
+    accepts_nested_attributes_for :exhibit
+    accepts_nested_attributes_for :delivery
+    accepts_nested_attributes_for :category
+  
+    validates :name, presence: true
+    validates :description, presence: true
+    validates :price, presence: true
+    validates_associated :delivery, presence: true
+  
+    def sales_commission
+      (price * 0.1).round
+    end
+  
+    def sales_profit
+      (price - (price * 0.1)).round
+    end
+
 end
