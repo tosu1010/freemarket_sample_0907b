@@ -5,11 +5,11 @@
 .mypage
   .main
     .user-icon
-      = link_to "https://www.mercari.com/jp/mypage/", class: "user-icon__link" do
+      = link_to mypage_profile_path, class: "user-icon__link" do
         .user-icon__image-div
           = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "user-icon__image"
         .user-icon__user-name.bold
-          tosu
+          = current_user.nickname
         .user-icon__user-info
           .user-icon__user-evaluation
             評価
@@ -18,7 +18,7 @@
           .user-icon__user-exhibit
             出品数
             %span.bold
-              0
+              = current_user.exhibits.count
 
     .notify-todo
       %ul.tab

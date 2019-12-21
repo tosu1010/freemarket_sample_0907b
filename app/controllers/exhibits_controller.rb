@@ -78,4 +78,58 @@ class ExhibitsController < ApplicationController
       redirect_to action: :show
     end
   end
+
+  def edit
+    @merchandise = Merchandise.find(params[:id])
+    @exhibit = Exhibit.find_by(merchandise_id: @merchandise.id)
+   
+    if @merchandise.category.depth == 0
+      @category1 = Category.find_by(id: @merchandise.category_id)
+      @category2_list = @category1.children
+
+    elsif @merchandise.category.depth == 1
+      @category1 = Category.find_by(id: @merchandise.category_id).root
+      @category2 = Category.find_by(id: @merchandise.category_id)
+      @category3_list = @category2.children
+
+    else @merchandise.category.depth == 2
+      @category1 = Category.find_by(id: @merchandise.category_id).root
+      @category2 = Category.find_by(id: @merchandise.category_id).parent
+      @category3 = Category.find_by(id: @merchandise.category_id)
+
+    end
+
+    @size = Size.find_by(id: @merchandise.exhibit.size_id)
+
+    @category_root = Category.where(ancestry: nil)
+
+  
+  end
+
+  def update
+    @exhibit = Exhibit.find(params[:id])
+    @merchandise = Merchandise.find(params[:id])
+    
+    if @merchandise.update(merchandise_params)
+      redirect_to exhibit_path(@exhibit)
+    else
+      redirect_to edit_exhibit_path(@exhibit)
+
+    end
+
+
+  end
+
+  private
+  def merchandise_params
+    params.require(:merchandise).permit(:name, :description, :price, :category_id, :condition_id, :brand_id\
+                                        ,exhibit_attributes: [:id, :size_id]\
+                                        ,exhibit_image_attributes: [:id, {image: []}]\
+                                        ,delivery_attributes: [:id, :shipping_charge_id, :shipping_area_id, :shipping_date_id, :delivery_type_id])
+  end
+
+  def exhibit_params
+    params.permit(:id)
+  end
+
 end

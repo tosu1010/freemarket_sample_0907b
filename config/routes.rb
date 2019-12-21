@@ -25,7 +25,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :purchase, only: [:index, :create]
   end
-  resources :exhibits, only: [:index, :create, :show, :destroy] do
+
+  resources :exhibits, only: [:index, :create, :edit, :update, :show, :destroy] do
     collection do
       get 'get_category_children', defaults: { format: 'json'}
     end
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
 
   resources :personal_informations, only: [:new, :create, :edit, :update]
 
+  get '/signup' => 'signup#index'
   get '/logout' => 'logout#log_out'
   
 end

@@ -48,7 +48,7 @@
               &:hover {border-color: $hover_blue;}
 
               @media (max-width: 768px) {
-                &:last-child {
+                &:nth-child(10n) {
                   display: none;
                 }             
               }

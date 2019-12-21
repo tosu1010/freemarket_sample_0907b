@@ -1,0 +1,236 @@
+.main_exhibit
+  = render 'exhibits/header' 
+
+  .main_exhibit__contents
+  -# = form_for @exhibit, html: { multipart: true }  do |ff|
+  = form_with(url: exhibit_path, model: @merchandise, method: :patch, local: true, multipart: true) do |f|
+    .main_exhibit__contents__main
+      .content
+        .content__head
+          商品の情報を入力
+      .content
+        .content__box__img
+          .content__box__img__title-photos 
+            出品画像
+            .form_require 
+              必須
+          .explain 最大10枚までアップロードできます
+        .content__box__img__select-img
+          = fields_for @exhibit_image do |e_i|
+            - @merchandise.exhibit.exhibit_images.sort_by(&:id).each_with_index do |exhibit_image, i|
+              -if i == 0
+                .img-view
+                  .img-field          
+                    .img-field-upper
+                      = image_tag "#{exhibit_image.image}", class: "preview"
+                    .img-field-bottom
+                      %label.change
+                        .edit-btn 編集
+                        = button_tag id: "clear" do
+                          削除                      
+              -else
+                %div{class: "img-view#{i+1}"}
+                  .img-field
+                    .img-field-upper
+                      -#  原因不明
+                      -# = image_tag exhibit_image.image, class: "preview#{i+1}"
+                      = image_tag "#{exhibit_image.image}", class: "preview#{i+1}"
+
+                    .img-field-bottom
+                      %label.change
+                        .edit-btn 編集
+                        = button_tag id: "clear#{i+1}" do
+                          削除
+            -images_count = @merchandise.exhibit.exhibit_images.length + 1
+            %label{class: "select_#{images_count}"}
+              %input{class: "select_img_#{images_count}", type:"file", id:"select_img_#{images_count}"}
+              %div{class: "content__box__dropbox__#{images_count}"}
+                .content__box__dropbox__form
+                  ドラッグアンドドロップ
+                  %br
+                  またはクリックしてファイルをアップロード
+
+      .content
+        .content__box
+          .content__box__title
+            商品名
+            .form_require
+              必須
+          .content__box__text-field
+            = f.text_field :name, class: 'input-form', placeholder: '商品名（必須40字まで）'
+        .content__box__explain
+          .content__box__title
+            商品の説明
+            .form_require 
+              必須
+          .content__box__text-area
+            = f.text_area :description, class: 'input-text-form', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+
+      .content
+        .content__box
+          .content__box__title
+          .content__box__title__left
+            .content__box__title__left-head
+              商品の詳細
+          .content__box__title__right
+            .content__box
+              .content__box__title
+                カテゴリー
+                .form_require 
+                  必須
+              .content__box__select-category
+                .content__box__select-category__box
+                  = f.collection_select :category_id, @category1.siblings, :id, :name, {include_blank: "---", selected: @category1.id},{class:"select"}
+                  .icon
+                    %i.fa.fa-angle-down
+
+                -if @category2
+                  .content__box__select-category2
+                    .content__box__select-category__box
+                      = f.collection_select :category_id, @category2.siblings, :id, :name, {include_blank: "---", selected: @category2.id},{class:"select2 active" ,child_id: "#{@category2.id}"} 
+                      .icon
+                        %i.fa.fa-angle-down
+                -else
+                  .content__box__select-category2
+                    .content__box__select-category__box
+                      = f.collection_select :category_id, @category2_list, :id, :name, {include_blank: "---"},{class:"select2 active"} 
+                      .icon
+                        %i.fa.fa-angle-down
+
+                -if @category3
+                  .content__box__select-category3
+                    .content__box__select-category__box
+                      = f.collection_select :category_id, @category3.siblings, :id, :name, {include_blank: "---", selected: @category3.id},{class:"select3 active", son_id: "#{@category3.id}"} 
+                      .icon
+                        %i.fa.fa-angle-down
+
+              -if @size
+                .content__box-middle#size
+                  .content__box__title
+                    サイズ
+                    .form_require
+                      必須
+                  .content__box__select
+                    .content__box__select__box
+                      = f.fields_for :exhibit do |e|
+                        = e.collection_select :size_id, Size.all, :id, :value, {include_blank: "---", selected: @merchandise.exhibit.size_id},{class:"select4"} 
+                      .icon
+                        %i.fa.fa-angle-down
+
+              -if @merchandise.brand_id
+                .content__box-middle#brand
+                  .content__box__title
+                    ブランド
+                    .form_require#opt
+                      任意
+                  .content__box__select
+                    .content__box__select__box
+                      -# 仮でリストボックス
+                      = f.collection_select :brand_id, Brand.order('name'), :id, :name,{include_blank: "---", selected: @merchandise.brand_id},{class: "select5"}
+                      .icon
+                        %i.fa.fa-angle-down
+            .content__box-middle
+              .content__box__title
+                商品の状態
+                .form_require 
+                  必須
+              .content__box__select
+                .content__box__select__box
+                  = f.collection_select :condition_id, Condition.all, :id, :value,{include_blank: "---", selected: @merchandise.condition_id},{class: "select"}
+                  .icon
+                    %i.fa.fa-angle-down
+      .content
+        .content__box
+        = f.fields_for :delivery do |d|
+          .content__box__title
+          .content__box__title__left
+            .content__box__title__left-head
+              発送について
+              = link_to "?" ,"https://www.mercari.com/jp/help_center/article/68/", class: "question"
+          .content__box__title__right
+            .content__box1
+              .content__box__title
+                配送料の負担
+                .form_require
+                  必須
+              .content__box__select-shipping_charge
+                .content__box__select__box
+                  = d.collection_select :shipping_charge_id, ShippingCharge.all, :id, :value,{include_blank: "---", selected: @merchandise.delivery.shipping_charge_id},{class: "select"}
+                  .icon
+                    %i.fa.fa-angle-down
+                .content__box-middle
+                  .content__box__title
+                    配送方法
+                    .form_require
+                      必須
+                  .content__box__select
+                    .content__box__select__box.delivery_type
+                      = d.collection_select :delivery_type_id, DeliveryType.all, :id, :value,{include_blank: "---", selected: @merchandise.delivery.delivery_type_id},{class: "select active"}
+                      .icon
+                        %i.fa.fa-angle-down
+
+
+            .content__box-middle
+              .content__box__title
+                発送元の地域
+                .form_require 
+                  必須
+              .content__box__select
+                .content__box__select__box
+                  = d.collection_select :shipping_area_id, ShippingArea.all, :id, :name,{include_blank: "---", selected: @merchandise.delivery.shipping_area_id},{class: "select"}
+                  .icon
+                    %i.fa.fa-angle-down
+                    
+            .content__box-bottom
+              .content__box__title
+                発送までの日数
+                .form_require 
+                  必須
+              .content__box__select
+                .content__box__select__box
+                  = d.collection_select :shipping_date_id, ShippingDate.all, :id, :value,{include_blank: "---", selected: @merchandise.delivery.shipping_date_id},{class: "select"}
+                  .icon
+                    %i.fa.fa-angle-down
+      .content
+        .content__box
+          .content__box__title
+          .content__box__title__left
+            .content__box__title__left-head
+              販売価格(300~9,999,999)
+              = link_to "?" ,"https://www.mercari.com/jp/help_center/article/64/", class: "question"
+          .content__box__title__right
+            .content__box-price
+              .content__box-price__left
+                .content__box__title
+                  価格
+                  .form_require2
+                    必須
+              .content__box-price__right
+                .content__box-price__right__yen
+                  ¥
+                .content__box-price__right__text-field-price
+                  = f.text_field :price, class: 'input-form', placeholder: '例）300', id: "price"
+
+            .content__box-fee
+              .fee
+                販売手数料（10%）
+              .hyphen 
+                = f.text_field :sales_commission, class: "sales-fee", id: "sales-fee", disabled: "disabled"
+            .content__box-profit
+              .content__box-profit-left
+                販売利益
+              .content__box-profit-right
+                = f.text_field :sales_profit, class: "total-price", id: "total-price", type: "text", disabled: "disabled"
+
+      .content
+        .content-btn-exhibit
+          = button_tag type: "submit", class: "text" do
+            変更する
+            
+        .content-btn-back
+          = link_to "キャンセル", '', class: "back"
+
+  .exhibit__footer
+    = render "exhibits/footer"
+
+
