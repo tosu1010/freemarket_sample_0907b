@@ -9,88 +9,55 @@ class ExhibitsController < ApplicationController
     @brand = Brand.new
   end
 
-  def search
-    respond_to do |format|
-      format.html
-      format.json do
-       @children = Category.find(params[:category_id]).children
-       #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
-      end
-    end
+  def get_category_children
+    @category_children = Category.find(params[:parent_id].to_i).children
   end
 
   def create
-    @delivery = Delivery.new(
-      shipping_charge_id: params[:delivery][:shipping_charge_id],
-      shipping_area_id: params[:delivery][:shipping_area_id],
-      shipping_date_id: params[:delivery][:shipping_date_id],
-      delivery_type_id: params[:delivery][:delivery_type_id]
-      )
-    if @delivery.save
-      session[:delivery_id] = @delivery.id
-
-      @brand = Brand.new(
-        name: params[:brand][:name]
+    Merchandise.transaction do
+      delivery = Delivery.create!(
+        shipping_charge_id: params[:delivery][:shipping_charge_id],
+        shipping_area_id: params[:delivery][:shipping_area_id],
+        shipping_date_id: params[:delivery][:shipping_date_id],
+        delivery_type_id: params[:delivery][:delivery_type_id]
         )
-      if @brand.name.blank?
-        redirect_to "/exhibits" and return
-      else
-        if @brand.save
-          session[:brand_id] = @brand.id
-    
-          @category = Category.new(
-            name: params[:category][:name]
-          )
+      session[:delivery_id] = delivery.id
 
-          if @category.save
-            session[:category_id] = @category.id
+      brand = Brand.find_or_create_by!(name: params[:brand][:name])
+      session[:brand_id] = brand.id
       
-            @merchandise = Merchandise.new(
-              name: params[:merchandise][:name],
-              description: params[:merchandise][:description],
-              price: params[:merchandise][:price],
-              delivery_id: session[:delivery_id],
-              brand_id: session[:brand_id],
-              category_id: 8,
-              condition_id: params[:merchandise][:condition_id]
-              )
-          
-            if @merchandise.save
-              session[:merchandise_id] = @merchandise.id
+      merchandise = Merchandise.create!(
+        name: params[:merchandise][:name],
+        description: params[:merchandise][:description],
+        price: params[:merchandise][:price],
+        delivery_id: session[:delivery_id],
+        brand_id: session[:brand_id],
+        category_id: params[:category][:id],
+        condition_id: params[:merchandise][:condition_id]
+        )
+      session[:merchandise_id] = merchandise.id
+
+      exhibit = Exhibit.create!(
+        status: 1,
+        size_id: params[:exhibit][:size_id],
+        user_id: current_user.id,
+        merchandise_id: session[:merchandise_id]
+        )
+        session[:exhibit_id] = exhibit.id
         
-              @exhibit = Exhibit.new(
-                status: 1,
-                size_id: params[:exhibit][:size_id],
-                user_id: current_user.id,
-                merchandise_id: session[:merchandise_id]
-                )
-              if @exhibit.save
-                session[:exhibit_id] = @exhibit.id
-          
-                if params[:images].present?
-                  params[:images].each do |image| 
-                    @exhibit_image = ExhibitImage.new(
-                      image: image,
-                      exhibit_id: session[:exhibit_id]
-                      )
-                    @exhibit_image.save
-                  end
-                  redirect_to root_path and return
-                end
-              else
-                redirect_to "/exhibits" and return #データがない場合は戻る
-              end
-            else
-              redirect_to "/exhibits" and return #データがない場合は戻る
-            end
-          else
-            redirect_to "/exhibits" and return #データがない場合は戻る
-          end
+        if params[:images].present?
+          params[:images].each do |image| 
+            ExhibitImage.create!(
+              image: image,
+              exhibit_id: session[:exhibit_id]
+          )
         end
       end
-    else
-      redirect_to "/exhibits" and return #データがない場合は戻る
     end
+      redirect_to root_path
+    rescue => e
+      puts e
+      redirect_to "/exhibits" #データがない場合は戻る
   end
 
   def show

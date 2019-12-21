@@ -17,14 +17,15 @@
                 必須
             .explain 最大10枚までアップロードできます
             .content__box__img__select-img
-              %label.select_1
-                = fields_for @exhibit_image do |f|
-                  = f.file_field :image, class: "select_img", type: "file", id: "select_img", name: "[images][]"
-                  .content__box__dropbox
+              = fields_for @exhibit_image do |f|
+                = f.file_field :image, class: "select_img_1", type: "file", id: "select_img_1", name: "images[]"
+                .select_1
+                  %label{for: "select_img_1", class: 'content__box__dropbox__1'}
                     .content__box__dropbox__form
                       ドラッグアンドドロップ
-                      %br
+                      %br/
                       またはクリックしてファイルをアップロード
+
         .content
           .content__box
             .content__box__title
@@ -58,7 +59,7 @@
                 .content__box__select-category
                   .content__box__select-category__box
                     = fields_for @category do |f|
-                      = f.collection_select :name, @category, :id, :name,{include_blank: "---"} ,class: "select", id: "select", name: 'item[category_ids][]'
+                      = f.collection_select :name, @category, :id, :name,{include_blank: "---"} ,class: "select", id: "select"
                     .icon
                       %i.fa.fa-angle-down
 

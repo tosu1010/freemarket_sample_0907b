@@ -150,33 +150,32 @@
     }
 
 /////出品画像////
-      .select_img { 
+      .select_img_1 { 
         display: none; //inputのデフォルトを非表示
       }
 
 /////inputのデザイン/////
-      .content__box__dropbox {
+      .content__box__dropbox__1 {
         width: 100%;
         height: 162px;
-        background-color: $light-grey-f5;
+        background-color: $light-grey;
         border: dashed 1px $grey;
         text-align: center;
         display: inline-block;
         cursor: pointer;
-
-/////inputのデザインのテキスト部分/////
-      &__form {
-        height: 162px;
-        display: flex;
-        align-items: center;
-        justify-content: center;          
-        box-sizing: border-box;
-        font-weight: bold;
-        line-height: 1.5
-  
       }
-
-    }
+/////inputのデザインのテキスト部分/////
+      .content__box__dropbox {
+        &__form {
+          height: 162px;
+          display: flex;
+          align-items: center;
+          justify-content: center;          
+          box-sizing: border-box;
+          font-weight: bold;
+          line-height: 1.5
+        }
+      }
 
 /////javascriptによる追加要素のcss/////はじまり
 
@@ -200,7 +199,7 @@
 }
 
 /////画像選択共通部分////
-#clear, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear9, #clear10 {
+#clear1, #clear2, #clear3, #clear4, #clear5, #clear6, #clear7, #clear8, #clear9, #clear10 {
   width: 50%;
   height: 100%;
   font-size: 14px;
@@ -212,33 +211,48 @@
 }
 
 /////画像選択共通部分////
-#clear:hover, #clear2:hover, #clear3:hover, #clear4:hover, #clear5:hover, #clear6:hover, #clear7:hover, #clear8:hover, #clear9:hover, #clear10:hover {
+#clear1:hover, #clear2:hover, #clear3:hover, #clear4:hover, #clear5:hover, #clear6:hover, #clear7:hover, #clear8:hover, #clear9:hover, #clear10:hover {
   text-decoration: underline;
   opacity: .7;
 }
 
 //////出品画像表示欄1/////
-.img-view {
-  width: 116px;
+.img-view1 {
+  width: 114px;
   height: 160px;
   float: left;
 }
 
 .img-field {
   background-color: $light-grey;
-  border: 1px solid $light-grey;
+  width: 114px;
 }
 
 .img-field-upper {
-  height: 116px;
+  height: 114px;
+  width: 114px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
 }
 
-.preview {   //選択画像の表示
-  line-height: 116px;
-  width: 100%;
-  margin: 15px 0 0 0;
-  position: static;
+.preview1,
+.preview2,
+.preview3,
+.preview4,
+.preview5,
+.preview6,
+.preview7,
+.preview8,
+.preview9,
+.preview10 {   //選択画像の表示
+  max-height: 114px;
+  max-width: 114px;
+  height: auto;
+  width: auto;
 }
+
 
 .img-field-bottom {
   height: 44px;
@@ -283,14 +297,6 @@
   float: left;
   margin: 0 0 0 10px;
 }
-
-.preview2 {
-  line-height: 116px;
-  width: 100%;
-  margin: 15px 0 0 0;
-  position: static;
-  box-sizing:border-box;
-}
           
 /////出品画像2:1/////
 .select_img_3 {
@@ -318,13 +324,6 @@
   margin: 0 0 0 10px;
 }
   
-  .preview3 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
       
 /////出品画像3:1/////
 .select_img_4 {
@@ -352,13 +351,7 @@
   margin: 0 0 0 10px;
 }
   
-  .preview4 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
+
 
 /////出品画像4:1/////
 .select_img_5 {
@@ -390,13 +383,6 @@
   margin: 0 0 0 10px;
 }
 
-  .preview5 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
           
 /////出品画像5:1/////
 .select_img_6 {
@@ -419,13 +405,6 @@
   height: 160px;
   float: left;
 }
-
-  .preview6 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-  }
 
 /////出品画像6:1/////
 .select_img_7 {
@@ -453,14 +432,7 @@
   margin: 0 0 0 10px;
 }
       
-  .preview7 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
 
-  }
   
 /////出品画像7:1/////
 .select_img_8 {
@@ -488,13 +460,6 @@
   margin: 0 0 0 10px;
 }
           
-  .preview8 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
 
 /////出品画像8:1/////
 .select_img_9 {
@@ -522,14 +487,6 @@
   margin: 0 0 0 10px;
 }
 
-  .preview9 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
-
 
 /////出品画像9:1/////
 .select_img_10 {
@@ -556,13 +513,6 @@
   margin: 0 0 0 10px;
 }
   
-  .preview10 {
-    line-height: 116px;
-    width: 100%;
-    margin: 15px 0 0 0;
-    position: static;
-    box-sizing:border-box;
-  }
 
 
 /////出品画像10/////

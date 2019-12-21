@@ -25,7 +25,12 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :purchase, only: [:index, :create]
   end
-  resources :exhibits, only: [:index, :create, :edit, :update, :show, :destroy]
+
+  resources :exhibits, only: [:index, :create, :edit, :update, :show, :destroy] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json'}
+    end
+  end
 
   get '/mypage/profile' => 'mypage#edit'
   get '/mypage/card' => 'mypage#show'
