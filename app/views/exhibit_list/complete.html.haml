@@ -10,13 +10,13 @@
         出品中
       %li.mypage__tab__tabs--dealing
         取引中
-      %li.mypage__tab__tabs--complete
+      %li.mypage__tab__tabs--compleate
         売却済み
     
     .mypage__tab__content
       - unless @exhibit_list.exists?
         .not-found.bold
-          取引中の商品がありません
+          売却済みの商品がありません
         
       - else
         - @exhibit_list.each do |exhibit|
