@@ -131,21 +131,6 @@
           = @merchandise.description
     
     = render 'exhibits/exhibiter_only'
-      
-    .comments
-      %ul.comments__container#comments__container
-        - if @merchandise.comments.present?
-          - @merchandise.comments.order("created_at ASC").each do |comment|
-            = render partial: 'comments/comment', locals: {comment: comment}
-
-      .comment-form
-        .comment-form__attention
-          %p
-            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        = form_for [@merchandise, @comment], html: {class: "comment-form__form", id: "comment-form__form"}, url: merchandise_comments_path(@merchandise) do |f|
-          = f.text_area :comment, class: 'comment-form__text-box', size: '40*10'
-          = f.submit 'コメントする', class: 'comment-form__submit'
-  .side        
 
 -# アプリダウンロードバーナー
 = render 'layouts/app-download'

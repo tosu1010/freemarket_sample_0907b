@@ -6,11 +6,11 @@
     .mypage__tab__header.bold
       出品した商品
     %ul.mypage__tab__tabs
-      %li.mypage__tab__tabs--list
+      = link_to mypage_exhibit_list_list_path, class: 'mypage__tab__tabs__link' do
         出品中
-      %li.mypage__tab__tabs--dealing
+      = link_to mypage_exhibit_list_dealing_path, class: 'mypage__tab__tabs__link--active' do
         取引中
-      %li.mypage__tab__tabs--complete
+      = link_to mypage_exhibit_list_complete_path, class: 'mypage__tab__tabs__link' do
         売却済み
     
     .mypage__tab__content
@@ -19,9 +19,13 @@
           取引中の商品がありません
         
       - else
-        - @exhibit_list.each do |exhibit|
-          = link_to edit_exhibit_path(exhibit.merchandise), class: 'exhibit-img' do
-            .exhibit-img__field
-              = image_tag "#{exhibit.exhibit_images.first.image}", class: 'exhibit-img__field__image'
+        .exhibits
+          - @exhibit_list.each do |exhibit|
+            .exhibit-field
+              = link_to exhibit_path(exhibit) do
+                .exhibit-field__img
+                  = image_tag "#{exhibit.exhibit_images.first.image}", class: 'exhibit-field__img__image'
+                .exhibit-field__name
+                  = exhibit.merchandise.name
 
   = render "mypage/menu"
