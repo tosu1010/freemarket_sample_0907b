@@ -21,11 +21,13 @@
     line-height: 74px;
     text-align: center;
     width: 100%;
+    font-weight: 600;
 
     &__link {
       display: inline-block;
       height: 72px;
       width: 33.3%;
+
 
       &--active {
         display: inline-block;
@@ -60,8 +62,10 @@
     .exhibits {
 
       .exhibit-field {
-        width: 157.5px;
+        width: 120px;
         display: inline-block;
+        vertical-align: top;
+        vertical-align: top;
         background-color: #eee;
         margin-bottom: 20px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
@@ -70,7 +74,7 @@
           opacity: .7;
         }
         
-        &:not(:nth-child(4n)) {
+        &:not(:nth-child(5n)) {
           margin: 0 10px 20px 0;
         }
         
@@ -92,17 +96,19 @@
             margin: auto;
             max-width: 100%;
             max-height: 120px;
-            // object-fit: contain;
           }
         }
   
         &__name {
-          background-color: $white;
+          background-color: #fff;
           box-sizing: border-box;
           width: 100%;
-          font-size: 14px;
-          padding: 10px;
+          font-size: 12px;
+          padding: 5px 10px;
           text-align: left;
+          overflow: hidden;
+          height: 40px;
+          line-height: 17px;
         }
       }
     }
