@@ -21,15 +21,15 @@
         出品する
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/listings/listing/" ,class: "menu__links__box__link" do
+      = link_to mypage_exhibit_list_list_path, class: "menu__links__box__link" do
         出品した商品 - 出品中
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/listings/in_progress/" ,class: "menu__links__box__link" do
+      = link_to mypage_exhibit_list_dealing_path, class: "menu__links__box__link" do
         出品した商品 - 取引中
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box
-      = link_to "https://www.mercari.com/jp/mypage/listings/completed/" ,class: "menu__links__box__link" do
+      = link_to mypage_exhibit_list_complete_path, class: "menu__links__box__link" do
         出品した商品 - 売却済み
         = fa_icon "chevron-right", class: "menu__links__box__angle"
     %li.menu__links__box

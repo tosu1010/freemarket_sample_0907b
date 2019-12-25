@@ -2,7 +2,6 @@
   = render 'exhibits/header' 
 
   .main_exhibit__contents
-  -# = form_for @exhibit, html: { multipart: true }  do |ff|
   = form_with(url: exhibit_path, model: @merchandise, method: :patch, local: true, multipart: true) do |f|
     .main_exhibit__contents__main
       .content
@@ -15,25 +14,12 @@
             .form_require 
               必須
           .explain 最大10枚までアップロードできます
-        .content__box__img__select-img
-          = fields_for @exhibit_image do |e_i|
-            - @merchandise.exhibit.exhibit_images.sort_by(&:id).each_with_index do |exhibit_image, i|
-              -if i == 0
-                .img-view
-                  .img-field          
-                    .img-field-upper
-                      = image_tag "#{exhibit_image.image}", class: "preview"
-                    .img-field-bottom
-                      %label.change
-                        .edit-btn 編集
-                        = button_tag id: "clear" do
-                          削除                      
-              -else
+          .content__box__img__select-img
+            = fields_for @exhibit_image do |e_i|
+              - @merchandise.exhibit.exhibit_images.sort_by(&:id).each_with_index do |exhibit_image, i|
                 %div{class: "img-view#{i+1}"}
                   .img-field
                     .img-field-upper
-                      -#  原因不明
-                      -# = image_tag exhibit_image.image, class: "preview#{i+1}"
                       = image_tag "#{exhibit_image.image}", class: "preview#{i+1}"
 
                     .img-field-bottom
@@ -41,14 +27,15 @@
                         .edit-btn 編集
                         = button_tag id: "clear#{i+1}" do
                           削除
-            -images_count = @merchandise.exhibit.exhibit_images.length + 1
-            %label{class: "select_#{images_count}"}
-              %input{class: "select_img_#{images_count}", type:"file", id:"select_img_#{images_count}"}
-              %div{class: "content__box__dropbox__#{images_count}"}
-                .content__box__dropbox__form
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
+              - images_count = @merchandise.exhibit.exhibit_images.length + 1
+                - if images_count <= 5
+                %label{class: "select_#{images_count}"}
+                  %input{class: "select_img_#{images_count}", type:"file", id:"select_img_#{images_count}"}
+                  %div{class: "content__box__dropbox__#{images_count}"}
+                    .content__box__dropbox__form
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをアップロード
 
       .content
         .content__box

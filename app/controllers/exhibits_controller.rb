@@ -63,13 +63,13 @@ class ExhibitsController < ApplicationController
   def show
     # Viewから送られてきたparamsよりインスタンス生成
     @exhibit = Exhibit.find(params[:id])
-    @merchandise = Merchandise.find(params[:id])
+    @merchandise = @exhibit.merchandise
     @comment = Comment.new()
   end
 
   def destroy
     # Viewから送られてきたparamsよりインスタンス生成
-    merchandise = Merchandise.find(params[:id])
+    merchandise = Exhibit.find(params[:id]).merchandise
     # 削除処理
     if merchandise.destroy
       # リダイレクト先はマイページ（仮）
@@ -80,8 +80,8 @@ class ExhibitsController < ApplicationController
   end
 
   def edit
-    @merchandise = Merchandise.find(params[:id])
-    @exhibit = Exhibit.find_by(merchandise_id: @merchandise.id)
+    @exhibit = Exhibit.find(params[:id])
+    @merchandise = @exhibit.merchandise
    
     if @merchandise.category.depth == 0
       @category1 = Category.find_by(id: @merchandise.category_id)

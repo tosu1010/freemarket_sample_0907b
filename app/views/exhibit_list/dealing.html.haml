@@ -1,0 +1,31 @@
+= render 'layouts/header_responsive'
+= render 'layouts/header'
+
+.mypage
+  .mypage__tab
+    .mypage__tab__header.bold
+      出品した商品
+    %ul.mypage__tab__tabs
+      = link_to mypage_exhibit_list_list_path, class: 'mypage__tab__tabs__link' do
+        出品中
+      = link_to mypage_exhibit_list_dealing_path, class: 'mypage__tab__tabs__link--active' do
+        取引中
+      = link_to mypage_exhibit_list_complete_path, class: 'mypage__tab__tabs__link' do
+        売却済み
+    
+    .mypage__tab__content
+      - unless @exhibit_list.exists?
+        .not-found.bold
+          取引中の商品がありません
+        
+      - else
+        .exhibits
+          - @exhibit_list.each do |exhibit|
+            .exhibit-field
+              = link_to exhibit_path(exhibit) do
+                .exhibit-field__img
+                  = image_tag "#{exhibit.exhibit_images.first.image}", class: 'exhibit-field__img__image'
+                .exhibit-field__name
+                  = exhibit.merchandise.name
+
+  = render "mypage/menu"

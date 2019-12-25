@@ -1,8 +1,6 @@
 .exhibition__change__box
   = form_for [@exhibit], html: {class: "comment-form__form exhibition_edit"}, url: edit_exhibit_path(@exhibit), method: 'GET' do |f|
     = f.submit '商品の編集', class: 'comment-form__submit'
-  
-  %p.exhibition_word_or or
 
   -# URLは仮置き
   = form_for [@exhibit], html: {class: "comment-form__form exhibition_stop"}, url: '/' do |f|
